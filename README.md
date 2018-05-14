@@ -11,3 +11,9 @@ This is here beacuse I will be switching from Ubuntu to Debian and want to keep 
 **Theme:** Arc-dark
 
 **Icons:** Paper
+
+----
+cowsay
+ipython
+jupyter
+lolcat
