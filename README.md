@@ -17,3 +17,10 @@ cowsay
 ipython
 jupyter
 lolcat
+
+```
+ ,__,
+[O.o]
+/)__)
+-"--"-
+```
