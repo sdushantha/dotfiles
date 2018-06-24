@@ -1,22 +1,13 @@
-# dots
-My dot files and for my Linux setup
+# Ubuntu
+Editor: Vim
 
-This is here beacuse I will be switching from Ubuntu to Debian and want to keep some of my aliases and bash prompts
+Wallpaper: [link](https://user-images.githubusercontent.com/27065646/41817943-04e95ede-77a5-11e8-91f5-27c6b7e1070d.jpg)
 
-----
-**Screen recorder:** Green Recorder
+Terminal: [tmux](https://github.com/tmux/tmux)
 
-**Text Editor:** Sublime Text 3
+Colorscheme: [Oceanic Next](https://github.com/voronianski/oceanic-next-color-scheme)
 
-**Theme:** Arc-dark
-
-**Icons:** Paper
-
-----
-cowsay
-ipython
-jupyter
-lolcat
+Shell: bash
 
 ```
  ,__,
