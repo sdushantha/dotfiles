@@ -1,7 +1,35 @@
-# Ubuntu
-Editor: Vim
+```
+                    _   _ _                 _               _       _             
+                   | | | | |__  _   _ _ __ | |_ _   _    __| | ___ | |_ ___       
+                   | | | | '_ \| | | | '_ \| __| | | |  / _` |/ _ \| __/ __|      
+                   | |_| | |_) | |_| | | | | |_| |_| | | (_| | (_) | |_\__ \_ _ _ 
+                    \___/|_.__/ \__,_|_| |_|\__|\__,_|  \__,_|\___/ \__|___(_|_|_)
 
-Wallpaper: [link](https://user-images.githubusercontent.com/27065646/41817943-04e95ede-77a5-11e8-91f5-27c6b7e1070d.jpg)
+```
+
+## Dark Theme
+![](Screenshots/info.png)
+
+![](Screenshots/dark_theme.png)
+I always use the dark theme since its better for my eyes
+
+**Theme:** Arc-Dark
+
+**Stuff in the screenshots :** Neofetch, iPython3, cmus, vim
+
+## Light Theme
+![](Screenshots/light_theme.png)
+But I just made a light theme for fun :)
+
+**Theme:** Arc
+
+**Stuff in the screenshots :** feh, Neofetch, 2048.c
+
+---
+
+# Extra
+
+Editor: Vim
 
 Terminal: [tmux](https://github.com/tmux/tmux)
 
@@ -9,9 +37,14 @@ Colorscheme: [Oceanic Next](https://github.com/voronianski/oceanic-next-color-sc
 
 Shell: bash
 
+Icons: Paper
 ```
- ,__,
-[O.o]
-/)__)
--"--"-
+ _________
+< THE END >
+ ---------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 ```
