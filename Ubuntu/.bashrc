@@ -119,9 +119,7 @@ fi
 #####Things I have added#####
 
 # Normal prompt is magenta
-PS1="\033[92m➜ \033[0m "
-#PS1="\n\W\[$(tput sgr0)\]\n\033[95mλ\033[0m  "
-
+PS1='\[\e[0;31m\]♥ \e[0;31m\]\W \[\e[1;33m\]\$\[\e[0m\] '
 
 # This is the real way to remove a package
 alias remove="sudo apt-get purge --auto-remove"
@@ -129,6 +127,12 @@ alias ipython3="ipython3 --no-banner"
 
 # This allows me to run my own scripts from
 export PATH=$PATH":$HOME/scripts"
+
+# Editor is vi
+EDITOR=vi
+
+# Prevents me from using nano
+alias nano=vi
 
 # Runs tmux when opening new terminal
 [[ $- != *i* ]] && return
