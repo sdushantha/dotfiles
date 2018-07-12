@@ -11,19 +11,15 @@
 ![](Screenshots/info.png)
 
 ![](Screenshots/dark_theme.png)
-I always use the dark theme since its better for my eyes
-
-**Theme:** Arc-Dark
-
-**Stuff in the screenshots :** Neofetch, iPython3, cmus, vim
+I always use the dark theme since its better for my eyes  <br />
+**Theme:** Arc-Dark  <br />
+**Stuff in the screenshots :** Neofetch, iPython3, cmus, vim  <br />
 
 ## Light Theme
 ![](Screenshots/light_theme.png)
-But I just made a light theme for fun :)
-
-**Theme:** Arc
-
-**Stuff in the screenshots :** feh, Neofetch, 2048.c
+But I just made a light theme for fun :)  <br />
+**Theme:** Arc  <br />
+**Stuff in the screenshots :** feh, Neofetch, 2048.c  <br />
 
 ---
 
