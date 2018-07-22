@@ -1,0 +1,5 @@
+rofi.lines: 10
+rofi.font: Monospace 10
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.location: 0
