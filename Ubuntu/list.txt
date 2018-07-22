@@ -1,2 +1,3 @@
 compton
 i3status
+nitrogen
