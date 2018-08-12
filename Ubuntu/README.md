@@ -14,15 +14,19 @@
 
 # Extra
 
-Editor: Vim
+- **WM:** [i3-gaps](https://github.com/Airblader/i3)
 
-Terminal: gnome-terminal
+- **Terminal:** gnome-terminal
 
-Colorscheme: [Oceanic Next](https://github.com/voronianski/oceanic-next-color-scheme)
+- **Shell:** bash
 
-Shell: bash
+- **Fonts:** Hack, Font Awesome
 
-Icons: Paper
+- **Color scheme:** [Ocean Next Theme](https://github.com/voronianski/oceanic-next-color-scheme)
+
+- **Theme:** [Arc-Dark](https://github.com/horst3180/Arc-theme)
+
+- **Icons:** [Paper](https://www.snwh.org/paper)
 ```
  _________
 < THE END >
