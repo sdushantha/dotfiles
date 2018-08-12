@@ -16,7 +16,7 @@
 
 Editor: Vim
 
-Terminal: [tmux](https://github.com/tmux/tmux)
+Terminal: gnome-terminal
 
 Colorscheme: [Oceanic Next](https://github.com/voronianski/oceanic-next-color-scheme)
 
