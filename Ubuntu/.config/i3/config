@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -94,9 +94,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -168,6 +168,8 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         position top
+        font pango:Hack 8
+
 }
 
 
@@ -187,6 +189,7 @@ for_window [window_role="task_dialog"] floating enable
 # The image viewer, Viewnior is floating
 for_window [class="Viewnior"] floating enable
 
+for_window [title="Terminal"] floating enable
 # The pixles of the gaps
 gaps inner 6
 gaps outer 6
@@ -214,11 +217,11 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/*
 # Allows sound
 exec --no-startup-id start-pulseaudio-x11
 
-# Allows me to have transparency
-exec --no-startup-id compton
-
 # Notification when i pull the charging plug out and put it in
 exec_always --no-startup-id python3 ~/scripts/chargestatus.py
+
+# Fixes graphics glitch
+new_window none
 
 # Notification when battery is less than 20%
 exec_always --no-startup-id python3 ~/scripts/battery.py
@@ -239,3 +242,5 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # Decrease brightness by 5%
 
 # Starts the i3lock-fancy lockscreen
 bindsym $mod+x exec --no-startup-id i3lock-fancy
+
+
