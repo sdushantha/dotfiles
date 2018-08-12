@@ -7,19 +7,8 @@
 
 ```
 
-## Dark Theme
-![](Screenshots/info.png)
+![messy](https://user-images.githubusercontent.com/27065646/43999883-0abd4d10-9e16-11e8-9ea7-f56c3fe0b25f.png)
 
-![](Screenshots/dark_theme.png)
-I always use the dark theme since its better for my eyes  <br />
-**Theme:** Arc-Dark  <br />
-**Stuff in the screenshots :** Neofetch, iPython3, cmus, vim  <br />
-
-## Light Theme
-![](Screenshots/light_theme.png)
-But I just made a light theme for fun :)  <br />
-**Theme:** Arc  <br />
-**Stuff in the screenshots :** feh, Neofetch, 2048.c  <br />
 
 ---
 
