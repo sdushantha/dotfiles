@@ -7,7 +7,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec gnome-terminal
-bindsym $mod+Return exec --no-startup-id python3 ~/scripts/term.py
+# Need i3ipc module
+bindsym $mod+Return exec --no-startup-id python ~/scripts/term.py
 
 # kill focused window
 bindsym $mod+q kill
@@ -71,9 +72,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -142,12 +143,13 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-        position top
-        font pango:Hack 8
-
-}
+# Uncomment this to enable i3bar
+#bar {
+#        status_command i3status
+#        position top
+#        font pango:Hack 8
+#
+#}
 
 
 #########################
@@ -160,7 +162,7 @@ gaps inner 6
 gaps outer 6
 
 # Gives a border to the windows. 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 
 # Pop ups are floating
 for_window [window_role="pop-up"] floating enable
@@ -198,29 +200,37 @@ assign [class=Firefox] $ws1
 exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/*
 
 # Allows sound
-exec --no-startup-id start-pulseaudio-x11
+exec_always --no-startup-id start-pulseaudio-x11
 
 # Notification when i pull the charging plug out and put it in
-exec_always --no-startup-id python3 ~/scripts/chargestatus.py
+#exec_always --no-startup-id python3 ~/scripts/chargestatus.py
 
 # Fixes graphics glitch
 new_window none
 
 # Notification when battery is less than 20%
-exec_always --no-startup-id python3 ~/scripts/battery.py
+#exec_always --no-startup-id python3 ~/scripts/battery.py
 
 # Reminds be to stand up and walk around
-exec_always --no-startup-id python3 ~/scripts/standup.py
+#exec_always --no-startup-id python3 ~/scripts/standup.py
+
+# Nice window effects and some shadow
 exec_always --no-startup-id compton
+
+# My eyes love the brightness set to 5%
+exec_always --no-startup-id xbacklight -set 5
+
+# Starts the launch.sh script which launches polybar
+exec_always --no-startup-id bash ~/.config/polybar/launch.sh 
 
 ##################
 ## Key bindings ##
 ##################
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle          # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%    # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%    # decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle             # mute sound
 
 # Change brightness using xbacklight
 # Check the link below to fix brightness on MacBooks

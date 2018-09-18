@@ -1,0 +1,33 @@
+[options]
+mouse_autohide = true
+allow_bold = true
+title = termite
+audible_bell = true
+dynamic-title = false
+
+[colors]
+cursor = #d8dee9
+cursor_foreground = #2e3440
+
+foreground = #d7d2ce
+foreground_bold = #d8dee9
+#background = rgba(46, 52, 64, 0.75)
+background = #03142C
+highlight = #4c566a
+
+color0  = #1B2B34
+color1  = #E06C75
+color2  = #99C794
+color3  = #FAC863
+color4  = #6699CC
+color5  = #C594C5
+color6  = #5FB3B3
+color7  = #A7ADBA
+color8  = #4F5B66
+color9  = #EC5F67
+color10 = #99C794
+color11 = #FAC863
+color12 = #6699CC
+color13 = #C594C5
+color14 = #5FB3B3
+color15 = #D8DEE9

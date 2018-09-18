@@ -1,0 +1,185 @@
+[bar/bar1]
+
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width = 100%
+height = 25
+offset-y = 0
+offset-x = 0
+
+border-top-size = 0
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 0
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+monitor = eDP-1
+override-redirect = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = Hack:size=9.5;3
+font-1 = "Font Awesome 5:style=Solid:pixelsize=12;3"
+font-2 = "Font Awesome 5:style=Regular:pixelsize=12;3"
+font-3 = "Font Awesome:pixelsize=12;3"
+
+;--------;
+; COLORS ;
+;--------;
+
+background = #cc2d2d2d
+foreground = ${xrdb:color7}
+border-color = 0
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+fixed-center = true
+padding-left = 2 
+padding-right = 2
+module-margin = 1.5
+
+modules-left = volume backlight battery wlan
+modules-center = i3
+modules-right =  memory date time
+
+tray-position = none
+tray-detached = true
+
+;---------;
+; MODULES ;
+;---------;
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+;enable-scroll = false
+
+label-unfocused-foreground = ${xrdb:color7}
+label-focused-foreground = ${xrdb:color4}
+label-urgent-foreground = ${xrdb:color1}
+
+[module/time]
+type = internal/date
+interval = 1.0
+date =  %{F-}%I:%M %p
+label-foreground = ${xrdb:color6}
+
+[module/date]
+;type = internal/date
+;date =  %e %B - %A
+;label = %date%
+;label-foreground = ${xrdb:color5}
+
+type = custom/script
+exec = date +"%e %B - %A"
+interval = 5
+format-prefix = " "
+format-prefix-foreground = ${xrdb:color5}
+
+
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 1
+
+full-at = 100
+
+label-discharging = %percentage%%
+label-charging = %percentage%%
+label-full = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+format-charging = <animation-charging> <label-charging>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+ramp-capacity-0-foreground = ${xrdb:color1}
+ramp-capacity-1-foreground = ${xrdb:color3}
+ramp-capacity-2-foreground = ${xrdb:color3}
+ramp-capacity-3-foreground = ${xrdb:color2}
+ramp-capacity-4-foreground = ${xrdb:color2}
+
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+animation-charging-foreground = ${xrdb:color2}
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+format-muted =  0%
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-volume-foreground = ${xrdb:color6}
+format-muted-foreground = ${xrdb:color1}
+
+[module/backlight]
+type = internal/xbacklight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+;card = intel_backlight
+
+format = <ramp> <label>
+
+label = %percentage%%
+ramp-0 = 
+ramp-1 = 
+ramp-2 =  
+
+;label-foregound =  
+ramp-0-foreground = ${xrdb:color5}
+ramp-1-foreground = ${xrdb:color4}
+ramp-2-foreground = ${xrdb:color3}
+
+[module/wlan]
+type = internal/network
+
+interface = wlp3s0
+
+interval = 5
+
+label-connected =  %{F-}%essid%
+label-disconnected =  %{F-}Not Connected
+
+label-connected-foreground = ${xrdb:color4}
+label-disconnected-foreground = ${xrdb:color1}
+
+[module/memory]
+type = custom/script
+format-prefix=" "
+format-prefix-foreground = ${xrdb:color2}
+
+exec = raw=$(($(stat -f --format="%a*%S" .)));final=${raw:0:2};echo $final "GB"
+tail = true
+
