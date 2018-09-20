@@ -14,7 +14,8 @@ More scrots: https://imgur.com/a/fCYTUlD
 
 - **.Xresources** <br> Has the colors for polybar
 
-- **.i3status.conf** <br>I use polybar but have configuration for the i3bar incase I want to switch back
+- **.i3status.conf** <br>I use polybar but have configuration for the i3bar incase I want to switch back![i3status](https://user-images.githubusercontent.com/27065646/45798078-c3c81f00-bca8-11e8-91f2-a860ba30fa77.png)
+
 
 - **.bashrc** <br> Contains my config for the bash shell. It also contains some aliases which I find usefull
 
@@ -31,7 +32,8 @@ More scrots: https://imgur.com/a/fCYTUlD
   
   - **i3** <br> Basic configuration for the ```i3-gaps``` window manager. The only keybinding that might be needed to be noted is that ```mod+x``` launches ```i3lock-fancy```
   
-  - **polybar** <br> In this folder you will find a file called ```config``` which has some neat configurartion and file called ```launch.sh``` which is script which used to start polybar
+  - **polybar** <br> In this folder you will find a file called ```config``` which has some neat configurartion and file called ```launch.sh``` which is script which used to start polybar![polybar](https://user-images.githubusercontent.com/27065646/45797876-f9b8d380-bca7-11e8-8435-170f6022a832.png)
+
   
   - **ranger** <br> Minimal configuration for my cli file manager which also lets view the images in the terminal. But there is a small bug which makes the images sometimes not render properly
   
@@ -48,7 +50,7 @@ More scrots: https://imgur.com/a/fCYTUlD
 
 - **WM:** [i3-gaps](https://github.com/Airblader/i3)
 
-- **Terminal:** gnome-terminal
+- **Terminal:** termite
 
 - **Shell:** bash
 
@@ -59,13 +61,16 @@ More scrots: https://imgur.com/a/fCYTUlD
 - **Theme:** [Arc-Dark](https://github.com/horst3180/Arc-theme)
 
 - **Icons:** [Paper](https://www.snwh.org/paper)
-```
- _________
-< THE END >
- ---------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-```
+
+- **Music Player:** ncmpcpp and Audacious for double click music files
+
+- **Text editor:** Sublime Text 3 and VIM
+
+- **File explorer:** Thunar and sometimes ranger
+
+- **Image viewer:** Viewnior
+
+- **Program launcher:** Rofi
+
+- **Wallpaper handler:** feh
+
