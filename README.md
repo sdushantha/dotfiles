@@ -39,7 +39,7 @@ More scrots: https://imgur.com/a/fCYTUlD
   
   - **termite** <br> My termite terminal emulator configuration. The color scheme is the ocean-next color scheme with but the background color is gotton from pywal-web
   
-- **var/spool/cron/siddharth** <br> Configuration for my cron jobs
+- **/var/spool/cron/siddharth** <br> Configuration for my cron jobs
 
 - **.vimrc** <br> Just a simple vimrc. Nothing special her.
 
