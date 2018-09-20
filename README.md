@@ -12,6 +12,8 @@ More scrots: https://imgur.com/a/fCYTUlD
 ## Explaination
 - **.Xmodmap** <br>This file lets me have natural scrolling on MacBookAir.
 
+- **.Xresources** <br> Has the colors for polybar
+
 - **.i3status.conf** <br>I use polybar but have configuration for the i3bar incase I want to switch back
 
 - **.bashrc** <br> Contains my config for the bash shell. It also contains some aliases which I find usefull
