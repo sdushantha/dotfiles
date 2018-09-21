@@ -5,20 +5,18 @@ set $mod Mod4
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-#bindsym $mod+Return exec gnome-terminal
-# Need i3ipc module
+# This is a very usefull script whic starts the terminal. I have a keyboard 
+# shortcut (mod+enter) which runs this script. What this script does is that 
+# if the currect workspace is empty, then it will open the terminal
+# as floating enabled. If there is a window in the current workspace, then the 
+# terminal will open like other windows
 bindsym $mod+Return exec --no-startup-id python ~/scripts/term.py
 
 # kill focused window
 bindsym $mod+q kill
 
-# start dmenu (a program launcher)
+# start polybar (a program launcher)
 bindsym $mod+d exec rofi -show drun
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -152,39 +150,35 @@ bindsym $mod+r mode "resize"
 #}
 
 
-#########################
-## Things I have added ##
-#########################
 
-#for_window [title="Terminal"] floating enable
-# The pixles of the gaps
+# the pixles of the gaps
 gaps inner 6
 gaps outer 6
 
-# Gives a border to the windows. 
+# gives a border to the windows. 
 for_window [class="^.*"] border pixel 2
 
-# Pop ups are floating
+# pop ups are floating
 for_window [window_role="pop-up"] floating enable
 
-# Task dialogs are floating
+# task dialogs are floating
 for_window [window_role="task_dialog"] floating enable
 
-# I like having the image viewer floating
+# i like having the image viewer floating
 for_window [class="Viewnior"] floating enable
 
 # Video player floating. This video player is used for quick
 # playing. But I use VLC for movies or something similar.
 for_window [class="mpv"] floating enable
 
-# Color of the borders
+# color of the borders
 client.focused #ffffff #ffffff #000000 #c8395b 
 client.urgent #900000 #900000 #ffffff #c8395b
 
-# Mouse, please stop focus whenever you hover to whatever windows plz :(
+# mouse, please stop focus whenever you hover to whatever windows plz :(
 focus_follows_mouse no
 
-# Firefox open automaticaly on workspace 1 
+# firefox open automaticaly on workspace 1 
 assign [class=Firefox] $ws1
 
 ####################
@@ -199,44 +193,53 @@ assign [class=Firefox] $ws1
 # automaticaly set it on start up.
 exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/*
 
-# Allows sound
+# allows sound
 exec_always --no-startup-id start-pulseaudio-x11
 
-# Notification when i pull the charging plug out and put it in
+# notification when i pull the charging plug out and put it in
 #exec_always --no-startup-id python3 ~/scripts/chargestatus.py
 
-# Fixes graphics glitch
+# fixes graphics glitch
 new_window none
 
-# Notification when battery is less than 20%
+# notification when battery is less than 20%
 #exec_always --no-startup-id python3 ~/scripts/battery.py
 
-# Reminds be to stand up and walk around
+# reminds be to stand up and walk around
 #exec_always --no-startup-id python3 ~/scripts/standup.py
 
-# Nice window effects and some shadow
+# nice window effects and some shadow
 exec_always --no-startup-id compton
 
-# My eyes love the brightness set to 5%
+# my eyes love the brightness set to 5%
 exec_always --no-startup-id xbacklight -set 5
 
-# Starts the launch.sh script which launches polybar
-exec_always --no-startup-id bash ~/.config/polybar/launch.sh 
+# starts the launch.sh script which launches polybar
+exec_always --no-startup-id bash ~/.config/polybar/launch.sh
+
+# i like music
+exec --no-startup-id mpd
 
 ##################
 ## Key bindings ##
 ##################
 
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%    # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%    # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle             # mute sound
+# pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-# Change brightness using xbacklight
-# Check the link below to fix brightness on MacBooks
+# change brightness using xbacklight
+# check the link below to fix brightness on MacBooks
 # https://medium.com/@philpl/ubuntu-14-10-running-on-my-macbook-18991a697ae0
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5   # increase brightness by 5%
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # Decrease brightness by 5%
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
-# Starts the i3lock-fancy lockscreen
+# starts the i3lock-fancy lockscreen
 bindsym $mod+x exec --no-startup-id i3lock-fancy
+
+# music control
+bindsym XF86AudioNext exec mpc next && notify-send "Now Playing ♫" "$(mpc current)"
+bindsym XF86AudioPrev exec mpc prev && notify-send "Now Playing ♫" "$(mpc current)"
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioStop exec mpc stop
