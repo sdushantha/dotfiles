@@ -118,14 +118,24 @@ fi
 
 #####Things I have added#####
 
-PS1='\[\e[0;31m♥ \e[0;31m\]\W \[\e[1;33m\]❯\[\e[0m\] '
+# I ♥ my bash prompt
+PS1='\[\e[0;31mc \e[0;31m\]\W \[\e[1;33m\]❯\[\e[0m\] '
 
 # This is the real way to remove a package
 alias ipython3="ipython3 --no-banner"
 
 # This allows me to run my own scripts from
 export PATH=$PATH":$HOME/scripts"
+
+# I rather type subl than subl3
 alias subl=subl3
+
+# av means off in Norwegian and it is much shorter than typing poweroff
 alias av=poweroff
+
+# Cool warning when running naything with sudo
+alias sudo="python3 ~/scripts/sudoer_lecture.py && sudo"
+
+# Set my editor as VIM
 export VISUAL=vim
 export EDITOR="$VISUAL"
