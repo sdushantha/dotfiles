@@ -36,6 +36,8 @@ into your ```.bashrc```.
   - **audacious** <br> Just a simple config to make audacious minimal
   
   - **dunst** <br> Some configuration for my notification deamon that I took from somewhere
+  
+    ![sysinfo](Screenshot/dunst.png)
     
   - **gtk-3.0** <br> Here you will find ```gtk.css``` which adds paddings for vte-based terminal and ```settings.ini``` which setts my gtk theme and the icons
   
