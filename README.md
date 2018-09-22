@@ -18,6 +18,14 @@
 
 - **~/script/term.py** <br> Is a very usefull script. I have a keyboard shortcut (```mod+enter```) which runs this script. What this script does is that if the currect workspace is empty, then it will open my terminal which ```termite``` as floating enabled. If there is a window in the current workspace, then the terminal will open like other windows
 
+- **~/script/sudoer_lecture.py** <br> Just nice message when you do anything with sudo :)
+
+  ![sudobee](Screenshot/sudobee.png)
+
+- **~/script/sysinfo.sh** <br> A minimal alternative to neofetch I guess
+  
+  ![sysinfo](Screenshot/sysinfo.png)
+
 - **.ncmpcpp** <br> There are a few conficurations for it. I like all of them and switch between them from time to time 
 
 - **~/.config/**
