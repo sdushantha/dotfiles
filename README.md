@@ -1,10 +1,7 @@
 
 <h1 align="center">dots ♥ ~/</h1>
 
-![messy](https://user-images.githubusercontent.com/27065646/43999883-0abd4d10-9e16-11e8-9ea7-f56c3fe0b25f.png)
-
-
-More scrots: https://imgur.com/a/fCYTUlD
+![fake_busy](Screenshot/fake_busy.png)
 
 ---
 
