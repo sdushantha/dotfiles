@@ -18,7 +18,11 @@
 
 - **~/script/term.py** <br> Is a very usefull script. I have a keyboard shortcut (```mod+enter```) which runs this script. What this script does is that if the currect workspace is empty, then it will open my terminal which ```termite``` as floating enabled. If there is a window in the current workspace, then the terminal will open like other windows
 
-- **~/script/sudoer_lecture.py** <br> Just nice message when you do anything with sudo :)
+- **~/script/sudoer_lecture.py** <br> Just nice message when you do anything with sudo. To make it run properly, but this
+into your ```.bashrc```. 
+  ```bash
+  alias sudo="python3 ~/scripts/sudoer_lecture.py && sudo"
+  ```
 
   ![sudobee](Screenshot/sudobee.png)
 
