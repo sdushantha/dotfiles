@@ -119,7 +119,7 @@ fi
 #####Things I have added#####
 
 # I ♥ my bash prompt
-PS1='\[\e[0;31mc \e[0;31m\]\W \[\e[1;33m\]❯\[\e[0m\] '
+PS1='\[\e[0;31m♥ \e[0;31m\]\W \[\e[1;33m\]❯\[\e[0m\] '
 
 # This is the real way to remove a package
 alias ipython3="ipython3 --no-banner"
