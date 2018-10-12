@@ -41,7 +41,7 @@ into your ```.bashrc```.
     
   - **gtk-3.0** <br> Here you will find ```gtk.css``` which adds paddings for vte-based terminal and ```settings.ini``` which setts my gtk theme and the icons
   
-  - **i3** <br> Basic configuration for the ```i3-gaps``` window manager. The only keybinding that might be needed to be noted is that ```mod+x``` launches ```i3lock-fancy```
+  - **i3** <br> Basic configuration for the ```i3-gaps``` window manager. The only keybinding that might be needed to be noted is that ```mod+x``` launches ```betterlockscreen```
   
   - **polybar** <br> In this folder you will find a file called ```config``` which has some neat configurartion and file called ```launch.sh``` which is script which used to start polybar![polybar](https://user-images.githubusercontent.com/27065646/45797876-f9b8d380-bca7-11e8-8435-170f6022a832.png)
 
