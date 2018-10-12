@@ -173,7 +173,8 @@ for_window [class="mpv"] floating enable
 
 # color of the borders
 client.focused #ffffff #ffffff #000000 #c8395b 
-client.urgent #900000 #900000 #ffffff #c8395b
+#client.urgent #900000 #900000 #ffffff #c8395b
+client.urgent #7ec0c3 #FFFFFF #FFFFFF #7ec0c3 
 
 # mouse, please stop focus whenever you hover to whatever windows plz :(
 focus_follows_mouse no
@@ -235,11 +236,21 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
-# starts the i3lock-fancy lockscreen
-bindsym $mod+x exec --no-startup-id i3lock-fancy
+# starts the  betterlockscreen lockscreen
+bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -s
+bindsym $mod+x exec --no-startup-id betterlockscreen -l
 
 # music control
 bindsym XF86AudioNext exec mpc next && notify-send "Now Playing ♫" "$(mpc current)"
 bindsym XF86AudioPrev exec mpc prev && notify-send "Now Playing ♫" "$(mpc current)"
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
+
+
+# screenshot fullscreen
+bindsym $mod+p exec ~/scripts/screenshot.sh
+
+# screenshot selected area
+# You need to use `--release` in the binding.
+# See "4.3. Keyboard bindings" on i3wm docs 
+bindsym $mod+o --release exec bash ~/scripts/screenshot.sh -s
