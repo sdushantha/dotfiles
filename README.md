@@ -1,5 +1,5 @@
 
-<h1 align="center">dots ❤ ~/</h1>
+<h1 align="center">dots ♥ ~/</h1>
 
 ![fake_busy](Screenshot/fakebusy.png)
 
