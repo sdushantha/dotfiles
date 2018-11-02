@@ -1,3 +1,9 @@
+# ██╗██████╗ ██╗    ██╗███╗   ███╗
+# ██║╚════██╗██║    ██║████╗ ████║
+# ██║ █████╔╝██║ █╗ ██║██╔████╔██║
+# ██║ ╚═══██╗██║███╗██║██║╚██╔╝██║
+# ██║██████╔╝╚███╔███╔╝██║ ╚═╝ ██║
+# ╚═╝╚═════╝  ╚══╝╚══╝ ╚═╝     ╚═╝
 
 set $mod Mod4
 
@@ -15,7 +21,7 @@ bindsym $mod+Return exec --no-startup-id python ~/scripts/term.py
 # kill focused window
 bindsym $mod+q kill
 
-# start polybar (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+d exec rofi -show drun
 
 # change focus
@@ -170,17 +176,15 @@ for_window [class="Viewnior"] floating enable
 # Video player floating. This video player is used for quick
 # playing. But I use VLC for movies or something similar.
 for_window [class="mpv"] floating enable
+for_window [class="SimpleScreenRecorder"] floating enable
 
 # color of the borders
-client.focused #ffffff #ffffff #000000 #c8395b 
+client.focused #ffffff #ffffff #ffffff #ffffff 
 #client.urgent #900000 #900000 #ffffff #c8395b
 client.urgent #7ec0c3 #FFFFFF #FFFFFF #7ec0c3 
 
 # mouse, please stop focus whenever you hover to whatever windows plz :(
 focus_follows_mouse no
-
-# firefox open automaticaly on workspace 1 
-assign [class=Firefox] $ws1
 
 ####################
 ## Run on startup ##
@@ -192,7 +196,7 @@ assign [class=Firefox] $ws1
 # Automaticaly sets wallpaper. Just the the wallpaper
 # you want in the Wallpapers directory then it will 
 # automaticaly set it on start up.
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/*
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpaper/*
 
 # allows sound
 exec_always --no-startup-id start-pulseaudio-x11
@@ -220,6 +224,9 @@ exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 
 # i like music
 exec --no-startup-id mpd
+
+# uses my wallpaper as my lockscreen image
+exec --no-startip-id betterlockscreen -u Pictures/Wallpaper/
 
 ##################
 ## Key bindings ##
@@ -254,3 +261,6 @@ bindsym $mod+p exec ~/scripts/screenshot.sh
 # You need to use `--release` in the binding.
 # See "4.3. Keyboard bindings" on i3wm docs 
 bindsym $mod+o --release exec bash ~/scripts/screenshot.sh -s
+
+# A very cool emoji picker using rofi
+bindsym $mod+Shift+d exec bash /home/siddharth/scripts/emoji.sh
