@@ -9,8 +9,6 @@
 ## Explaination
 - **.Xmodmap** <br>This file lets me have natural scrolling on MacBookAir.
 
-- **.Xresources** <br> Has the colors for polybar
-
 - **.i3status.conf** <br>I use polybar but have configuration for the i3bar incase I want to switch back![i3status](https://user-images.githubusercontent.com/27065646/45798078-c3c81f00-bca8-11e8-91f2-a860ba30fa77.png)
 
 
