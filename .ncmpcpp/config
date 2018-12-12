@@ -33,7 +33,6 @@ mpd_connection_timeout = 5
 ## Needed for tag editor and file operations to work.
 ##
 mpd_music_dir = "~/music"
-#mpd_music_dir = "Y:\\stor\\music"
 mpd_crossfade_time = 5
 #
 ##### music visualizer #####
@@ -180,20 +179,9 @@ message_delay_time = 3
 ## Note: colors can be nested.
 ##
 #
-song_list_format = {$(248)%f}$R{$(248)(%l)}
-# song_list_format = "$9{$3%a $1►$3 %t}|{$8%a $1►$8 <untitled>}|{$8<unknown artist> $1►$3 %t}|{$1►$8 %f} $9 $R{$1%l}"
-# song_list_format = "{$1►$3 %t}|{$1►$8 <untitled>}|{$1►$8 %f} $1$R{$8 %a}|{$8 <unknown artist>} {$1◀ %l}"
-#(Kori list below)
- # song_list_format = "$2%t$7 $1by$6 %a$1 on %b$9"
-#
-# song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
-# song_status_format = {$8%t}{$8 "%b"}|{$8 "%a"}$8
-#
-# song_library_format = {%n - }{%t}|{%f}
-#
-# tag_editor_album_format = {(%y) }%b
-#
-##
+#song_list_format = {$(248)%a - %t}$R{$(248)[%l]}
+song_list_format = {%a - }{%t}|{$8%f$9}$R{$(white)(%l)$9}
+
 ## Note: Below variables are used for sorting songs in browser.
 ## The sort mode determines how songs are sorted, and can be used
 ## in combination with a sort format to specify a custom sorting format.
@@ -342,7 +330,7 @@ progressbar_look = "─╼─"
 # progressbar_look = "▪▪▪"
 # progressbar_look = "▪▪▫"
 #progressbar_look = "───"
-# progressbar_look = "▁▁▁"
+#progressbar_look = "▁▁▁"
 #progressbar_look = "‒‒‒"
 # progressbar_look = "■◣ "
 # progressbar_look = "◈◆◇"
@@ -514,4 +502,4 @@ alternative_ui_separator_color = 239
 window_border_color = "white"
 active_window_border = "white"
 #
-
+execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"

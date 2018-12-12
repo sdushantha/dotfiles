@@ -1,3 +1,44 @@
+# ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗ 
+# ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+# ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+# ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+# ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+# ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+                                                       
+[colors]
+; Black
+color0 = #121418
+color8 = #675f54
+
+; Red
+color1 = #c94234
+color9 = #ff645a
+
+; Green
+color2 = #85c54c
+color10 = #98e036
+
+; Yellow
+color3 = #f5ae2e
+color11 = #e0d561
+
+; Blue
+color4 = #1398b9
+color12 = #5fdaff
+
+; Magenta
+color5 = #d0633d
+color13 = #ff9269
+
+; Cyan
+color6 = #509552
+color14 = #84f088
+
+; White
+color7 = #e5c6aa
+color15 = #f6f7ec
+
+
 [bar/bar1]
 
 ;------------;
@@ -36,7 +77,7 @@ font-3 = "Font Awesome:pixelsize=12;3"
 ;--------;
 
 background = #cc2d2d2d
-foreground = ${xrdb:color7}
+foreground = ${colors.color7}
 border-color = 0
 
 ;---------------;
@@ -59,6 +100,7 @@ tray-detached = true
 ; MODULES ;
 ;---------;
 
+
 [module/i3]
 type = internal/i3
 
@@ -66,28 +108,24 @@ pin-workspaces = true
 strip-wsnumbers = true
 ;enable-scroll = false
 
-label-unfocused-foreground = ${xrdb:color7}
-label-focused-foreground = ${xrdb:color4}
-label-urgent-foreground = ${xrdb:color1}
+label-unfocused-foreground = ${colors.color7}
+label-focused-foreground = ${colors.color4}
+label-urgent-foreground = ${colors.color1}
+
 
 [module/time]
 type = internal/date
 interval = 1.0
 date =  %{F-}%I:%M %p
-label-foreground = ${xrdb:color6}
+label-foreground = ${colors.color6}
+
 
 [module/date]
-;type = internal/date
-;date =  %e %B - %A
-;label = %date%
-;label-foreground = ${xrdb:color5}
-
 type = custom/script
 exec = date +"%e %B - %A"
 interval = 5
 format-prefix = " "
-format-prefix-foreground = ${xrdb:color5}
-
+format-prefix-foreground = ${colors.color5}
 
 
 [module/battery]
@@ -114,11 +152,11 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
-ramp-capacity-0-foreground = ${xrdb:color1}
-ramp-capacity-1-foreground = ${xrdb:color3}
-ramp-capacity-2-foreground = ${xrdb:color3}
-ramp-capacity-3-foreground = ${xrdb:color2}
-ramp-capacity-4-foreground = ${xrdb:color2}
+ramp-capacity-0-foreground = ${colors.color1}
+ramp-capacity-1-foreground = ${colors.color3}
+ramp-capacity-2-foreground = ${colors.color3}
+ramp-capacity-3-foreground = ${colors.color2}
+ramp-capacity-4-foreground = ${colors.color2}
 
 
 animation-charging-0 = 
@@ -128,7 +166,8 @@ animation-charging-3 = 
 animation-charging-4 = 
 ; Framerate in milliseconds
 animation-charging-framerate = 750
-animation-charging-foreground = ${xrdb:color2}
+animation-charging-foreground = ${colors.color2}
+
 
 [module/volume]
 type = internal/volume
@@ -140,8 +179,9 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-ramp-volume-foreground = ${xrdb:color6}
-format-muted-foreground = ${xrdb:color1}
+ramp-volume-foreground = ${colors.color6}
+format-muted-foreground = ${colors.color1}
+
 
 [module/backlight]
 type = internal/xbacklight
@@ -157,10 +197,10 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 =  
 
-;label-foregound =  
-ramp-0-foreground = ${xrdb:color5}
-ramp-1-foreground = ${xrdb:color4}
-ramp-2-foreground = ${xrdb:color3}
+ramp-0-foreground = ${colors.color5}
+ramp-1-foreground = ${colors.color4}
+ramp-2-foreground = ${colors.color3}
+
 
 [module/wlan]
 type = internal/network
@@ -172,14 +212,14 @@ interval = 5
 label-connected =  %{F-}%essid%
 label-disconnected =  %{F-}Not Connected
 
-label-connected-foreground = ${xrdb:color4}
-label-disconnected-foreground = ${xrdb:color1}
+label-connected-foreground = ${colors.color4}
+label-disconnected-foreground = ${colors.color1}
+
 
 [module/memory]
 type = custom/script
 format-prefix=" "
-format-prefix-foreground = ${xrdb:color2}
+format-prefix-foreground = ${colors.color2}
 
 exec = raw=$(($(stat -f --format="%a*%S" .)));final=${raw:0:2};echo $final "GB"
 tail = true
-

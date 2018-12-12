@@ -1,28 +1,13 @@
 rofi.lines: 10
-rofi.font: Monospace 11
+rofi.font: Hack 11
 rofi.hide-scrollbar: true
 
-! Use extended color scheme
-rofi.color-enabled:                  true
-! Color scheme for normal row
-rofi.color-normal:                   #ffffff,#525d76,#f5f5f5,#5294e2,#ffffff
-! Color scheme for urgent row
-rofi.color-urgent:                   #ffffff,#dc322f,#f5f5f5,#5294e2,#dc322f
-! Color scheme for active row
-rofi.color-active:                   #ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0
-! Color scheme window
-rofi.color-window:                   #ffffff,#f5f5f5
-
-! Enable the extended coloring options
-rofi.color-enabled: true
-
 ! Property Name     BG       Border   Separator
-rofi.color-window:  #353b45, #353b45, #282c34
+rofi.color-window:  #1b2b34, #ffffff, #282c34
 
 ! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
-rofi.color-normal:  #353b45, #abb2bf, #353b45, #61afef, #fff
-!rofi.color-normal:  #353b45, #abb2bf, #353b45, #353b45, #c8ccd4
-rofi.color-active:  #353b45, #61afef, #353b45, #353b45, #61afef
+rofi.color-normal:  #1b2b34,#abb2bf, #1b2b34, #4c566a, #fff
+rofi.color-active:  #1b2b34, #61afef, #1b2b34, #4c566a, #61afef
 rofi.color-urgent:  #353b45, #e06c75, #353b45, #353b45, #e06c75
 
 ! Set the desired separator style

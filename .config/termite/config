@@ -1,3 +1,10 @@
+# ████████╗███████╗██████╗ ███╗   ███╗██╗████████╗███████╗
+# ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║╚══██╔══╝██╔════╝
+#    ██║   █████╗  ██████╔╝██╔████╔██║██║   ██║   █████╗  
+#    ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║   ██║   ██╔══╝  
+#    ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║   ██║   ███████╗
+#    ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝   ╚═╝   ╚══════╝
+
 [options]
 allow_bold = true
 title = termite
@@ -6,16 +13,19 @@ font = Hack 10
 cursor_shape = block
 browser = firefox
 
+
 [colors]
 cursor = #d8dee9
 cursor_foreground = #2e3440
+foreground = #d1dce6
+foreground_bold = #d1dce6
 
-foreground = #c9c4c4
-foreground_bold = #d8dee9
-#background = rgba(46, 52, 64, 0.75)
-background = #1e1515
+#background = rgba(17, 24, 30, 0.90)
+background = #282a36
 highlight = #4c566a
 
+# I should organize the colors so that
+# I know what color is what
 color0  = #1B2B34
 color1  = #E06C75
 color2  = #99C794

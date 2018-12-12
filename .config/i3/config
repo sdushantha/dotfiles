@@ -178,6 +178,8 @@ for_window [class="Viewnior"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 
+for_window [class="Keybase"] floating enable
+
 # color of the borders
 client.focused #ffffff #ffffff #ffffff #ffffff 
 #client.urgent #900000 #900000 #ffffff #c8395b
@@ -185,6 +187,9 @@ client.urgent #7ec0c3 #FFFFFF #FFFFFF #7ec0c3
 
 # mouse, please stop focus whenever you hover to whatever windows plz :(
 focus_follows_mouse no
+
+# fixes graphics glitch
+new_window none
 
 ####################
 ## Run on startup ##
@@ -204,14 +209,6 @@ exec_always --no-startup-id start-pulseaudio-x11
 # notification when i pull the charging plug out and put it in
 #exec_always --no-startup-id python3 ~/scripts/chargestatus.py
 
-# fixes graphics glitch
-new_window none
-
-# notification when battery is less than 20%
-#exec_always --no-startup-id python3 ~/scripts/battery.py
-
-# reminds be to stand up and walk around
-#exec_always --no-startup-id python3 ~/scripts/standup.py
 
 # nice window effects and some shadow
 exec_always --no-startup-id compton
@@ -233,8 +230,11 @@ exec --no-startip-id betterlockscreen -u Pictures/Wallpaper/
 ##################
 
 # pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
+# I have set it so that it if the volume is set to mute, and I try to increase or decrease
+# the volume, it will unmute and then increase or decrease. Because before, it would stay mute
+# and just increase the volume but it would still stay mute. Yes, its strange.
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-mute 0 0 && pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-mute 0 0 && pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # change brightness using xbacklight
@@ -262,5 +262,8 @@ bindsym $mod+p exec ~/scripts/screenshot.sh
 # See "4.3. Keyboard bindings" on i3wm docs 
 bindsym $mod+o --release exec bash ~/scripts/screenshot.sh -s
 
-# A very cool emoji picker using rofi
-bindsym $mod+Shift+d exec bash /home/siddharth/scripts/emoji.sh
+# a very cool emoji and unicode character picker using rofi
+bindsym $mod+Shift+d exec bash ~/.config/rofi/scripts/picker.sh
+
+# open up my file manager
+bindsym $mod+Shift+Return exec thunar 

@@ -1,21 +1,18 @@
 
-[audacious]
-record=FALSE
-
 [audgui]
 about_win=707,304,623,180
-filebrowser_win=343,136,672,480
-filesel_path=/home/siddharth
+filebrowser_win=343,130,672,480
+filesel_path=/home/siddharth/Music
 info_win=399,181,560,398
 
 [gtkui]
 column_widths=10,200,234,10,175,175,10,100,29,53,275,275,275,10,275
 infoarea_visible=FALSE
 menu_visible=FALSE
-player_height=414
-player_width=832
-player_x=346
-player_y=331
+player_height=305
+player_width=718
+player_x=392
+player_y=312
 playlist_columns=artist title length
 playlist_headers=FALSE
 playlist_tabs_visible=FALSE
