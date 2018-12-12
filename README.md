@@ -1,7 +1,7 @@
 
 <h1 align="center">dots ♥ ~/</h1>
 
-![fake_busy](Screenshot/scrot.png)
+![fake_busy](Screenshot/preview.png)
 
 ---
 
