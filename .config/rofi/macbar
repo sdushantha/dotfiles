@@ -1,0 +1,157 @@
+[bar/bar]
+
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width = 100%
+height = 23
+offset-y = 0
+offset-x = 0
+
+border-top-size = 0
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 0
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+monitor = eDP-1
+override-redirect = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = "San Francisco:size=10;3"
+font-1 = "Font Awesome 5:style=Solid:pixelsize=12;3"
+font-2 = "Font Awesome 5:style=Regular:pixelsize=12;3"
+font-3 = "Font Awesome:pixelsize=12;3"
+
+;--------;
+; COLORS ;
+;--------;
+
+background = #ece9f2
+foreground = #000000
+border-color = 0
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+fixed-center = true
+padding-left = 2 
+padding-right = 2
+module-margin = 1.5
+
+modules-left = powermenu xwindow 
+modules-right =  wlan battery time search
+
+tray-position = none
+tray-detached = true
+
+;---------;
+; MODULES ;
+;---------;
+
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+
+label-unfocused-foreground = ${colors.color7}
+label-focused-foreground = ${colors.color4}
+label-urgent-foreground = ${colors.color1}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 25
+
+
+[module/time]
+type = custom/script
+interval = 1.0
+exec = date +"%I:%M %p"
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 1
+
+full-at = 100
+
+label-discharging = %percentage%%
+label-charging = %percentage%%
+label-full = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+format-charging = <ramp-capacity> <label-charging>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+ramp-capacity-0-foreground = #000000
+ramp-capacity-1-foreground = #000000
+ramp-capacity-2-foreground = #000000
+ramp-capacity-3-foreground = #000000
+ramp-capacity-4-foreground = #000000
+
+
+[module/wlan]
+type = internal/network
+
+interface = wlp3s0
+
+interval = 5
+
+label-connected =  %{F-}
+label-disconnected =  %{F-}
+
+label-connected-foreground = #000000
+label-disconnected-foreground = #FF0000
+
+[module/search]
+type = custom/text
+content = "     "
+click-left = rofi -show drun
+
+
+[module/powermenu]
+type = custom/menu
+
+label-open = ""
+
+label-close = cancel
+label-open-padding = 4 
+label-close-padding = 3 
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-0-padding = 3
+menu-0-1-padding = 3
+
+menu-1-0 = reboot?  
+menu-1-0-exec = sudo reboot
+menu-1-0-padding = 3
+
+menu-2-0 = power off?  
+menu-2-0-exec = sudo poweroff
+menu-2-0-padding = 3
+
+
