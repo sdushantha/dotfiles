@@ -28,7 +28,7 @@ into your ```.bashrc```.
   
   ![sysinfo](Screenshot/sysinfo.png)
 
-- **~/script/emoji.py** <br> A rofi emoji picker. It is binded to ```mod+Shift+d``` 
+- **~/.config/rofi/scripts/picker.sh** <br> A rofi emoji picker. It is binded to ```mod+Shift+d``` 
 
   ![rofi_emoji_picker](https://user-images.githubusercontent.com/27065646/47914882-79d67980-dea1-11e8-83c1-0ce5ba47ad12.png)
 
