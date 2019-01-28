@@ -6,6 +6,8 @@
 # ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
                                                        
 [colors]
+; These colors are not the same as the
+; ones in the config file for Termite
 ; Black
 color0 = #121418
 color8 = #675f54
@@ -68,8 +70,8 @@ override-redirect = false
 ;-------;
 
 font-0 = Hack:size=9.5;3
-font-1 = "Font Awesome 5:style=Solid:pixelsize=12;3"
-font-2 = "Font Awesome 5:style=Regular:pixelsize=12;3"
+font-1 = "Font Awesome:style=Solid:pixelsize=12;3"
+font-2 = "Font Awesome:style=Regular:pixelsize=12;3"
 font-3 = "Font Awesome:pixelsize=12;3"
 
 ;--------;
@@ -170,7 +172,7 @@ animation-charging-foreground = ${colors.color2}
 
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <ramp-volume> <label-volume>
 format-muted =  0%

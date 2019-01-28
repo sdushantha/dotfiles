@@ -8,7 +8,7 @@ i3 = i3ipc.Connection()
 
 
 def on(i3, e):
-    if e.container.window_class == 'Termite':
+    if e.container.window_class == 'kitty':
         e.container.command('floating enable')
 
         e.container.command("resize set 748 px 460 px, move window to position 347 px 230 px")
@@ -16,7 +16,7 @@ def on(i3, e):
 
 
 workspace_empty = i3.get_tree().find_focused().type == 'workspace'
-subprocess.Popen(['termite'], close_fds=True)
+subprocess.Popen(['kitty', '--title', 'kitty'], close_fds=True)
 
 if not workspace_empty:
     sys.exit(0)

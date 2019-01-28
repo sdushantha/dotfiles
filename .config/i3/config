@@ -5,6 +5,9 @@
 # ██║██████╔╝╚███╔███╔╝██║ ╚═╝ ██║
 # ╚═╝╚═════╝  ╚══╝╚══╝ ╚═╝     ╚═╝
 
+
+# Ø = oslash
+
 set $mod Mod4
 
 
@@ -170,7 +173,7 @@ for_window [window_role="pop-up"] floating enable
 # task dialogs are floating
 for_window [window_role="task_dialog"] floating enable
 
-# i like having the image viewer floating
+# I like having the image viewer floating
 for_window [class="Viewnior"] floating enable
 
 # Video player floating. This video player is used for quick
@@ -180,10 +183,9 @@ for_window [class="SimpleScreenRecorder"] floating enable
 
 for_window [class="Keybase"] floating enable
 
+
 # color of the borders
-client.focused #ffffff #ffffff #ffffff #ffffff 
-#client.urgent #900000 #900000 #ffffff #c8395b
-client.urgent #7ec0c3 #FFFFFF #FFFFFF #7ec0c3 
+client.focused #ffffff #ffffff #ffffff #ffffff #ffffff
 
 # mouse, please stop focus whenever you hover to whatever windows plz :(
 focus_follows_mouse no
@@ -205,10 +207,6 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpaper/*
 
 # allows sound
 exec_always --no-startup-id start-pulseaudio-x11
-
-# notification when i pull the charging plug out and put it in
-#exec_always --no-startup-id python3 ~/scripts/chargestatus.py
-
 
 # nice window effects and some shadow
 exec_always --no-startup-id compton
@@ -265,5 +263,11 @@ bindsym $mod+o --release exec bash ~/scripts/screenshot.sh -s
 # a very cool emoji and unicode character picker using rofi
 bindsym $mod+Shift+d exec bash ~/.config/rofi/scripts/picker.sh
 
-# open up my file manager
-bindsym $mod+Shift+Return exec thunar 
+# open up my CLI file manager
+bindsym $mod+Shift+Return exec python3 /home/siddharth/scripts/ranger.py 
+bindsym $mod+Shift+t exec thunar
+
+bindsym $mod+plus  gaps outer current plus 5
+bindsym $mod+minus gaps outer current minus 5
+
+bindsym $mod+at gaps inner current set 6; gaps outer current set 6
