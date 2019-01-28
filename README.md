@@ -64,7 +64,7 @@ into your ```.bashrc```.
 
 - **WM:** [i3-gaps](https://github.com/Airblader/i3)
 
-- **Terminal:** termite
+- **Terminal:** kitty
 
 - **Shell:** bash
 
@@ -80,7 +80,7 @@ into your ```.bashrc```.
 
 - **Text editor:** Sublime Text 3 and VIM
 
-- **File explorer:** Thunar and sometimes ranger
+- **File explorer:** ranger and sometimes Thunar
 
 - **Image viewer:** Viewnior
 
