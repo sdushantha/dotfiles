@@ -5,7 +5,6 @@
 
 ---
 
-
 ## Explaination
 - **.Xmodmap** <br>This file lets me have natural scrolling on MacBookAir.
 
@@ -14,7 +13,9 @@
 
 - **.bashrc** <br> Contains my config for the bash shell. It also contains some aliases which I find usefull
 
-- **~/script/term.py** <br> Is a very usefull script. I have a keyboard shortcut (```mod+enter```) which runs this script. What this script does is that if the currect workspace is empty, then it will open my terminal which ```termite``` as floating enabled. If there is a window in the current workspace, then the terminal will open like other windows
+- **~/script/term.py** <br> Is a very usefull script. I have a keyboard shortcut (```mod+enter```) which runs this script. What this script does is that if the currect workspace is empty, then it will open my terminal which ```kitty``` as floating enabled. If there is a window in the current workspace, then the terminal will open like other windows
+
+- **~/script/ranger.py** <br> This script is very similar to ```term.py```, whicih is mentioned above. But instead of having a blank terminal, it opens ```ranger```, which is my main file browser. This script is binded to ```mod+Shift+enter```.
 
 - **~/script/sudoer_lecture.py** <br> Just nice message when you do anything with sudo. To make it run properly, but this
 into your ```.bashrc```. 
