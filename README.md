@@ -55,7 +55,7 @@ into your ```.bashrc```.
   
   - **termite** <br> My termite terminal emulator configuration. The color scheme is the ocean-next color scheme with but the background color is gotton from pywal-web
   
-- **/var/spool/cron/siddharth** <br> Configuration for my cron jobs
+- ** 	etc/X11/xorg.conf.d** <br> This config allows me to just tap on my trackpad instead of clicking it. For this to work, you will need ```libinput```. I have only tried this on my MacBook, so I cant guarantee that this will work on other laptops
 
 - **.vimrc** <br> Just a simple vimrc. Nothing special her.
 
