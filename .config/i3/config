@@ -6,7 +6,12 @@
 # ╚═╝╚═════╝  ╚══╝╚══╝ ╚═╝     ╚═╝
 
 
+# Norwegian speacial letters
+# Watch the video below, its great :D
+# https://www.youtube.com/watch?v=f488uJAQgmw
+# Æ = ae
 # Ø = oslash
+# Å = aring
 
 set $mod Mod4
 
@@ -28,10 +33,10 @@ bindsym $mod+q kill
 bindsym $mod+d exec rofi -show drun
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+oslash focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -40,10 +45,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+oslash move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -52,10 +57,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+#bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+#bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -183,6 +188,8 @@ for_window [class="SimpleScreenRecorder"] floating enable
 
 for_window [class="Keybase"] floating enable
 
+# Let the Openbox Logout menu fill the whole screen
+for_window [title="Openbox Logout"] fullscreen
 
 # color of the borders
 client.focused #ffffff #ffffff #ffffff #ffffff #ffffff
@@ -218,10 +225,7 @@ exec_always --no-startup-id xbacklight -set 5
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 
 # i like music
-exec --no-startup-id mpd
-
-# uses my wallpaper as my lockscreen image
-exec --no-startip-id betterlockscreen -u Pictures/Wallpaper/
+exec_always --no-startup-id mpd
 
 ##################
 ## Key bindings ##
@@ -241,24 +245,26 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
-# starts the  betterlockscreen lockscreen
-bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -s
-bindsym $mod+x exec --no-startup-id betterlockscreen -l
+# launches Openbox Logout menu
+bindsym $mod+Shift+x exec --no-startup-id oblogout
+
+# locks my screen
+bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id betterlockscreen -l
 
 # music control
-bindsym XF86AudioNext exec mpc next && notify-send "Now Playing ♫" "$(mpc current)"
-bindsym XF86AudioPrev exec mpc prev && notify-send "Now Playing ♫" "$(mpc current)"
+bindsym XF86AudioNext exec mpc next && bash ~/scripts/change_music.sh 
+bindsym XF86AudioPrev exec mpc prev && bash ~/scripts/change_music.sh
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 
 
 # screenshot fullscreen
-bindsym $mod+p exec ~/scripts/screenshot.sh
+bindsym $mod+aring exec ~/scripts/screenshot.sh
 
 # screenshot selected area
 # You need to use `--release` in the binding.
 # See "4.3. Keyboard bindings" on i3wm docs 
-bindsym $mod+o --release exec bash ~/scripts/screenshot.sh -s
+bindsym $mod+oslash --release exec bash ~/scripts/screenshot.sh -s
 
 # a very cool emoji and unicode character picker using rofi
 bindsym $mod+Shift+d exec bash ~/.config/rofi/scripts/picker.sh
@@ -266,8 +272,3 @@ bindsym $mod+Shift+d exec bash ~/.config/rofi/scripts/picker.sh
 # open up my CLI file manager
 bindsym $mod+Shift+Return exec python3 /home/siddharth/scripts/ranger.py 
 bindsym $mod+Shift+t exec thunar
-
-bindsym $mod+plus  gaps outer current plus 5
-bindsym $mod+minus gaps outer current minus 5
-
-bindsym $mod+at gaps inner current set 6; gaps outer current set 6
