@@ -1,7 +1,7 @@
 
 <h1 align="center">dots ♥ ~/</h1>
 
-![fake_busy](Screenshot/2018-02-16.png)
+![fake_busy](Screenshot/2019-02-16.png)
 
 ---
 
