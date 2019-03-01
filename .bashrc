@@ -86,7 +86,7 @@ PS1='\[\e[0;31m♥ \e[0;91m\]\W \[\e[0;35m\]❯\[\e[0m\] '
 alias ipython3="ipython3 --no-banner"
 
 # This allows me to run my own scripts from
-export PATH=$PATH":$HOME/scripts"
+export PATH=$PATH":$HOME/scripts:$HOME/.local/bin:$HOME/$HOME/$HOME/$HOME/.gem/ruby/2.6.0/bin"
 
 # I rather type subl than subl3
 alias subl=subl3
@@ -101,4 +101,40 @@ alias sudo="python3 ~/scripts/sudoer_lecture.py && sudo"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-alias history="history | fzf"
+# A better history function. You get to pick from the 
+# history using fzf and then grep cleans some things up
+# and then eval executes the command. The reason this function
+# is called "his" is because if I called it "history", things
+# would mess up because the command history is being used in
+# function, which means this whole function would just loop itself.
+function his(){
+    eval '$(history | fzf | grep -Po "\s+\d+\s+\K(.*)")'
+}
+
+
+# Disable ctrl-s and ctrl-q.
+stty -ixon 
+
+# Allows you to cd into directory merely by typing the directory name
+shopt -s autocd 
+
+# Run the pywal-web script. I cant be bothered to go into the dir 
+# where the script is located and run it from there.
+alias pywal-web="python3 /home/siddharth/projects/pywal-web/server.py"
+
+# Since ther is some strange problem with the location of my themes,
+# viewnior outputs alot of info which I am not bothered about. So my
+# solution is to throw the output into the black hole (a.k.a /dev/null)
+alias viewnior="viewnior &> /dev/null"
+
+# Im not a fan of the black bar at the bottom of sxiv
+alias sxiv="sxiv -b"
+
+# This lets me have a colorful man page :)
+export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
+export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode - bold, magenta
+export LESS_TERMCAP_me=$(printf '\e[0m')     # turn off all appearance modes (mb, md, so, us)
+export LESS_TERMCAP_se=$(printf '\e[0m')     # leave standout mode
+export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode - yellow
+export LESS_TERMCAP_ue=$(printf '\e[0m')     # leave underline mode
+export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
