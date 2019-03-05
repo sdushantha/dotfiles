@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# kunst + ncmpcpp = ♥
+
+kunst --silent &
+echo $! >/tmp/music.pid
+
+ncmpcpp
+
+kill -9 $(cat /tmp/kunst.pid) &> /dev/null
