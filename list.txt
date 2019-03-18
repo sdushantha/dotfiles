@@ -1,7 +1,0 @@
-Viewnior
-gimp
-sublime text
-green recorder
-calibre
-virtual box
-vlc
