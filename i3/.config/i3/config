@@ -235,7 +235,7 @@ exec_always --no-startup-id ~/bin/pomobar.sh
 ## Key bindings ##
 ##################
 
-# pulse Audio controls
+# Pulse Audio controls
 # I have set it so that it if the volume is set to mute, and I try to increase or decrease
 # the volume, it will unmute and then increase or decrease. Because before, it would stay mute
 # and just increase the volume but it would still stay mute. Yes, its strange.
@@ -243,40 +243,41 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-mute 0 0 && pac
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-mute 0 0 && pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-# change brightness using xbacklight
-# check the link below to fix brightness on MacBooks
+# Change brightness using xbacklight
+# Check the link below to fix brightness on MacBooks
 # https://medium.com/@philpl/ubuntu-14-10-running-on-my-macbook-18991a697ae0
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
-# launches Openbox Logout menu
+# Launches Openbox Logout menu
 bindsym $mod+Shift+x exec --no-startup-id oblogout
 
-# locks my screen
+# Locks my screen
 bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id betterlockscreen -l
 
-# music control
+# Music control
 bindsym XF86AudioNext exec mpc next && bash ~/bin/change_music.sh 
 bindsym XF86AudioPrev exec mpc prev && bash ~/bin/change_music.sh
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 
 
-# screenshot fullscreen
+# Screenshot fullscreen
 bindsym $mod+aring exec ~/bin/screenshot.sh
 
-# screenshot selected area
+# Screenshot selected area
 # You need to use `--release` in the binding.
 # See "4.3. Keyboard bindings" on i3wm docs 
 bindsym $mod+oslash --release exec bash ~/bin/screenshot.sh -s
 
-# a very cool emoji and unicode character picker using rofi
+# A very cool emoji and unicode character picker using rofi
 bindsym $mod+Shift+d exec bash ~/.config/rofi/scripts/picker.sh
 
-# open up my CLI file manager
+# Open up my CLI file manager
 bindsym $mod+Shift+Return exec python3 /home/siddharth/bin/ranger.py 
 bindsym $mod+Shift+t exec thunar
 
-bindsym XF86KbdBrightnessDown exec sudo kb_backlight down
-bindsym XF86KbdBrightnessUp exec sudo kb_backlight up
+# Keyboard backlight for Macbook
+bindsym XF86KbdBrightnessDown exec kbdlight down
+bindsym XF86KbdBrightnessUp exec kbdlight up
 

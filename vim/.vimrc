@@ -1,5 +1,8 @@
 set encoding=utf-8
 
+" Detects the filetype and set correct syntax color
+set filetype detect
+
 " Stops producing  A B C D when pressing
 " the arrow keys. Well, when I think about it, this
 " might be just for vi not VIM

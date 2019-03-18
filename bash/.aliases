@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+alias dl="cd ~/Downloads"
+alias docs="cd ~/Documents"
+alias prj="cd ~/projects"
+alias pics="cd ~/Pictures"
+alias conf="cd ~/.config"
+alias vids="cd ~/Videos"
+
+
+# Enable colors for ls and *grep
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# This is the real way to remove a package
+alias ipython3="ipython3 --no-banner"
+
+# I rather type subl than subl3
+alias subl=subl3
+
+# Cool warning when running naything with sudo
+alias sudo="python3 ~/bin/sudoer_lecture.py && sudo"
+
+# Run the pywal-web script. I cant be bothered to go into the dir
+# where the script is located and run it from there.
+alias pywal-web="python3 /home/siddharth/projects/pywal-web/server.py"
