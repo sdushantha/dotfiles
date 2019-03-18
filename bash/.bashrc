@@ -122,11 +122,6 @@ shopt -s autocd
 # where the script is located and run it from there.
 alias pywal-web="python3 /home/siddharth/projects/pywal-web/server.py"
 
-# Since ther is some strange problem with the location of my themes,
-# viewnior outputs alot of info which I am not bothered about. So my
-# solution is to throw the output into the black hole (a.k.a /dev/null)
-alias viewnior="viewnior &> /dev/null"
-
 # Im not a fan of the black bar at the bottom of sxiv
 alias sxiv="sxiv -b"
 
