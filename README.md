@@ -5,6 +5,18 @@
 
 ---
 
+## How to install the dotfiles?
+I use ```stow``` to manage my dotfiles.
+To install all of them, just run:
+```bash
+[~/dotfiles]$ stow *
+```
+
+If you want the config of just one program (e.g ```mpv```), just run:
+```bash
+[~/dotfiles]$ stow mpv
+```
+
 ## Explaination
 - **.Xmodmap** <br>This file lets me have natural scrolling on MacBookAir.
 
@@ -77,15 +89,15 @@ into your ```.bashrc```.
 
 - **Icons:** [Paper](https://www.snwh.org/paper)
 
-- **Music Player:** ncmpcpp and Audacious for double click music files
+- **Music Player:** ncmpcpp
 
-- **Text editor:** Sublime Text 3 and VIM
+- **Text editor:** VIM
 
 - **File explorer:** ranger and sometimes Thunar
 
-- **Image viewer:** Viewnior
+- **Image viewer:** mpv
 
-- **Program launcher:** Rofi
+- **Program launcher:** rofi
 
 - **Wallpaper handler:** feh
 
