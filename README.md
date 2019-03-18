@@ -41,7 +41,7 @@ into your ```.bashrc```.
   
   - **dunst** <br> Some configuration for my notification deamon that I took from somewhere
   
-    ![dunst](https://user-images.githubusercontent.com/27065646/54530323-bc957b80-4982-11e9-9f7c-3f07b5172f62.png
+    ![dunst](https://user-images.githubusercontent.com/27065646/54530323-bc957b80-4982-11e9-9f7c-3f07b5172f62.png)
     
   - **gtk-3.0** <br> Here you will find ```gtk.css``` which adds paddings for vte-based terminal and ```settings.ini``` which setts my gtk theme and the icons
   
