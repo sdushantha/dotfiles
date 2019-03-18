@@ -1,0 +1,10 @@
+# Switching the keybindings for reload and rotate
+# because I personaly reload my documents more than
+# I rotate them. So having reload binded to r seems
+# more practicle
+map r reload
+map R rotate
+
+# In MuPDF, i is the keybinding to invert the color
+# and I rather stick with that binding
+map i recolor

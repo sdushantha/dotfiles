@@ -1,0 +1,17 @@
+rofi.lines: 10
+rofi.font: Hack 11
+rofi.hide-scrollbar: true
+
+! Property Name     BG       Border   Separator
+!rofi.color-window:  #1b2b34, #ffffff, #282c34
+rofi.color-window:  #1b2b34, #1b2b34, #282c34
+
+! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
+rofi.color-normal:  #1b2b34,#abb2bf, #1b2b34, #4c566a, #fff
+rofi.color-active:  #1b2b34, #61afef, #1b2b34, #4c566a, #61afef
+rofi.color-urgent:  #353b45, #e06c75, #353b45, #353b45, #e06c75
+
+! Set the desired separator style
+rofi.separator-style: none
+
+!rofi.fullscreen: true

@@ -1,0 +1,58 @@
+# ████████╗███████╗██████╗ ███╗   ███╗██╗████████╗███████╗
+# ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║╚══██╔══╝██╔════╝
+#    ██║   █████╗  ██████╔╝██╔████╔██║██║   ██║   █████╗  
+#    ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║   ██║   ██╔══╝  
+#    ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║   ██║   ███████╗
+#    ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝   ╚═╝   ╚══════╝
+
+[options]
+allow_bold = true
+title = termite
+mouse_autohide = true
+font = Hack 10
+cursor_shape = block
+browser = firefox
+
+
+[colors]
+cursor = #d8dee9
+cursor_foreground = #2e3440
+foreground = #d1dce6
+foreground_bold = #d1dce6
+
+#background = rgba(17, 24, 30, 0.90)
+background = #282a36
+highlight = #4c566a
+
+
+# black
+color0  = #1B2B34
+color8  = #4F5B66
+
+# red
+color1  = #E06C75
+color9  = #EC5F67
+
+# green
+color2  = #99C794
+color10 = #99C794
+
+# yellow
+color3  = #FAC863
+color11 = #FAC863
+
+# blue
+color4  = #6699CC
+color12 = #6699CC
+
+# magenta
+color5  = #C594C5
+color13 = #C594C5
+
+# cyan
+color6  = #5FB3B3
+color14 = #5FB3B3
+
+# white
+color7  = #A7ADBA
+color15 = #D8DEE9

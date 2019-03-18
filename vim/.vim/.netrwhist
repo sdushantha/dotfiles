@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/siddharth/.config/i3'
+let g:netrw_dirhist_2='/home/siddharth/projects/kunst'
+let g:netrw_dirhist_3='/home/siddharth/projects'
+let g:netrw_dirhist_4='/home/siddharth/.config/dunst'
+let g:netrw_dirhist_5='/home/siddharth/.config/i3'
+let g:netrw_dirhist_6='/home/siddharth/scripts'
+let g:netrw_dirhist_7='/home/siddharth/projects/vsco-dl/maiyaprivv'
+let g:netrw_dirhist_8='/home/siddharth/.config/polybar'
+let g:netrw_dirhist_9='/home/siddharth/.config/kitty'
