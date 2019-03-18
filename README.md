@@ -23,11 +23,11 @@ into your ```.bashrc```.
   alias sudo="python3 ~/scripts/sudoer_lecture.py && sudo"
   ```
 
-  ![sudobee](Screenshot/sudobee.png)
+  ![sudobee](https://user-images.githubusercontent.com/27065646/54530272-9cfe5300-4982-11e9-80d2-d26209b3b037.png)
 
 - **~/script/sysinfo.sh** <br> A minimal alternative to neofetch I guess
   
-  ![sysinfo](Screenshot/sysinfo.png)
+  ![sysinfo](https://user-images.githubusercontent.com/27065646/54530295-ac7d9c00-4982-11e9-933a-f9b24c84c862.png)
 
 - **~/.config/rofi/scripts/picker.sh** <br> A rofi emoji picker. It is binded to ```mod+Shift+d``` 
 
@@ -41,7 +41,7 @@ into your ```.bashrc```.
   
   - **dunst** <br> Some configuration for my notification deamon that I took from somewhere
   
-    ![sysinfo](Screenshot/dunst.png)
+    ![dunst](https://user-images.githubusercontent.com/27065646/54530323-bc957b80-4982-11e9-9f7c-3f07b5172f62.png
     
   - **gtk-3.0** <br> Here you will find ```gtk.css``` which adds paddings for vte-based terminal and ```settings.ini``` which setts my gtk theme and the icons
   
