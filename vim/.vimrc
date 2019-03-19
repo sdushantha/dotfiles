@@ -1,7 +1,7 @@
 set encoding=utf-8
 
 " Detects the filetype and set correct syntax color
-set filetype detect
+filetype detect
 
 " Stops producing  A B C D when pressing
 " the arrow keys. Well, when I think about it, this
@@ -55,8 +55,6 @@ hi LineNr ctermbg=NONE ctermfg=darkgrey
 "set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
 
 
-" set textwidth=80
-map <C-a> :source .vimrc <Enter>
 
 " Disable the arrow keys so that I get used to using hjkl. Also, this forces
 " to change to normal mode when I have want to move the cursor
@@ -107,3 +105,10 @@ nnoremap L A
 " where you might need to be root, write the file file
 " by typing w!!
 cmap w!! w !sudo tee % >/dev/null
+
+" Quickly edit .vimrc while editing another file.
+" :e# to go to the prevouse file you were originaly editing
+nnoremap <c-x> :edit ~/.vimrc<cr>
+
+" Quick way to update .vimrc while Im using it
+map <C-a> :source .vimrc <Enter>
