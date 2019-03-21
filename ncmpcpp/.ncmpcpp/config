@@ -42,7 +42,3 @@ current_item_inactive_column_suffix = red
 window_border_color = yellow
 active_window_border = magenta
 
-## you don't have dunst? maybe another notification daemon would work. doesn't work? comment the line below to disable sending notification attemps
-#execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"
-#execute_on_song_change = bilde.sh
-

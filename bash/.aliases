@@ -6,6 +6,7 @@ alias prj="cd ~/projects"
 alias pics="cd ~/Pictures"
 alias conf="cd ~/.config"
 alias vids="cd ~/Videos"
+alias dots="cd ~/dotfiles"
 
 
 # Enable colors for ls and *grep
