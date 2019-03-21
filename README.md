@@ -1,9 +1,21 @@
 
 <h1 align="center">dotfiles ♥ ~/</h1>
 
-![fake_busy](Screenshot/2019-02-16.png)
+![preview](https://user-images.githubusercontent.com/27065646/54530106-27928280-4982-11e9-948b-ebf1935584e1.png)
 
 ---
+
+## How to install the dotfiles?
+I use ```stow``` to manage my dotfiles.
+To install all of them, just run:
+```bash
+[~/dotfiles]$ stow *
+```
+
+If you want the config of just one program (e.g ```mpv```), just run:
+```bash
+[~/dotfiles]$ stow mpv
+```
 
 ## Explaination
 - **.Xmodmap** <br>This file lets me have natural scrolling on MacBookAir.
@@ -23,11 +35,11 @@ into your ```.bashrc```.
   alias sudo="python3 ~/scripts/sudoer_lecture.py && sudo"
   ```
 
-  ![sudobee](Screenshot/sudobee.png)
+  ![sudobee](https://user-images.githubusercontent.com/27065646/54530272-9cfe5300-4982-11e9-80d2-d26209b3b037.png)
 
 - **~/script/sysinfo.sh** <br> A minimal alternative to neofetch I guess
   
-  ![sysinfo](Screenshot/sysinfo.png)
+  ![sysinfo](https://user-images.githubusercontent.com/27065646/54530295-ac7d9c00-4982-11e9-933a-f9b24c84c862.png)
 
 - **~/.config/rofi/scripts/picker.sh** <br> A rofi emoji picker. It is binded to ```mod+Shift+d``` 
 
@@ -41,7 +53,7 @@ into your ```.bashrc```.
   
   - **dunst** <br> Some configuration for my notification deamon that I took from somewhere
   
-    ![sysinfo](Screenshot/dunst.png)
+    ![dunst](https://user-images.githubusercontent.com/27065646/54530323-bc957b80-4982-11e9-9f7c-3f07b5172f62.png)
     
   - **gtk-3.0** <br> Here you will find ```gtk.css``` which adds paddings for vte-based terminal and ```settings.ini``` which setts my gtk theme and the icons
   
@@ -77,15 +89,15 @@ into your ```.bashrc```.
 
 - **Icons:** [Paper](https://www.snwh.org/paper)
 
-- **Music Player:** ncmpcpp and Audacious for double click music files
+- **Music Player:** ncmpcpp
 
-- **Text editor:** Sublime Text 3 and VIM
+- **Text editor:** VIM
 
 - **File explorer:** ranger and sometimes Thunar
 
-- **Image viewer:** Viewnior
+- **Image viewer:** mpv
 
-- **Program launcher:** Rofi
+- **Program launcher:** rofi
 
 - **Wallpaper handler:** feh
 
