@@ -8,6 +8,8 @@
 I use ```stow``` to manage my dotfiles.
 To install all of them, just run:
 ```bash
+[~/dotfiles]$ # First delete the READEME.md because you dont want that :P
+[~/dotfiles]$ rm README.md
 [~/dotfiles]$ stow *
 ```
 
