@@ -281,3 +281,5 @@ bindsym $mod+Shift+t exec thunar
 bindsym XF86KbdBrightnessDown exec kbdlight down
 bindsym XF86KbdBrightnessUp exec kbdlight up
 
+# Pop any video from the browser out into mpv
+bindsym --release $mod+p exec bash ~/bin/pop_mpv.sh
