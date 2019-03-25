@@ -4,7 +4,6 @@
 ![preview](https://user-images.githubusercontent.com/27065646/54530106-27928280-4982-11e9-948b-ebf1935584e1.png)
 
 ---
-
 ## How to install the dotfiles?
 I use ```stow``` to manage my dotfiles.
 To install all of them, just run:
@@ -16,6 +15,8 @@ If you want the config of just one program (e.g ```mpv```), just run:
 ```bash
 [~/dotfiles]$ stow mpv
 ```
+**Note:** Some of the keybindings in the i3 config needs some scripts. You can find them in [this repo](https://github.com/sdushantha/bin).
+
 
 ## Explaination
 - **.Xmodmap** <br>This file lets me have natural scrolling on MacBookAir.
