@@ -112,3 +112,7 @@ nnoremap <c-x> :edit ~/.vimrc<cr>
 
 " Quick way to update .vimrc while Im using it
 map <C-a> :source .vimrc <Enter>
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/goyo.vim'
+call plug#end()

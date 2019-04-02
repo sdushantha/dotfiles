@@ -71,7 +71,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle, move absolute position center
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -250,7 +250,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Launches Openbox Logout menu
-bindsym $mod+Shift+x exec --no-startup-id oblogout
+bindsym $mod+Shift+s exec --no-startup-id oblogout
 
 # Locks my screen
 bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id betterlockscreen -l

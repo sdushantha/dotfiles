@@ -8,3 +8,6 @@ map R rotate
 # In MuPDF, i is the keybinding to invert the color
 # and I rather stick with that binding
 map i recolor
+
+set statusbar-home-tilde
+

@@ -8,6 +8,7 @@ alias conf="cd ~/.config"
 alias vids="cd ~/Videos"
 alias dots="cd ~/dotfiles"
 alias bin="cd ~/bin"
+alias tmp="cd /tmp"
 
 
 # Enable colors for ls and *grep

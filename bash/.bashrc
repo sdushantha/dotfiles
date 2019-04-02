@@ -84,3 +84,4 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi
+
