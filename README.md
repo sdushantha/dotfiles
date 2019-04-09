@@ -104,3 +104,17 @@ into your ```.bashrc```.
 
 - **Wallpaper handler:** feh
 
+## TODO
+
+**Edit the keybindings for taking screenshot and make them similar to MacOS.**
+
+<kbd>mod</kbd>+<kbd>Shift</kbd>+<kbd>3</kbd> = Screenshot of whole screen
+
+<kbd>mod</kbd>+<kbd>Shift</kbd>+<kbd>4</kbd> = Screenshot of selected area
+
+---
+**Image preview of screenshot using dunst**
+
+I asked on Reddit. Still waiting for a reply...
+
+Would be cool to have it similar to MacOS
