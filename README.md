@@ -118,3 +118,6 @@ into your ```.bashrc```.
 I asked on Reddit. Still waiting for a reply...
 
 Would be cool to have it similar to MacOS
+
+---
+**Fix the sudo bee thing. The ascii bee is shown even if my password is not needed. That is because it is an alias...**
