@@ -118,6 +118,15 @@ into your ```.bashrc```.
 I asked on Reddit. Still waiting for a reply...
 
 Would be cool to have it similar to MacOS
+```bash
+#!/bin/bash
+file="/home/zsucrilhos/Screenshots/screenshot_$(date "+%Y-%m-%d_%H-%M-%S").png"
+maim -u -f png $file
+dunstify -u critical -i $file "System" "Screenshot saved!"
+xclip -selection c -t "image/png" -i $file
+```
+
+> If the icon is too large, you can adjust the max icon size in your Dunst config.
 
 ---
 **Fix the sudo bee thing. The ascii bee is shown even if my password is not needed. That is because it is an alias...**
