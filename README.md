@@ -130,3 +130,8 @@ xclip -selection c -t "image/png" -i $file
 
 ---
 **Fix the sudo bee thing. The ascii bee is shown even if my password is not needed. That is because it is an alias...**
+
+---
+**Better cursor for VIM**
+https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
+
