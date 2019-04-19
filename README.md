@@ -133,5 +133,11 @@ xclip -selection c -t "image/png" -i $file
 
 ---
 **Better cursor for VIM**
+
 https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
+
+---
+**Copy/paste for vim to include the clipboard**
+
+https://github.com/neovim/neovim/issues/583#issuecomment-40942281
 
