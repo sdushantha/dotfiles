@@ -141,3 +141,8 @@ https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
 
 https://github.com/neovim/neovim/issues/583#issuecomment-40942281
 
+
+--
+**Paper mode for writing :)**
+
+https://github.com/resloved/dots/blob/master/.config/i3/config#L134
