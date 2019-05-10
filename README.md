@@ -151,3 +151,10 @@ https://github.com/resloved/dots/blob/master/.config/i3/config#L134
 ---
 
 **Make font size 14. Looks nice and better on the eyes. Well, looks nice on MacOS. Might not be as niceon Linux because MacOS has better font rendering**
+
+---
+
+Use the fork of dunst which has round corners.
+https://www.reddit.com/r/unixporn/comments/792fya/dmenu_surfing_the_wave_of_round_corners/
+
+---
