@@ -154,7 +154,9 @@ https://github.com/resloved/dots/blob/master/.config/i3/config#L134
 
 ---
 
-Use the fork of dunst which has round corners.
+**Use the fork of dunst which has round corners.**
 https://www.reddit.com/r/unixporn/comments/792fya/dmenu_surfing_the_wave_of_round_corners/
 
 ---
+
+**Use Luke's st terminal build. Its on the AUR. luke-st-git**
