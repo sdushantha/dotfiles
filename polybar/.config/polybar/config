@@ -6,8 +6,6 @@
 # ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
                                                        
 [colors]
-; These colors are not the same as the
-; ones in the config file for Termite
 ; Black
 color0 = #121418
 color8 = #675f54
@@ -70,9 +68,7 @@ override-redirect = false
 ;-------;
 
 font-0 = Hack:size=9.5;3
-font-1 = "Font Awesome:style=Solid:pixelsize=12;3"
-font-2 = "Font Awesome:style=Regular:pixelsize=12;3"
-font-3 = "Font Awesome:pixelsize=12;3"
+font-1 = "Symbols Nerd Font:pixelsize=12;3"
 
 ;--------;
 ; COLORS ;
@@ -91,9 +87,9 @@ padding-left = 2
 padding-right = 2
 module-margin = 1.5
 
-modules-left = volume backlight battery wlan
-modules-center = i3
-modules-right =  pomobar memory date time
+modules-left = i3
+modules-center = 
+modules-right =  volume battery wlan date time
 
 tray-position = none
 tray-detached = true
@@ -116,15 +112,16 @@ label-urgent-foreground = ${colors.color1}
 
 
 [module/time]
-type = internal/date
+type = custom/script
 interval = 1.0
-date =  %{F-}%I:%M %p
-label-foreground = ${colors.color6}
+exec = date +"%H:%M"
+format-prefix = " " 
+format-prefix-foreground = ${colors.color6}
 
 
 [module/date]
 type = custom/script
-exec = date +"%e %B - %A"
+exec = date +"%a %e %B"
 interval = 5
 format-prefix = " "
 format-prefix-foreground = ${colors.color5}
@@ -174,15 +171,18 @@ animation-charging-foreground = ${colors.color2}
 [module/volume]
 type = internal/alsa
 
-format-volume = <ramp-volume> <label-volume>
-format-muted =  0%
+;format-volume = <ramp-volume> <label-volume>
+;format-muted =  0%
+
+format-volume = <ramp-volume>
+format-muted = 
 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
 ramp-volume-foreground = ${colors.color6}
-format-muted-foreground = ${colors.color1}
+format-muted-foreground = ${colors.color6}
 
 
 [module/backlight]

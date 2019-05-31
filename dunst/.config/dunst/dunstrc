@@ -1,16 +1,20 @@
 [global]
     monitor = 0
     follow = mouse
-    geometry = "320x5-10+35"
+
+    #[{width}]x{height}[+/-{x}+/-{y}]
+    geometry = "320x5-12+37"
+
     indicate_hidden = yes
     shrink = no
     transparency = 0
+    allow_markup = yes
     notification_height = 0
     separator_height = 2
     padding = 10
     horizontal_padding = 10
     frame_width = 1
-    frame_color = "#121b23"
+    frame_color = "#070D15"
     separator_color = frame
     sort = yes
     idle_threshold = 120
@@ -27,7 +31,7 @@
     hide_duplicate_count = false
     show_indicators = yes
     icon_position = left
-    max_icon_size = 32
+    max_icon_size = 48
     icon_path = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
     sticky_history = yes
     history_length = 20
@@ -42,12 +46,14 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#121b23"
+    # This urgency should be used only 
+    # for volume/brightness notification
+    background = "#070D15"
     foreground = "#a8a8a8"
-    timeout = 10
+    timeout = 1
 
 [urgency_normal]
-    background = "#121b23"
+    background = "#070D15"
     foreground = "#a8a8a8"
     timeout = 10
 

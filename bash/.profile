@@ -1,4 +1,5 @@
-export EDITOR="vim"
+export VISUAL="nvim"
+export EDITOR="$VISUAL"
 export TERMINAL="kitty"
 export BROWSER="firefox"
 export READER="zathura"

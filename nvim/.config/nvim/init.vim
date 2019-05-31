@@ -1,7 +1,7 @@
 set encoding=utf-8
 
 " Detects the filetype and set correct syntax color
-filetype detect
+"filetype detect
 
 " Stops producing  A B C D when pressing
 " the arrow keys. Well, when I think about it, this
@@ -82,15 +82,8 @@ xnoremap <right> <nop>
 " Check later if P or p is better
 "map <C-v> "+p
 
-" Make double-<Esc> clear search highlights
+" Make double <Esc> clear search highlights
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
-
-" Sane regexp (very magical)
-"nnoremap / /\v
-"vnoremap / /\v
-" Search with regex
-nnoremap / <Esc>:g/
-vnoremap / <Esc>:g/
 
 " More intuitive way of...
 " going home
@@ -98,21 +91,82 @@ nnoremap H 0
 vnoremap H 0
 " going to end of line
 vnoremap L $
-" going to end of line and append
+" and going to end of line and append
 nnoremap L A
+
+" Move up and down visual lines
+" https://www.reddit.com/r/vim/comments/bjbhht/jumping_through_the_string_of_characters_like_go/
+nnoremap j gj
+nnoremap k gk
 
 " In case you forget to type sudo before editing a file
 " where you might need to be root, write the file file
 " by typing w!!
 cmap w!! w !sudo tee % >/dev/null
 
-" Quickly edit .vimrc while editing another file.
+" Quickly edit init.vim while editing another file.
 " :e# to go to the prevouse file you were originaly editing
-nnoremap <c-x> :edit ~/.vimrc<cr>
+nnoremap <c-x> :edit ~/.config/nvim/init.vim<cr>
 
-" Quick way to update .vimrc while Im using it
-map <C-a> :source .vimrc <Enter>
+" Quick way to update init.vim while Im using it
+map <C-a> :source ~/.config/nvim/init.vim <cr>
 
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/goyo.vim'
-call plug#end()
+syntax on
+
+filetype off
+
+""""PLUGIN""""
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin('~/.config/nvim/bundle')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Yggdroot/indentLine'
+
+" All of your Plugins must be added before the following line
+call vundle#end()
+""""PLUGIN END""""
+
+filetype plugin indent on  " allows auto-indenting depending on file type
+
+" Yank to clipboard
+function! ClipboardYank()
+  call system('xclip -i -selection clipboard', @@)
+endfunction
+
+function! ClipboardPaste()
+  let @@ = system('xclip -o -selection clipboard')
+endfunction
+
+vnoremap <silent> y y:call ClipboardYank()<cr>
+vnoremap <silent> d d:call ClipboardYank()<cr>
+nnoremap <silent> p :call ClipboardPaste()<cr>p
+
+" Disable the status line
+set laststatus=0
+
+" Search down into subfolders
+" Provides tab-completion for all file related tasks
+set path+=**
+
+" Display all matching results when we tab complete
+set wildmenu
+
+" show search matches as you type
+set incsearch
+
+set autoread
+
+" Highlight the 81st charcter
+" I like to stay in the 80 character limit :)
+highlight OverLength ctermbg=magenta ctermfg=black
+match OverLength /\%81v\+/
+
+" Save the undotree to a file when exiting a buffer
+set undofile
+set undolevels=1000
+set undodir=~/.config/nvim/tmp/undo/
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), 'p')
+endif

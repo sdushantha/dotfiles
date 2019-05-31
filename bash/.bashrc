@@ -50,10 +50,6 @@ PS1='\[\e[0;31m♥ \e[0;91m\]\W \[\e[0;35m\]❯\[\e[0m\] '
 # This allows me to run my own scripts from
 export PATH=$PATH":$HOME/bin:$HOME/.local/bin:$HOME/$HOME/$HOME/$HOME/.gem/ruby/2.6.0/bin"
 
-# Set my editor as VIM
-export VISUAL=vim
-export EDITOR="$VISUAL"
-
 # A better history function. You get to pick from the 
 # history using fzf and then grep cleans some things up
 # and then eval executes the command. The reason this function
@@ -85,3 +81,11 @@ if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi
 
+export FFF_W3M_XOFFSET=0
+export FFF_W3M_YOFFSET=0
+
+set -o vi
+
+# https://goo.gl/KcoQgP
+BG_COLOR="#330000"
+printf "\\e]11;${BG_COLOR}\\e\\\\"

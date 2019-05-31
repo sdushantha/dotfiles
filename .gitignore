@@ -1,4 +1,2 @@
-# MPD logs are way too big and I dont need them
 mpd/.mpd/mpd.log
-
-vim/.vim/plugged/*
+nvim/.config/nvim/tmp/*

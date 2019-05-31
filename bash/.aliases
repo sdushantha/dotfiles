@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-alias dl="cd ~/Downloads"
+# Quick shortcuts to some dirs
+alias dls="cd ~/Downloads"
 alias docs="cd ~/Documents"
-alias prj="cd ~/projects"
+alias prjs="cd ~/projects"
 alias pics="cd ~/Pictures"
 alias conf="cd ~/.config"
 alias vids="cd ~/Videos"
@@ -34,3 +35,17 @@ alias sudo="python3 ~/bin/sudoer_lecture.py && sudo"
 # Run the pywal-web script. I cant be bothered to go into the dir
 # where the script is located and run it from there.
 alias pywal-web="python3 /home/siddharth/projects/pywal-web/server.py"
+
+alias tmp="cd /tmp/"
+
+# I prefer neovim
+alias vim=nvim
+
+# Easy access to configs
+alias vimrc="nvim ~/.config/nvim/init.vim"
+
+# The remaining storage
+alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
+
+# Get the IP of my computer
+alias myip="ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'"

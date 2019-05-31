@@ -170,7 +170,7 @@ gaps inner 6
 gaps outer 6
 
 # gives a border to the windows. 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 
 # pop ups are floating
 for_window [window_role="pop-up"] floating enable
@@ -186,15 +186,13 @@ for_window [class="Viewnior"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 
-for_window [class="Keybase"] floating enable
-
 # Let the Openbox Logout menu fill the whole screen
 for_window [title="Openbox Logout"] fullscreen
 
 for_window [instance="Kunst"] floating enable
 
 # color of the borders
-client.focused #ffffff #ffffff #ffffff #ffffff #ffffff
+#client.focused #ffffff #ffffff #ffffff #ffffff #ffffff
 
 # mouse, please stop focus whenever you hover to whatever windows plz :(
 focus_follows_mouse no
@@ -212,13 +210,13 @@ new_window none
 # Automaticaly sets wallpaper. Just the the wallpaper
 # you want in the Wallpapers directory then it will 
 # automaticaly set it on start up.
-exec_always --no-startup-id feh --bg-fill ~/.wallpaper
+exec_always --no-startup-id feh --bg-fill ~/Pictures/current/*
 
 # allows sound
 exec_always --no-startup-id start-pulseaudio-x11
 
 # nice window effects and some shadow
-exec_always --no-startup-id compton
+exec_always --no-startup-id compton -r 0 -o 0 -l 0 -t 0
 
 # my eyes love the brightness set to 5%
 exec_always --no-startup-id xbacklight -set 5
@@ -229,7 +227,7 @@ exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 # i like music
 exec_always --no-startup-id mpd
 
-exec_always --no-startup-id ~/bin/pomobar.sh
+exec_always --no-startup-id flashfocus
 
 ##################
 ## Key bindings ##
@@ -239,15 +237,15 @@ exec_always --no-startup-id ~/bin/pomobar.sh
 # I have set it so that it if the volume is set to mute, and I try to increase or decrease
 # the volume, it will unmute and then increase or decrease. Because before, it would stay mute
 # and just increase the volume but it would still stay mute. Yes, its strange.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-mute 0 0 && pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-mute 0 0 && pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id bash ~/bin/volumeControl.sh up
+bindsym XF86AudioLowerVolume exec --no-startup-id bash ~/bin/volumeControl.sh down
+bindsym XF86AudioMute exec --no-startup-id bash ~/bin/volumeControl.sh mute
 
 # Change brightness using xbacklight
 # Check the link below to fix brightness on MacBooks
 # https://medium.com/@philpl/ubuntu-14-10-running-on-my-macbook-18991a697ae0
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec bash ~/bin/brightnessControl.sh up
+bindsym XF86MonBrightnessDown exec bash ~/bin/brightnessControl.sh down
 
 # Launches Openbox Logout menu
 bindsym $mod+Shift+s exec --no-startup-id oblogout
@@ -283,3 +281,8 @@ bindsym XF86KbdBrightnessUp exec kbdlight up
 
 # Pop any video from the browser out into mpv
 bindsym --release $mod+p exec bash ~/bin/pop_mpv.sh
+
+bindsym $mod+n exec --no-startup-id flash_window
+# RESIZE VARIABLES
+#set $center move absolute position center
+#bindsym $mod+Ctrl+space floating toggle; resize set 700px 975px; $center
