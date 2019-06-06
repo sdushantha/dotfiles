@@ -1,7 +1,7 @@
 
 <h1 align="center">dotfiles ♥ ~/</h1>
 
-![preview](https://user-images.githubusercontent.com/27065646/54530106-27928280-4982-11e9-948b-ebf1935584e1.png)
+![preview](https://user-images.githubusercontent.com/27065646/59027564-9a144f80-8859-11e9-8eee-5f5c18759c97.png)
 
 ---
 ## How to install the dotfiles?
