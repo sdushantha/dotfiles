@@ -5,7 +5,7 @@
 map r reload
 map R rotate
 
-default-bg "#221e1d"
+default-bg "#000000"
 # In MuPDF, i is the keybinding to invert the color
 # and I rather stick with that binding
 map i recolor

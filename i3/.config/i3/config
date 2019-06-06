@@ -215,7 +215,7 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/current/*
 # allows sound
 exec_always --no-startup-id start-pulseaudio-x11
 
-# nice window effects and some shadow
+# enable compton without any shadows
 exec_always --no-startup-id compton -r 0 -o 0 -l 0 -t 0
 
 # my eyes love the brightness set to 5%
@@ -248,7 +248,7 @@ bindsym XF86MonBrightnessUp exec bash ~/bin/brightnessControl.sh up
 bindsym XF86MonBrightnessDown exec bash ~/bin/brightnessControl.sh down
 
 # Launches Openbox Logout menu
-bindsym $mod+Shift+s exec --no-startup-id oblogout
+bindsym $mod+Shift+s --release exec bash ~/bin/logout_menu.sh
 
 # Locks my screen
 bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id betterlockscreen -l

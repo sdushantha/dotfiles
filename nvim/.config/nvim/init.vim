@@ -116,20 +116,19 @@ syntax on
 filetype off
 
 """"PLUGIN""""
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Yggdroot/indentLine'
-
-" All of your Plugins must be added before the following line
-call vundle#end()
+call plug#begin()
+Plug 'Yggdroot/indentLine'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'davidhalter/jedi-vim'
+Plug 'junegunn/goyo.vim'
+call plug#end()
 """"PLUGIN END""""
 
-filetype plugin indent on  " allows auto-indenting depending on file type
+let g:mkdp_browser = "qutebrowser"
 
+
+filetype plugin indent on  " allows auto-indenting depending on file type
+autocmd FileType python setlocal completeopt-=preview
 " Yank to clipboard
 function! ClipboardYank()
   call system('xclip -i -selection clipboard', @@)

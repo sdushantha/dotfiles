@@ -14,7 +14,7 @@
     padding = 10
     horizontal_padding = 10
     frame_width = 1
-    frame_color = "#070D15"
+    frame_color = "#0d191b"
     separator_color = frame
     sort = yes
     idle_threshold = 120
@@ -48,12 +48,12 @@
 [urgency_low]
     # This urgency should be used only 
     # for volume/brightness notification
-    background = "#070D15"
+    background = "#0d191b"
     foreground = "#a8a8a8"
     timeout = 1
 
 [urgency_normal]
-    background = "#070D15"
+    background = "#0d191b"
     foreground = "#a8a8a8"
     timeout = 10
 

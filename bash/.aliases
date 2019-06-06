@@ -10,6 +10,8 @@ alias vids="cd ~/Videos"
 alias dots="cd ~/dotfiles"
 alias bin="cd ~/bin"
 alias tmp="cd /tmp"
+alias shots="cd ~/Pictures/Screenshots"
+alias ..="cd .."
 
 
 # Enable colors for ls and *grep
@@ -46,6 +48,3 @@ alias vimrc="nvim ~/.config/nvim/init.vim"
 
 # The remaining storage
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
-
-# Get the IP of my computer
-alias myip="ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'"
