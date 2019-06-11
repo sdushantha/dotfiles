@@ -124,8 +124,9 @@ Plug 'junegunn/goyo.vim'
 call plug#end()
 """"PLUGIN END""""
 
+" Use qutebrowser as Markdown viewer for markdown-preview-nvim
 let g:mkdp_browser = "qutebrowser"
-
+au BufEnter *.{md,mkd,markdown,mdown,mkdn,mdwn} call mkdp#util#open_preview_page()
 
 filetype plugin indent on  " allows auto-indenting depending on file type
 autocmd FileType python setlocal completeopt-=preview
@@ -169,3 +170,11 @@ set undodir=~/.config/nvim/tmp/undo/
 if !isdirectory(expand(&undodir))
     call mkdir(expand(&undodir), 'p')
 endif
+
+" Shift+. causes some trouble at times and it is not efficient
+" The first line here is just here so that I get used to
+" the new maping which the line after
+" The first line here is just here so that I get used to
+" the new maping which the line after
+nnoremap : <nop>
+nnoremap , :

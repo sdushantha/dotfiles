@@ -14,11 +14,13 @@ alias shots="cd ~/Pictures/Screenshots"
 alias ..="cd .."
 
 
-# Enable colors for ls and *grep
+# Enable colors for some commands
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+alias tree="tree -C"
 
 # Some more ls aliases
 alias ll='ls -alF'

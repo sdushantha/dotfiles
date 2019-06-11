@@ -1,11 +1,3 @@
-# ██╗██████╗ ██╗    ██╗███╗   ███╗
-# ██║╚════██╗██║    ██║████╗ ████║
-# ██║ █████╔╝██║ █╗ ██║██╔████╔██║
-# ██║ ╚═══██╗██║███╗██║██║╚██╔╝██║
-# ██║██████╔╝╚███╔███╔╝██║ ╚═╝ ██║
-# ╚═╝╚═════╝  ╚══╝╚══╝ ╚═╝     ╚═╝
-
-
 # Norwegian speacial letters
 # Watch the video below, its great :D
 # https://www.youtube.com/watch?v=f488uJAQgmw
@@ -38,23 +30,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+period split h
@@ -79,8 +59,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -139,11 +117,6 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        #bindsym Left resize shrink width 10 px or 10 ppt
-        #bindsym Down resize grow height 10 px or 10 ppt
-        #bindsym Up resize shrink height 10 px or 10 ppt
-        #bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -152,18 +125,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# Uncomment this to enable i3bar
-#bar {
-#        status_command i3status
-#        position top
-#        font pango:Hack 8
-#
-#}
-
-
 
 # the pixles of the gaps
 gaps inner 6
@@ -178,21 +139,31 @@ for_window [window_role="pop-up"] floating enable
 # task dialogs are floating
 for_window [window_role="task_dialog"] floating enable
 
-# I like having the image viewer floating
-for_window [class="Viewnior"] floating enable
-
 # Video player floating. This video player is used for quick
 # playing. But I use VLC for movies or something similar.
 for_window [class="mpv"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 
-# Let the Openbox Logout menu fill the whole screen
-for_window [title="Openbox Logout"] fullscreen
-
 for_window [instance="Kunst"] floating enable
 
-# color of the borders
-#client.focused #ffffff #ffffff #ffffff #ffffff #ffffff
+
+##### RULES FOR SOME PROGRAMS #####
+# Exmaple:
+#   Spotify will open in workspace 4 only on launch.
+#   This wont effect any other Spotify windows. For example,
+#   Lets say that I have a Spotify window in workspace 2, when I 
+#   relaod i3, it will still stay there. These rules only apply
+#   to new windows which have been launched.
+
+assign [class="firefox"] $ws1
+for_window [class="firefox"] focus
+
+assign [class="discord"] $ws3
+for_window [class="discord"] focus
+
+for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to workspace 4, focus
+###################################
+
 
 # mouse, please stop focus whenever you hover to whatever windows plz :(
 focus_follows_mouse no
@@ -227,6 +198,7 @@ exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 # i like music
 exec_always --no-startup-id mpd
 
+# Flash the window you have changed focus to.
 exec_always --no-startup-id flashfocus
 
 ##################
@@ -282,7 +254,6 @@ bindsym XF86KbdBrightnessUp exec kbdlight up
 # Pop any video from the browser out into mpv
 bindsym --release $mod+p exec bash ~/bin/pop_mpv.sh
 
+# Flash the current window I am in
 bindsym $mod+n exec --no-startup-id flash_window
-# RESIZE VARIABLES
-#set $center move absolute position center
-#bindsym $mod+Ctrl+space floating toggle; resize set 700px 975px; $center
+

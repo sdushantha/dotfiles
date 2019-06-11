@@ -88,7 +88,7 @@ padding-right = 2
 module-margin = 1.5
 
 modules-left = now
-modules-center = 
+modules-center = demo test
 modules-right =  volume battery wlan
 
 tray-position = none
@@ -99,23 +99,12 @@ tray-detached = true
 ;---------;
 
 
-[module/i3]
-type = internal/i3
-
-pin-workspaces = true
-strip-wsnumbers = true
-enable-scroll = false
-
-label-unfocused-foreground = ${colors.color7}
-label-focused-foreground = ${colors.color4}
-label-urgent-foreground = ${colors.color1}
-
-
 [module/now]
 type = custom/script
 interval = 1.0
 ;exec = date +"%a %H:%M"
 exec = date +"%H:%M"
+trail = true
 click-left = bash $HOME/bin/widgets/cal_widget.sh
 
 
@@ -129,9 +118,9 @@ poll-interval = 1
 
 full-at = 100
 
-format-discharging = <ramp-capacity>
-format-full = <ramp-capacity>
-format-charging = <animation-charging>
+format-discharging = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<ramp-capacity>%{A}
+format-full = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<ramp-capacity>%{A}
+format-charging = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<animation-charging>%{A}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -148,12 +137,8 @@ animation-charging-4 = 
 ; Framerate in milliseconds
 animation-charging-framerate = 750
 
-
 [module/volume]
 type = internal/alsa
-
-;format-volume = <ramp-volume> <label-volume>
-;format-muted =  0%
 
 format-volume = <ramp-volume>
 format-muted = 
@@ -161,25 +146,6 @@ format-muted = 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-
-
-[module/backlight]
-type = internal/xbacklight
-
-; Use the following command to list available cards:
-; $ ls -1 /sys/class/backlight/
-;card = intel_backlight
-
-format = <ramp> <label>
-
-label = %percentage%%
-ramp-0 = 
-;ramp-1 = 
-;ramp-2 =  
-
-ramp-0-foreground = ${colors.color5}
-;ramp-1-foreground = ${colors.color4}
-;ramp-2-foreground = ${colors.color3}
 
 
 [module/wlan]
@@ -191,14 +157,6 @@ interval = 5
 
 label-connected =  
 label-disconnected = 
-click-left = bash $HOME/bin/widgets/wifi_widget.sh
 
-
-[module/memory]
-type = custom/script
-format-prefix=" "
-format-prefix-foreground = ${colors.color2}
-
-exec = "df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
-tail = true
+format-connected = %{A1:$HOME/bin/widgets/wifi_widget.sh:}<label-connected>%{A}
 
