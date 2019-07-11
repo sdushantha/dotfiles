@@ -1,31 +1,28 @@
-set encoding=utf-8
+"{{{ Looks
+" -----------------------------------------------------------------------------
+" Turn on syntax highlighting.
+syntax on
 
-" Detects the filetype and set correct syntax color
-"filetype detect
+" Show line numbers
+set number relativenumber 
+hi LineNr ctermbg=NONE ctermfg=darkgrey
 
-" Stops producing  A B C D when pressing
-" the arrow keys. Well, when I think about it, this
-" might be just for vi not VIM
-" I have also heard that it sets compatibility to Vim only.
-set nocompatible
+" Disable the status line
+set laststatus=0
 
-" Use spaces when usinf "<" and ">" to tab
-set expandtab
+" Display all matching results when we tab complete
+set wildmenu
 
-" Use 4 spaces to represent tab
-set tabstop=4
+" Highlight the 81st charcter
+" I like to stay in the 80 character limit :)
+highlight OverLength ctermbg=magenta ctermfg=black
+match OverLength /\%81v\+/
+" -----------------------------------------------------------------------------
+"}}}
 
-" Number of spaces to use for auto indent
-set shiftwidth=4
 
-" Copy indent from last line when starting new lineiletype indent on
-set autoindent
-
-filetype indent on
-set smartindent
-
-set softtabstop=4
-
+"{{{ Search
+" -----------------------------------------------------------------------------
 " Ignore case when searching
 set ignorecase
 
@@ -35,55 +32,112 @@ set ignorecase
 " But if you search with uppercase, only uppercase is shown
 set smartcase
 
-" Turn on syntax highlighting.
-syntax on
-
-" Fixes common backspace problems
-set backspace=indent,eol,start
+" show search matches as you type
+set incsearch
 
 " Highlight matching search patterns
 set hlsearch
 
-" Show line numbers
-set relativenumber
-hi LineNr ctermbg=NONE ctermfg=darkgrey
-
-" Display different types of white spaces.
-" Very usefull when coding
-"set list
-"set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
-"set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" Make double <Esc> clear search highlights
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+" -----------------------------------------------------------------------------
+" }}}
 
 
+"{{{ Tabs
+" -----------------------------------------------------------------------------
+" Use spaces when using "<" and ">" to tab
+set expandtab
 
-" Disable the arrow keys so that I get used to using hjkl. Also, this forces
-" to change to normal mode when I have want to move the cursor
+" Use 4 spaces to represent tab
+set tabstop=4
 
+set softtabstop=4
+
+" Copy indent from last line when starting new lineiletype indent on
+set autoindent
+
+" Number of spaces to use for auto indent
+set shiftwidth=4
+
+filetype indent on
+set smartindent
+" -----------------------------------------------------------------------------
+" }}}
+
+
+"{{{ Plugins
+" -----------------------------------------------------------------------------
+call plug#begin()
+Plug 'Yggdroot/indentLine'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'junegunn/goyo.vim'
+call plug#end()
+" -----------------------------------------------------------------------------
+"}}}
+
+
+"{{{ Plugin configs
+" -----------------------------------------------------------------------------
+" Use qutebrowser as Markdown viewer for markdown-preview-nvim
+let g:mkdp_browser = "qutebrowser"
+au BufEnter *.{md,mkd,markdown,mdown,mkdn,mdwn} call mkdp#util#open_preview_page()
+
+" Dont hide markdown symbols. 
+" By default, VIM hides characters like # and *
+" on the editor, but that really confuses me when editing
+let g:indentLine_fileTypeExclude = ['md']
+let g:indentLine_fileTypeExclude = ['markdown']
+set conceallevel=0
+
+" Need to see if this for jedi python thingy, if so, then remove it
+filetype plugin indent on  " allows auto-indenting depending on file type
+autocmd FileType python setlocal completeopt-=preview
+
+" View selection from top when doing tab completion
+let g:SuperTabDefaultCompletionType = "<c-n>"
+" -----------------------------------------------------------------------------
+"}}}
+
+
+"{{{ Functions
+" -----------------------------------------------------------------------------
+" Yank to clipboard
+function! ClipboardYank()
+  call system('xclip -i -selection clipboard', @@)
+endfunction
+
+" Paste from clipboard
+function! ClipboardPaste()
+  let @@ = system('xclip -o -selection clipboard')
+endfunction
+" -----------------------------------------------------------------------------
+"}}}
+
+
+"{{{ Key mappings
+" -----------------------------------------------------------------------------
+" Disable the arrow keys
 " In NORMAL mode
 nnoremap <up>    <nop>
 nnoremap <down>  <nop>
 nnoremap <left>  <nop>
 nnoremap <right> <nop>
-
 " In INSERT mode
 inoremap <up>    <nop>
 inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
-
 " In VISUAL mode
 xnoremap <up>    <nop>
 xnoremap <down>  <nop>
 xnoremap <left>  <nop>
 xnoremap <right> <nop>
 
-" Not sure if this is good. C-v is very usefull
-"vnoremap <C-c> "+y
-" Check later if P or p is better
-"map <C-v> "+p
-
-" Make double <Esc> clear search highlights
-nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+" Scroll up
+nnoremap J <C-e>
+" Scroll down
+nnoremap K <C-y>
 
 " More intuitive way of...
 " going home
@@ -99,11 +153,6 @@ nnoremap L A
 nnoremap j gj
 nnoremap k gk
 
-" In case you forget to type sudo before editing a file
-" where you might need to be root, write the file file
-" by typing w!!
-cmap w!! w !sudo tee % >/dev/null
-
 " Quickly edit init.vim while editing another file.
 " :e# to go to the prevouse file you were originaly editing
 nnoremap <c-x> :edit ~/.config/nvim/init.vim<cr>
@@ -111,57 +160,40 @@ nnoremap <c-x> :edit ~/.config/nvim/init.vim<cr>
 " Quick way to update init.vim while Im using it
 map <C-a> :source ~/.config/nvim/init.vim <cr>
 
-syntax on
-
-filetype off
-
-""""PLUGIN""""
-call plug#begin()
-Plug 'Yggdroot/indentLine'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'davidhalter/jedi-vim'
-Plug 'junegunn/goyo.vim'
-call plug#end()
-""""PLUGIN END""""
-
-" Use qutebrowser as Markdown viewer for markdown-preview-nvim
-let g:mkdp_browser = "qutebrowser"
-au BufEnter *.{md,mkd,markdown,mdown,mkdn,mdwn} call mkdp#util#open_preview_page()
-
-filetype plugin indent on  " allows auto-indenting depending on file type
-autocmd FileType python setlocal completeopt-=preview
-" Yank to clipboard
-function! ClipboardYank()
-  call system('xclip -i -selection clipboard', @@)
-endfunction
-
-function! ClipboardPaste()
-  let @@ = system('xclip -o -selection clipboard')
-endfunction
-
+" Remapping the simple yank, delete, paste keys to my functions
 vnoremap <silent> y y:call ClipboardYank()<cr>
 vnoremap <silent> d d:call ClipboardYank()<cr>
 nnoremap <silent> p :call ClipboardPaste()<cr>p
+onoremap <silent> y y:call ClipboardYank()<cr>
+onoremap <silent> d d:call ClipboardYank()<cr>
 
-" Disable the status line
-set laststatus=0
+" Shift+. causes some trouble at times and it is not efficient
+" The first line here is just here so that I get used to
+" the new maping which the line after
+" The first line here is just here so that I get used to
+" the new maping which the line after.
+" By the way, I have a MacBook, so the keyboard is
+" a little different
+nnoremap , :
+" -----------------------------------------------------------------------------
+" }}}
 
+
+"{{{ Command mappings
+" -----------------------------------------------------------------------------
+" In case you forget to type sudo before editing a file
+" where you might need to be root, write the file file
+" by typing w!!
+cmap w!! w !sudo tee % >/dev/null
+" -----------------------------------------------------------------------------
+"}}}
+
+
+"{{{ Uncatogorised
+" -----------------------------------------------------------------------------
 " Search down into subfolders
 " Provides tab-completion for all file related tasks
 set path+=**
-
-" Display all matching results when we tab complete
-set wildmenu
-
-" show search matches as you type
-set incsearch
-
-set autoread
-
-" Highlight the 81st charcter
-" I like to stay in the 80 character limit :)
-highlight OverLength ctermbg=magenta ctermfg=black
-match OverLength /\%81v\+/
 
 " Save the undotree to a file when exiting a buffer
 set undofile
@@ -171,10 +203,31 @@ if !isdirectory(expand(&undodir))
     call mkdir(expand(&undodir), 'p')
 endif
 
-" Shift+. causes some trouble at times and it is not efficient
-" The first line here is just here so that I get used to
-" the new maping which the line after
-" The first line here is just here so that I get used to
-" the new maping which the line after
-nnoremap : <nop>
-nnoremap , :
+
+" Autoreload file when it gets changed externaly
+" For example "echo hi > file.txt"
+" Source: https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" Triger `autoread` when files changes on disk
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" Notification after file change
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
+set encoding=utf-8
+
+" Stops producing  A B C D when pressing
+" the arrow keys. Well, when I think about it, this
+" might be just for vi not VIM
+" I have also heard that it sets compatibility to Vim only.
+set nocompatible
+
+" Fixes common backspace problems
+set backspace=indent,eol,start
+
+" Fold the code. I only use this in my config files to organize it.
+" zo - open fold
+" zc - close fold
+set foldmethod=marker
+hi Folded ctermfg=white
+" -----------------------------------------------------------------------------
+"}}}

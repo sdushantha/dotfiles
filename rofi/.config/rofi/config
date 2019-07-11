@@ -1,7 +1,9 @@
+
+!rofi.theme: ~/.config/rofi/theme.rasi
 rofi.lines: 10
 rofi.font: Hack 11
 rofi.hide-scrollbar: true
-
+rofi.display-drun: Applications
 ! Property Name     BG       Border   Separator
 !rofi.color-window:  #1b2b34, #ffffff, #282c34
 rofi.color-window:  #070D15, #070D15, #070D15
@@ -10,8 +12,10 @@ rofi.color-window:  #070D15, #070D15, #070D15
 rofi.color-normal:  #070D15,#abb2bf, #070D15, #4c566a, #ffffff
 rofi.color-active:  #070D15, #61afef, #070D15, #4c566a, #61afef
 rofi.color-urgent:  #353b45, #e06c75, #353b45, #353b45, #e06c75
-
+!
 ! Set the desired separator style
 rofi.separator-style: none
 
 !rofi.fullscreen: true
+
+rofi.border-radius: 8px

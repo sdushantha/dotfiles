@@ -16,7 +16,7 @@ floating_modifier $mod
 # if the currect workspace is empty, then it will open the terminal
 # as floating enabled. If there is a window in the current workspace, then the 
 # terminal will open like other windows
-bindsym $mod+Return exec --no-startup-id python ~/bin/term.py
+bindsym $mod+Return exec --no-startup-id python $HOME/bin/keybinded/term.py
 
 # kill focused window
 bindsym $mod+q kill
@@ -144,6 +144,7 @@ for_window [window_role="task_dialog"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 
+# Keep my album art displayer floating
 for_window [instance="Kunst"] floating enable
 
 
@@ -165,10 +166,10 @@ for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to wor
 ###################################
 
 
-# mouse, please stop focus whenever you hover to whatever windows plz :(
+# Prevent mouse from changing the focus
 focus_follows_mouse no
 
-# fixes graphics glitch
+# Fixes graphics glitch
 new_window none
 
 ####################
@@ -181,24 +182,26 @@ new_window none
 # Automaticaly sets wallpaper. Just the the wallpaper
 # you want in the Wallpapers directory then it will 
 # automaticaly set it on start up.
-exec_always --no-startup-id feh --bg-fill ~/Pictures/current/*
+exec_always --no-startup-id feh --bg-fill $HOME/pictures/current/*
 
 # allows sound
 exec_always --no-startup-id start-pulseaudio-x11
 
-# enable compton without any shadows
+# Enable compton without any shadows
 exec_always --no-startup-id compton -r 0 -o 0 -l 0 -t 0
 
-# my eyes love the brightness set to 5%
+# Have brightness set to 5% when starting
+# TODO: make a file which stores the brightness value
+#       so that it can be restored on startup
 exec_always --no-startup-id xbacklight -set 5
 
-# starts the launch.sh script which launches polybar
-exec_always --no-startup-id bash ~/.config/polybar/launch.sh
+# Starts the launch.sh script which launches polybar
+exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
 
-# i like music
+# Start MPD, which is needed for ncmpcpp to work
 exec_always --no-startup-id mpd
 
-# Flash the window you have changed focus to.
+# Flash the window you have changed focus to
 exec_always --no-startup-id flashfocus
 
 ##################
@@ -209,51 +212,48 @@ exec_always --no-startup-id flashfocus
 # I have set it so that it if the volume is set to mute, and I try to increase or decrease
 # the volume, it will unmute and then increase or decrease. Because before, it would stay mute
 # and just increase the volume but it would still stay mute. Yes, its strange.
-bindsym XF86AudioRaiseVolume exec --no-startup-id bash ~/bin/volumeControl.sh up
-bindsym XF86AudioLowerVolume exec --no-startup-id bash ~/bin/volumeControl.sh down
-bindsym XF86AudioMute exec --no-startup-id bash ~/bin/volumeControl.sh mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh up
+bindsym XF86AudioLowerVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh down
+bindsym XF86AudioMute exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh mute
 
 # Change brightness using xbacklight
 # Check the link below to fix brightness on MacBooks
 # https://medium.com/@philpl/ubuntu-14-10-running-on-my-macbook-18991a697ae0
-bindsym XF86MonBrightnessUp exec bash ~/bin/brightnessControl.sh up
-bindsym XF86MonBrightnessDown exec bash ~/bin/brightnessControl.sh down
+bindsym XF86MonBrightnessUp exec bash $HOME/bin/keybinded/brightnessControl.sh up
+bindsym XF86MonBrightnessDown exec bash $HOME/bin/keybinded/brightnessControl.sh down
 
-# Launches Openbox Logout menu
-bindsym $mod+Shift+s --release exec bash ~/bin/logout_menu.sh
+# Launch clearine logout menu
+bindsym $mod+Shift+s exec --no-startup-id $HOME/.local/bin/clearine
 
 # Locks my screen
 bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id betterlockscreen -l
 
 # Music control
-bindsym XF86AudioNext exec mpc next && bash ~/bin/change_music.sh 
-bindsym XF86AudioPrev exec mpc prev && bash ~/bin/change_music.sh
+bindsym XF86AudioNext exec mpc next && bash $HOME/bin/keybinded/change_music.sh 
+bindsym XF86AudioPrev exec mpc prev && bash $HOME/bin/keybinded/change_music.sh
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 
-
 # Screenshot fullscreen
-bindsym $mod+aring exec ~/bin/screenshot.sh
+bindsym $mod+aring exec $HOME/bin/keybinded/screenshot.sh
 
 # Screenshot selected area
 # You need to use `--release` in the binding.
 # See "4.3. Keyboard bindings" on i3wm docs 
-bindsym $mod+oslash --release exec bash ~/bin/screenshot.sh -s
+bindsym $mod+oslash --release exec bash $HOME/bin/keybinded/screenshot.sh -s
 
 # A very cool emoji and unicode character picker using rofi
-bindsym $mod+Shift+d exec bash ~/.config/rofi/scripts/picker.sh
+bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
 
-# Open up my CLI file manager
-bindsym $mod+Shift+Return exec python3 /home/siddharth/bin/ranger.py 
-bindsym $mod+Shift+t exec thunar
+# Open up ranger
+bindsym $mod+Shift+Return exec python3 $HOME/bin/keybinded/ranger.py 
 
 # Keyboard backlight for Macbook
 bindsym XF86KbdBrightnessDown exec kbdlight down
 bindsym XF86KbdBrightnessUp exec kbdlight up
 
 # Pop any video from the browser out into mpv
-bindsym --release $mod+p exec bash ~/bin/pop_mpv.sh
+bindsym --release $mod+p exec bash $HOME/bin/keybinded/pop_mpv.sh
 
 # Flash the current window I am in
 bindsym $mod+n exec --no-startup-id flash_window
-

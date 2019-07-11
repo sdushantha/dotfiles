@@ -3,6 +3,15 @@
 
 config_version: 2
 settings:
+  aliases:
+    global:
+      q: close
+      qa: quit
+      w: session-save
+      wq: quit --save
+      wqa: quit --save
+  bindings.commands:
+    global: null
   statusbar.hide:
     global: true
   tabs.show:

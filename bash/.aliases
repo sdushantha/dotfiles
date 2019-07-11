@@ -1,25 +1,30 @@
 #!/usr/bin/env bash
 
 # Quick shortcuts to some dirs
-alias dls="cd ~/Downloads"
-alias docs="cd ~/Documents"
+alias dls="cd ~/downloads"
+alias docs="cd ~/documents"
 alias prjs="cd ~/projects"
-alias pics="cd ~/Pictures"
+alias pics="cd ~/pictures"
 alias conf="cd ~/.config"
-alias vids="cd ~/Videos"
+alias vids="cd ~/videos"
 alias dots="cd ~/dotfiles"
 alias bin="cd ~/bin"
 alias tmp="cd /tmp"
-alias shots="cd ~/Pictures/Screenshots"
+alias shots="cd ~/pictures/Screenshots"
 alias ..="cd .."
+alias notes="cd $HOME/documents/notes"
 
+# Quickly edit some files
+alias zshrc="vim $HOME/.zshrc"
+alias aliases="vim $HOME/.aliases"
+alias profile="vim $HOME/.profile"
+alias i3config="vim $HOME/.config/i3/config"
 
 # Enable colors for some commands
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
 alias tree="tree -C"
 
 # Some more ls aliases
@@ -27,26 +32,27 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# This is the real way to remove a package
+# Dont show the annoying banner in ipython3
 alias ipython3="ipython3 --no-banner"
-
-# I rather type subl than subl3
-alias subl=subl3
-
-# Cool warning when running naything with sudo
-alias sudo="python3 ~/bin/sudoer_lecture.py && sudo"
 
 # Run the pywal-web script. I cant be bothered to go into the dir
 # where the script is located and run it from there.
 alias pywal-web="python3 /home/siddharth/projects/pywal-web/server.py"
 
-alias tmp="cd /tmp/"
-
-# I prefer neovim
+# I prefer neovim, but I am used to typing vim
 alias vim=nvim
 
-# Easy access to configs
+# Easy access to vim config
 alias vimrc="nvim ~/.config/nvim/init.vim"
 
 # The remaining storage
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
+
+# cat, but with syntax highlighting and it is automaticaly piped to less if 
+# the whole text does not fit in in the terminal
+alias cat="bat -p"
+
+# https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/
+alias ytdl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
+
+alias gif2mp4='ffmpeg -i $1 -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $2'

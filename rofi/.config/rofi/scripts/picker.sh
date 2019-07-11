@@ -24,7 +24,7 @@ function rofi_menu() { # {{{
 	rofi -width 25 -lines 7 -dmenu -i -p 'emoji' \
 		-kb-row-tab '' \
 		-kb-row-select Tab \
-		-kb-custom-1 Ctrl+c
+		-kb-custom-1 Ctrl+c -columns 1
 }
 
 function repeat() { # {{{

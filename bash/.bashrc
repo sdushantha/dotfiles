@@ -85,6 +85,7 @@ export FFF_W3M_XOFFSET=0
 export FFF_W3M_YOFFSET=0
 
 set -o vi
+export ATHAME_SHOW_MODE=0
 
 # https://goo.gl/KcoQgP
 BG_COLOR="#330000"

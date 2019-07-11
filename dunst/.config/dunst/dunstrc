@@ -5,6 +5,7 @@
     #[{width}]x{height}[+/-{x}+/-{y}]
     geometry = "320x5-12+37"
 
+    corner_radius = 3
     indicate_hidden = yes
     shrink = no
     transparency = 0
@@ -13,8 +14,10 @@
     separator_height = 2
     padding = 10
     horizontal_padding = 10
+
+    # maybe make this 0
     frame_width = 1
-    frame_color = "#0d191b"
+    frame_color = "#01181D"
     separator_color = frame
     sort = yes
     idle_threshold = 120
@@ -48,15 +51,16 @@
 [urgency_low]
     # This urgency should be used only 
     # for volume/brightness notification
-    background = "#0d191b"
+    background = "#01181D"
     foreground = "#a8a8a8"
     timeout = 1
+    icon = /dev/null
 
 [urgency_normal]
-    background = "#0d191b"
+    background = "#01181D"
     foreground = "#a8a8a8"
     timeout = 10
-
+    icon = /dev/null
 [urgency_critical]
     background = "#d64e4e"
     foreground = "#f0e0e0"
