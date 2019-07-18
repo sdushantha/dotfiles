@@ -10,7 +10,7 @@ alias vids="cd ~/videos"
 alias dots="cd ~/dotfiles"
 alias bin="cd ~/bin"
 alias tmp="cd /tmp"
-alias shots="cd ~/pictures/Screenshots"
+alias shots="cd ~/pictures/screenshots"
 alias ..="cd .."
 alias notes="cd $HOME/documents/notes"
 

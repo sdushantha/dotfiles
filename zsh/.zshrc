@@ -11,15 +11,6 @@ zstyle :compinstall filename '/home/siddharth/.zshrc'
 autoload -Uz compinit
 compinit
 
-# Enable auto suggestions while typing.
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# CTRL+Space to complete/accept the sugestion
-# But I prefer to go into NORMAL mode and then press
-# L to accept/complete the suggestion because it is
-# faster.
-bindkey '^ ' autosuggest-accept
-
-
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 

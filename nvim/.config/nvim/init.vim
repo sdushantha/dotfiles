@@ -96,6 +96,15 @@ autocmd FileType python setlocal completeopt-=preview
 
 " View selection from top when doing tab completion
 let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" Styling the autocomplete window
+"  == Reference ==
+"  Pmenu – normal item
+"  PmenuSel – selected item
+"  PmenuSbar – scrollbar
+"  PmenuThumb – thumb of the scrollbar
+highlight Pmenu ctermbg=grey
+highlight PmenuSel ctermbg=darkgrey ctermfg=grey
 " -----------------------------------------------------------------------------
 "}}}
 
