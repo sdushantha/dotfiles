@@ -22,6 +22,5 @@ set default-bg "#000000"
 map i recolor
 
 # Recolor the PDF
-set recolor true
 set recolor-darkcolor "#dcdccc" 
 set recolor-lightcolor "#01181D"

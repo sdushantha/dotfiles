@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home'
-let g:netrw_dirhist_2='/'
-let g:netrw_dirhist_3='/home/siddharth/.config/nvim'
-let g:netrw_dirhist_4='/home/siddharth/projects/pure-bash-bible'
-let g:netrw_dirhist_5='/home/siddharth/dotfiles'
-let g:netrw_dirhist_6='/home/siddharth/.config/i3'
-let g:netrw_dirhist_7='/home/siddharth/.config'
-let g:netrw_dirhist_8='/home/siddharth/bin/keybinded'
-let g:netrw_dirhist_9='/home/siddharth/.zsh'
+let g:netrw_dirhist_cnt =0

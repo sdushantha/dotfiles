@@ -192,10 +192,8 @@ exec_always --no-startup-id start-pulseaudio-x11
 # Enable compton without any shadows
 exec_always --no-startup-id compton -r 0 -o 0 -l 0 -t 0
 
-# Have brightness set to 5% when starting
-# TODO: make a file which stores the brightness value
-#       so that it can be restored on startup
-exec_always --no-startup-id xbacklight -set 5
+# Restore the brightness by taking the value in the file, brightness
+exec_always --no-startup-id restoreBrightness.sh
 
 # Starts the launch.sh script which launches polybar
 exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
