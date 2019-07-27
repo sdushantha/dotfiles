@@ -56,3 +56,10 @@ alias cat="bat -p"
 alias ytdl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
 
 alias gif2mp4='ffmpeg -i $1 -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $2'
+
+# Some git aliases
+alias gadd="git add"
+alias gclone="git clone"
+alias gcommit="git commit"
+alias gpush="git push"
+alias gstatus="git status"

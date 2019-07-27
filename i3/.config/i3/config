@@ -148,7 +148,7 @@ for_window [title="Open File"] fullscreen enable
 
 # Keep my album art displayer floating
 for_window [instance="Kunst"] floating enable
-
+for_window [instance="feh"] floating enable
 
 ##### RULES FOR SOME PROGRAMS #####
 # Exmaple:
@@ -180,7 +180,7 @@ new_window none
 
 # exec -> On start-up
 # exec_always -> On start-up and reload
-
+exec betterlockscreen -l
 # Automaticaly sets wallpaper. Just the the wallpaper
 # you want in the Wallpapers directory then it will 
 # automaticaly set it on start up.
@@ -193,7 +193,7 @@ exec_always --no-startup-id start-pulseaudio-x11
 exec_always --no-startup-id compton -r 0 -o 0 -l 0 -t 0
 
 # Restore the brightness by taking the value in the file, brightness
-exec_always --no-startup-id restoreBrightness.sh
+exec_always --no-startup-id bash $HOME/bin/keybinded/brightness/restoreBrightness.sh
 
 # Starts the launch.sh script which launches polybar
 exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
@@ -203,6 +203,7 @@ exec_always --no-startup-id mpd
 
 # Flash the window you have changed focus to
 exec_always --no-startup-id $HOME/.local/bin/flashfocus
+exec_always --no-startup-id xfce4-power-manager
 
 ##################
 ## Key bindings ##
@@ -219,8 +220,8 @@ bindsym XF86AudioMute exec --no-startup-id bash $HOME/bin/keybinded/volumeContro
 # Change brightness using xbacklight
 # Check the link below to fix brightness on MacBooks
 # https://medium.com/@philpl/ubuntu-14-10-running-on-my-macbook-18991a697ae0
-bindsym XF86MonBrightnessUp exec bash $HOME/bin/keybinded/brightnessControl.sh up
-bindsym XF86MonBrightnessDown exec bash $HOME/bin/keybinded/brightnessControl.sh down
+bindsym XF86MonBrightnessUp exec bash $HOME/bin/keybinded/brightness/brightnessControl.sh up
+bindsym XF86MonBrightnessDown exec bash $HOME/bin/keybinded/brightness/brightnessControl.sh down
 
 # Launch clearine logout menu
 bindsym $mod+Shift+s exec --no-startup-id clearine
@@ -258,5 +259,8 @@ bindsym --release $mod+p exec bash $HOME/bin/keybinded/pop_mpv.sh
 # Flash the current window I am in
 bindsym $mod+n exec --no-startup-id flash_window
 
-
+# Only works on this fork of i3
+# https://github.com/resloved/i3
 border_radius 4
+
+

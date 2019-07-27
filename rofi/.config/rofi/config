@@ -1,7 +1,7 @@
 
 !rofi.theme: ~/.config/rofi/theme.rasi
 rofi.lines: 10
-rofi.font: Hack 11
+rofi.font: Mono 11
 rofi.hide-scrollbar: true
 rofi.display-drun: Applications
 ! Property Name     BG       Border   Separator

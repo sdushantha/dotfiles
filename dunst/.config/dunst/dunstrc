@@ -17,7 +17,7 @@
 
     # maybe make this 0
     frame_width = 1
-    frame_color = "#111622"
+    frame_color = "#0F1214"
     separator_color = frame
     sort = yes
     idle_threshold = 120
@@ -51,13 +51,13 @@
 [urgency_low]
     # This urgency should be used only 
     # for volume/brightness notification
-    background = "#111622"
+    background = "#0F1214"
     foreground = "#a8a8a8"
     timeout = 1
     icon = /dev/null
 
 [urgency_normal]
-    background = "#111622"
+    background = "#0F1214"
     foreground = "#a8a8a8"
     timeout = 10
     icon = /dev/null
