@@ -1,8 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/siddharth/projects/colorpicker'
-let g:netrw_dirhist_2='/home/siddharth/.config/clearine'
-let g:netrw_dirhist_3='/home/siddharth/.config/kitty'
-let g:netrw_dirhist_4='/home/siddharth/.config'
-let g:netrw_dirhist_5='/home/siddharth/dotfiles/kitty/.config/kitty'
-let g:netrw_dirhist_6='/home/siddharth/.config/ranger'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/siddharth/bin'

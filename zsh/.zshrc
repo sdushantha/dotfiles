@@ -1,5 +1,11 @@
 PS1=$'%{\e[0;31m♥%} %{\e[0;91m%}%c %{\e[0;35m%}❯%{\e[0m%} '
 
+# Start my graphical interface
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi 
+
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -14,9 +20,17 @@ compinit
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# This allows me to run my own scripts from
-export PATH=$PATH":$HOME/bin:$HOME/.local/bin:$HOME/$HOME/$HOME/$HOME/.gem/ruby/2.6.0/bin:/home/siddharth/.cargo/bin"
+# Allows me to run scripts which are installed locally
+export PATH=$PATH":$HOME/.local/bin"
 
+# Scripts installed using gem
+export PATH=$PATH":$HOME/.gem/ruby/2.6.0/bin"
+
+# Scripts installed using cargo
+export PATH=$PATH":$HOME/.cargo/bin"
+
+# Allow all files in bin and the subdirs to be in PATH
+export PATH=$PATH$( find $HOME/bin/ -type d -printf ":%p" )
 
 ### VIM mode config
 # Summery:
@@ -85,13 +99,12 @@ if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi
 
+# Plugins
+source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
+
 # This is here to set my terminal background color
 # The script colors.sh uses this part of the bashrc
 # https://goo.gl/KcoQgP
-BG_COLOR="#0d191b"
+BG_COLOR="#111622"
 printf "\\e]11;${BG_COLOR}\\e\\\\"
-
-
-export FFF_LS_COLORS=1
-export FFF_HIDDEN=1
-

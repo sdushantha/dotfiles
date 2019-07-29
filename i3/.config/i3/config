@@ -164,6 +164,7 @@ for_window [class="firefox"] focus
 assign [class="discord"] $ws3
 for_window [class="discord"] focus
 
+for_window [title="draw_urxvt"] floating enable
 for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to workspace 4, focus
 ###################################
 
@@ -262,5 +263,7 @@ bindsym $mod+n exec --no-startup-id flash_window
 # Only works on this fork of i3
 # https://github.com/resloved/i3
 border_radius 4
+
+bindsym $mod+Shift+x exec --no-startup-id bash $HOME/bin/keybinded/draw.sh
 
 
