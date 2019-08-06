@@ -17,6 +17,7 @@ zstyle :compinstall filename '/home/siddharth/.zshrc'
 autoload -Uz compinit
 compinit
 
+
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -31,6 +32,7 @@ export PATH=$PATH":$HOME/.cargo/bin"
 
 # Allow all files in bin and the subdirs to be in PATH
 export PATH=$PATH$( find $HOME/bin/ -type d -printf ":%p" )
+
 
 ### VIM mode config
 # Summery:
@@ -82,8 +84,11 @@ function h(){
 }
 
 
+
+
 # Disable ctrl-s and ctrl-q.
 stty -ixon 
+
 
 # This lets me have a colorful man page :)
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
@@ -99,12 +104,21 @@ if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi
 
-# Plugins
+# This file has some important variables
+source $HOME/.profile
+
+# ZSH plugins
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
 
 # This is here to set my terminal background color
 # The script colors.sh uses this part of the bashrc
 # https://goo.gl/KcoQgP
-BG_COLOR="#111622"
+BG_COLOR="#111116"
 printf "\\e]11;${BG_COLOR}\\e\\\\"
+
+export KUNST_SIZE="250x250"
+export KUNST_MUSIC_DIR="$HOME/music/"
+
+bindkey -M vicmd 'H' beginning-of-line
+bindkey -M vicmd 'L' end-of-line

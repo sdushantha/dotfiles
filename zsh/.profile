@@ -1,6 +1,6 @@
 export VISUAL="nvim"
-export EDITOR="$VISUAL"
-export TERMINAL="kitty"
+export EDITOR="nvim"
+export TERMINAL="urxvt"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="thunar"

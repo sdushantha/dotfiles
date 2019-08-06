@@ -39,3 +39,5 @@ fi
 exec i3 --shmlog-size 0
 
 flashfocus
+
+export LANG=en_GB.UTF-8

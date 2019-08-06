@@ -60,7 +60,7 @@ border-left-size = 0
 ;----------;
 
 bottom = false
-monitor = eDP-1
+monitor = eDP1
 override-redirect = false
 
 ;-------;
@@ -87,7 +87,7 @@ padding-right = 2
 module-margin = 1.5
 
 modules-left = now
-modules-center = demo test
+modules-center = 
 modules-right =  volume battery wlan
 
 tray-position = none

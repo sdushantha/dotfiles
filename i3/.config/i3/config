@@ -5,8 +5,35 @@
 # Ø = oslash
 # Å = aring
 
-set $mod Mod4
 
+#{{{ General 
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# The pixles of the gaps
+gaps inner 6
+gaps outer 6
+
+# Only works on this fork of i3
+# https://github.com/resloved/i3
+border_radius 4
+
+#}}}
+
+
+#{{{ Keybindings
+
+set $mod Mod4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -58,20 +85,6 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
-
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -126,90 +139,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# the pixles of the gaps
-gaps inner 6
-gaps outer 6
-
-# gives a border to the windows. 
-for_window [class="^.*"] border pixel 0
-
-# pop ups are floating
-for_window [window_role="pop-up"] floating enable
-
-# task dialogs are floating
-for_window [window_role="task_dialog"] floating enable
-
-# Video player floating. This video player is used for quick
-# playing. But I use VLC for movies or something similar.
-for_window [class="mpv"] floating enable
-for_window [class="SimpleScreenRecorder"] floating enable
-
-for_window [title="Open File"] fullscreen enable
-
-# Keep my album art displayer floating
-for_window [instance="Kunst"] floating enable
-for_window [instance="feh"] floating enable
-
-##### RULES FOR SOME PROGRAMS #####
-# Exmaple:
-#   Spotify will open in workspace 4 only on launch.
-#   This wont effect any other Spotify windows. For example,
-#   Lets say that I have a Spotify window in workspace 2, when I 
-#   relaod i3, it will still stay there. These rules only apply
-#   to new windows which have been launched.
-
-assign [class="firefox"] $ws1
-for_window [class="firefox"] focus
-
-assign [class="discord"] $ws3
-for_window [class="discord"] focus
-
-for_window [title="draw_urxvt"] floating enable
-for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to workspace 4, focus
-###################################
-
-
-# Prevent mouse from changing the focus
-focus_follows_mouse no
-
-# Fixes graphics glitch
-new_window none
-
-####################
-## Run on startup ##
-####################
-
-# exec -> On start-up
-# exec_always -> On start-up and reload
-exec betterlockscreen -l
-# Automaticaly sets wallpaper. Just the the wallpaper
-# you want in the Wallpapers directory then it will 
-# automaticaly set it on start up.
-exec_always --no-startup-id feh --bg-fill $HOME/pictures/current/*
-
-# allows sound
-exec_always --no-startup-id start-pulseaudio-x11
-
-# Enable compton without any shadows
-exec_always --no-startup-id compton -r 0 -o 0 -l 0 -t 0
-
-# Restore the brightness by taking the value in the file, brightness
-exec_always --no-startup-id bash $HOME/bin/keybinded/brightness/restoreBrightness.sh
-
-# Starts the launch.sh script which launches polybar
-exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
-
-# Start MPD, which is needed for ncmpcpp to work
-exec_always --no-startup-id mpd
-
-# Flash the window you have changed focus to
-exec_always --no-startup-id $HOME/.local/bin/flashfocus
-exec_always --no-startup-id xfce4-power-manager
-
-##################
-## Key bindings ##
-##################
-
 # Pulse Audio controls
 # I have set it so that it if the volume is set to mute, and I try to increase or decrease
 # the volume, it will unmute and then increase or decrease. Because before, it would stay mute
@@ -228,7 +157,7 @@ bindsym XF86MonBrightnessDown exec bash $HOME/bin/keybinded/brightness/brightnes
 bindsym $mod+Shift+s exec --no-startup-id clearine
 
 # Locks my screen
-bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id betterlockscreen -l
+bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id bash $HOME/bin/keybinded/lock
 
 # Music control
 bindsym XF86AudioNext exec mpc next && bash $HOME/bin/keybinded/change_music.sh 
@@ -260,10 +189,96 @@ bindsym --release $mod+p exec bash $HOME/bin/keybinded/pop_mpv.sh
 # Flash the current window I am in
 bindsym $mod+n exec --no-startup-id flash_window
 
-# Only works on this fork of i3
-# https://github.com/resloved/i3
-border_radius 4
+# The best color picker ;)
+bindsym $mod+Shift+f --release exec farge --image-viewer mpv
 
-bindsym $mod+Shift+x exec --no-startup-id bash $HOME/bin/keybinded/draw.sh
+#}}}
 
+
+#{{{ Autorun
+# exec -> On start-up
+# exec_always -> On start-up and reload
+
+# Show lockscreen on start up because thats the only security I have
+exec bash $HOME/bin/keybinded/lock
+
+# Start my pomodoro timer
+exec bash $HOME/bin/pomo 
+
+# Automaticaly sets wallpaper. Just the the wallpaper
+# you want in the Wallpapers directory then it will 
+# automaticaly set it on start up.
+exec_always --no-startup-id feh --bg-fill $HOME/pictures/current/*
+
+# allows sound
+exec_always --no-startup-id start-pulseaudio-x11
+
+# Enable compton without any shadows
+exec_always --no-startup-id compton -r 0 -o 0 -l 0 -t 0
+
+# Restore the brightness by taking the value in the file, brightness
+exec_always --no-startup-id bash $HOME/bin/keybinded/brightness/restoreBrightness.sh
+
+# Starts the launch.sh script which launches polybar
+exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
+
+# Start MPD, which is needed for ncmpcpp to work
+exec_always --no-startup-id mpd
+
+# Flash the window you have changed focus to
+exec_always --no-startup-id $HOME/.local/bin/flashfocus
+
+exec_always --no-startup-id xfce4-power-manager
+
+#}}}
+
+
+#{{{ Window rules
+
+# Gives a border to the windows. 
+for_window [class="^.*"] border pixel 0
+
+# Pop ups are floating
+for_window [window_role="pop-up"] floating enable
+
+# Task dialogs are floating
+for_window [window_role="task_dialog"] floating enable
+
+# Video player floating. This video player is used for quick
+# playing. But I use VLC for movies or something similar.
+for_window [class="mpv"] floating enable
+for_window [class="SimpleScreenRecorder"] floating enable
+
+for_window [title="Open File"] fullscreen enable
+
+# Keep my album art displayer floating
+for_window [instance="Kunst"] floating enable
+
+# Let the windows created by Farge be floating
+for_window [instance="Farge"] floating enable
+
+##### RULES FOR SOME PROGRAMS #####
+# Exmaple:
+#   Spotify will open in workspace 4 only on launch.
+#   This wont effect any other Spotify windows. For example,
+#   Lets say that I have a Spotify window in workspace 2, when I 
+#   relaod i3, it will still stay there. These rules only apply
+#   to new windows which have been launched.
+
+assign [class="firefox"] $ws1
+for_window [class="firefox"] focus
+
+assign [class="discord"] $ws3
+for_window [class="discord"] focus
+
+for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to workspace 4, focus
+###################################
+
+
+# Prevent mouse from changing the focus
+focus_follows_mouse no
+
+# Fixes graphics glitch
+new_window none
+#}}}
 

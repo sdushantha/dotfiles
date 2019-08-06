@@ -1,84 +1,14 @@
-"{{{ Looks
-" -----------------------------------------------------------------------------
-" Turn on syntax highlighting.
-syntax on
 
-" Show line numbers
-set number relativenumber 
-hi LineNr ctermbg=NONE ctermfg=darkgrey
-
-" Disable the status line
-set laststatus=0
-
-" Display all matching results when we tab complete
-set wildmenu
-
-" Highlight the 81st charcter
-" I like to stay in the 80 character limit :)
-highlight OverLength ctermbg=magenta ctermfg=black
-match OverLength /\%81v\+/
-" -----------------------------------------------------------------------------
-"}}}
-
-
-"{{{ Search
-" -----------------------------------------------------------------------------
-" Ignore case when searching
-set ignorecase
-
-" When searching try to be smart about cases.
-" What I have notcied is that, when searching with
-" only lowercase, the upper case words are also shown.
-" But if you search with uppercase, only uppercase is shown
-set smartcase
-
-" show search matches as you type
-set incsearch
-
-" Highlight matching search patterns
-set hlsearch
-
-" Make double <Esc> clear search highlights
-nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
-" -----------------------------------------------------------------------------
-" }}}
-
-
-"{{{ Tabs
-" -----------------------------------------------------------------------------
-" Use spaces when using "<" and ">" to tab
-set expandtab
-
-" Use 4 spaces to represent tab
-set tabstop=4
-
-set softtabstop=4
-
-" Copy indent from last line when starting new lineiletype indent on
-set autoindent
-
-" Number of spaces to use for auto indent
-set shiftwidth=4
-
-filetype indent on
-set smartindent
-" -----------------------------------------------------------------------------
-" }}}
-
-
-"{{{ Plugins
-" -----------------------------------------------------------------------------
+"{{{ Plugins  
 call plug#begin()
 Plug 'Yggdroot/indentLine'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'junegunn/goyo.vim'
 call plug#end()
-" -----------------------------------------------------------------------------
 "}}}
 
 
-"{{{ Plugin configs
-" -----------------------------------------------------------------------------
+"{{{ Plugin configs  
 " Use qutebrowser as Markdown viewer for markdown-preview-nvim
 let g:mkdp_browser = "qutebrowser"
 au BufEnter *.{md,mkd,markdown,mdown,mkdn,mdwn} call mkdp#util#open_preview_page()
@@ -105,12 +35,82 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 "  PmenuThumb – thumb of the scrollbar
 highlight Pmenu ctermbg=grey
 highlight PmenuSel ctermbg=darkgrey ctermfg=grey
-" -----------------------------------------------------------------------------
 "}}}
 
 
-"{{{ Functions
-" -----------------------------------------------------------------------------
+"{{{ Looks  
+" Turn on syntax highlighting.
+syntax on
+
+" Show line numbers
+set number relativenumber 
+hi LineNr ctermbg=NONE ctermfg=darkgrey
+
+" Disable the status line
+set laststatus=0
+
+" Display all matching results when we tab complete
+set wildmenu
+
+" Highlight the 81st charcter
+" I like to stay in the 80 character limit :)
+highlight OverLength ctermbg=magenta ctermfg=black
+match OverLength /\%81v\+/
+
+
+" Fold the code. I only use this in my config files to organize it.
+set foldmethod=marker
+hi Folded ctermfg=white ctermbg=none
+
+" Colors for tabline
+hi TabLine      ctermfg=254 ctermbg=238 cterm=none
+hi TabLineSel   ctermfg=231 ctermbg=235 cterm=bold
+hi TabLineFill  ctermfg=254 ctermbg=238 cterm=none
+"}}}
+
+
+"{{{ Search  
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases.
+" What I have notcied is that, when searching with
+" only lowercase, the upper case words are also shown.
+" But if you search with uppercase, only uppercase is shown
+set smartcase
+
+" show search matches as you type
+set incsearch
+
+" Highlight matching search patterns
+set hlsearch
+
+" Make double <Esc> clear search highlights
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+" }}}
+
+
+"{{{ Tabs  
+" Use spaces when using "<" and ">" to tab
+set expandtab
+
+" Use 4 spaces to represent tab
+set tabstop=4
+
+set softtabstop=4
+
+" Copy indent from last line when starting new lineiletype indent on
+set autoindent
+
+" Number of spaces to use for auto indent
+set shiftwidth=4
+
+filetype indent on
+set smartindent
+" }}}
+
+
+"{{{ Functions  
 " Yank to clipboard
 function! ClipboardYank()
   call system('xclip -i -selection clipboard', @@)
@@ -120,12 +120,14 @@ endfunction
 function! ClipboardPaste()
   let @@ = system('xclip -o -selection clipboard')
 endfunction
-" -----------------------------------------------------------------------------
+
+function! GOTO(num)
+    execute "normal!".a:num."gt" 
+endfunction
 "}}}
 
 
-"{{{ Key mappings
-" -----------------------------------------------------------------------------
+"{{{ Key mappings  
 " Disable the arrow keys
 " In NORMAL mode
 nnoremap <up>    <nop>
@@ -164,7 +166,7 @@ nnoremap k gk
 
 " Quickly edit init.vim while editing another file.
 " :e# to go to the prevouse file you were originaly editing
-nnoremap <c-x> :edit ~/.config/nvim/init.vim<cr>
+nnoremap <c-x> :tabnew ~/.config/nvim/init.vim<cr>
 
 " Quick way to update init.vim while Im using it
 map <C-a> :source ~/.config/nvim/init.vim <cr>
@@ -184,22 +186,44 @@ onoremap <silent> d d:call ClipboardYank()<cr>
 " By the way, I have a MacBook, so the keyboard is
 " a little different
 nnoremap , :
-" -----------------------------------------------------------------------------
+
+nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>
+
+" Moving between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Top/bottom of fold
+nnoremap fj zo]z
+nnoremap fk zo[z
+
+" Toggel folds with space bar
+nnoremap <space> za
+
+" New tab
+nnoremap tn :tabnew<Space>
+
+" Next/prev tab
+nnoremap tk :tabnext<CR>
+nnoremap tj :tabprev<CR>
+
+" First/last tab
+nnoremap th :tabfirst<CR>
+nnoremap tl :tablast<CR>
 " }}}
 
 
-"{{{ Command mappings
-" -----------------------------------------------------------------------------
+"{{{ Command mappings  
 " In case you forget to type sudo before editing a file
 " where you might need to be root, write the file file
 " by typing w!!
 cmap w!! w !sudo tee % >/dev/null
-" -----------------------------------------------------------------------------
 "}}}
 
 
-"{{{ Uncatogorised
-" -----------------------------------------------------------------------------
+"{{{ Uncatogorised  
 " Search down into subfolders
 " Provides tab-completion for all file related tasks
 set path+=**
@@ -233,10 +257,5 @@ set nocompatible
 " Fixes common backspace problems
 set backspace=indent,eol,start
 
-" Fold the code. I only use this in my config files to organize it.
-" zo - open fold
-" zc - close fold
-set foldmethod=marker
-hi Folded ctermfg=white
-" -----------------------------------------------------------------------------
 "}}}
+
