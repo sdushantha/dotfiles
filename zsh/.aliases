@@ -19,6 +19,7 @@ alias zshrc="vim $HOME/.zshrc"
 alias aliases="vim $HOME/.aliases"
 alias profile="vim $HOME/.profile"
 alias i3config="vim $HOME/.config/i3/config"
+alias vimrc="nvim ~/.config/nvim/init.vim"
 
 # Enable colors for some commands
 alias ls='ls --color=auto'
@@ -35,15 +36,8 @@ alias l='ls -CF'
 # Dont show the annoying banner in ipython3
 alias ipython3="ipython3 --no-banner"
 
-# Run the pywal-web script. I cant be bothered to go into the dir
-# where the script is located and run it from there.
-alias pywal-web="python3 /home/siddharth/projects/pywal-web/server.py"
-
 # I prefer neovim, but I am used to typing vim
-alias vim=nvim
-
-# Easy access to vim config
-alias vimrc="nvim ~/.config/nvim/init.vim"
+alias vim="nvim -p"
 
 # The remaining storage
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
