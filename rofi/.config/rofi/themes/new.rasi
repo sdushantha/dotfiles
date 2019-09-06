@@ -1,0 +1,71 @@
+/*
+  make a var for background color
+  so that it can be changed suing my
+  color script w/ pywal
+ */
+
+configuration {
+  modi: "drun";
+
+  click-to-exit: true;
+  show-icons: false;
+  cycle: false;
+  sidebar-mode: false;
+  m: "-1";
+  hide-scrollbar: true;
+  scroll-method: 0;
+  drun-display-format: "<b>{name}</b>";
+}
+
+
+* {
+
+   font: "Comfortaa 11";
+   text-color: #ffffff;
+   background-color: #0A0E10;
+}
+
+#window {
+   width: 47.5%;
+   y-offset: -30%;
+   padding: 30px 30px;
+   border-radius: 4px;
+}
+
+#mainbox {
+   spacing:				0px;
+   children: 			[inputbar, listview];
+}
+
+#textbox {
+   text-color:			#ffffff;
+   background-color:	#ffffff;
+}
+
+#listview {
+   fixed-height: 		false;
+   dynamic: 			true;
+   lines: 10;
+   spacing: 0px;
+   padding: 0px -10px;
+}
+
+#element {
+    border:  			0;
+    padding: 			10px;
+}
+
+#element-text selected {
+  text-color: #A052A0;
+}
+
+
+#inputbar {
+   children: [entry];
+   spacing:				0px;
+}
+
+#entry {
+   padding:				1px 0px;
+   font: "Comfortaa 14";
+}

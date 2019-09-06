@@ -4,6 +4,7 @@ call plug#begin()
 Plug 'Yggdroot/indentLine'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'junegunn/goyo.vim'
+Plug 'ap/vim-buftabline'
 call plug#end()
 "}}}
 
@@ -57,15 +58,10 @@ set wildmenu
 highlight OverLength ctermbg=magenta ctermfg=black
 match OverLength /\%81v\+/
 
-
 " Fold the code. I only use this in my config files to organize it.
 set foldmethod=marker
 hi Folded ctermfg=white ctermbg=none
 
-" Colors for tabline
-hi TabLine      ctermfg=254 ctermbg=238 cterm=none
-hi TabLineSel   ctermfg=231 ctermbg=235 cterm=bold
-hi TabLineFill  ctermfg=254 ctermbg=238 cterm=none
 "}}}
 
 
@@ -187,8 +183,6 @@ onoremap <silent> d d:call ClipboardYank()<cr>
 " a little different
 nnoremap , :
 
-nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>
-
 " Moving between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -196,22 +190,28 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Top/bottom of fold
-nnoremap fj zo]z
-nnoremap fk zo[z
+nnoremap fj zo]zk
+nnoremap fk zo[zj
 
 " Toggel folds with space bar
 nnoremap <space> za
 
-" New tab
-nnoremap tn :tabnew<Space>
+" Some nice bindings for buffers
+" Create new file or edit an existing file
+nmap <C-t> :e 
+" Close current buffer
+nmap <C-w> :bp<CR>:bd #<CR>  
 
-" Next/prev tab
-nnoremap tk :tabnext<CR>
-nnoremap tj :tabprev<CR>
-
-" First/last tab
-nnoremap th :tabfirst<CR>
-nnoremap tl :tablast<CR>
+" Go to Nth buffer
+nnoremap <A-1> :b1<CR>
+nnoremap <A-2> :b2<CR>
+nnoremap <A-3> :b3<CR>
+nnoremap <A-4> :b4<CR>
+nnoremap <A-5> :b5<CR>
+nnoremap <A-6> :b6<CR> 
+nnoremap <A-7> :b7<CR>
+nnoremap <A-8> :b8<CR>
+nnoremap <A-9> :b9<CR>
 " }}}
 
 

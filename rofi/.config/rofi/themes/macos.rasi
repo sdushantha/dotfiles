@@ -1,0 +1,96 @@
+configuration {
+  modi: "drun";
+
+  click-to-exit: true;
+  show-icons: false;
+  cycle: false;
+  sidebar-mode: false;
+  m: "-1";
+  hide-scrollbar: true;
+  scroll-method: 0;
+  drun-display-format: "   <b>{name}</b>";
+  p: "foobarbaz";
+}
+
+* {
+  font: "Nunito 10";
+
+  text-color: #ffffff;
+  text-color-selected: #000000;
+
+  background-color: transparent;
+
+  transparent-dark: rgba(30,35,40,0.88);
+  element-alternate-shading: rgba(0,0,0,0.15);
+  element-selected-color: #FFFFFF;
+}
+
+#window {
+  background-color: rgba(17,17,22,0.93);
+  border-radius: 10px;
+  width: 47.5%;
+  y-offset: -30%;
+  border: 0px solid;
+  border-color: #555555;
+}
+
+#mainbox {
+  children: [inputbar,listview];
+  spacing: 0;
+}
+
+#inputbar {
+  children: [textboxicon,entry];
+  orientation: horizontal;
+  spacing: 0;
+  border: 0 0 0px 0 solid;
+  border-color: #666666;
+}
+
+#textboxicon {
+  font: "Hack Nerd Font 17";
+  str: "";
+  text-color: #B9ADAD;
+  padding: 10px 0 10px 10px;
+  margin: 7px 0 0 0;
+  expand: false;
+}
+
+
+#entry {
+  font: "Nunito 20";
+  padding: 14px;
+  expand: true;
+  margin: 2.5px 0 0 -5px;
+}
+
+#listview {  
+  spacing: 0;
+  dynamic: true;
+  fixed-height: false;
+  lines: 10;
+}
+
+#element {
+  children: [element-icon, element-text];
+  orientation: horizontal;
+}
+
+#element-icon {
+  size: 16;
+  padding: 8px 15px;
+}
+
+#element-text {
+  font: "Nunito 10.5";
+  horizontal-align: 0;
+  padding: 8px 0;
+}
+
+#element-text selected {
+  text-color: #fff;
+}
+
+#element selected {
+  background-color: #4C566A;
+}

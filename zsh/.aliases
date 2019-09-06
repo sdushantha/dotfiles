@@ -15,10 +15,10 @@ alias ..="cd .."
 alias notes="cd $HOME/documents/notes"
 
 # Quickly edit some files
-alias zshrc="vim $HOME/.zshrc"
-alias aliases="vim $HOME/.aliases"
-alias profile="vim $HOME/.profile"
-alias i3config="vim $HOME/.config/i3/config"
+alias zshrc="nvim $HOME/.zshrc"
+alias aliases="nvim $HOME/.aliases"
+alias profile="nvim $HOME/.profile"
+alias i3config="nvim $HOME/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 
 # Enable colors for some commands
@@ -37,7 +37,7 @@ alias l='ls -CF'
 alias ipython3="ipython3 --no-banner"
 
 # I prefer neovim, but I am used to typing vim
-alias vim="nvim -p"
+alias vim="nvim"
 
 # The remaining storage
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
