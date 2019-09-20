@@ -57,3 +57,5 @@ alias gclone="git clone"
 alias gcommit="git commit"
 alias gpush="git push"
 alias gstatus="git status"
+
+alias mail="aerc"

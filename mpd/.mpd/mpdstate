@@ -1,9 +1,8 @@
 sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: pause
-current: 86
-time: 3.312000
+state: stop
+current: 15
 random: 1
 repeat: 1
 single: 1
@@ -13,190 +12,112 @@ mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
 0:5 Seconds Of Summer - Youngblood.mp3
-1:Aaron Lansing - Naive Spin.mp3
-2:AC_DC - Highway to Hell.mp3
-3:Adele - When We Were Young.mp3
-4:Adidas Majic (Radio Edit).mp3
-5:Aerosmith - Dream On.mp3
-6:Alan Walker - Darkside.mp3
-7:Alan Walker - Diamond Heart.mp3
-8:Alan Walker - Ignite.mp3
-9:Alan Walker - Lost Control.mp3
-10:Alan Walker - On My Way.mp3
-11:Alan Walker - The Spectre.mp3
-12:Alan Walker - Tired.mp3
-13:Amber Run - I Found.mp3
-14:Appropriate - Sid 2019.mp3
-15:Ariana Grande - no tears left to cry.mp3
-16:Arunraja Kamaraj - Neruppu Da.mp3
-17:Astrid S - Such A Boy.mp3
-18:Astrid S - Think Before I Talk.mp3
-19:Ava Max - So Am I.mp3
-20:Ava Max - Sweet but Psycho.mp3
-21:Avicii - Waiting For Love.mp3
-22:Avicii - Wake Me Up.mp3
-23:Avril Lavigne - Sk8er Boi.mp3
-24:Axwell  Ingrosso - More Than You Know.mp3
-25:Axwell __ Ingrosso - Sun Is Shining.mp3
-26:Bad Wolves - Zombie.mp3
-27:Bazzi - Beautiful (feat. Camila Cabello).mp3
-28:Bebe Rexha - Meant to Be (feat. Florida Georgia Line).mp3
-29:Benislav - Opa Bratan.mp3
-30:Benny Blanco - Eastside.mp3
-31:Big Shaq - Man's Not Hot.mp3
-32:Billie Eilish - Ocean Eyes (Blackbear Remix).mp3
-33:Billie Eilish - ocean eyes.mp3
-34:blink-182 - First Date.mp3
-35:Bon Jovi - Always.mp3
-36:Bon Jovi - Hey God.mp3
-37:Bon Jovi - It's My Life.mp3
-38:Bon Jovi - Livin' On A Prayer.mp3
-39:Boney M. - Rasputin.mp3
-40:Bonnie Tyler - Total Eclipse of the Heart.mp3
-41:Brian Crain - Song for Sienna.mp3
-42:Bryan Adams - Summer Of '69.mp3
-43:Calum Scott - Dancing On My Own.mp3
-44:Calvin Harris - My Way.mp3
-45:Clean Bandit - Rockabye (feat. Sean Paul & Anne-Marie).mp3
-46:Clean Bandit - Symphony (feat. Zara Larsson).mp3
-47:Common - Let It Lie.mp3
-48:DaBaby - Suge.mp3
-49:Davaï - Replay.mp3
-50:David Guetta - Like I Do.mp3
-51:David Guetta - Say My Name.mp3
-52:Dean Lewis - Be Alright.mp3
-53:Dean Lewis - Waves.mp3
-54:Desiigner - Panda.mp3
-55:DOTcom - Gang Shit (feat. Lil Toe).mp3
-56:Dua Lipa - IDGAF.mp3
-57:Dua Lipa - New Rules (Alison Wonderland Remix).mp3
-58:Dynoro - Hangover.mp3
-59:Dynoro - In My Mind.mp3
-60:Eagles - Hotel California (Remastered).mp3
-61:Ed Sheeran - Perfect.mp3
-62:Ella Vos - Down in Flames.mp3
-63:Ellie Goulding - Burn.mp3
-64:Elton John - Can You Feel the Love Tonight.mp3
-65:Eminem - The Monster.mp3
-66:Emma Bale - Run (Lost Frequencies Radio Edit).mp3
-67:Eurythmics - Sweet Dreams (Are Made of This) (Remastered).mp3
-68:Fifth Harmony - Worth It.mp3
-69:Flo Rida - Right Round (feat. Ke$ha).mp3
-70:Flo Rida - Wild Ones (feat. Sia).mp3
-71:Freddy Kalas - Jovial.mp3
-72:Grace VanderWaal - I Don't Know My Name.mp3
-73:Green Day - 21 Guns.mp3
-74:Green Day - Boulevard of Broken Dreams.mp3
-75:Green Day - Holiday (Faded Ending).mp3
-76:Greg Maroney - Breathe.mp3
-77:Guns N' Roses - Knockin' On Heaven's Door.mp3
-78:Guns N' Roses - Paradise City.mp3
-79:Guns N' Roses - Shadow Of Your Love.mp3
-80:Guns N' Roses - Sweet Child O' Mine.mp3
-81:Imagine Dragons - Bad Liar.mp3
-82:Imagine Dragons - Thunder.mp3
-83:Imagine Dragons - Whatever It Takes.mp3
-84:Ina Wroldsen - Strongest.mp3
-85:Iron Maiden - Fear Of The Dark (1998 Remastered Version).mp3
-86:Iron Maiden - Hallowed Be Thy Name (1998 Remastered Version).mp3
-87:Iron Maiden - The Trooper (1998 Remastered Version).mp3
-88:Islandsgate - Der Hvor Ølen Smaker Godt.mp3
-89:ItaloBrothers - Summer Air.mp3
-90:Iyaz - Replay.mp3
-91:Joan Jett and the Blackhearts - I Love Rock 'N Roll.mp3
-92:Joel Adams - Please Don't Go.mp3
-93:Jokeasses - Зын Зын.mp3
-94:Jonas Blue - Mama.mp3
-95:Jonas Blue - Rise.mp3
-96:Jubel - Dancing in the Moonlight.mp3
-97:Katy Perry - Roar.mp3
-98:Katy Perry - Swish Swish.mp3
-99:KB - Hold Me Back.mp3
-100:Kedam - Shy Girl.mp3
-101:Kelly Clarkson - Stronger (What Doesn't Kill You).mp3
-102:Klingande - Pumped Up.mp3
-103:Kodaline - All I Want.mp3
-104:Kongos - Come with Me Now.mp3
-105:KSHMR - Invisible Children.mp3
-106:Kygo - Happy Now.mp3
-107:Kygo - Remind Me to Forget.mp3
-108:Kygo - Stargazing.mp3
-109:Lauv - I Like Me Better.mp3
-110:Led Zeppelin - Black Dog.mp3
-111:Led Zeppelin - Stairway To Heaven.mp3
-112:Lil Nas X - Old Town Road.mp3
-113:Logic - Homicide.mp3
-114:Lou Bega - Mambo No. 5 (a Little Bit of...).mp3
-115:lovelytheband - broken.mp3
-116:LUM!X - Monster.mp3
-117:M.I.A. - Paper Planes.mp3
-118:MabbiJ - Bomshakalaka (DTG - Karmøyrussen).mp3
-119:Macklemore - Thrift Shop (feat. Wanz).mp3
-120:Maggie Lindemann - Pretty Girl.mp3
-121:Maroon 5 - Girls Like You.mp3
-122:Marshmello - Happier.mp3
-123:Marshmello - Silence.mp3
-124:Martin Garrix - Ocean.mp3
-125:Metallica - Nothing Else Matters.mp3
-126:Michael Jackson - Smooth Criminal (Remastered Radio Edit).mp3
-127:Michele McLaughlin - The Druids Prayer.mp3
-128:Mike Perry - Stay Young.mp3
-129:Mike Perry - The Ocean.mp3
-130:Misfits - Dig Up Her Bones.mp3
-131:Mr. Probz - Waves (Robin Schulz Radio Edit).mp3
-132:My Chemical Romance - Welcome to the Black Parade.mp3
-133:Nathan Lane - Hakuna Matata.mp3
-134:NF - Let You Down.mp3
-135:NF - When I Grow Up.mp3
-136:Nirvana - Smells Like Teen Spirit.mp3
-137:Oasis - Wonderwall.mp3
-138:OneRepublic - Rich Love.mp3
-139:ookay - Can You Hear Me.mp3
-140:Panic! At the Disco - High Hopes.mp3
-141:Passenger - Let Her Go.mp3
-142:Pharrell Williams - Freedom.mp3
-143:Phildel - Qi.mp3
-144:Pitbull - International Love.mp3
-145:Pitbull - Timber.mp3
-146:Portugal. The Man - Feel It Still.mp3
-147:Post Malone - Better Now.mp3
-148:Post Malone - Psycho.mp3
-149:Post Malone - Sunflower.mp3
-150:Queen - Bohemian Rhapsody.mp3
-151:R3hab - All Around The World (La La La).mp3
-152:R3hab - Lullaby.mp3
-153:Rag'n'Bone Man - Skin.mp3
-154:Ruben - Walls.mp3
-155:Rudimental - These Days (feat. Jess Glynne, Macklemore & Dan Caplen).mp3
-156:Ruth B. - Lost Boy.mp3
-157:S.O. - Boast.mp3
-158:Sam Smith - Too Good At Goodbyes.mp3
-159:Shahmen - Mark.mp3
-160:Sia - The Greatest.mp3
-161:Sigrid - Don't Kill My Vibe.mp3
-162:Sophie Elise - Next Summer.mp3
-163:Staysman & Lazz - Om 100 år er allting glemt.mp3
-164:Staysman & Lazz - Trenger en mann.mp3
-165:Stone Sour - Song #3.mp3
-166:Sub Urban - Cradles.mp3
-167:Sum 41 - In Too Deep.mp3
-168:Sum 41 - Out For Blood.mp3
-169:Sum 41 - Still Waiting.mp3
-170:Sum 41 - The Hell Song.mp3
-171:Sum 41 - With Me.mp3
-172:Taylor Swift - I Knew You Were Trouble.mp3
-173:Taylor Swift - Look What You Made Me Do.mp3
-174:The Chainsmokers - Something Just Like This.mp3
-175:The Misfits - Zombie Girl.mp3
-176:The Offspring - You're Gonna Go Far, Kid.mp3
-177:TheFatRat - Monody (feat. Laura Brehm).mp3
-178:Timmy Trumpet - Freaks (Radio Edit).mp3
-179:Tix - Shotgun.mp3
-180:Toto - Africa.mp3
-181:Toto - Hold the Line.mp3
-182:Vance Joy - Riptide.mp3
-183:Vancouver Sleep Clinic - Someone To Stay.mp3
-184:Vigiland - Pong Dance.mp3
-185:will.i.am - I Like To Move It.mp3
-186:X Ambassadors - Renegades.mp3
+1:Adele - When We Were Young.mp3
+2:Alan Walker - Darkside.mp3
+3:Alan Walker - Diamond Heart.mp3
+4:Alan Walker - Ignite.mp3
+5:Alan Walker - Lost Control.mp3
+6:Alan Walker - On My Way.mp3
+7:Alan Walker - The Spectre.mp3
+8:Alan Walker - Tired.mp3
+9:Ali Gatie - It's You.mp3
+10:Amber Run - I Found.mp3
+11:Ariana Grande - no tears left to cry.mp3
+12:Arunraja Kamaraj - Neruppu Da.mp3
+13:Astrid S - Such A Boy.mp3
+14:Astrid S - Think Before I Talk.mp3
+15:Ava Max - So Am I.mp3
+16:Ava Max - Sweet but Psycho.mp3
+17:Avicii - Waiting For Love.mp3
+18:Avicii - Wake Me Up.mp3
+19:Axwell  Ingrosso - More Than You Know.mp3
+20:Axwell __ Ingrosso - Sun Is Shining.mp3
+21:Bazzi - Beautiful (feat. Camila Cabello).mp3
+22:Bebe Rexha - Meant to Be (feat. Florida Georgia Line).mp3
+23:Benny Blanco - Eastside.mp3
+24:Boney M. - Rasputin.mp3
+25:Bonnie Tyler - Total Eclipse of the Heart.mp3
+26:Calum Scott - Dancing On My Own.mp3
+27:Calvin Harris - My Way.mp3
+28:Clean Bandit - Rockabye (feat. Sean Paul & Anne-Marie).mp3
+29:Clean Bandit - Symphony (feat. Zara Larsson).mp3
+30:Common - Let It Lie.mp3
+31:Davaï - Replay.mp3
+32:David Guetta - Like I Do.mp3
+33:David Guetta - Say My Name.mp3
+34:Dean Lewis - Be Alright.mp3
+35:Dean Lewis - Waves.mp3
+36:Dua Lipa - IDGAF.mp3
+37:Dua Lipa - New Rules (Alison Wonderland Remix).mp3
+38:Dynoro - Hangover.mp3
+39:Dynoro - In My Mind.mp3
+40:Ed Sheeran - Perfect.mp3
+41:Ellie Goulding - Burn.mp3
+42:Elton John - Can You Feel the Love Tonight.mp3
+43:Eminem - The Monster.mp3
+44:Eurythmics - Sweet Dreams (Are Made of This) (Remastered).mp3
+45:Fifth Harmony - Worth It.mp3
+46:Flo Rida - Right Round (feat. Ke$ha).mp3
+47:Flo Rida - Wild Ones (feat. Sia).mp3
+48:Freddy Kalas - Jovial.mp3
+49:Grace VanderWaal - I Don't Know My Name.mp3
+50:Ina Wroldsen - Strongest.mp3
+51:Islandsgate - Der Hvor Ølen Smaker Godt.mp3
+52:ItaloBrothers - Summer Air.mp3
+53:Iyaz - Replay.mp3
+54:Joel Adams - Please Don't Go.mp3
+55:Jonas Blue - Mama.mp3
+56:Jubel - Dancing in the Moonlight.mp3
+57:Katy Perry - Roar.mp3
+58:Katy Perry - Swish Swish.mp3
+59:Kelly Clarkson - Stronger (What Doesn't Kill You).mp3
+60:Klingande - Pumped Up.mp3
+61:Kodaline - All I Want.mp3
+62:Kongos - Come with Me Now.mp3
+63:KSHMR - Invisible Children.mp3
+64:Kygo - Remind Me to Forget.mp3
+65:Kygo - Stargazing.mp3
+66:Lauv - I Like Me Better.mp3
+67:Lou Bega - Mambo No. 5 (a Little Bit of...).mp3
+68:M.I.A. - Paper Planes.mp3
+69:Macklemore - Thrift Shop (feat. Wanz).mp3
+70:Maggie Lindemann - Pretty Girl.mp3
+71:Maroon 5 - Girls Like You.mp3
+72:Marshmello - Happier.mp3
+73:Marshmello - Silence.mp3
+74:Martin Garrix - Ocean.mp3
+75:Michael Jackson - Smooth Criminal (Remastered Radio Edit).mp3
+76:Michele McLaughlin - The Druids Prayer.mp3
+77:Mike Perry - Stay Young.mp3
+78:Mr. Probz - Waves (Robin Schulz Radio Edit).mp3
+79:Nathan Lane - Hakuna Matata.mp3
+80:NF - Let You Down.mp3
+81:Oasis - Wonderwall.mp3
+82:OneRepublic - Rich Love.mp3
+83:Panic! At the Disco - High Hopes.mp3
+84:Passenger - Let Her Go.mp3
+85:Pharrell Williams - Freedom.mp3
+86:Phildel - Qi.mp3
+87:Pitbull - International Love.mp3
+88:Pitbull - Timber.mp3
+89:Portugal. The Man - Feel It Still.mp3
+90:Post Malone - Better Now.mp3
+91:Post Malone - Psycho.mp3
+92:R3hab - Lullaby.mp3
+93:Rag'n'Bone Man - Skin.mp3
+94:Ruben - Walls.mp3
+95:Rudimental - These Days (feat. Jess Glynne, Macklemore & Dan Caplen).mp3
+96:Sam Smith - Too Good At Goodbyes.mp3
+97:Shahmen - Mark.mp3
+98:Sia - The Greatest.mp3
+99:Sigrid - Don't Kill My Vibe.mp3
+100:Sophie Elise - Next Summer.mp3
+101:Staysman & Lazz - Om 100 år er allting glemt.mp3
+102:Staysman & Lazz - Trenger en mann.mp3
+103:Taylor Swift - I Knew You Were Trouble.mp3
+104:Taylor Swift - Look What You Made Me Do.mp3
+105:The Chainsmokers - Something Just Like This.mp3
+106:TheFatRat - Monody (feat. Laura Brehm).mp3
+107:Vancouver Sleep Clinic - Someone To Stay.mp3
+108:will.i.am - I Like To Move It.mp3
 playlist_end

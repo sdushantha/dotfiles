@@ -78,7 +78,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle, move absolute position center
+bindsym $mod+Shift+space floating toggle,move absolute position center
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -192,6 +192,8 @@ bindsym $mod+n exec --no-startup-id flash_window
 # The best color picker ;)
 bindsym $mod+Shift+f --release exec farge --image-viewer mpv
 
+# Mailbox
+bindsym $mod+m exec kitty -e aerc
 #}}}
 
 
@@ -238,18 +240,18 @@ exec_always --no-startup-id xfce4-power-manager
 # Gives a border to the windows. 
 for_window [class="^.*"] border pixel 0
 
-# Pop ups are floating
-for_window [window_role="pop-up"] floating enable
+# Dialogs, popups, etc should be floating and in the center of the screen
+for_window [window_role="pop-up"] floating enable,move absolute position center
+for_window [window_role="task_dialog"] floating enable,move absolute position center
+for_window [instance="Dialog"] floating enable,move absolute position center
 
-# Task dialogs are floating
-for_window [window_role="task_dialog"] floating enable
-
-# Video player floating. This video player is used for quick
-# playing. But I use VLC for movies or something similar.
+# Video player floating
 for_window [class="mpv"] floating enable
+
 for_window [class="SimpleScreenRecorder"] floating enable
 
 for_window [title="Open File"] fullscreen enable
+#for_window [title="^https:\/\/translate\.google\.com - qutebrowser"] floating enable
 
 # Keep my album art displayer floating
 for_window [instance="Kunst"] floating enable

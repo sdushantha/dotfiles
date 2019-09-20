@@ -5,6 +5,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'junegunn/goyo.vim'
 Plug 'ap/vim-buftabline'
+Plug 'lilydjwg/colorizer'
+Plug 'mboughaba/i3config.vim'
 call plug#end()
 "}}}
 
@@ -12,8 +14,8 @@ call plug#end()
 "{{{ Plugin configs  
 " Use qutebrowser as Markdown viewer for markdown-preview-nvim
 let g:mkdp_browser = "qutebrowser"
-au BufEnter *.{md,mkd,markdown,mdown,mkdn,mdwn} call mkdp#util#open_preview_page()
 
+filetype plugin on
 " Dont hide markdown symbols. 
 " By default, VIM hides characters like # and *
 " on the editor, but that really confuses me when editing
@@ -25,9 +27,6 @@ set conceallevel=0
 filetype plugin indent on  " allows auto-indenting depending on file type
 autocmd FileType python setlocal completeopt-=preview
 
-" View selection from top when doing tab completion
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " Styling the autocomplete window
 "  == Reference ==
 "  Pmenu – normal item
@@ -36,6 +35,27 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 "  PmenuThumb – thumb of the scrollbar
 highlight Pmenu ctermbg=grey
 highlight PmenuSel ctermbg=darkgrey ctermfg=grey
+
+
+" Set syntex highlighting for i3 config
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
+
+"autocmd FileType text :Goyo<CR>:setlocal showtabline=0<CR>
+"autocmd FileType markdown :Goyo
+"function! s:goyo_enter()
+"    setlocal showtabline=0
+"endfunction
+"
+"function! s:goyo_leave()
+"    setlocal showtabline=2
+"endfunction
+"
+"autocmd! User GoyoEnter nested call <SID>goyo_enter()
+"autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 "}}}
 
 
@@ -86,7 +106,7 @@ nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 " }}}
 
 
-"{{{ Tabs  
+"{{{ Tab  
 " Use spaces when using "<" and ">" to tab
 set expandtab
 
@@ -162,10 +182,10 @@ nnoremap k gk
 
 " Quickly edit init.vim while editing another file.
 " :e# to go to the prevouse file you were originaly editing
-nnoremap <c-x> :tabnew ~/.config/nvim/init.vim<cr>
+nnoremap <silent> <c-x> :e ~/.config/nvim/init.vim<cr>
 
 " Quick way to update init.vim while Im using it
-map <C-a> :source ~/.config/nvim/init.vim <cr>
+map <silent> <C-a> :source ~/.config/nvim/init.vim <cr>
 
 " Remapping the simple yank, delete, paste keys to my functions
 vnoremap <silent> y y:call ClipboardYank()<cr>
@@ -203,15 +223,41 @@ nmap <C-t> :e
 nmap <C-w> :bp<CR>:bd #<CR>  
 
 " Go to Nth buffer
-nnoremap <A-1> :b1<CR>
-nnoremap <A-2> :b2<CR>
-nnoremap <A-3> :b3<CR>
-nnoremap <A-4> :b4<CR>
-nnoremap <A-5> :b5<CR>
-nnoremap <A-6> :b6<CR> 
-nnoremap <A-7> :b7<CR>
-nnoremap <A-8> :b8<CR>
-nnoremap <A-9> :b9<CR>
+nnoremap <silent> <A-1> :b1<CR>
+nnoremap <silent> <A-2> :b2<CR>
+nnoremap <silent> <A-3> :b3<CR>
+nnoremap <silent> <A-4> :b4<CR>
+nnoremap <silent> <A-5> :b5<CR>
+nnoremap <silent> <A-6> :b6<CR> 
+nnoremap <silent> <A-7> :b7<CR>
+nnoremap <silent> <A-8> :b8<CR>
+nnoremap <silent> <A-9> :b9<CR>
+
+" Remove the top bar. Used when enabling Goyo
+nnoremap <silent> st :setlocal showtabline=0<CR>
+
+" Enable Goyo
+nnoremap <silent> Q :Goyo<CR>:setlocal showtabline=0<CR>
+
+" {{{ Code snippets  
+" Jump to <++>, which is used in my mappings
+inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
+
+" Markdown
+autocmd FileType markdown inoremap ,1 # 
+autocmd FileType markdown inoremap ,2 ## 
+autocmd FileType markdown inoremap ,3 ### 
+autocmd FileType markdown inoremap ,i ![<++>](<++>)
+autocmd FileType markdown inoremap ,a [<++>](<++>)
+autocmd FileType markdown inoremap ,c ``<Esc>i
+autocmd FileType markdown inoremap ,bc ```<cr><cr>```<cr><Esc>2kI
+
+" Bash
+autocmd FileType sh inoremap ,f <++>(<++>){<CR>    <++><CR>}<CR><CR><++>
+autocmd FileType sh inoremap ,i if [ <++> ]; then<CR><++><CR><BS>fi<CR><CR><++>
+autocmd FileType sh inoremap ,e if [ <++> ]; then<CR><++><CR><BS>else<CR><++><CR><BS>fi<CR><CR><++>
+" }}}
+
 " }}}
 
 
@@ -258,4 +304,3 @@ set nocompatible
 set backspace=indent,eol,start
 
 "}}}
-

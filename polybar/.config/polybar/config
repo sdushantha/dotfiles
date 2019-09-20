@@ -67,7 +67,7 @@ override-redirect = false
 ; FONTS ;
 ;-------;
 
-font-0 = Hack:size=9.5;3
+font-0 = SF Mono:Semibold:size=9.5;3
 font-1 = "Symbols Nerd Font:pixelsize=12;3"
 ;--------;
 ; COLORS ;

@@ -1,0 +1,18 @@
+header,
+.gp-footer,
+.feedback-link,
+.source-input-tools,
+.source-footer,
+.res-tts,
+.morebutton,
+.starbutton {
+    display: none!important;
+}
+
+div.source-input {
+    border-bottom: 1px solid #eee!important;
+}
+
+.frame {
+    height: 100%;
+}
