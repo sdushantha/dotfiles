@@ -88,7 +88,7 @@ module-margin = 1.5
 
 modules-left = now
 modules-center = 
-modules-right =  volume battery wlan
+modules-right = volume battery wlan
 
 tray-position = none
 tray-detached = true
@@ -158,4 +158,3 @@ label-connected = 
 label-disconnected = 
 
 format-connected = %{A1:$HOME/bin/widgets/wifi_widget.sh:}<label-connected>%{A}
-
