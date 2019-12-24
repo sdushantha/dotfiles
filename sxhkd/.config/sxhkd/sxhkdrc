@@ -98,7 +98,7 @@ XF86AudioStop
 
 # Screenshot
 super + aring 
-  $HOME/bin/keybinded/screenshot.sh
+  bash $HOME/bin/keybinded/screenshot.sh
 super + oslash
   bash $HOME/bin/keybinded/screenshot.sh -s
 
