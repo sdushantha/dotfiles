@@ -18,7 +18,7 @@ configuration {
 
 
 * {
-    background: #111216;
+    background: #130f0d;
     font: "Comfortaa 11";
     text-color: #ffffff;
     background-color: @background;
@@ -54,10 +54,9 @@ configuration {
     padding: 			10px;
 }
 
-#element-text selected {
+#element selected {
     text-color: #506C9F;
 }
-
 
 #inputbar {
     children: [entry];

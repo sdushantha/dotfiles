@@ -82,6 +82,12 @@ match OverLength /\%81v\+/
 set foldmethod=marker
 hi Folded ctermfg=white ctermbg=none
 
+" Have an bar that indicates which line I am on
+set cursorline
+highlight CursorLine ctermbg=236 cterm=None
+hi CursorLineNR ctermbg=236
+
+highlight LineNr ctermfg=darkgrey
 "}}}
 
 
@@ -140,6 +146,13 @@ endfunction
 function! GOTO(num)
     execute "normal!".a:num."gt" 
 endfunction
+
+function! Check()
+    let n = len(getbufinfo({'buflisted':1}))
+    if n == 1
+        cabclear
+    endif
+endfunction
 "}}}
 
 
@@ -186,7 +199,6 @@ nnoremap <silent> <c-x> :e ~/.config/nvim/init.vim<cr>
 
 " Quick way to update init.vim while Im using it
 map <silent> <C-a> :source ~/.config/nvim/init.vim <cr>
-
 " Remapping the simple yank, delete, paste keys to my functions
 vnoremap <silent> y y:call ClipboardYank()<cr>
 vnoremap <silent> d d:call ClipboardYank()<cr>
@@ -238,7 +250,6 @@ nnoremap <silent> st :setlocal showtabline=0<CR>
 
 " Enable Goyo
 nnoremap <silent> Q :Goyo<CR>:setlocal showtabline=0<CR>
-
 " {{{ Code snippets  
 " Jump to <++>, which is used in my mappings
 inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
@@ -266,6 +277,12 @@ autocmd FileType sh inoremap ,e if [ <++> ]; then<CR><++><CR><BS>else<CR><++><CR
 " where you might need to be root, write the file file
 " by typing w!!
 cmap w!! w !sudo tee % >/dev/null
+
+" Prevent accidental closing of all buffers when doing :wq or :q
+"cnoreabbrev wq w<bar>bd
+"cnoreabbrev q bd
+
+
 "}}}
 
 
@@ -303,4 +320,9 @@ set nocompatible
 " Fixes common backspace problems
 set backspace=indent,eol,start
 
+" Autowrite, this is very useful because when you have edited a file
+" and want to edit another one using :e or move to another buffer,
+" you dont have to write the current one manually every time you switch
+" buffers.
+set autowriteall
 "}}}

@@ -26,7 +26,7 @@ gaps outer 6
 
 # Only works on this fork of i3
 # https://github.com/resloved/i3
-border_radius 4
+#border_radius 4
 
 #}}}
 
@@ -43,13 +43,14 @@ floating_modifier $mod
 # if the currect workspace is empty, then it will open the terminal
 # as floating enabled. If there is a window in the current workspace, then the 
 # terminal will open like other windows
-bindsym $mod+Return exec --no-startup-id python $HOME/bin/keybinded/term.py
+#bindsym $mod+Return exec --no-startup-id python $HOME/bin/keybinded/term.py
+#bindsym $mod+Return exec --no-startup-id kitty 
 
 # kill focused window
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show drun
+#bindsym $mod+d exec rofi -show drun
 
 # change focus
 bindsym $mod+h focus left
@@ -143,57 +144,57 @@ bindsym $mod+r mode "resize"
 # I have set it so that it if the volume is set to mute, and I try to increase or decrease
 # the volume, it will unmute and then increase or decrease. Because before, it would stay mute
 # and just increase the volume but it would still stay mute. Yes, its strange.
-bindsym XF86AudioRaiseVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh up
-bindsym XF86AudioLowerVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh down
-bindsym XF86AudioMute exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh mute
+#bindsym XF86AudioRaiseVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh up
+#bindsym XF86AudioLowerVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh down
+#bindsym XF86AudioMute exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh mute
 
 # Change brightness using xbacklight
 # Check the link below to fix brightness on MacBooks
 # https://medium.com/@philpl/ubuntu-14-10-running-on-my-macbook-18991a697ae0
-bindsym XF86MonBrightnessUp exec bash $HOME/bin/keybinded/brightness/brightnessControl.sh up
-bindsym XF86MonBrightnessDown exec bash $HOME/bin/keybinded/brightness/brightnessControl.sh down
+#bindsym XF86MonBrightnessUp exec bash $HOME/bin/keybinded/brightness/brightnessControl.sh up
+#bindsym XF86MonBrightnessDown exec bash $HOME/bin/keybinded/brightness/brightnessControl.sh down
 
 # Launch clearine logout menu
-bindsym $mod+Shift+s exec --no-startup-id clearine
+#bindsym $mod+Shift+s exec --no-startup-id clearine
 
 # Locks my screen
-bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id bash $HOME/bin/keybinded/lock
+#bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id bash $HOME/bin/keybinded/lock
 
 # Music control
-bindsym XF86AudioNext exec mpc next && bash $HOME/bin/keybinded/change_music.sh 
-bindsym XF86AudioPrev exec mpc prev && bash $HOME/bin/keybinded/change_music.sh
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioStop exec mpc stop
+#bindsym XF86AudioNext exec mpc next && bash $HOME/bin/keybinded/change_music.sh 
+#bindsym XF86AudioPrev exec mpc prev && bash $HOME/bin/keybinded/change_music.sh
+#bindsym XF86AudioPlay exec mpc toggle
+#bindsym XF86AudioStop exec mpc stop
 
 # Screenshot fullscreen
-bindsym $mod+aring exec $HOME/bin/keybinded/screenshot.sh
+#bindsym $mod+aring exec $HOME/bin/keybinded/screenshot.sh
 
 # Screenshot selected area
 # You need to use `--release` in the binding.
 # See "4.3. Keyboard bindings" on i3wm docs 
-bindsym $mod+oslash --release exec bash $HOME/bin/keybinded/screenshot.sh -s
+#bindsym $mod+oslash --release exec bash $HOME/bin/keybinded/screenshot.sh -s
 
 # A very cool emoji and unicode character picker using rofi
-bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
+#bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
 
 # Open up ranger
-bindsym $mod+Shift+Return exec python3 $HOME/bin/keybinded/ranger.py 
+#bindsym $mod+Shift+Return exec python3 $HOME/bin/keybinded/ranger.py 
 
 # Keyboard backlight for Macbook
-bindsym XF86KbdBrightnessDown exec kbdlight down
-bindsym XF86KbdBrightnessUp exec kbdlight up
+#bindsym XF86KbdBrightnessDown exec kbdlight down
+#bindsym XF86KbdBrightnessUp exec kbdlight up
 
 # Pop any video from the browser out into mpv
-bindsym --release $mod+p exec bash $HOME/bin/keybinded/pop_mpv.sh
+#bindsym --release $mod+p exec bash $HOME/bin/keybinded/pop_mpv.sh
 
 # Flash the current window I am in
-bindsym $mod+n exec --no-startup-id flash_window
+#bindsym $mod+n exec --no-startup-id flash_window
 
 # The best color picker ;)
-bindsym $mod+Shift+f --release exec farge --image-viewer mpv
+#bindsym $mod+Shift+f --release exec farge --image-viewer mpv
 
 # Mailbox
-bindsym $mod+m exec kitty -e aerc
+#bindsym $mod+m exec kitty -e aerc
 #}}}
 
 
@@ -231,7 +232,7 @@ exec_always --no-startup-id mpd
 exec_always --no-startup-id $HOME/.local/bin/flashfocus
 
 exec_always --no-startup-id xfce4-power-manager
-
+exec_always --no-startup-id sxhkd
 #}}}
 
 

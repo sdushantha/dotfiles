@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# If refreshing bspwm, remove all previous rules to prevent doubling up
+bspc rule -r "*"
+
+bspc desktop -f 1
+
+bspc config border_width 0
+
+compton &
+flashfocus &

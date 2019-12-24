@@ -1,0 +1,135 @@
+
+super + shift + Escape
+  bspc quit
+
+# Restart bspwm
+super + shift + w
+  bspc wm -r
+
+## close app
+super + q
+	bspc node -c
+
+# Focus on window in direction
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+#	Send window to desktop
+super + shift + {0-9}
+  bspc node -d {0-9}
+
+## fullscreen
+super + f
+	bspc desktop -l next
+
+# Toggle floating on and off
+super + shift + space
+  bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# Swap window with direction
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+# Focus on desktop
+super + {0-9}
+	bspc desktop -f {0-9}
+
+# Expand a window by moving one of its side outward
+ctrl + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+  #xdo resize {-w -20, -h +20, -h -20, -w +20}
+
+# Contract a window by moving one of its side inward
+ctrl + super + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+  #xdo resize {-w +20, -h -20, -h +20, -w -20}
+
+# Move a floating window
+ctrl + alt + {Left,Right,Up,Down}
+  xdo move {-x -20, -x +20, -y -20, -y +20}
+
+
+### Applications
+
+# Launch terminal
+super + Return
+  kitty
+
+# Launch my program launcher, rofi
+super + d
+  rofi -show drun
+
+# Pulse Audio controls
+# I have set it so that it if the volume is set to mute, and I try to increase or decrease
+# the volume, it will unmute and then increase or decrease. Because before, it would stay mute
+# and just increase the volume but it would still stay mute. Yes, its strange.
+XF86AudioRaiseVolume
+  bash $HOME/bin/keybinded/volumeControl.sh up
+XF86AudioLowerVolume
+  bash $HOME/bin/keybinded/volumeControl.sh down
+XF86AudioMute
+  bash $HOME/bin/keybinded/volumeControl.sh mute
+
+# Change brightness using xbacklight
+# Check the link below to fix brightness on MacBooks
+# https://medium.com/@philpl/ubuntu-14-10-running-on-my-macbook-18991a697ae0
+XF86MonBrightnessUp
+  bash $HOME/bin/keybinded/brightness/brightnessControl.sh up
+XF86MonBrightnessDown
+  bash $HOME/bin/keybinded/brightness/brightnessControl.sh down
+
+# Launch clearine logout menu
+super + shift + s
+  clearine
+
+# Locks my screen
+super + x
+  mpc pause && pauseallmpv && bash $HOME/bin/keybinded/lock
+
+# Music control
+XF86AudioNext
+  mpc next && bash $HOME/bin/keybinded/change_music.sh 
+XF86AudioPrev
+  mpc prev && bash $HOME/bin/keybinded/change_music.sh
+XF86AudioPlay
+  mpc toggle
+XF86AudioStop
+  mpc stop
+
+# Screenshot
+super + aring 
+  $HOME/bin/keybinded/screenshot.sh
+super + oslash
+  bash $HOME/bin/keybinded/screenshot.sh -s
+
+# A very cool emoji and unicode character picker using rofi
+super + shift + d
+  bash $HOME/.config/rofi/scripts/picker.sh
+
+# Open up ranger
+super + shift + Return
+  python3 $HOME/bin/keybinded/ranger.py
+
+# Keyboard backlight for Macbook
+XF86KbdBrightnessDown
+  kbdlight down
+XF86KbdBrightnessUp
+  kbdlight up
+
+# Pop any video from the browser out into mpv
+super + p
+  bash $HOME/bin/keybinded/pop_mpv.sh
+
+# Flash the current window I am in
+super + n
+  flash_window
+
+# The best color picker ;)
+super + shift + f
+  farge --image-viewer mpv
+
+# Mailbox
+super + m
+  kitty -e aerc
+
+
