@@ -1,52 +1,51 @@
-
-super + shift + Escape
-  bspc quit
-
-# Restart bspwm
-super + shift + w
-  bspc wm -r
-
-## close app
-super + q
-	bspc node -c
-
-# Focus on window in direction
-super + {h,j,k,l}
-	bspc node -f {west,south,north,east}
-
-#	Send window to desktop
-super + shift + {0-9}
-  bspc node -d {0-9}
-
-## fullscreen
-super + f
-	bspc desktop -l next
-
-# Toggle floating on and off
-super + shift + space
-  bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
-
-# Swap window with direction
-super + shift + {h,j,k,l}
-	bspc node -s {west,south,north,east}
-
-# Focus on desktop
-super + {0-9}
-	bspc desktop -f {0-9}
-
-# Expand a window by moving one of its side outward
-ctrl + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-  #xdo resize {-w -20, -h +20, -h -20, -w +20}
-
-# Contract a window by moving one of its side inward
-ctrl + super + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-  #xdo resize {-w +20, -h -20, -h +20, -w -20}
-
-# Move a floating window
-ctrl + alt + {Left,Right,Up,Down}
-  xdo move {-x -20, -x +20, -y -20, -y +20}
+#super + shift + Escape
+#  bspc quit
+#
+## Restart bspwm
+#super + shift + w
+#  bspc wm -r
+#
+### close app
+#super + q
+#	bspc node -c
+#
+## Focus on window in direction
+#super + {h,j,k,l}
+#	bspc node -f {west,south,north,east}
+#
+##	Send window to desktop
+#super + shift + {0-9}
+#  bspc node -d {0-9}
+#
+### fullscreen
+#super + f
+#	bspc desktop -l next
+#
+## Toggle floating on and off
+#super + shift + space
+#  bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+#
+## Swap window with direction
+#super + shift + {h,j,k,l}
+#	bspc node -s {west,south,north,east}
+#
+## Focus on desktop
+#super + {0-9}
+#	bspc desktop -f {0-9}
+#
+## Expand a window by moving one of its side outward
+#ctrl + alt + {h,j,k,l}
+#	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+#  #xdo resize {-w -20, -h +20, -h -20, -w +20}
+#
+## Contract a window by moving one of its side inward
+#ctrl + super + {h,j,k,l}
+#	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+#  #xdo resize {-w +20, -h -20, -h +20, -w -20}
+#
+## Move a floating window
+#ctrl + alt + {Left,Right,Up,Down}
+#  xdo move {-x -20, -x +20, -y -20, -y +20}
 
 
 ### Applications
@@ -84,7 +83,9 @@ super + shift + s
 
 # Locks my screen
 super + x
-  mpc pause && pauseallmpv && bash $HOME/bin/keybinded/lock
+ # mpc pause && pauseallmpv && bash $HOME/bin/keybinded/lock
+# bash $HOME/bin/keybinded/lock
+  lock
 
 # Music control
 XF86AudioNext
@@ -100,7 +101,7 @@ XF86AudioStop
 super + aring 
   bash $HOME/bin/keybinded/screenshot.sh
 super + oslash
-  bash $HOME/bin/keybinded/screenshot.sh -s
+  $HOME/bin/keybinded/screenshot.sh -s
 
 # A very cool emoji and unicode character picker using rofi
 super + shift + d

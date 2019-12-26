@@ -5,7 +5,7 @@
     #[{width}]x{height}[+/-{x}+/-{y}]
     geometry = "320x5-12+37"
 
-    corner_radius = 3
+    corner_radius = 0
     indicate_hidden = yes
     shrink = no
     transparency = 0

@@ -189,7 +189,6 @@ vnoremap L $
 nnoremap L A
 
 " Move up and down visual lines
-" https://www.reddit.com/r/vim/comments/bjbhht/jumping_through_the_string_of_characters_like_go/
 nnoremap j gj
 nnoremap k gk
 
