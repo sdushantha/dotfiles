@@ -2,8 +2,8 @@ sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: pause
-current: 185
-time: 127.264000
+current: 11
+time: 85.487000
 random: 1
 repeat: 1
 single: 1
@@ -12,202 +12,21 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:americian rebel/Oasis - Wonderwall.mp3
-1:americian rebel/Green Day - 21 Guns.mp3
-2:americian rebel/Sum 41 - In Too Deep.mp3
-3:americian rebel/Green Day - Boulevard of Broken Dreams.mp3
-4:americian rebel/Zebrahead - All My Friends Are Nobodies.mp3
-5:americian rebel/Sum 41 - Some Say.mp3
-6:americian rebel/Islandsgate - Der Hvor Ølen Smaker Godt.mp3
-7:americian rebel/Mest - Cadillac.mp3
-8:americian rebel/Sum 41 - The Hell Song.mp3
-9:americian rebel/Sum 41 - Still Waiting.mp3
-10:americian rebel/Green Day - When I Come Around.mp3
-11:americian rebel/Green Day - Holiday (Faded Ending).mp3
-12:americian rebel/Stone Sour - Song #3.mp3
-13:americian rebel/Avril Lavigne - Sk8er Boi.mp3
-14:americian rebel/Zebrahead - Falling Apart.mp3
-15:americian rebel/Sum 41 - Out For Blood.mp3
-16:americian rebel/The Offspring - You're Gonna Go Far, Kid.mp3
-17:americian rebel/blink-182 - First Date.mp3
-18:americian rebel/My Chemical Romance - Welcome to the Black Parade.mp3
-19:americian rebel/My Chemical Romance - Teenagers.mp3
-20:americian rebel/Sum 41 - With Me.mp3
-21:boom/Adidas Majic (Radio Edit).mp3
-22:boom/R3hab - All Around The World (La La La).mp3
-23:boom/Henrik Heggem - Barnehagen 2019.mp3
-24:boom/MabbiJ - Bomshakalaka (DTG - Karmøyrussen).mp3
-25:boom/Timmy Trumpet - Freaks (Radio Edit).mp3
-26:boom/Dynoro - Hangover.mp3
-27:boom/Dynoro - In My Mind.mp3
-28:boom/Big Shaq - Man's Not Hot.mp3
-29:boom/Lil Nas X - Old Town Road.mp3
-30:boom/Benislav - Opa Bratan.mp3
-31:boom/Desiigner - Panda.mp3
-32:boom/Vigiland - Pong Dance.mp3
-33:boom/Tix - Shotgun.mp3
-34:boom/Appropriate - Sid 2019.mp3
-35:boom/Jokeasses - Зын Зын.mp3
-36:bus3/Pitbull - Timber.mp3
-37:bus3/Pitbull - International Love.mp3
-38:bus3/Iyaz - Replay.mp3
-39:bus3/Flo Rida - Right Round (feat. Ke$ha).mp3
-40:bus3/Eurythmics - Sweet Dreams (Are Made of This) (Remastered).mp3
-41:bus3/Avicii - The Nights.mp3
-42:bus3/Eminem - The Monster.mp3
-43:bus3/Avicii - Wake Me Up.mp3
-44:bus3/Flo Rida - Wild Ones (feat. Sia).mp3
-45:bus3/Fifth Harmony - Worth It.mp3
-46:calm/Post Malone - Psycho.mp3
-47:calm/Post Malone - Better Now.mp3
-48:calm/BROCKHAMPTON - NO HALO.mp3
-49:calm/BROCKHAMPTON - SUGAR.mp3
-50:calm/Post Malone - Hollywood's Bleeding.mp3
-51:calm/Post Malone - Circles.mp3
-52:calm/Billie Eilish - ocean eyes.mp3
-53:calm/Billie Eilish - Ocean Eyes (Blackbear Remix).mp3
-54:calm/SAINt JHN - Roses (Imanbek Remix).mp3
-55:calm/Ella Vos - Down in Flames.mp3
-56:chillpop/David Guetta - Say My Name.mp3
-57:chillpop/Bebe Rexha - Meant to Be (feat. Florida Georgia Line).mp3
-58:chillpop/Jubel - Dancing in the Moonlight.mp3
-59:chillpop/Alan Walker - Darkside.mp3
-60:chillpop/Alan Walker - Diamond Heart.mp3
-61:chillpop/Alan Walker - Lost Control.mp3
-62:chillpop/Sigrid - Don't Kill My Vibe.mp3
-63:chillpop/Dua Lipa - IDGAF.mp3
-64:chillpop/Benny Blanco - Eastside.mp3
-65:chillpop/Pharrell Williams - Freedom.mp3
-66:chillpop/Maroon 5 - Girls Like You.mp3
-67:chillpop/Marshmello - Happier.mp3
-68:chillpop/Lauv - I Like Me Better.mp3
-69:chillpop/Alan Walker - Ignite.mp3
-70:chillpop/David Guetta - Like I Do.mp3
-71:chillpop/Jonas Blue - Mama.mp3
-72:chillpop/TheFatRat - Monody (feat. Laura Brehm).mp3
-73:chillpop/Axwell  Ingrosso - More Than You Know.mp3
-74:chillpop/Axwell __ Ingrosso - Sun Is Shining.mp3
-75:chillpop/Calvin Harris - My Way.mp3
-76:chillpop/Dua Lipa - New Rules (Alison Wonderland Remix).mp3
-77:chillpop/Sophie Elise - Next Summer.mp3
-78:chillpop/Martin Garrix - Ocean.mp3
-79:chillpop/Alan Walker - On My Way.mp3
-80:chillpop/NF - Let You Down.mp3
-81:chillpop/Panic! At the Disco - High Hopes.mp3
-82:chillpop/Taylor Swift - I Knew You Were Trouble.mp3
-83:chillpop/Davaï - Replay.mp3
-84:chillpop/Taylor Swift - Look What You Made Me Do.mp3
-85:chillpop/OneRepublic - Rich Love.mp3
-86:chillpop/Clean Bandit - Rockabye (feat. Sean Paul & Anne-Marie).mp3
-87:chillpop/Marshmello - Silence.mp3
-88:chillpop/Ava Max - So Am I.mp3
-89:chillpop/Nea - Some Say.mp3
-90:chillpop/The Chainsmokers - Something Just Like This.mp3
-91:chillpop/Kygo - Stargazing.mp3
-92:chillpop/ZEDD - Stay.mp3
-93:chillpop/Avicii - Waiting For Love.mp3
-94:chillpop/Ina Wroldsen - Strongest.mp3
-95:chillpop/Robin Schulz - Sugar (feat. Francesco Yates).mp3
-96:chillpop/ItaloBrothers - Summer Air.mp3
-97:chillpop/Ava Max - Sweet but Psycho.mp3
-98:chillpop/Clean Bandit - Symphony (feat. Zara Larsson).mp3
-99:chillpop/Macklemore - Thrift Shop (feat. Wanz).mp3
-100:chillpop/Alan Walker - The Spectre.mp3
-101:chillpop/Rudimental - These Days (feat. Jess Glynne, Macklemore & Dan Caplen).mp3
-102:chillpop/Sia - The Greatest.mp3
-103:chillpop/Alan Walker - Tired.mp3
-104:chillpop/Ruben - Walls.mp3
-105:chillpop/Mr. Probz - Waves (Robin Schulz Radio Edit).mp3
-106:chillpop/Katy Perry - Swish Swish.mp3
-107:chillpop/Portugal. The Man - Feel It Still.mp3
-108:focus/Slow Harmonies.mp3
-109:focus/Dim Memories.mp3
-110:focus/Contemplative Keys.mp3
-111:focus/Black and White Dreaming.mp3
-112:focus/Reverse Chronology.mp3
-113:focus/Michele McLaughlin - The Druids Prayer.mp3
-114:focus/Aaron Lansing - Naive Spin.mp3
-115:focus/Phildel - Qi.mp3
-116:focus/Brian Crain - Song for Sienna.mp3
-117:focus/Greg Maroney - Breathe.mp3
-118:movie tracks/will.i.am - I Like To Move It.mp3
-119:movie tracks/Common - Let It Lie.mp3
-120:movie tracks/Nathan Lane - Hakuna Matata.mp3
-121:movie tracks/Elton John - Can You Feel the Love Tonight.mp3
-122:other/Ed Sheeran - Perfect.mp3
-123:other/Adele - When We Were Young.mp3
-124:other/Lewis Capaldi - Someone You Loved.mp3
-125:other/Ali Gatie - It's You.mp3
-126:other/Passenger - Let Her Go.mp3
-127:other/Kongos - Come with Me Now.mp3
-128:other/Calum Scott - Dancing On My Own.mp3
-129:other/Amber Run - I Found.mp3
-130:other/Katy Perry - Roar.mp3
-131:other/Rag'n'Bone Man - Skin.mp3
-132:other/Vancouver Sleep Clinic - Someone To Stay.mp3
-133:other/Kelly Clarkson - Stronger (What Doesn't Kill You).mp3
-134:other/Sam Smith - Too Good At Goodbyes.mp3
-135:other/Dean Lewis - Waves.mp3
-136:other/5 Seconds Of Summer - Youngblood.mp3
-137:rocknroll/Misfits - Dig Up Her Bones.mp3
-138:rocknroll/Guns N' Roses - Paradise City.mp3
-139:rocknroll/Guns N' Roses - Sweet Child O' Mine.mp3
-140:rocknroll/Guns N' Roses - Shadow Of Your Love.mp3
-141:rocknroll/Queen - Bohemian Rhapsody.mp3
-142:rocknroll/Bon Jovi - Always.mp3
-143:rocknroll/Bon Jovi - It's My Life.mp3
-144:rocknroll/Wind Rose - Diggy Diggy Hole.mp3
-145:rocknroll/Iron Maiden - The Trooper (1998 Remastered Version).mp3
-146:rocknroll/Iron Maiden - Hallowed Be Thy Name (1998 Remastered Version).mp3
-147:rocknroll/Imagine Dragons - Whatever It Takes.mp3
-148:rocknroll/Imagine Dragons - Thunder.mp3
-149:rocknroll/Iron Maiden - Fear Of The Dark (1998 Remastered Version).mp3
-150:rocknroll/Guns N' Roses - Knockin' On Heaven's Door.mp3
-151:rocknroll/Bonnie Tyler - Total Eclipse of the Heart.mp3
-152:rocknroll/AC_DC - Highway to Hell.mp3
-153:rocknroll/Eagles - Hotel California (Remastered).mp3
-154:rocknroll/Joan Jett and the Blackhearts - I Love Rock 'N Roll.mp3
-155:rocknroll/Led Zeppelin - Black Dog.mp3
-156:rocknroll/Led Zeppelin - Stairway To Heaven.mp3
-157:rocknroll/Metallica - Nothing Else Matters.mp3
-158:rocknroll/Nirvana - Smells Like Teen Spirit.mp3
-159:rocknroll/Imagine Dragons - Bad Liar.mp3
-160:rocknroll/Opeth - Moon Above, Sun Below.mp3
-161:rocknroll/Dårlig Hjort - Partybussen 414.mp3
-162:rocknroll/Bryan Adams - Summer Of '69.mp3
-163:rocknroll/Bon Jovi - Livin' On A Prayer.mp3
-164:rocknroll/Opeth - Chrysalis.mp3
-165:rocknroll/Lordi - Hard Rock Hallelujah.mp3
-166:rocknroll/Aerosmith - Dream On.mp3
-167:rocknroll/Bon Jovi - Hey God.mp3
-168:rocknroll/Toto - Hold the Line.mp3
-169:rocknroll/Toto - Africa.mp3
-170:rocknroll/Dream Theater - This Dying Soul.mp3
-171:rocknroll/Alice Cooper - Poison.mp3
-172:rocknroll/X Ambassadors - Renegades.mp3
-173:rocknroll/Bad Wolves - Zombie.mp3
-174:rocknroll/The Misfits - Zombie Girl.mp3
-175:skyhigh/Bazzi - Beautiful (feat. Camila Cabello).mp3
-176:skyhigh/Kina - Can We Kiss Forever_.mp3
-177:skyhigh/Sub Urban - Cradles.mp3
-178:skyhigh/Tones and I - Dance Monkey.mp3
-179:skyhigh/lovelytheband - broken.mp3
-180:skyhigh/Kygo - Happy Now.mp3
-181:skyhigh/Grace VanderWaal - I Don't Know My Name.mp3
-182:skyhigh/Kygo - Remind Me to Forget.mp3
-183:skyhigh/Ruth B. - Lost Boy.mp3
-184:skyhigh/R3hab - Lullaby.mp3
-185:skyhigh/Dayo - Mockingbirds (VIZE Remix).mp3
-186:skyhigh/LUM!X - Monster.mp3
-187:skyhigh/K-391 - Play.mp3
-188:skyhigh/Joel Adams - Please Don't Go.mp3
-189:skyhigh/Klingande - Pumped Up.mp3
-190:skyhigh/Vance Joy - Riptide.mp3
-191:skyhigh/Jonas Blue - Rise.mp3
-192:skyhigh/Kedam - Shy Girl.mp3
-193:skyhigh/Post Malone - Sunflower.mp3
-194:skyhigh/Mike Perry - Stay Young.mp3
-195:skyhigh/Kodaline - All I Want.mp3
-196:skyhigh/Mike Perry - The Ocean.mp3
-197:skyhigh/The Chainsmokers - Takeaway.mp3
+0:rocknroll/Lordi - Hard Rock Hallelujah.mp3
+1:rocknroll/Metallica - Nothing Else Matters.mp3
+2:boom/Adidas Majic (Radio Edit).mp3
+3:boom/Appropriate - Sid 2019.mp3
+4:boom/Benislav - Opa Bratan.mp3
+5:boom/Big Shaq - Man's Not Hot.mp3
+6:boom/Desiigner - Panda.mp3
+7:boom/Dynoro - Hangover.mp3
+8:boom/Dynoro - In My Mind.mp3
+9:boom/Henrik Heggem - Barnehagen 2019.mp3
+10:boom/Jokeasses - Зын Зын.mp3
+11:boom/Lil Nas X - Old Town Road.mp3
+12:boom/MabbiJ - Bomshakalaka (DTG - Karmøyrussen).mp3
+13:boom/R3hab - All Around The World (La La La).mp3
+14:boom/Timmy Trumpet - Freaks (Radio Edit).mp3
+15:boom/Tix - Shotgun.mp3
+16:boom/Vigiland - Pong Dance.mp3
 playlist_end

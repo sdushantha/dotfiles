@@ -117,9 +117,17 @@ poll-interval = 1
 
 full-at = 100
 
-format-discharging = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<ramp-capacity>%{A}
-format-full = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<ramp-capacity>%{A}
-format-charging = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<animation-charging>%{A}
+# format-discharging = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<ramp-capacity>%{A}
+# format-full = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<ramp-capacity>%{A}
+# format-charging = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<animation-charging>%{A}
+
+label-discharging = %percentage%%
+label-charging = %percentage%%
+label-full = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+format-charging = <animation-charging> <label-charging>
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -154,7 +162,9 @@ interface = wlp3s0
 
 interval = 5
 
-label-connected =  
+label-connected =  %essid%
 label-disconnected = 
 
 format-connected = %{A1:$HOME/bin/widgets/wifi_widget.sh:}<label-connected>%{A}
+
+

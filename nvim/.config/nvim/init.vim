@@ -7,6 +7,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'ap/vim-buftabline'
 Plug 'lilydjwg/colorizer'
 Plug 'mboughaba/i3config.vim'
+Plug 'tpope/vim-commentary'
+"Plug 'zefei/vim-wintabs'
 call plug#end()
 "}}}
 
@@ -22,10 +24,6 @@ filetype plugin on
 let g:indentLine_fileTypeExclude = ['md']
 let g:indentLine_fileTypeExclude = ['markdown']
 set conceallevel=0
-
-" Need to see if this for jedi python thingy, if so, then remove it
-filetype plugin indent on  " allows auto-indenting depending on file type
-autocmd FileType python setlocal completeopt-=preview
 
 " Styling the autocomplete window
 "  == Reference ==
@@ -55,6 +53,7 @@ aug end
 "
 "autocmd! User GoyoEnter nested call <SID>goyo_enter()
 "autocmd! User GoyoLeave nested call <SID>goyo_leave()
+let g:deoplete#enable_at_startup = 1
 
 "}}}
 
@@ -88,6 +87,10 @@ highlight CursorLine ctermbg=236 cterm=None
 hi CursorLineNR ctermbg=236
 
 highlight LineNr ctermfg=darkgrey
+
+" Show quotes in JSON files because they are usually hidden and
+" it honestly messes up what you are typing/seeing
+set conceallevel=0
 "}}}
 
 
@@ -140,7 +143,7 @@ endfunction
 
 " Paste from clipboard
 function! ClipboardPaste()
-  let @@ = system('xclip -o -selection clipboard')
+  let @@ = system('xclip -o -selection clipboard | perl -pe "chomp if eof"')
 endfunction
 
 function! GOTO(num)
@@ -249,6 +252,10 @@ nnoremap <silent> st :setlocal showtabline=0<CR>
 
 " Enable Goyo
 nnoremap <silent> Q :Goyo<CR>:setlocal showtabline=0<CR>
+
+" Insert/remove comment, vim-commentary
+nmap <C-q> gcc
+vmap <C-q> gcc
 " {{{ Code snippets  
 " Jump to <++>, which is used in my mappings
 inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
@@ -263,9 +270,9 @@ autocmd FileType markdown inoremap ,c ``<Esc>i
 autocmd FileType markdown inoremap ,bc ```<cr><cr>```<cr><Esc>2kI
 
 " Bash
-autocmd FileType sh inoremap ,f <++>(<++>){<CR>    <++><CR>}<CR><CR><++>
-autocmd FileType sh inoremap ,i if [ <++> ]; then<CR><++><CR><BS>fi<CR><CR><++>
-autocmd FileType sh inoremap ,e if [ <++> ]; then<CR><++><CR><BS>else<CR><++><CR><BS>fi<CR><CR><++>
+autocmd FileType sh inoremap ,f <++>(<++>){<CR>    <++><CR>}<CR><CR>
+autocmd FileType sh inoremap ,i if [ <++> ]; then<CR><++><CR><BS>fi<CR><CR>
+autocmd FileType sh inoremap ,e if [ <++> ]; then<CR><++><CR><BS>else<CR><++><CR><BS>fi<CR><CR>
 " }}}
 
 " }}}

@@ -26,7 +26,7 @@ gaps outer 6
 
 # Only works on this fork of i3
 # https://github.com/resloved/i3
-#border_radius 4
+#border_radius 0
 
 #}}}
 
@@ -246,7 +246,7 @@ for_window [instance="Kunst"] floating enable
 
 # Let the windows created by Farge be floating
 for_window [instance="Farge"] floating enable
-
+for_window [class="Yad" title="yad-calendar"] floating enable
 ##### RULES FOR SOME PROGRAMS #####
 # Exmaple:
 #   Spotify will open in workspace 4 only on launch.

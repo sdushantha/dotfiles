@@ -1,2 +1,3 @@
 mpd/.mpd/mpd.log
 nvim/.config/nvim/tmp/*
+nvim/.config/nvim/plugged/*
