@@ -2,13 +2,15 @@
 "{{{ Plugins  
 call plug#begin()
 Plug 'Yggdroot/indentLine'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'junegunn/goyo.vim'
 Plug 'ap/vim-buftabline'
 Plug 'lilydjwg/colorizer'
 Plug 'mboughaba/i3config.vim'
 Plug 'tpope/vim-commentary'
 "Plug 'zefei/vim-wintabs'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 "}}}
 
@@ -256,6 +258,9 @@ nnoremap <silent> Q :Goyo<CR>:setlocal showtabline=0<CR>
 " Insert/remove comment, vim-commentary
 nmap <C-q> gcc
 vmap <C-q> gcc
+
+nnoremap <c-o> :Files<CR>
+inoremap <c-o> <Esc>:Files<CR>
 " {{{ Code snippets  
 " Jump to <++>, which is used in my mappings
 inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l

@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/siddharth/.config/cfiles/scripts'
+let g:netrw_dirhist_6='/home/siddharth/bin/widgets'
 let g:netrw_dirhist_5='/home/siddharth/projects/blocklist'
 let g:netrw_dirhist_4='/home/siddharth/.config/bspwm'
 let g:netrw_dirhist_3='/home/siddharth/.config/sxhkd'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_1='/home/siddharth/.config/sxhkd'
 let g:netrw_dirhist_0='/home/siddharth/.config/bspwm'
 let g:netrw_dirhist_9='/home/siddharth/.config'
 let g:netrw_dirhist_8='/home/siddharth/projects/blocklist/.git'
-let g:netrw_dirhist_7='/home/siddharth/projects/blocklist'
-let g:netrw_dirhist_6='/home/siddharth/.zsh'
