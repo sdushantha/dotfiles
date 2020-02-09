@@ -18,7 +18,7 @@ configuration {
 
 
 * {
-    background: #0c0d0c;
+    background: #0f121b;
     font: "Comfortaa 11";
     text-color: #ffffff;
     background-color: @background;

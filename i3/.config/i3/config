@@ -248,6 +248,7 @@ for_window [instance="Kunst"] floating enable
 
 # Let the windows created by Farge be floating
 for_window [instance="Farge"] floating enable
+for_window [instance="fontpreview"] floating enable
 for_window [class="Yad" title="yad-calendar"] floating enable
 ##### RULES FOR SOME PROGRAMS #####
 # Exmaple:

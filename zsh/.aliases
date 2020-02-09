@@ -61,3 +61,4 @@ alias gstatus="git status"
 alias mail="aerc"
 
 alias lbin="cd $HOME/.local/bin"
+
