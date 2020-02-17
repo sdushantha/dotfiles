@@ -1,0 +1,24 @@
+" colortheme
+highlight clear
+
+highlight Win cterm=none ctermfg=255 ctermbg=none
+highlight Directory cterm=bold ctermfg=12 ctermbg=default
+highlight Link cterm=bold ctermfg=216 ctermbg=default
+highlight BrokenLink cterm=bold ctermfg=9 ctermbg=default
+highlight Socket cterm=bold ctermfg=10 ctermbg=default
+highlight Device cterm=bold ctermfg=9 ctermbg=default
+highlight Fifo cterm=bold ctermfg=150 ctermbg=default
+highlight Executable cterm=none ctermfg=150 ctermbg=default
+highlight Selected cterm=none ctermfg=255 ctermbg=236
+highlight CurrLine cterm=reverse
+highlight TopLine cterm=none ctermfg=255 ctermbg=none
+highlight TopLineSel cterm=bold ctermfg=110 ctermbg=none
+highlight StatusLine cterm=none ctermfg=15 ctermbg=234
+highlight WildMenu cterm=reverse ctermfg=255 ctermbg=black
+highlight CmdLine cterm=none ctermfg=255 ctermbg=none
+highlight ErrorMsg cterm=none ctermfg=203 ctermbg=none
+highlight Border cterm=none ctermfg=black ctermbg=none
+highlight JobLine cterm=bold,reverse ctermfg=black ctermbg=255
+highlight SuggestBox cterm=bold ctermfg=255 ctermbg=default
+highlight CmpMismatch cterm=bold ctermfg=255 ctermbg=9
+highlight AuxWin cterm=bold,reverse ctermfg=default ctermbg=default

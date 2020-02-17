@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+readonly ID_PREVIEW="preview"
+
+# preview an image file directly
+function draw() {
+  declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
+                     [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
+                     [path]="${PWD}/$6") \
+    > "$FIFO_UEBERZUG"
+}
+
+# preview an font file (e.g. *.otf)
+function font_prevw() {
+  # if no preview found, generate one
+  if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
+    fontpreview -i "$6" -o "/tmp${PWD}/$6.png"
+  fi
+  declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
+                     [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
+                     [path]="/tmp${PWD}/$6.png") \
+    > "$FIFO_UEBERZUG"
+}
+
+function pdf_prevw() {
+  # if no preview found, generate one
+  if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
+    pdftoppm -png -singlefile "$6" "/tmp${PWD}/$6"
+  fi
+  declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
+                     [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
+                     [path]="/tmp${PWD}/$6.png") \
+    > "$FIFO_UEBERZUG"
+}
+
+function video_prevw() {
+  # if no preview found, generate one
+  if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
+    ffmpegthumbnailer -i "${PWD}/$6" -o "/tmp${PWD}/$6.png" -s 0 -q 10
+  fi
+  declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
+                     [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
+                     [path]="/tmp${PWD}/$6.png") \
+    > "$FIFO_UEBERZUG"
+}
+
+# clear preview image
+function clear_prevw() {
+  declare -p -A cmd=([action]=remove [identifier]="$ID_PREVIEW") \
+    > "$FIFO_UEBERZUG"
+}
+
+# make sure ueberzug's fifo exists
+if [ -e "$FIFO_UEBERZUG" ]; then
+  # make a temp dir for rendering if not exists
+  if [[ ! -d "/tmp${PWD}/" ]]; then
+    mkdir -p "/tmp${PWD}/"
+  fi
+  case "$1" in
+    draw) draw "$@" ;;
+    font) font_prevw "$@" ;;
+    pdf) pdf_prevw "$@" ;;
+    video) video_prevw "$@" ;;
+    clear) clear_prevw ;;
+  esac
+fi

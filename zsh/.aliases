@@ -9,6 +9,7 @@ alias conf="cd ~/.config"
 alias vids="cd ~/videos"
 alias dots="cd ~/dotfiles"
 alias bin="cd ~/bin"
+alias lbin="cd $HOME/.local/bin"
 alias tmp="cd /tmp"
 alias shots="cd ~/pictures/screenshots"
 alias ..="cd .."
@@ -20,7 +21,7 @@ alias aliases="nvim $HOME/.aliases"
 alias profile="nvim $HOME/.profile"
 alias i3config="nvim $HOME/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/init.vim"
-
+alias vifmrc="nvim $HOME/.config/vifm/vifmrc"
 # Enable colors for some commands
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -60,5 +61,8 @@ alias gstatus="git status"
 
 alias mail="aerc"
 
-alias lbin="cd $HOME/.local/bin"
+# Quickly blend in with the public by using a light terminal theme.
+# I always get strange looks if Im using the terminal in public with dark colors
+alias blend="wal -l -i $HOME/pictures/current/*"
 
+alias vifm="vifmrun"
