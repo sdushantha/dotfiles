@@ -13,7 +13,7 @@ highlight Selected cterm=none ctermfg=255 ctermbg=236
 highlight CurrLine cterm=reverse
 highlight TopLine cterm=none ctermfg=255 ctermbg=none
 highlight TopLineSel cterm=bold ctermfg=110 ctermbg=none
-highlight StatusLine cterm=none ctermfg=15 ctermbg=234
+highlight StatusLine cterm=none ctermfg=15 ctermbg=none
 highlight WildMenu cterm=reverse ctermfg=255 ctermbg=black
 highlight CmdLine cterm=none ctermfg=255 ctermbg=none
 highlight ErrorMsg cterm=none ctermfg=203 ctermbg=none
