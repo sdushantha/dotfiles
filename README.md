@@ -1,7 +1,7 @@
 
 <h1 align="center">dotfiles ♥ ~/</h1>
 
-![preview](https://user-images.githubusercontent.com/27065646/71407887-9cdf6200-263c-11ea-967d-7e36a0c8254b.png)
+![preview](https://user-images.githubusercontent.com/27065646/77437310-cb5c0d00-6de4-11ea-8c87-31c45dee9232.png)
 
 ---
 
