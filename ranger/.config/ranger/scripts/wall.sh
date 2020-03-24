@@ -19,7 +19,7 @@ cp "$1" "$path"
 setroot -z $path*
 
 # Change the background color of some programs
-bash $HOME/.config/ranger/scripts/color.sh
+#bash $HOME/.config/ranger/scripts/color.sh
 
 # Updates the image for betterlockscreen
 betterlockscreen -u $path* &> /dev/null

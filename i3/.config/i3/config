@@ -204,6 +204,7 @@ exec_always --no-startup-id start-pulseaudio-x11
 # Enable compton without any shadows
 # exec_always --no-startup-id compton -r 0 -o 0 -l 0 -t 0
 exec_always --no-startup-id compton
+
 # Restore the brightness by taking the value in the file, brightness
 exec_always --no-startup-id bash $HOME/bin/keybinded/brightness/restoreBrightness.sh
 
@@ -221,7 +222,6 @@ exec_always --no-startup-id xfce4-power-manager
 # Have a fibonacci type of layout, and this is similar to the bspwm layout
 exec_always --no-startup-id python $HOME/bin/utils/alternating_layouts.py
 
-exec_always --no-startup-id libinput-gestures
 #}}}
 
 

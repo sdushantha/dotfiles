@@ -9,7 +9,6 @@ function draw() {
     > "$FIFO_UEBERZUG"
 }
 
-# preview an font file (e.g. *.otf)
 function font_prevw() {
   # if no preview found, generate one
   if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
@@ -20,6 +19,7 @@ function font_prevw() {
                      [path]="/tmp${PWD}/$6.png") \
     > "$FIFO_UEBERZUG"
 }
+
 
 function pdf_prevw() {
   # if no preview found, generate one

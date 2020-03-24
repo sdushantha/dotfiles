@@ -11,7 +11,7 @@
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 
-set vicmd=$EDITOR
+set vicmd=nvim
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
@@ -110,6 +110,8 @@ endif
 
 " set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
+" Dont show delete confirmation
+set confirm-=delete
 
 " ------------------------------------------------------------------------------
 
@@ -165,10 +167,13 @@ command! reload :write | restart
 "fileview */ tree %c -L 1 --dirsfirst
 nmap q ZQ
 
-
 " CSV/Excel
 filetype *.csv,*.xlsx libreoffice %c %i
 fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g" | cut -c -%pw
+
+" HTML
+fileviewer *.html w3m -dump %c
+filextype *.html,*.htm firefox %f 2>/dev/null &
 
 " Text based files
 filetype <text/*> nvim
@@ -182,7 +187,7 @@ fileviewer *.pdf
         \ vifmimg clear
 
 " Fonts
-fileviewer <font/*>
+fileviewer *.otf,*.ttf,*.woff
         \ vifmimg font %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
@@ -264,6 +269,9 @@ nnoremap cd :cd<cr>
 " Open with preview window
 :view
 
+" Flip through the pages of the PDF in the preview
+map > :!vifmimg inc<CR>
+map < :!vifmimg dec<CR>
 
 " Start shell in current directory
 nnoremap s :shell<cr>
@@ -300,13 +308,8 @@ nnoremap ,t :!kitty &<cr>
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
 
-" Example of standard two-panel file managers mappings
-nnoremap <f3> :!less %f<cr>
-nnoremap <f4> :edit<cr>
-nnoremap <f5> :copy<cr>
-nnoremap <f6> :move<cr>
-nnoremap <f7> :mkdir<space>
-nnoremap <f8> :delete<cr>
+nnoremap x :!/home/siddharth/bin/utils/extract %f<cr>
+
 
 " ------------------------------------------------------------------------------
 
@@ -401,3 +404,6 @@ set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.
 set classify+='  ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid::'
 " office files
 set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::'
+
+
+

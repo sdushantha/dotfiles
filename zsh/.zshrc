@@ -1,4 +1,7 @@
-PS1=$'%{\e[0;31m♥%} %{\e[0;91m%}%c %{\e[0;35m%}❯%{\e[0m%} '
+#PS1=$'%{\e[0;31m♥%} %{\e[0;91m%}%c %{\e[0;35m%}❯%{\e[0m%} '
+fpath+=('/home/siddharth/.npm-packages/lib/node_modules/pure-prompt/functions')
+autoload -U promptinit; promptinit
+prompt pure
 
 # Start my graphical interface
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then

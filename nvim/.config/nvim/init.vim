@@ -1,62 +1,37 @@
 
 "{{{ Plugins  
+filetype plugin on
+set conceallevel=0
+
 call plug#begin()
 Plug 'Yggdroot/indentLine'
+    " Dont hide markdown symbols. 
+    " By default, VIM hides characters like # and *
+    " on the editor, but that really confuses me when editing
+    let g:indentLine_fileTypeExclude = ['md']
+    let g:indentLine_fileTypeExclude = ['markdown']
+
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'junegunn/goyo.vim'
-" Plug 'ap/vim-buftabline'
-Plug 'lilydjwg/colorizer'
+    let g:mkdp_browser = "qutebrowser"
+
 Plug 'mboughaba/i3config.vim'
+    " Set syntex highlighting for i3 config
+    aug i3config_ft_detection
+      au!
+      au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+    aug end
+
 Plug 'tpope/vim-commentary'
-"Plug 'zefei/vim-wintabs'
+    " Insert/remove comment, vim-commentary
+    nmap cq gcc
+    vmap cq gcc
+
+Plug 'maxboisvert/vim-simple-complete'
+Plug 'junegunn/goyo.vim'
+Plug 'lilydjwg/colorizer'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 call plug#end()
-"}}}
-
-
-"{{{ Plugin configs  
-" Use qutebrowser as Markdown viewer for markdown-preview-nvim
-let g:mkdp_browser = "qutebrowser"
-
-filetype plugin on
-" Dont hide markdown symbols. 
-" By default, VIM hides characters like # and *
-" on the editor, but that really confuses me when editing
-let g:indentLine_fileTypeExclude = ['md']
-let g:indentLine_fileTypeExclude = ['markdown']
-set conceallevel=0
-
-" Styling the autocomplete window
-"  == Reference ==
-"  Pmenu – normal item
-"  PmenuSel – selected item
-"  PmenuSbar – scrollbar
-"  PmenuThumb – thumb of the scrollbar
-highlight Pmenu ctermbg=grey
-highlight PmenuSel ctermbg=darkgrey ctermfg=grey
-
-
-" Set syntex highlighting for i3 config
-aug i3config_ft_detection
-  au!
-  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
-aug end
-
-"autocmd FileType text :Goyo<CR>:setlocal showtabline=0<CR>
-"autocmd FileType markdown :Goyo
-"function! s:goyo_enter()
-"    setlocal showtabline=0
-"endfunction
-"
-"function! s:goyo_leave()
-"    setlocal showtabline=2
-"endfunction
-"
-"autocmd! User GoyoEnter nested call <SID>goyo_enter()
-"autocmd! User GoyoLeave nested call <SID>goyo_leave()
-let g:deoplete#enable_at_startup = 1
-
 "}}}
 
 
@@ -67,6 +42,15 @@ syntax on
 " Show line numbers
 set number relativenumber 
 hi LineNr ctermbg=NONE ctermfg=darkgrey
+
+" Styling the autocomplete window
+"  == Reference ==
+"  Pmenu – normal item
+"  PmenuSel – selected item
+"  PmenuSbar – scrollbar
+"  PmenuThumb – thumb of the scrollbar
+highlight Pmenu ctermbg=grey
+highlight PmenuSel ctermbg=darkgrey ctermfg=grey
 
 " Disable the status line
 set laststatus=0
@@ -148,16 +132,16 @@ function! ClipboardPaste()
   let @@ = system('xclip -o -selection clipboard | perl -pe "chomp if eof"')
 endfunction
 
-function! GOTO(num)
-    execute "normal!".a:num."gt" 
-endfunction
+" function! GOTO(num)
+"     execute "normal!".a:num."gt" 
+" endfunction
 
-function! Check()
-    let n = len(getbufinfo({'buflisted':1}))
-    if n == 1
-        cabclear
-    endif
-endfunction
+" function! Check()
+"     let n = len(getbufinfo({'buflisted':1}))
+"     if n == 1
+"         cabclear
+"     endif
+" endfunction
 
 " Credits: https://github.com/LinuxSDA/HashBang
 function! Hashbang(portable, permission, RemExt)
@@ -179,9 +163,7 @@ let shells = {
         \    'tcl': "tclsh",
         \     'tk': "wish"
         \    }
-
 let extension = expand("%:e")
-
 if has_key(shells,extension)
 	let fileshell = shells[extension]
 
@@ -197,16 +179,13 @@ if has_key(shells,extension)
 		:autocmd BufWritePost * :autocmd VimLeave * :!chmod u+x %
 	endif
 
-
 	if a:RemExt
 		:autocmd BufWritePost * :autocmd VimLeave * :!mv % "%:p:r"
 	endif
-
 endif
-
 endfunction
-
 :autocmd BufNewFile *.* :call Hashbang(1,1,0)
+
 "}}}
 
 
@@ -304,15 +283,24 @@ nnoremap <silent> st :setlocal showtabline=0<CR>
 " Enable Goyo
 nnoremap <silent> Q :Goyo<CR>:setlocal showtabline=0<CR>
 
-" Insert/remove comment, vim-commentary
-nmap <C-q> gcc
-vmap <C-q> gcc
-
 nnoremap <c-o> :Files<CR>
 inoremap <c-o> <Esc>:Files<CR>
+
+" Automatic close certain characters (e.g brackets)
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+
+" Since I have mapped Shift-J or uppercase J to scrolling down, we have to map
+" ctrl-j to join so that we can join two lines
+nnoremap <c-j> :join<CR>
+
 " {{{ Code snippets  
 " Jump to <++>, which is used in my mappings
-inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
+inoremap ,, <Esc>/<++><Enter>"_c4l
 
 " Markdown
 autocmd FileType markdown inoremap ,1 # 
@@ -361,7 +349,6 @@ endif
 
 
 " Autoreload file when it gets changed externaly
-" For example "echo hi > file.txt"
 " Source: https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 " Triger `autoread` when files changes on disk
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
