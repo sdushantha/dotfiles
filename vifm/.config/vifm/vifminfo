@@ -77,6 +77,9 @@ d/home/siddharth/dotfiles/vifm
 d/home/siddharth/dotfiles
 	vifm
 15
+d/home/siddharth
+	music
+15
 
 # Right window history (oldest to newest):
 D/home/siddharth/bin/utils
@@ -98,6 +101,9 @@ D/home/siddharth
 	
 0
 D/home/siddharth/dotfiles/vifm/.config/vifm
+	
+0
+D/home/siddharth
 	
 0
 

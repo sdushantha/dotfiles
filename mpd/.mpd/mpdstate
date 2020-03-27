@@ -1,8 +1,9 @@
 sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: stop
-current: 22
+state: pause
+current: 1
+time: 38.884000
 random: 1
 repeat: 1
 single: 1
@@ -11,54 +12,6 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:rocknroll/Lordi - Hard Rock Hallelujah.mp3
-1:rocknroll/Metallica - Nothing Else Matters.mp3
-2:boom/Adidas Majic (Radio Edit).mp3
-3:boom/Appropriate - Sid 2019.mp3
-4:boom/Benislav - Opa Bratan.mp3
-5:boom/Big Shaq - Man's Not Hot.mp3
-6:boom/Desiigner - Panda.mp3
-7:boom/Dynoro - Hangover.mp3
-8:boom/Dynoro - In My Mind.mp3
-9:boom/Henrik Heggem - Barnehagen 2019.mp3
-10:boom/Jokeasses - Зын Зын.mp3
-11:boom/Lil Nas X - Old Town Road.mp3
-12:boom/MabbiJ - Bomshakalaka (DTG - Karmøyrussen).mp3
-13:boom/R3hab - All Around The World (La La La).mp3
-14:boom/Timmy Trumpet - Freaks (Radio Edit).mp3
-15:boom/Tix - Shotgun.mp3
-16:boom/Vigiland - Pong Dance.mp3
-17:calm/Billie Eilish - Ocean Eyes (Blackbear Remix).mp3
-18:calm/Billie Eilish - ocean eyes.mp3
-19:calm/BROCKHAMPTON - NO HALO.mp3
-20:calm/BROCKHAMPTON - SUGAR.mp3
-21:calm/Ella Vos - Down in Flames.mp3
-22:calm/Post Malone - Better Now.mp3
-23:calm/Post Malone - Circles.mp3
-24:calm/Post Malone - Hollywood's Bleeding.mp3
-25:calm/Post Malone - Psycho.mp3
-26:calm/SAINt JHN - Roses (Imanbek Remix).mp3
-27:skyhigh/Bazzi - Beautiful (feat. Camila Cabello).mp3
-28:skyhigh/Dayo - Mockingbirds (VIZE Remix).mp3
-29:skyhigh/Grace VanderWaal - I Don't Know My Name.mp3
-30:skyhigh/Joel Adams - Please Don't Go.mp3
-31:skyhigh/Jonas Blue - Rise.mp3
-32:skyhigh/K-391 - Play.mp3
-33:skyhigh/Kedam - Shy Girl.mp3
-34:skyhigh/Kina - Can We Kiss Forever_.mp3
-35:skyhigh/Klingande - Pumped Up.mp3
-36:skyhigh/Kodaline - All I Want.mp3
-37:skyhigh/Kygo - Happy Now.mp3
-38:skyhigh/Kygo - Remind Me to Forget.mp3
-39:skyhigh/lovelytheband - broken.mp3
-40:skyhigh/LUM!X - Monster.mp3
-41:skyhigh/Mike Perry - Stay Young.mp3
-42:skyhigh/Mike Perry - The Ocean.mp3
-43:skyhigh/Post Malone - Sunflower.mp3
-44:skyhigh/R3hab - Lullaby.mp3
-45:skyhigh/Ruth B. - Lost Boy.mp3
-46:skyhigh/Sub Urban - Cradles.mp3
-47:skyhigh/The Chainsmokers - Takeaway.mp3
-48:skyhigh/Tones and I - Dance Monkey.mp3
-49:skyhigh/Vance Joy - Riptide.mp3
+0:Tujamo - WHO.mp3
+1:music.flac
 playlist_end
