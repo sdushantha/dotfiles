@@ -80,6 +80,27 @@ d/home/siddharth/dotfiles
 d/home/siddharth
 	music
 15
+d/home/siddharth/dotfiles/zsh
+	.config
+1
+d/home/siddharth/dotfiles/zsh/.config
+	..
+0
+d/home/siddharth/dotfiles/zsh
+	.zsh
+1
+d/home/siddharth/dotfiles
+	zsh
+24
+d/home/siddharth/dotfiles/zsh
+	.zsh
+1
+d/home/siddharth/dotfiles/zsh/.zsh
+	plugins
+1
+d/home/siddharth/dotfiles/zsh
+	.zshrc
+4
 
 # Right window history (oldest to newest):
 D/home/siddharth/bin/utils
@@ -106,6 +127,9 @@ D/home/siddharth/dotfiles/vifm/.config/vifm
 D/home/siddharth
 	
 0
+D/home/siddharth/dotfiles/zsh
+	
+0
 
 # Command line history (oldest to newest):
 :echo $EDITOR
@@ -114,17 +138,20 @@ D/home/siddharth
 # Search history (oldest to newest):
 
 # Prompt history (oldest to newest):
+p.zsh
+p.zshrc
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/siddharth/.local/share/vifm/Trash/000_epdf.pub_another-day-of-life-penguin-modern-classics.pdf
 
 # Directory stack (oldest to newest):
 
 # Trash content:
 t/home/siddharth/.local/share/vifm/Trash/000_epdf.pub_another-day-of-life-penguin-modern-classics.pdf
 	/home/siddharth/epdf.pub_another-day-of-life-penguin-modern-classics.pdf
+t/home/siddharth/.local/share/vifm/Trash/000_.config
+	/home/siddharth/dotfiles/zsh/.config
 
 # State:
 f

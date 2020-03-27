@@ -1,0 +1,474 @@
+Mar 22 10:04 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 22 10:04 : exception: Failed to decode /home/siddharth/music/skyhigh/Vance Joy - Riptide.mp3
+Mar 22 10:04 : exception: nested: Failed to open '/home/siddharth/music/skyhigh/Vance Joy - Riptide.mp3': No such file or directory
+Mar 22 10:04 : player: played "skyhigh/Vance Joy - Riptide.mp3"
+Mar 22 10:04 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 22 10:04 : client: [0] opened from 127.0.0.1:58454
+Mar 22 10:04 : client: [0] closed
+Mar 22 10:04 : client: [1] opened from 127.0.0.1:58458
+Mar 22 10:04 : client: [1] closed
+Mar 22 10:07 : client: [2] opened from 127.0.0.1:58506
+Mar 22 10:07 : client: [2] closed
+Mar 22 21:11 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 22 21:44 : client: [0] opened from 127.0.0.1:48752
+Mar 22 21:44 : client: [0] closed
+Mar 22 22:04 : client: [1] opened from 127.0.0.1:48976
+Mar 22 22:04 : client: [1] closed
+Mar 23 16:01 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 23 16:34 : client: [0] opened from 127.0.0.1:42042
+Mar 23 16:34 : client: [0] closed
+Mar 23 18:01 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 23 18:08 : client: [0] opened from 127.0.0.1:49846
+Mar 23 18:08 : client: [0] closed
+Mar 23 18:27 : client: [1] opened from 127.0.0.1:50358
+Mar 23 18:27 : client: [1] closed
+Mar 23 20:22 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 24 07:29 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 24 10:23 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 24 13:40 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 24 15:34 : client: [0] opened from 127.0.0.1:42310
+Mar 24 15:34 : client: [0] closed
+Mar 25 15:28 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 25 20:35 : client: [0] opened from 127.0.0.1:44258
+Mar 25 20:35 : client: [0] closed
+Mar 25 20:35 : client: [1] opened from 127.0.0.1:44262
+Mar 25 20:35 : client: [1] closed
+Mar 25 20:35 : client: [2] opened from 127.0.0.1:44266
+Mar 25 20:35 : client: [2] closed
+Mar 25 20:35 : client: [3] opened from 127.0.0.1:44272
+Mar 25 20:35 : client: [3] closed
+Mar 25 20:35 : client: [4] opened from 127.0.0.1:44276
+Mar 25 20:35 : client: [4] closed
+Mar 25 20:35 : client: [5] opened from 127.0.0.1:44284
+Mar 25 20:35 : client: [5] closed
+Mar 25 20:35 : client: [6] opened from 127.0.0.1:44288
+Mar 25 20:35 : client: [6] closed
+Mar 25 20:35 : client: [7] opened from 127.0.0.1:44292
+Mar 25 20:35 : client: [7] closed
+Mar 25 20:35 : client: [8] opened from 127.0.0.1:44298
+Mar 25 20:35 : client: [8] closed
+Mar 25 20:35 : client: [9] opened from 127.0.0.1:44302
+Mar 25 20:35 : client: [9] closed
+Mar 25 20:36 : client: [10] opened from 127.0.0.1:44306
+Mar 25 20:36 : client: [10] closed
+Mar 25 20:36 : client: [11] opened from 127.0.0.1:44310
+Mar 25 20:36 : client: [11] closed
+Mar 25 20:36 : client: [12] opened from 127.0.0.1:44314
+Mar 25 20:36 : client: [12] closed
+Mar 25 20:36 : client: [13] opened from 127.0.0.1:44320
+Mar 25 20:36 : client: [13] closed
+Mar 25 20:36 : client: [14] opened from 127.0.0.1:44324
+Mar 25 20:36 : client: [14] closed
+Mar 25 20:36 : client: [15] opened from 127.0.0.1:44328
+Mar 25 20:36 : client: [15] closed
+Mar 25 20:36 : client: [16] opened from 127.0.0.1:44332
+Mar 25 20:36 : client: [16] closed
+Mar 25 20:36 : client: [17] opened from 127.0.0.1:44336
+Mar 25 20:36 : client: [17] closed
+Mar 25 20:37 : client: [18] opened from 127.0.0.1:44342
+Mar 25 20:37 : client: [18] closed
+Mar 25 20:37 : client: [19] opened from 127.0.0.1:44346
+Mar 25 20:38 : client: [19] closed
+Mar 25 20:38 : client: [20] opened from 127.0.0.1:44388
+Mar 25 20:38 : client: [20] closed
+Mar 25 20:38 : client: [21] opened from 127.0.0.1:44392
+Mar 25 20:38 : client: [21] closed
+Mar 25 20:38 : client: [22] opened from 127.0.0.1:44396
+Mar 25 20:38 : client: [22] closed
+Mar 25 20:38 : client: [23] opened from 127.0.0.1:44402
+Mar 25 20:38 : client: [23] closed
+Mar 25 20:38 : client: [24] opened from 127.0.0.1:44406
+Mar 25 20:38 : client: [24] closed
+Mar 25 20:39 : client: [25] opened from 127.0.0.1:44412
+Mar 25 20:39 : client: [25] closed
+Mar 25 20:39 : client: [26] opened from 127.0.0.1:44416
+Mar 25 20:39 : client: [26] closed
+Mar 25 20:39 : client: [27] opened from 127.0.0.1:44420
+Mar 25 20:39 : client: [27] closed
+Mar 25 20:39 : client: [28] opened from 127.0.0.1:44426
+Mar 25 20:39 : client: [28] closed
+Mar 25 20:39 : client: [29] opened from 127.0.0.1:44430
+Mar 25 20:39 : client: [29] closed
+Mar 25 20:39 : client: [30] opened from 127.0.0.1:44434
+Mar 25 20:39 : client: [30] closed
+Mar 25 20:39 : client: [31] opened from 127.0.0.1:44438
+Mar 25 20:39 : client: [31] closed
+Mar 25 20:39 : client: [32] opened from 127.0.0.1:44442
+Mar 25 20:39 : client: [32] closed
+Mar 25 20:39 : client: [33] opened from 127.0.0.1:44448
+Mar 25 20:39 : client: [33] closed
+Mar 25 20:39 : client: [34] opened from 127.0.0.1:44452
+Mar 25 20:39 : client: [34] closed
+Mar 25 20:40 : client: [35] opened from 127.0.0.1:44456
+Mar 25 20:40 : client: [35] closed
+Mar 25 20:40 : client: [36] opened from 127.0.0.1:44460
+Mar 25 20:40 : client: [36] closed
+Mar 25 20:40 : client: [37] opened from 127.0.0.1:44464
+Mar 25 20:40 : client: [37] closed
+Mar 25 20:40 : client: [38] opened from 127.0.0.1:44468
+Mar 25 20:40 : client: [38] closed
+Mar 25 20:40 : client: [39] opened from 127.0.0.1:44472
+Mar 25 20:40 : client: [39] closed
+Mar 25 20:41 : client: [40] opened from 127.0.0.1:44476
+Mar 25 20:41 : exception: Failed to open /home/siddharth/music/playlists/: No such file or directory
+Mar 25 20:41 : update: removing americian rebel/My Chemical Romance - Teenagers.mp3
+Mar 25 20:41 : update: removing americian rebel/My Chemical Romance - Welcome to the Black Parade.mp3
+Mar 25 20:41 : update: removing americian rebel/blink-182 - First Date.mp3
+Mar 25 20:41 : update: removing americian rebel/The Offspring - You're Gonna Go Far, Kid.mp3
+Mar 25 20:41 : update: removing americian rebel/Sum 41 - Out For Blood.mp3
+Mar 25 20:41 : update: removing americian rebel/Zebrahead - Falling Apart.mp3
+Mar 25 20:41 : update: removing americian rebel/Avril Lavigne - Sk8er Boi.mp3
+Mar 25 20:41 : update: removing americian rebel/Stone Sour - Song #3.mp3
+Mar 25 20:41 : update: removing americian rebel/Green Day - Holiday (Faded Ending).mp3
+Mar 25 20:41 : update: removing americian rebel/Green Day - When I Come Around.mp3
+Mar 25 20:41 : update: removing americian rebel/Sum 41 - Still Waiting.mp3
+Mar 25 20:41 : update: removing americian rebel/Sum 41 - The Hell Song.mp3
+Mar 25 20:41 : update: removing americian rebel/Mest - Cadillac.mp3
+Mar 25 20:41 : update: removing americian rebel/Islandsgate - Der Hvor Ølen Smaker Godt.mp3
+Mar 25 20:41 : update: removing americian rebel/Sum 41 - Some Say.mp3
+Mar 25 20:41 : update: removing americian rebel/Zebrahead - All My Friends Are Nobodies.mp3
+Mar 25 20:41 : update: removing americian rebel/Green Day - Boulevard of Broken Dreams.mp3
+Mar 25 20:41 : update: removing americian rebel/Sum 41 - In Too Deep.mp3
+Mar 25 20:41 : update: removing americian rebel/Green Day - 21 Guns.mp3
+Mar 25 20:41 : update: removing americian rebel/Oasis - Wonderwall.mp3
+Mar 25 20:41 : update: removing focus/Greg Maroney - Breathe.mp3
+Mar 25 20:41 : update: removing focus/Brian Crain - Song for Sienna.mp3
+Mar 25 20:41 : update: removing focus/Phildel - Qi.mp3
+Mar 25 20:41 : update: removing focus/Aaron Lansing - Naive Spin.mp3
+Mar 25 20:41 : update: removing focus/Michele McLaughlin - The Druids Prayer.mp3
+Mar 25 20:41 : update: removing focus/Reverse Chronology.mp3
+Mar 25 20:41 : update: removing focus/Black and White Dreaming.mp3
+Mar 25 20:41 : update: removing focus/Contemplative Keys.mp3
+Mar 25 20:41 : update: removing focus/Dim Memories.mp3
+Mar 25 20:41 : update: removing focus/Slow Harmonies.mp3
+Mar 25 20:41 : update: removing chillpop/Portugal. The Man - Feel It Still.mp3
+Mar 25 20:41 : update: removing chillpop/Katy Perry - Swish Swish.mp3
+Mar 25 20:41 : update: removing chillpop/Mr. Probz - Waves (Robin Schulz Radio Edit).mp3
+Mar 25 20:41 : update: removing chillpop/Ruben - Walls.mp3
+Mar 25 20:41 : update: removing chillpop/Alan Walker - Tired.mp3
+Mar 25 20:41 : update: removing chillpop/Sia - The Greatest.mp3
+Mar 25 20:41 : update: removing chillpop/Rudimental - These Days (feat. Jess Glynne, Macklemore & Dan Caplen).mp3
+Mar 25 20:41 : update: removing chillpop/Alan Walker - The Spectre.mp3
+Mar 25 20:41 : update: removing chillpop/Macklemore - Thrift Shop (feat. Wanz).mp3
+Mar 25 20:41 : update: removing chillpop/Clean Bandit - Symphony (feat. Zara Larsson).mp3
+Mar 25 20:41 : update: removing chillpop/Ava Max - Sweet but Psycho.mp3
+Mar 25 20:41 : update: removing chillpop/ItaloBrothers - Summer Air.mp3
+Mar 25 20:41 : update: removing chillpop/Robin Schulz - Sugar (feat. Francesco Yates).mp3
+Mar 25 20:41 : update: removing chillpop/Ina Wroldsen - Strongest.mp3
+Mar 25 20:41 : update: removing chillpop/Avicii - Waiting For Love.mp3
+Mar 25 20:41 : update: removing chillpop/ZEDD - Stay.mp3
+Mar 25 20:41 : update: removing chillpop/Kygo - Stargazing.mp3
+Mar 25 20:41 : update: removing chillpop/The Chainsmokers - Something Just Like This.mp3
+Mar 25 20:41 : update: removing chillpop/Nea - Some Say.mp3
+Mar 25 20:41 : update: removing chillpop/Ava Max - So Am I.mp3
+Mar 25 20:41 : update: removing chillpop/Marshmello - Silence.mp3
+Mar 25 20:41 : update: removing chillpop/Clean Bandit - Rockabye (feat. Sean Paul & Anne-Marie).mp3
+Mar 25 20:41 : update: removing chillpop/OneRepublic - Rich Love.mp3
+Mar 25 20:41 : update: removing chillpop/Taylor Swift - Look What You Made Me Do.mp3
+Mar 25 20:41 : update: removing chillpop/Davaï - Replay.mp3
+Mar 25 20:41 : update: removing chillpop/Taylor Swift - I Knew You Were Trouble.mp3
+Mar 25 20:41 : update: removing chillpop/Panic! At the Disco - High Hopes.mp3
+Mar 25 20:41 : update: removing chillpop/NF - Let You Down.mp3
+Mar 25 20:41 : update: removing chillpop/Alan Walker - On My Way.mp3
+Mar 25 20:41 : update: removing chillpop/Martin Garrix - Ocean.mp3
+Mar 25 20:41 : update: removing chillpop/Sophie Elise - Next Summer.mp3
+Mar 25 20:41 : update: removing chillpop/Dua Lipa - New Rules (Alison Wonderland Remix).mp3
+Mar 25 20:41 : update: removing chillpop/Calvin Harris - My Way.mp3
+Mar 25 20:41 : update: added /Tujamo - WHO.mp3
+Mar 25 20:41 : update: removing chillpop/Axwell __ Ingrosso - Sun Is Shining.mp3
+Mar 25 20:41 : update: removing chillpop/Axwell  Ingrosso - More Than You Know.mp3
+Mar 25 20:41 : update: removing chillpop/TheFatRat - Monody (feat. Laura Brehm).mp3
+Mar 25 20:41 : update: removing chillpop/Jonas Blue - Mama.mp3
+Mar 25 20:41 : update: removing chillpop/David Guetta - Like I Do.mp3
+Mar 25 20:41 : update: removing chillpop/Alan Walker - Ignite.mp3
+Mar 25 20:41 : update: removing chillpop/Lauv - I Like Me Better.mp3
+Mar 25 20:41 : update: removing chillpop/Marshmello - Happier.mp3
+Mar 25 20:41 : update: removing chillpop/Maroon 5 - Girls Like You.mp3
+Mar 25 20:41 : update: removing chillpop/Pharrell Williams - Freedom.mp3
+Mar 25 20:41 : update: removing chillpop/Benny Blanco - Eastside.mp3
+Mar 25 20:41 : update: removing chillpop/Dua Lipa - IDGAF.mp3
+Mar 25 20:41 : update: removing chillpop/Sigrid - Don't Kill My Vibe.mp3
+Mar 25 20:41 : update: removing chillpop/Alan Walker - Lost Control.mp3
+Mar 25 20:41 : update: removing chillpop/Alan Walker - Diamond Heart.mp3
+Mar 25 20:41 : update: removing chillpop/Alan Walker - Darkside.mp3
+Mar 25 20:41 : update: removing chillpop/Jubel - Dancing in the Moonlight.mp3
+Mar 25 20:41 : update: removing chillpop/Bebe Rexha - Meant to Be (feat. Florida Georgia Line).mp3
+Mar 25 20:41 : update: removing chillpop/David Guetta - Say My Name.mp3
+Mar 25 20:41 : update: removing calm/Ella Vos - Down in Flames.mp3
+Mar 25 20:41 : update: removing calm/SAINt JHN - Roses (Imanbek Remix).mp3
+Mar 25 20:41 : update: removing calm/Billie Eilish - Ocean Eyes (Blackbear Remix).mp3
+Mar 25 20:41 : update: removing calm/Billie Eilish - ocean eyes.mp3
+Mar 25 20:41 : update: removing calm/Post Malone - Circles.mp3
+Mar 25 20:41 : update: removing calm/Post Malone - Hollywood's Bleeding.mp3
+Mar 25 20:41 : update: removing calm/BROCKHAMPTON - SUGAR.mp3
+Mar 25 20:41 : update: removing calm/BROCKHAMPTON - NO HALO.mp3
+Mar 25 20:41 : update: removing calm/Post Malone - Better Now.mp3
+Mar 25 20:41 : update: removing calm/Post Malone - Psycho.mp3
+Mar 25 20:41 : update: removing bus3/Fifth Harmony - Worth It.mp3
+Mar 25 20:41 : update: removing bus3/Flo Rida - Wild Ones (feat. Sia).mp3
+Mar 25 20:41 : update: removing bus3/Avicii - Wake Me Up.mp3
+Mar 25 20:41 : update: removing bus3/Eminem - The Monster.mp3
+Mar 25 20:41 : update: removing bus3/Avicii - The Nights.mp3
+Mar 25 20:41 : update: removing bus3/Eurythmics - Sweet Dreams (Are Made of This) (Remastered).mp3
+Mar 25 20:41 : update: removing bus3/Flo Rida - Right Round (feat. Ke$ha).mp3
+Mar 25 20:41 : update: removing bus3/Iyaz - Replay.mp3
+Mar 25 20:41 : update: removing bus3/Pitbull - International Love.mp3
+Mar 25 20:41 : update: removing bus3/Pitbull - Timber.mp3
+Mar 25 20:41 : update: removing boom/Jokeasses - Зын Зын.mp3
+Mar 25 20:41 : update: removing boom/Appropriate - Sid 2019.mp3
+Mar 25 20:41 : update: removing boom/Tix - Shotgun.mp3
+Mar 25 20:41 : update: removing boom/Vigiland - Pong Dance.mp3
+Mar 25 20:41 : update: removing boom/Desiigner - Panda.mp3
+Mar 25 20:41 : update: removing boom/Benislav - Opa Bratan.mp3
+Mar 25 20:41 : update: removing boom/Lil Nas X - Old Town Road.mp3
+Mar 25 20:41 : update: removing boom/Big Shaq - Man's Not Hot.mp3
+Mar 25 20:41 : update: removing boom/Dynoro - In My Mind.mp3
+Mar 25 20:41 : update: removing boom/Dynoro - Hangover.mp3
+Mar 25 20:41 : update: removing boom/Timmy Trumpet - Freaks (Radio Edit).mp3
+Mar 25 20:41 : update: removing boom/MabbiJ - Bomshakalaka (DTG - Karmøyrussen).mp3
+Mar 25 20:41 : update: removing boom/Henrik Heggem - Barnehagen 2019.mp3
+Mar 25 20:41 : update: removing boom/R3hab - All Around The World (La La La).mp3
+Mar 25 20:41 : update: removing boom/Adidas Majic (Radio Edit).mp3
+Mar 25 20:41 : update: removing americian rebel/Sum 41 - With Me.mp3
+Mar 25 20:41 : update: removing workout/NF - When I Grow Up.mp3
+Mar 25 20:41 : update: removing workout/S.O. - Boast.mp3
+Mar 25 20:41 : update: removing workout/ookay - Can You Hear Me.mp3
+Mar 25 20:41 : update: removing workout/KB - Hold Me Back.mp3
+Mar 25 20:41 : update: removing workout/DOTcom - Gang Shit (feat. Lil Toe).mp3
+Mar 25 20:41 : update: removing workout/Logic - Homicide.mp3
+Mar 25 20:41 : update: removing workout/Lil Tracy - Beautiful Nightmare.mp3
+Mar 25 20:41 : update: removing skyhigh/The Chainsmokers - Takeaway.mp3
+Mar 25 20:41 : update: removing skyhigh/Mike Perry - The Ocean.mp3
+Mar 25 20:41 : update: removing skyhigh/Kodaline - All I Want.mp3
+Mar 25 20:41 : update: removing skyhigh/Mike Perry - Stay Young.mp3
+Mar 25 20:41 : update: removing skyhigh/Post Malone - Sunflower.mp3
+Mar 25 20:41 : update: removing skyhigh/Kedam - Shy Girl.mp3
+Mar 25 20:41 : update: removing skyhigh/Jonas Blue - Rise.mp3
+Mar 25 20:41 : update: removing skyhigh/Vance Joy - Riptide.mp3
+Mar 25 20:41 : update: removing skyhigh/Klingande - Pumped Up.mp3
+Mar 25 20:41 : update: removing skyhigh/Joel Adams - Please Don't Go.mp3
+Mar 25 20:41 : update: removing skyhigh/K-391 - Play.mp3
+Mar 25 20:41 : update: removing skyhigh/LUM!X - Monster.mp3
+Mar 25 20:41 : update: removing skyhigh/Dayo - Mockingbirds (VIZE Remix).mp3
+Mar 25 20:41 : update: removing skyhigh/R3hab - Lullaby.mp3
+Mar 25 20:41 : update: removing skyhigh/Ruth B. - Lost Boy.mp3
+Mar 25 20:41 : update: removing skyhigh/Kygo - Remind Me to Forget.mp3
+Mar 25 20:41 : update: removing skyhigh/Grace VanderWaal - I Don't Know My Name.mp3
+Mar 25 20:41 : update: removing skyhigh/Kygo - Happy Now.mp3
+Mar 25 20:41 : update: removing skyhigh/lovelytheband - broken.mp3
+Mar 25 20:41 : update: removing skyhigh/Tones and I - Dance Monkey.mp3
+Mar 25 20:41 : update: removing skyhigh/Sub Urban - Cradles.mp3
+Mar 25 20:41 : update: removing skyhigh/Kina - Can We Kiss Forever_.mp3
+Mar 25 20:41 : update: removing skyhigh/Bazzi - Beautiful (feat. Camila Cabello).mp3
+Mar 25 20:41 : update: removing rocknroll/The Misfits - Zombie Girl.mp3
+Mar 25 20:41 : update: removing rocknroll/Bad Wolves - Zombie.mp3
+Mar 25 20:41 : update: removing rocknroll/X Ambassadors - Renegades.mp3
+Mar 25 20:41 : update: removing rocknroll/Alice Cooper - Poison.mp3
+Mar 25 20:41 : update: removing rocknroll/Dream Theater - This Dying Soul.mp3
+Mar 25 20:41 : update: removing rocknroll/Toto - Africa.mp3
+Mar 25 20:41 : update: removing rocknroll/Toto - Hold the Line.mp3
+Mar 25 20:41 : update: removing rocknroll/Bon Jovi - Hey God.mp3
+Mar 25 20:41 : update: removing rocknroll/Aerosmith - Dream On.mp3
+Mar 25 20:41 : update: removing rocknroll/Lordi - Hard Rock Hallelujah.mp3
+Mar 25 20:41 : update: removing rocknroll/Opeth - Chrysalis.mp3
+Mar 25 20:41 : update: removing rocknroll/Bon Jovi - Livin' On A Prayer.mp3
+Mar 25 20:41 : update: removing rocknroll/Bryan Adams - Summer Of '69.mp3
+Mar 25 20:41 : update: removing rocknroll/Dårlig Hjort - Partybussen 414.mp3
+Mar 25 20:41 : update: removing rocknroll/Opeth - Moon Above, Sun Below.mp3
+Mar 25 20:41 : update: removing rocknroll/Imagine Dragons - Bad Liar.mp3
+Mar 25 20:41 : update: removing rocknroll/Nirvana - Smells Like Teen Spirit.mp3
+Mar 25 20:41 : update: removing rocknroll/Metallica - Nothing Else Matters.mp3
+Mar 25 20:41 : update: removing rocknroll/Led Zeppelin - Stairway To Heaven.mp3
+Mar 25 20:41 : update: removing rocknroll/Led Zeppelin - Black Dog.mp3
+Mar 25 20:41 : update: removing rocknroll/Joan Jett and the Blackhearts - I Love Rock 'N Roll.mp3
+Mar 25 20:41 : update: removing rocknroll/Eagles - Hotel California (Remastered).mp3
+Mar 25 20:41 : update: removing rocknroll/AC_DC - Highway to Hell.mp3
+Mar 25 20:41 : update: removing rocknroll/Bonnie Tyler - Total Eclipse of the Heart.mp3
+Mar 25 20:41 : update: removing rocknroll/Guns N' Roses - Knockin' On Heaven's Door.mp3
+Mar 25 20:41 : update: removing rocknroll/Iron Maiden - Fear Of The Dark (1998 Remastered Version).mp3
+Mar 25 20:41 : update: removing rocknroll/Imagine Dragons - Thunder.mp3
+Mar 25 20:41 : update: removing rocknroll/Imagine Dragons - Whatever It Takes.mp3
+Mar 25 20:41 : update: removing rocknroll/Iron Maiden - Hallowed Be Thy Name (1998 Remastered Version).mp3
+Mar 25 20:41 : update: removing rocknroll/Iron Maiden - The Trooper (1998 Remastered Version).mp3
+Mar 25 20:41 : update: removing rocknroll/Wind Rose - Diggy Diggy Hole.mp3
+Mar 25 20:41 : update: removing rocknroll/Bon Jovi - It's My Life.mp3
+Mar 25 20:41 : update: removing rocknroll/Bon Jovi - Always.mp3
+Mar 25 20:41 : update: removing rocknroll/Queen - Bohemian Rhapsody.mp3
+Mar 25 20:41 : update: removing rocknroll/Guns N' Roses - Shadow Of Your Love.mp3
+Mar 25 20:41 : update: removing rocknroll/Guns N' Roses - Sweet Child O' Mine.mp3
+Mar 25 20:41 : update: removing rocknroll/Guns N' Roses - Paradise City.mp3
+Mar 25 20:41 : update: removing rocknroll/Misfits - Dig Up Her Bones.mp3
+Mar 25 20:41 : update: removing other/5 Seconds Of Summer - Youngblood.mp3
+Mar 25 20:41 : update: removing other/Dean Lewis - Waves.mp3
+Mar 25 20:41 : update: removing other/Sam Smith - Too Good At Goodbyes.mp3
+Mar 25 20:41 : update: removing other/Kelly Clarkson - Stronger (What Doesn't Kill You).mp3
+Mar 25 20:41 : update: removing other/Vancouver Sleep Clinic - Someone To Stay.mp3
+Mar 25 20:41 : update: removing other/Rag'n'Bone Man - Skin.mp3
+Mar 25 20:41 : update: removing other/Katy Perry - Roar.mp3
+Mar 25 20:41 : update: removing other/Amber Run - I Found.mp3
+Mar 25 20:41 : update: removing other/Calum Scott - Dancing On My Own.mp3
+Mar 25 20:41 : update: removing other/Kongos - Come with Me Now.mp3
+Mar 25 20:41 : update: removing other/Passenger - Let Her Go.mp3
+Mar 25 20:41 : update: removing other/Ali Gatie - It's You.mp3
+Mar 25 20:41 : update: removing other/Lewis Capaldi - Someone You Loved.mp3
+Mar 25 20:41 : update: removing other/Adele - When We Were Young.mp3
+Mar 25 20:41 : update: removing other/Ed Sheeran - Perfect.mp3
+Mar 25 20:41 : update: removing movie tracks/Elton John - Can You Feel the Love Tonight.mp3
+Mar 25 20:41 : update: removing movie tracks/Nathan Lane - Hakuna Matata.mp3
+Mar 25 20:41 : update: removing movie tracks/Common - Let It Lie.mp3
+Mar 25 20:41 : update: removing movie tracks/will.i.am - I Like To Move It.mp3
+Mar 25 20:41 : exception: Failed to open /home/siddharth/music/playlists/: No such file or directory
+Mar 25 20:41 : client: [41] opened from 127.0.0.1:44492
+Mar 25 20:41 : client: [41] closed
+Mar 25 20:41 : client: [42] opened from 127.0.0.1:44496
+Mar 25 20:41 : client: [43] opened from 127.0.0.1:44500
+Mar 25 20:41 : client: [42] closed
+Mar 25 20:41 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 25 20:41 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 25 20:41 : client: [43] closed
+Mar 25 20:41 : client: [44] opened from 127.0.0.1:44504
+Mar 25 20:41 : client: [44] closed
+Mar 25 20:41 : client: [45] opened from 127.0.0.1:44508
+Mar 25 20:41 : client: [45] closed
+Mar 25 20:41 : client: [46] opened from 127.0.0.1:44512
+Mar 25 20:42 : client: [47] opened from 127.0.0.1:44516
+Mar 25 20:42 : client: [47] closed
+Mar 25 20:42 : client: [48] opened from 127.0.0.1:44520
+Mar 25 20:42 : client: [48] closed
+Mar 25 20:42 : client: [49] opened from 127.0.0.1:44524
+Mar 25 20:42 : client: [49] closed
+Mar 25 20:44 : player: played "Tujamo - WHO.mp3"
+Mar 25 20:44 : client: [46] closed
+Mar 25 20:44 : client: [50] opened from 127.0.0.1:44532
+Mar 25 20:44 : client: [50] closed
+Mar 25 20:44 : client: [51] opened from 127.0.0.1:44536
+Mar 25 20:44 : client: [51] closed
+Mar 25 20:44 : client: [52] opened from 127.0.0.1:44540
+Mar 25 20:44 : client: [52] closed
+Mar 25 20:44 : client: [53] opened from 127.0.0.1:44544
+Mar 25 20:44 : client: [53] closed
+Mar 25 20:44 : client: [54] opened from 127.0.0.1:44550
+Mar 25 20:46 : client: [40] closed
+Mar 25 20:46 : client: [55] opened from 127.0.0.1:44560
+Mar 25 20:46 : client: [54] closed
+Mar 25 20:46 : client: [56] opened from 127.0.0.1:44564
+Mar 25 20:46 : client: [55] closed
+Mar 25 20:46 : client: [56] closed
+Mar 25 20:46 : client: [57] opened from 127.0.0.1:44568
+Mar 25 20:46 : client: [58] opened from 127.0.0.1:44572
+Mar 25 20:46 : client: [58] closed
+Mar 25 20:46 : client: [59] opened from 127.0.0.1:44576
+Mar 25 20:46 : client: [59] closed
+Mar 25 20:46 : client: [60] opened from 127.0.0.1:44580
+Mar 25 20:47 : client: [60] closed
+Mar 25 20:49 : client: [61] opened from 127.0.0.1:44728
+Mar 25 20:49 : client: [61] closed
+Mar 25 20:49 : client: [62] opened from 127.0.0.1:44732
+Mar 25 20:49 : client: [62] closed
+Mar 25 20:49 : client: [63] opened from 127.0.0.1:44736
+Mar 25 20:49 : client: [63] closed
+Mar 25 20:49 : client: [64] opened from 127.0.0.1:44742
+Mar 25 20:49 : client: [64] closed
+Mar 25 20:49 : client: [65] opened from 127.0.0.1:44746
+Mar 25 20:51 : client: [65] closed
+Mar 25 20:51 : client: [66] opened from 127.0.0.1:44764
+Mar 25 20:51 : client: [66] closed
+Mar 25 20:51 : client: [67] opened from 127.0.0.1:44768
+Mar 25 20:51 : client: [67] closed
+Mar 25 20:51 : client: [68] opened from 127.0.0.1:44772
+Mar 25 20:51 : client: [68] closed
+Mar 25 20:51 : client: [69] opened from 127.0.0.1:44776
+Mar 25 20:53 : client: [69] closed
+Mar 25 20:55 : client: [70] opened from 127.0.0.1:44892
+Mar 25 20:55 : client: [70] closed
+Mar 25 20:55 : client: [71] opened from 127.0.0.1:44896
+Mar 25 20:55 : client: [71] closed
+Mar 25 20:55 : client: [72] opened from 127.0.0.1:44900
+Mar 25 20:55 : client: [72] closed
+Mar 25 20:55 : client: [73] opened from 127.0.0.1:44904
+Mar 25 20:59 : client: [73] closed
+Mar 25 21:25 : player: played "Tujamo - WHO.mp3"
+Mar 25 21:25 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 25 21:25 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 25 21:47 : player: played "Tujamo - WHO.mp3"
+Mar 26 07:45 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 26 07:45 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 26 07:58 : client: [0] opened from 127.0.0.1:55080
+Mar 26 07:58 : exception: Failed to open /home/siddharth/music/playlists/: No such file or directory
+Mar 26 07:58 : update: added /music.flac
+Mar 26 07:58 : exception: Failed to open /home/siddharth/music/playlists/: No such file or directory
+Mar 26 07:58 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 26 07:58 : client: [1] opened from 127.0.0.1:55084
+Mar 26 07:58 : client: [1] closed
+Mar 26 07:58 : client: [2] opened from 127.0.0.1:55088
+Mar 26 07:58 : client: [2] closed
+Mar 26 07:58 : client: [3] opened from 127.0.0.1:55092
+Mar 26 07:58 : client: [3] closed
+Mar 26 07:59 : client: [4] opened from 127.0.0.1:55100
+Mar 26 07:59 : client: [4] closed
+Mar 26 07:59 : client: [5] opened from 127.0.0.1:55104
+Mar 26 07:59 : client: [5] closed
+Mar 26 07:59 : client: [6] opened from 127.0.0.1:55108
+Mar 26 07:59 : client: [6] closed
+Mar 26 07:59 : client: [7] opened from 127.0.0.1:55116
+Mar 26 07:59 : client: [7] closed
+Mar 26 07:59 : client: [8] opened from 127.0.0.1:55120
+Mar 26 07:59 : client: [8] closed
+Mar 26 07:59 : client: [9] opened from 127.0.0.1:55124
+Mar 26 07:59 : client: [9] closed
+Mar 26 08:00 : client: [10] opened from 127.0.0.1:55130
+Mar 26 08:00 : client: [10] closed
+Mar 26 08:00 : client: [11] opened from 127.0.0.1:55134
+Mar 26 08:00 : client: [11] closed
+Mar 26 08:00 : client: [12] opened from 127.0.0.1:55138
+Mar 26 08:00 : client: [0] closed
+Mar 26 08:01 : player: played "music.flac"
+Mar 26 08:01 : client: [12] closed
+Mar 26 08:01 : client: [13] opened from 127.0.0.1:55146
+Mar 26 08:01 : client: [13] closed
+Mar 26 08:01 : client: [14] opened from 127.0.0.1:55150
+Mar 26 08:01 : client: [14] closed
+Mar 26 08:01 : client: [15] opened from 127.0.0.1:55154
+Mar 26 08:01 : client: [15] closed
+Mar 26 08:01 : client: [16] opened from 127.0.0.1:55158
+Mar 26 08:02 : client: [17] opened from 127.0.0.1:55162
+Mar 26 08:02 : client: [16] closed
+Mar 26 08:02 : client: [18] opened from 127.0.0.1:55166
+Mar 26 08:02 : client: [17] closed
+Mar 26 08:02 : client: [18] closed
+Mar 26 08:02 : client: [19] opened from 127.0.0.1:55170
+Mar 26 08:02 : client: [19] closed
+Mar 26 08:02 : client: [20] opened from 127.0.0.1:55178
+Mar 26 08:02 : client: [20] closed
+Mar 26 08:02 : client: [21] opened from 127.0.0.1:55182
+Mar 26 08:02 : client: [21] closed
+Mar 26 08:02 : client: [22] opened from 127.0.0.1:55186
+Mar 26 08:21 : client: [22] closed
+Mar 26 08:22 : player: played "music.flac"
+Mar 27 07:18 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 27 07:18 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 27 08:23 : player: played "music.flac"
+Mar 27 14:43 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 27 14:43 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 27 14:47 : client: [0] opened from 127.0.0.1:39308
+Mar 27 14:47 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 27 14:47 : client: [0] closed
+Mar 27 14:47 : client: [1] opened from 127.0.0.1:39312
+Mar 27 14:47 : client: [1] closed
+Mar 27 14:47 : client: [2] opened from 127.0.0.1:39316
+Mar 27 14:47 : client: [2] closed
+Mar 27 14:50 : player: played "Tujamo - WHO.mp3"
+Mar 27 14:50 : client: [3] opened from 127.0.0.1:39420
+Mar 27 14:50 : client: [3] closed
+Mar 27 15:05 : client: [4] opened from 127.0.0.1:39682
+Mar 27 15:05 : client: [4] closed
+Mar 27 15:15 : client: [5] opened from 127.0.0.1:39986
+Mar 27 15:15 : client: [5] closed
+Mar 27 15:27 : client: [6] opened from 127.0.0.1:40146
+Mar 27 15:27 : client: [6] closed
+Mar 27 15:41 : client: [7] opened from 127.0.0.1:40190
+Mar 27 15:41 : client: [7] closed
+Mar 27 17:06 : client: [8] opened from 127.0.0.1:41134
+Mar 27 17:06 : client: [8] closed
+Mar 27 17:15 : client: [9] opened from 127.0.0.1:41226
+Mar 27 17:15 : client: [9] closed

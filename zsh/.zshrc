@@ -1,7 +1,9 @@
 #PS1=$'%{\e[0;31m♥%} %{\e[0;91m%}%c %{\e[0;35m%}❯%{\e[0m%} '
-fpath+=('/home/siddharth/.npm-packages/lib/node_modules/pure-prompt/functions')
+
+fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
+
 
 # Start my graphical interface
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
@@ -13,7 +15,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd extendedglob
-
 
 zstyle :compinstall filename '/home/siddharth/.zshrc'
 
@@ -103,12 +104,12 @@ export LESS_TERMCAP_ue=$(printf '\e[0m')     # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 
 # Enable my ~/.aliases file which has all of my aliases
-if [ -f ~/.aliases ]; then
-. ~/.aliases
+if [ -f ~/.config/aliases ]; then
+. ~/.config/aliases
 fi
 
 # This file has some important variables
-source $HOME/.profile
+source $HOME/.zprofile
 
 # ZSH plugins
 source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -125,3 +126,19 @@ export KUNST_MUSIC_DIR="$HOME/music/"
 
 bindkey -M vicmd 'H' beginning-of-line
 bindkey -M vicmd 'L' end-of-line
+
+# Search and install packages with yay and fzf
+yi() {
+	SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
+	if [ -n "$SELECTED_PKGS" ]; then
+		yay -S $(echo $SELECTED_PKGS)
+	fi
+}
+
+# Search and remove packages with yay and fzf
+yr() {
+	SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
+	if [ -n "$SELECTED_PKGS" ]; then
+		yay -Rns $(echo $SELECTED_PKGS)
+	fi
+}

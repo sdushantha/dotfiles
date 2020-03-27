@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/siddharth/dotfiles/.git'
+let g:netrw_dirhist_8='/home/siddharth/.local/bin'
+let g:netrw_dirhist_7='/home/siddharth/.npm-packages/lib/node_modules/pure-prompt/functions'
 let g:netrw_dirhist_6='/home/siddharth/dotfiles/vifm/.config/vifm'
 let g:netrw_dirhist_5='/home/siddharth/pictures'
 let g:netrw_dirhist_4='/home/siddharth/documents/challenge'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_3='/home/siddharth/documents'
 let g:netrw_dirhist_2='/home/siddharth/dotfiles/vifm/.config/vifm/scripts'
 let g:netrw_dirhist_1='/home/siddharth/projects'
 let g:netrw_dirhist_0='/home/siddharth/bin/ranger'
-let g:netrw_dirhist_9='/home/siddharth/dotfiles/kitty/.config/kitty'
-let g:netrw_dirhist_8='/home/siddharth/.config/kitty'
-let g:netrw_dirhist_7='/home/siddharth/.config/cfiles/scripts'

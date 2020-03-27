@@ -1,3 +1,5 @@
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.local/share/lyrics
 mpd_host = localhost
 mpd_port = 6600
 mpd_crossfade_time = 2
