@@ -1,5 +1,3 @@
-#PS1=$'%{\e[0;31m♥%} %{\e[0;91m%}%c %{\e[0;35m%}❯%{\e[0m%} '
-
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
@@ -11,7 +9,7 @@ if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 fi 
 
 
-HISTFILE=~/.histfile
+HISTFILE=~/.cache/zsh/zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd extendedglob
@@ -19,8 +17,8 @@ setopt appendhistory autocd extendedglob
 zstyle :compinstall filename '/home/siddharth/.zshrc'
 
 autoload -Uz compinit
-compinit
-
+[ ! -d "$HOME/.cache/zsh" ] && mkdir "$HOME/.cache/zsh"
+compinit -d "$HOME/.cache/zsh/zcompdump"
 
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'

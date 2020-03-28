@@ -226,6 +226,7 @@ fileviewer *.7z 7z l %c
 " Show ls in the preview window, it creates a similar look as ranger.
 " The default directory tree thing is really messy
 fileviewer */ ls --color --group-directories-first
+fileviewer .*/ ls --color --group-directories-first
 
 " Dont show preview on "../"
 fileview ../ echo >/dev/null

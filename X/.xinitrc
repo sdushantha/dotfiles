@@ -44,3 +44,4 @@ flashfocus
 setroot -sc "#2e3440"
 
 export LANG=en_GB.UTF-8
+export ZDOTDIR="~/.config/zsh"
