@@ -13,15 +13,14 @@ alias lbin="cd $HOME/.local/bin"
 alias tmp="cd /tmp"
 alias shots="cd ~/pictures/screenshots"
 alias ..="cd .."
-alias notes="cd $HOME/documents/notes"
 
 # Quickly edit some files
 alias zshrc="nvim $HOME/.zshrc"
-alias aliases="nvim $HOME/.aliases"
-alias profile="nvim $HOME/.profile"
+alias aliases="nvim $HOME/.config/aliases"
 alias i3config="nvim $HOME/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias vifmrc="nvim $HOME/.config/vifm/vifmrc"
+
 # Enable colors for some commands
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'

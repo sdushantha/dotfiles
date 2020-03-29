@@ -4,6 +4,10 @@ filetype plugin on
 set conceallevel=0
 
 call plug#begin()
+Plug 'junegunn/goyo.vim'
+    let g:goyo_width = 82
+    let g:goyo_height = "80%"
+
 Plug 'Yggdroot/indentLine'
     " Dont hide markdown symbols. 
     " By default, VIM hides characters like # and *
@@ -21,13 +25,15 @@ Plug 'mboughaba/i3config.vim'
       au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
     aug end
 
+
 Plug 'tpope/vim-commentary'
     " Insert/remove comment, vim-commentary
     nmap cq gcc
     vmap cq gcc
 
 Plug 'maxboisvert/vim-simple-complete'
-Plug 'junegunn/goyo.vim'
+    set complete-=t
+    set complete-=i
 Plug 'lilydjwg/colorizer'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -276,9 +282,6 @@ nnoremap <silent> <A-6> :b6<CR>
 nnoremap <silent> <A-7> :b7<CR>
 nnoremap <silent> <A-8> :b8<CR>
 nnoremap <silent> <A-9> :b9<CR>
-
-" Remove the top bar. Used when enabling Goyo
-nnoremap <silent> st :setlocal showtabline=0<CR>
 
 " Enable Goyo
 nnoremap <silent> Q :Goyo<CR>:setlocal showtabline=0<CR>
