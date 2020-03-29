@@ -31,9 +31,9 @@ Plug 'tpope/vim-commentary'
     nmap cq gcc
     vmap cq gcc
 
-Plug 'maxboisvert/vim-simple-complete'
-    set complete-=t
-    set complete-=i
+" Plug 'maxboisvert/vim-simple-complete'
+"     set complete-=t
+"     set complete-=i
 Plug 'lilydjwg/colorizer'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
