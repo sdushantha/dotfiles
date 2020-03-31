@@ -43,7 +43,6 @@ floating_modifier $mod
 # if the currect workspace is empty, then it will open the terminal
 # as floating enabled. If there is a window in the current workspace, then the 
 # terminal will open like other windows
-#bindsym $mod+Return exec --no-startup-id python $HOME/bin/keybinded/term.py
 bindsym $mod+Return exec --no-startup-id kitty -d $(xcwd)
 
 # kill focused window
@@ -180,6 +179,8 @@ bindsym $mod+Shift+f --release exec farge --image-viewer mpv
 
 # Mailbox
 bindsym $mod+m exec kitty -e aerc
+
+
 #}}}
 
 
