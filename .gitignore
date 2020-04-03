@@ -1,5 +1,10 @@
 mpd/.config/mpd/mpd.log
+mpd/.config/mpd/mpdstate
+mpd/.config/mpd/mpd.pid
+mpd/.config/mpd/mpd.db
+
 nvim/.config/nvim/.netrwhist
 nvim/.config/nvim/tmp/*
 nvim/.config/nvim/plugged/*
+
 vifm/.config/vifm/vifminfo

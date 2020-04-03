@@ -125,6 +125,9 @@ export KUNST_MUSIC_DIR="$HOME/music/"
 bindkey -M vicmd 'H' beginning-of-line
 bindkey -M vicmd 'L' end-of-line
 
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd ' ' edit-command-line
+
 # Search and install packages with yay and fzf
 yi() {
 	SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"

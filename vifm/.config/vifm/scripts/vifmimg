@@ -20,7 +20,6 @@ function font_prevw() {
     > "$FIFO_UEBERZUG"
 }
 
-
 function pdf_prevw() {
   # if no preview found, generate one
   if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
@@ -60,6 +59,15 @@ function clear_prevw() {
     > "$FIFO_UEBERZUG"
 }
 
+dependencies=(ffmpeg ffmpegthumbnailer fontpreview pdftoppm)
+for dependency in "${dependencies[@]}"; do
+    type -p "$dependency" &>/dev/null || {
+        notify-send "vifm" "Could not find '${dependency}', is it installed?"
+        exit 1
+    }
+done
+
+
 # make sure ueberzug's fifo exists
 if [ -e "$FIFO_UEBERZUG" ]; then
   # make a temp dir for rendering if not exists
@@ -73,5 +81,6 @@ if [ -e "$FIFO_UEBERZUG" ]; then
     video) video_prevw "$@" ;;
     clear) clear_prevw ;;
     audio) audio_prevw "$@" ;;
+    gif) previewgif "$@" ;;
   esac
 fi

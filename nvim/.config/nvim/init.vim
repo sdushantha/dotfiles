@@ -290,12 +290,12 @@ nnoremap <c-o> :Files<CR>
 inoremap <c-o> <Esc>:Files<CR>
 
 " Automatic close certain characters (e.g brackets)
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
+" inoremap " ""<left>
+" inoremap ' ''<left>
+" inoremap ( ()<left>
+" inoremap [ []<left>
+" inoremap { {}<left>
+" inoremap {<CR> {<CR>}<ESC>O
 
 " Since I have mapped Shift-J or uppercase J to scrolling down, we have to map
 " ctrl-j to join so that we can join two lines
