@@ -186,6 +186,12 @@ fileviewer *.pdf
         \ %pc
         \ vifmimg clear
 
+filextype *.epub zathura %c %i &
+fileviewer *.epub
+        \ vifmimg epub %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
 " Fonts
 fileviewer *.otf,*.ttf,*.woff
         \ vifmimg font %px %py %pw %ph %c
@@ -203,12 +209,6 @@ fileviewer <audio/*>
 filetype <video/*> mpv %c %i &
 fileviewer <video/*>
         \ vifmimg video %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-" GIFs
-filextype *.gif mpv %c %i &
-fileviewer <image/*>
-        \ vifmimg gif %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
@@ -249,14 +249,17 @@ set vifminfo=dhistory,chistory,state,shistory,phistory,fhistory,dirstack,registe
 
 " ------------------------------------------------------------------------------
 
-
+" Use comma to enter command mode
 nnoremap , : 
 
 " Set highlighted image as wallpaper
-nnoremap <C-w> :!bash ~/.config/ranger/scripts/wall.sh %c<cr>
+nnoremap <C-w> :!bash ~/.config/ranger/scripts/wall.sh %c &<cr>
 
 " Upload highlighted file to 0x0.st and then save url to clipboard
-nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)"<cr> 
+nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)" &<cr> 
+
+" Reverse image search with Tiney
+nnoremap re :!bash ~/bin/utils/tineye %c &<cr>
 
 " Go to the file that is right before "../" for going to the top most file
 nnoremap gg ggj
@@ -276,10 +279,6 @@ nnoremap cd :cd<cr>
 " Open with preview window
 :view
 
-" Flip through the pages of the PDF in the preview
-map > :!vifmimg inc<CR>
-map < :!vifmimg dec<CR>
-
 " Start shell in current directory
 nnoremap s :shell<cr>
 
@@ -290,10 +289,8 @@ nnoremap S :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
-" Open file in existing instance of gvim
+" Open file in nvim
 nnoremap o :!nvim %f<cr>
-" Open file in new instance of gvim
-nnoremap O :!nvim %f<cr>
 
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l

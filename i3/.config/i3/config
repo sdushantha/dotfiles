@@ -218,10 +218,9 @@ exec_always --no-startup-id mpd
 # Flash the window you have changed focus to
 exec_always --no-startup-id $HOME/.local/bin/flashfocus
 
+# This fixes some issues with sleeping, closing the lid, and
+# some issues with the power on my Macbook
 exec_always --no-startup-id xfce4-power-manager
-
-# Have a fibonacci type of layout, and this is similar to the bspwm layout
-exec_always --no-startup-id python $HOME/bin/utils/alternating_layouts.py
 
 #}}}
 
@@ -242,7 +241,6 @@ for_window [class="mpv"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 
 for_window [title="Open File"] fullscreen enable
-#for_window [title="^https:\/\/translate\.google\.com - qutebrowser"] floating enable
 
 # Keep my album art displayer floating
 for_window [instance="Kunst"] floating enable
@@ -251,6 +249,7 @@ for_window [instance="Kunst"] floating enable
 for_window [instance="Farge"] floating enable
 for_window [instance="fontpreview"] floating enable
 for_window [class="Yad" title="yad-calendar"] floating enable
+
 ##### RULES FOR SOME PROGRAMS #####
 # Exmaple:
 #   Spotify will open in workspace 4 only on launch.

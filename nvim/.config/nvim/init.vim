@@ -1,7 +1,6 @@
 
 "{{{ Plugins  
 filetype plugin on
-set conceallevel=0
 
 call plug#begin()
 Plug 'junegunn/goyo.vim'
