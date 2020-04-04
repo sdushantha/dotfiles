@@ -53,13 +53,23 @@ function video_prevw() {
     > "$FIFO_UEBERZUG"
 }
 
+function previewepub() {
+    if [[ ! -f "/tmp$PWD/$6.png" ]]; then
+        epub-thumbnailer "$6" "/tmp$PWD/$6.png" 1024
+    fi
+    declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
+        [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
+        [path]="/tmp$PWD/$6.png") \
+        > "$FIFO_UEBERZUG"
+}
+
 # clear preview image
 function clear_prevw() {
   declare -p -A cmd=([action]=remove [identifier]="$ID_PREVIEW") \
     > "$FIFO_UEBERZUG"
 }
 
-dependencies=(ffmpeg ffmpegthumbnailer fontpreview pdftoppm)
+dependencies=(ffmpeg ffmpegthumbnailer fontpreview pdftoppm epub-thumbnailer)
 for dependency in "${dependencies[@]}"; do
     type -p "$dependency" &>/dev/null || {
         notify-send "vifm" "Could not find '${dependency}', is it installed?"
@@ -82,5 +92,6 @@ if [ -e "$FIFO_UEBERZUG" ]; then
     clear) clear_prevw ;;
     audio) audio_prevw "$@" ;;
     gif) previewgif "$@" ;;
+    epub) previewepub "$@" ;;
   esac
 fi
