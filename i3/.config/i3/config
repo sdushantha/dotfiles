@@ -161,8 +161,8 @@ bindsym $mod+oslash --release exec bash $HOME/bin/keybinded/screenshot.sh -s
 # A very cool emoji and unicode character picker using rofi
 bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
 
-# Open up ranger
-bindsym $mod+Shift+Return exec python3 $HOME/bin/keybinded/ranger.py 
+# Open up vifm 
+bindsym $mod+Shift+Return exec python3 $HOME/bin/keybinded/vifm.py 
 
 # Keyboard backlight for Macbook
 bindsym XF86KbdBrightnessDown exec kbdlight down

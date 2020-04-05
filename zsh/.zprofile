@@ -16,3 +16,6 @@ export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export PYTHONSTARTUP="$HOME/.config/python/pythonstartup.py"
 #export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
+
+# Other
+export SUDO_ASKPASS=~/bin/utils/rofi-askpass

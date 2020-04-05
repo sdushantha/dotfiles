@@ -9,7 +9,7 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-DEFAULT_SESSION=gnome-session
+DEFAULT_SESSION=i3
 
 # merge in defaults and keymaps
 
@@ -63,4 +63,4 @@ get_session(){
 	echo "dbus-launch ${dbus_args[*]}"
 }
 
-exec $(get_session)
+exec i3 --shmlog-size 0
