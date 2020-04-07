@@ -1,24 +1,17 @@
-" vim: filetype=vifm :
-" Sample configuration file for vifm (last updated: 20 July, 2018)
-" You can edit this file by hand.
-" The " character at the beginning of a line comments out the line.
-" Blank lines are ignored.
-" The basic format for each item is shown with an example.
-" Command macros: https://vifm.info/vimdoc.shtml
-" ------------------------------------------------------------------------------
-
+" {{{ General config 
 " This is the actual command used to start vi.  The default is vim.
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
-
 set vicmd=nvim
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
 " solution, it's also much slower when processing large amounts of files and
 " doesn't support progress measuring.
-
 set syscalls
+
+" Open with preview window
+view
 
 " Trash Directory
 " The default is to move files that are deleted with dd or :d to
@@ -26,89 +19,63 @@ set syscalls
 " files by deleting them and then using p to put the file in the new location.
 " I recommend not changing this until you are familiar with vifm.
 " This probably shouldn't be an option.
-
 set trash
 
 " This is how many directories to store in the directory history.
-
 set history=1000
 
 " Automatically resolve symbolic links on l or Enter.
-
 set nofollowlinks
 
-" With this option turned on you can run partially entered commands with
-" unambiguous beginning using :! (e.g. :!Te instead of :!Terminal or :!Te<tab>).
-
-" set fastrun
-
 " Natural sort of (version) numbers within text.
-
 set sortnumbers
 
 " Maximum number of changes that can be undone.
-
 set undolevels=100
-
-" If you installed the vim.txt help file set vimhelp.
-" If would rather use a plain text help file set novimhelp.
-
-"set novimhelp
 
 " If you would like to run an executable file when you
 " press return on the file name set this.
-
 set norunexec
 
 " Selected color scheme
-
 colorscheme minimal
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
 " See man date or man strftime for details.
-
 set timefmt=%m/%d\ %H:%M
 
 " Show list of matches on tab completion in command-line mode
-
 set wildmenu
 
 " Display completions in a form of popup with descriptions of the matches
-
 set wildstyle=popup
 
 " Display suggestions in normal, visual and view modes for keys, marks and
 " registers (at most 5 files).  In other view, when available.
-
 set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 
 " Ignore case in search patterns unless it contains at least one uppercase
 " letter
-
 set ignorecase
 set smartcase
 
 " Don't highlight search results automatically
-
 set nohlsearch
 
 " Use increment searching (search while typing)
 set incsearch
 
 " Try to leave some space from cursor to upper/lower border in lists
-
 set scrolloff=4
 
 " Don't do too many requests to slow file systems
-
 if !has('win')
     set slowfs=curlftpfs
 endif
 
-" Set custom status line look
-
-" set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
+" Things that should be stored in vifminfo
+set vifminfo=dhistory,chistory,state,shistory,phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " Dont show delete confirmation
 set confirm-=delete
@@ -135,9 +102,9 @@ command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
+" }}}
 
-" ------------------------------------------------------------------------------
-
+" {{{ File preview & file opening  
 " The file type is for the default programs to be used with
 " a file extension.
 " :filetype pattern1,pattern2 defaultprogram,program2
@@ -164,14 +131,12 @@ command! reload :write | restart
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
-"fileview */ tree %c -L 1 --dirsfirst
-nmap q ZQ
 
 " CSV/Excel
 filetype *.csv,*.xlsx libreoffice %c %i
 fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g" | cut -c -%pw
 
-" HTML
+" HTMLs
 fileviewer *.html w3m -dump %c
 filextype *.html,*.htm firefox %f 2>/dev/null &
 
@@ -179,13 +144,14 @@ filextype *.html,*.htm firefox %f 2>/dev/null &
 filetype <text/*> nvim
 fileviewer <text/*> env -uCOLORTERM bat --color always --wrap never --pager never %c -p
 
-" PDF
+" PDFs
 filextype *.pdf zathura %c %i &
 fileviewer *.pdf
         \ vifmimg pdf %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
+" ePUBs
 filextype *.epub zathura %c %i &
 fileviewer *.epub
         \ vifmimg epub %px %py %pw %ph %c
@@ -198,14 +164,14 @@ fileviewer *.otf,*.ttf,*.woff
         \ %pc
         \ vifmimg clear
 
-" Audio
+" Audios
 filetype <audio/*> mpv %c %i &
 fileviewer <audio/*>
         \ vifmimg audio %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
-" Video
+" Videos
 filetype <video/*> mpv %c %i &
 fileviewer <video/*>
         \ vifmimg video %px %py %pw %ph %c
@@ -228,14 +194,13 @@ fileviewer *.tar tar -tf %c
 fileviewer *.rar unrar v %c
 fileviewer *.7z 7z l %c
 
+" Dont show preview on ../ as this confuses me at times
+fileview ../ echo >/dev/null
 
 " Show ls in the preview window, it creates a similar look as ranger.
 " The default directory tree thing is really messy
 fileviewer */ ls --color --group-directories-first
 fileviewer .*/ ls --color --group-directories-first
-
-" Dont show preview on "../"
-fileview ../ echo >/dev/null
 
 " Other files
 " Using xdg-open to open the highlighted file with a compatible program and
@@ -243,11 +208,11 @@ fileview ../ echo >/dev/null
 " does not lag when trying "cat" the file
 filetype * xdg-open %c
 fileviewer * file -b %c
-" ------------------------------------------------------------------------------
+" }}}
 
-set vifminfo=dhistory,chistory,state,shistory,phistory,fhistory,dirstack,registers,bookmarks,bmarks
-
-" ------------------------------------------------------------------------------
+"{{{ Key mappings 
+" Easily quit vifm by hitting q
+nmap q ZQ
 
 " Use comma to enter command mode
 nnoremap , : 
@@ -276,8 +241,6 @@ nnoremap shots :cd ~/pictures/screenshots<cr>
 nnoremap music :cd ~/music<cr>
 nnoremap cd :cd<cr>
 
-" Open with preview window
-:view
 
 " Start shell in current directory
 nnoremap s :shell<cr>
@@ -306,24 +269,14 @@ nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
 nnoremap A cw
 
-" Open console in current directory
-nnoremap ,t :!kitty &<cr>
-
-" Toggle wrap setting on ,w key
-nnoremap ,w :set wrap!<cr>
-
-nnoremap x :!/home/siddharth/bin/utils/extract %f<cr>
+" Extract an archive
+nnoremap x :!/home/siddharth/bin/utils/extract %f &<cr>
 
 " Make a new directory
 nnoremap mkd :mkdir<space>
+"}}}
 
-" ------------------------------------------------------------------------------
-
-" Various customization examples
-
-" Use ag (the silver searcher) instead of grep
-set grepprg='ag --line-numbers %i %a %s'
-
+"{{{ Icons 
 " file types
 set classify='  :dir:/,  :exe:,  :reg:,  :link:'
 " various file names
@@ -338,5 +291,4 @@ set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.
 set classify+='  ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid::'
 " office files
 set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::'
-
-
+"}}}

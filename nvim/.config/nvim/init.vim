@@ -82,6 +82,15 @@ highlight LineNr ctermfg=darkgrey
 " Show quotes in JSON files because they are usually hidden and
 " it honestly messes up what you are typing/seeing
 set conceallevel=0
+
+
+" Enable syntax highlighting for files formats that are not known by
+" vim, but use the same syntax as file that are known to vim
+" Example:
+"    vifmrc uses the same syntax as .vim files
+"    rofi themes (*.rasi) uses the same syntax as css
+autocmd BufEnter,BufRead vifmrc :setfiletype vim
+
 "}}}
 
 
@@ -299,6 +308,10 @@ inoremap <c-o> <Esc>:Files<CR>
 " Since I have mapped Shift-J or uppercase J to scrolling down, we have to map
 " ctrl-j to join so that we can join two lines
 nnoremap <c-j> :join<CR>
+
+" Create a nice custom fold. This requires the vimfold script from 
+" my bin folder
+vnoremap f :!vimfold<cr>za
 
 " {{{ Code snippets  
 " Jump to <++>, which is used in my mappings

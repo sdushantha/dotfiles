@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 readonly ID_PREVIEW="preview"
 
-# preview an image file directly
+# Preview an image file directly
 function draw() {
   declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
                      [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
@@ -9,9 +9,9 @@ function draw() {
     > "$FIFO_UEBERZUG"
 }
 
-function font_prevw() {
+function font_preview() {
   # if no preview found, generate one
-  if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
+  if [ ! -f "/tmp${PWD}/$6.png" ]; then
     fontpreview -i "$6" -o "/tmp${PWD}/$6.png"
   fi
   declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
@@ -20,9 +20,9 @@ function font_prevw() {
     > "$FIFO_UEBERZUG"
 }
 
-function pdf_prevw() {
+function pdf_preview() {
   # if no preview found, generate one
-  if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
+  if [ ! -f "/tmp${PWD}/$6.png" ]; then
     pdftoppm -png -singlefile "$6" "/tmp${PWD}/$6"
   fi
   declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
@@ -31,9 +31,9 @@ function pdf_prevw() {
     > "$FIFO_UEBERZUG"
 }
 
-function audio_prevw() {
+function audio_preview() {
   # if no preview found, generate one
-  if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
+  if [ ! -f "/tmp${PWD}/$6.png" ]; then
     ffmpeg -i "$6" "/tmp${PWD}/$6.png" -y &> /dev/null
   fi
   declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
@@ -42,9 +42,9 @@ function audio_prevw() {
     > "$FIFO_UEBERZUG"
 }
 
-function video_prevw() {
+function video_preview() {
   # if no preview found, generate one
-  if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
+  if [ ! -f "/tmp${PWD}/$6.png" ]; then
     ffmpegthumbnailer -i "${PWD}/$6" -o "/tmp${PWD}/$6.png" -s 0 -q 10
   fi
   declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
@@ -53,8 +53,8 @@ function video_prevw() {
     > "$FIFO_UEBERZUG"
 }
 
-function previewepub() {
-    if [[ ! -f "/tmp$PWD/$6.png" ]]; then
+function epub_preview() {
+    if [ ! -f "/tmp$PWD/$6.png" ]; then
         epub-thumbnailer "$6" "/tmp$PWD/$6.png" 1024
     fi
     declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
@@ -64,11 +64,14 @@ function previewepub() {
 }
 
 # clear preview image
-function clear_prevw() {
+function clear_preview() {
   declare -p -A cmd=([action]=remove [identifier]="$ID_PREVIEW") \
     > "$FIFO_UEBERZUG"
 }
 
+# Check all the dependencies that are needed to show all the file previews.
+# The reason why we are sending a notification incase a dependency does not
+# exist is because that is the easiest way to get the user's attention.
 dependencies=(ffmpeg ffmpegthumbnailer fontpreview pdftoppm epub-thumbnailer)
 for dependency in "${dependencies[@]}"; do
     type -p "$dependency" &>/dev/null || {
@@ -78,20 +81,17 @@ for dependency in "${dependencies[@]}"; do
 done
 
 
-# make sure ueberzug's fifo exists
+# Make sure ueberzug's fifo exists
 if [ -e "$FIFO_UEBERZUG" ]; then
-  # make a temp dir for rendering if not exists
-  if [[ ! -d "/tmp${PWD}/" ]]; then
-    mkdir -p "/tmp${PWD}/"
-  fi
+  # Make a temp dir for rendering if not exists
+  [ ! -d "/tmp${PWD}/" ] && mkdir -p "/tmp${PWD}/"
   case "$1" in
     draw) draw "$@" ;;
-    font) font_prevw "$@" ;;
-    pdf) pdf_prevw "$@" ;;
-    video) video_prevw "$@" ;;
-    clear) clear_prevw ;;
-    audio) audio_prevw "$@" ;;
-    gif) previewgif "$@" ;;
-    epub) previewepub "$@" ;;
+    font) font_preview "$@" ;;
+    pdf) pdf_preview "$@" ;;
+    video) video_preview "$@" ;;
+    clear) clear_preview ;;
+    audio) audio_preview "$@" ;;
+    epub) epub_preview "$@" ;;
   esac
 fi

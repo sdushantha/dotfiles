@@ -203,8 +203,7 @@ exec_always --no-startup-id setroot -z $HOME/pictures/current/*
 exec_always --no-startup-id start-pulseaudio-x11
 
 # Enable compton without any shadows
-# exec_always --no-startup-id compton -r 0 -o 0 -l 0 -t 0
-exec_always --no-startup-id compton
+exec_always --no-startup-id picom 
 
 # Restore the brightness by taking the value in the file, brightness
 exec_always --no-startup-id bash $HOME/bin/keybinded/brightness/restoreBrightness.sh
