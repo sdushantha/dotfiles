@@ -103,6 +103,9 @@ command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
+
+" Empty the ruler. By default, it shows the number of directories+files.
+set rulerformat=
 " }}}
 
 

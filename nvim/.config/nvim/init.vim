@@ -313,6 +313,12 @@ nnoremap <c-j> :join<CR>
 " my bin folder
 vnoremap f :!vimfold<cr>za
 
+" Tab auto completation at it's finest.
+" Usually you would have to hit ctrl-n to show
+" the completation but mapping it to Tab is feels more normal
+inoremap <Tab> <C-n>
+inoremap <S-Tab> <C-p>
+
 " {{{ Code snippets  
 " Jump to <++>, which is used in my mappings
 inoremap ,, <Esc>/<++><Enter>"_c4l
