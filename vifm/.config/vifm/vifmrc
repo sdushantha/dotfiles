@@ -1,3 +1,4 @@
+
 " {{{ General config 
 " This is the actual command used to start vi.  The default is vim.
 " If you would like to use another vi clone such as Elvis or Vile
@@ -103,6 +104,7 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
 " }}}
+
 
 " {{{ File preview & file opening  
 " The file type is for the default programs to be used with
@@ -210,6 +212,7 @@ filetype * xdg-open %c
 fileviewer * file -b %c
 " }}}
 
+
 "{{{ Key mappings 
 " Easily quit vifm by hitting q
 nmap q ZQ
@@ -275,6 +278,7 @@ nnoremap x :!/home/siddharth/bin/utils/extract %f &<cr>
 " Make a new directory
 nnoremap mkd :mkdir<space>
 "}}}
+
 
 "{{{ Icons 
 " file types
