@@ -79,11 +79,6 @@ hi CursorLineNR ctermbg=236
 
 highlight LineNr ctermfg=darkgrey
 
-" Show quotes in JSON files because they are usually hidden and
-" it honestly messes up what you are typing/seeing
-set conceallevel=0
-
-
 " Enable syntax highlighting for files formats that are not known by
 " vim, but use the same syntax as file that are known to vim
 " Example:
@@ -91,6 +86,9 @@ set conceallevel=0
 "    rofi themes (*.rasi) uses the same syntax as css
 autocmd BufEnter,BufRead vifmrc :setfiletype vim
 
+" Show quotes in JSON files because they are usually hidden and
+" it honestly messes up what you are typing/seeing
+set conceallevel=0
 "}}}
 
 
