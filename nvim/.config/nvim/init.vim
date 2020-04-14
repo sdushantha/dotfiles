@@ -36,6 +36,21 @@ Plug 'tpope/vim-commentary'
 Plug 'lilydjwg/colorizer'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
+Plug 'itchyny/lightline.vim'
+    Plug 'mengelbrecht/lightline-bufferline'
+
+    let g:lightline						= {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ] ],
+      \ }
+      \ }
+
+    let g:lightline.colorscheme = "wombat"
+    let g:lightline.tabline          = {'left': [['buffers']], 'right': [['']]}
+    let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+    let g:lightline.component_type   = {'buffers': 'tabsel'}
+    let g:lightline#bufferline#filename_modifier = ':t'
 call plug#end()
 "}}}
 
@@ -57,10 +72,16 @@ hi LineNr ctermbg=NONE ctermfg=darkgrey
 highlight Pmenu ctermbg=grey
 highlight PmenuSel ctermbg=darkgrey ctermfg=grey
 
-" Disable the status line
-set laststatus=0
+" Always show tabline
+set showtabline=2
 
-" Display all matching results when we tab complete
+" Always show status line
+set laststatus=2
+
+" Dont show --INSERT-- , --NORMAL-- , etc
+set noshowmode
+
+" Display all matching results when we tab complete in command mode
 set wildmenu
 
 " Highlight the 81st charcter
@@ -276,18 +297,27 @@ nnoremap <space> za
 " Create new file or edit an existing file
 nmap <C-t> :e 
 " Close current buffer
-nmap <C-w> :bp<CR>:bd #<CR>  
+nmap <C-w> :bp<CR>:bdelete #<CR>  
 
 " Go to Nth buffer
-nnoremap <silent> <A-1> :b1<CR>
-nnoremap <silent> <A-2> :b2<CR>
-nnoremap <silent> <A-3> :b3<CR>
-nnoremap <silent> <A-4> :b4<CR>
-nnoremap <silent> <A-5> :b5<CR>
-nnoremap <silent> <A-6> :b6<CR> 
-nnoremap <silent> <A-7> :b7<CR>
-nnoremap <silent> <A-8> :b8<CR>
-nnoremap <silent> <A-9> :b9<CR>
+" nnoremap <silent> <A-1> :b1<CR>
+" nnoremap <silent> <A-2> :b2<CR>
+" nnoremap <silent> <A-3> :b3<CR>
+" nnoremap <silent> <A-4> :b4<CR>
+" nnoremap <silent> <A-5> :b5<CR>
+" nnoremap <silent> <A-6> :b6<CR> 
+" nnoremap <silent> <A-7> :b7<CR>
+" nnoremap <silent> <A-8> :b8<CR>
+" nnoremap <silent> <A-9> :b9<CR>
+nmap <A-1> <Plug>lightline#bufferline#go(1)
+nmap <A-2> <Plug>lightline#bufferline#go(2)
+nmap <A-3> <Plug>lightline#bufferline#go(3)
+nmap <A-4> <Plug>lightline#bufferline#go(4)
+nmap <A-5> <Plug>lightline#bufferline#go(5)
+nmap <A-6> <Plug>lightline#bufferline#go(6)
+nmap <A-7> <Plug>lightline#bufferline#go(7)
+nmap <A-8> <Plug>lightline#bufferline#go(8)
+nmap <A-9> <Plug>lightline#bufferline#go(9)
 
 " Enable Goyo
 nnoremap <silent> Q :Goyo<CR>:setlocal showtabline=0<CR>

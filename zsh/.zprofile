@@ -32,3 +32,4 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 
 # Other
 export SUDO_ASKPASS=~/bin/utils/rofi-askpass
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
