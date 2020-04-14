@@ -4,9 +4,6 @@
  * 
  * Preview: https://0x0.st/iu4y.png
  * 
- * WARNING: This is by no means the most secure method
- *          to implement a graphical interface for askpass
- * 
  * Put the code below in a location such as ~/bin/askpass-rofi
  *    #!/usr/bin/env bash
  *    rofi -dmenu\

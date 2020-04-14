@@ -221,6 +221,9 @@ exec_always --no-startup-id $HOME/.local/bin/flashfocus
 # some issues with the power on my Macbook
 exec_always --no-startup-id xfce4-power-manager
 
+# Start up my notification daemon
+exec_always --no-startup-id dunst
+
 #}}}
 
 
