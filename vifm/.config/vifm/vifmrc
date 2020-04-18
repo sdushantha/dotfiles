@@ -170,21 +170,21 @@ fileviewer *.otf,*.ttf,*.woff
         \ vifmimg clear
 
 " Audios
-filetype <audio/*> mpv %c %i &
+filetype <audio/*> mpv %c %i </dev/null &>/dev/null &
 fileviewer <audio/*>
         \ vifmimg audio %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
 " Videos
-filetype <video/*> mpv %c %i &
+filetype <video/*> mpv %c %i </dev/null &>/dev/null &
 fileviewer <video/*>
         \ vifmimg video %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
 " Images
-filextype <image/*> mpv %c %i &
+filextype <image/*> mpv %c %i </dev/null &>/dev/null &
 fileviewer <image/*>
         \ vifmimg draw %px %py %pw %ph %c
         \ %pc
