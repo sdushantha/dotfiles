@@ -372,6 +372,9 @@ if !isdirectory(expand(&undodir))
     call mkdir(expand(&undodir), 'p')
 endif
 
+" Save content from register to clipboard on exit
+" https://stackoverflow.com/a/9381778/9215267
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
 
 " Autoreload file when it gets changed externaly
 " Source: https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
@@ -397,4 +400,6 @@ set backspace=indent,eol,start
 " you dont have to write the current one manually every time you switch
 " buffers.
 set autowriteall
+
+
 "}}}

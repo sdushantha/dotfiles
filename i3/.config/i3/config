@@ -145,10 +145,10 @@ bindsym $mod+Shift+s exec --no-startup-id clearine
 bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id bash $HOME/bin/keybinded/lock
 
 # Music control
-bindsym XF86AudioNext exec mpc next && bash $HOME/bin/keybinded/change_music.sh 
-bindsym XF86AudioPrev exec mpc prev && bash $HOME/bin/keybinded/change_music.sh
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioStop exec mpc stop
+bindsym XF86AudioNext exec bash /home/siddharth/bin/keybinded/music_ctrl.sh next  
+bindsym XF86AudioPrev exec bash /home/siddharth/bin/keybinded/music_ctrl.sh previous
+bindsym XF86AudioPlay exec bash /home/siddharth/bin/keybinded/music_ctrl.sh toggle
+# bindsym XF86AudioStop exec bash /home/siddharth/bin/keybinded/music_ctrl.sh pause
 
 # Screenshot fullscreen
 bindsym $mod+aring exec $HOME/bin/keybinded/screenshot.sh
@@ -209,6 +209,7 @@ exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
 
 # Start MPD, which is needed for ncmpcpp to work
 exec_always --no-startup-id mpd
+exec_always --no-startup-id mpDris2
 
 # Flash the window you have changed focus to
 exec_always --no-startup-id $HOME/.local/bin/flashfocus
