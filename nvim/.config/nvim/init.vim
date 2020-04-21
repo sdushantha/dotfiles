@@ -155,27 +155,6 @@ set smartindent
 
 
 "{{{ Functions  
-" Yank to clipboard
-function! ClipboardYank()
-  call system('xclip -i -selection clipboard', @@)
-endfunction
-
-" Paste from clipboard
-function! ClipboardPaste()
-  let @@ = system('xclip -o -selection clipboard | perl -pe "chomp if eof"')
-endfunction
-
-" function! GOTO(num)
-"     execute "normal!".a:num."gt" 
-" endfunction
-
-" function! Check()
-"     let n = len(getbufinfo({'buflisted':1}))
-"     if n == 1
-"         cabclear
-"     endif
-" endfunction
-
 " Credits: https://github.com/LinuxSDA/HashBang
 function! Hashbang(portable, permission, RemExt)
 let shells = { 
@@ -264,12 +243,6 @@ nnoremap <silent> <c-x> :e ~/.config/nvim/init.vim<cr>
 
 " Quick way to update init.vim while Im using it
 map <silent> <C-a> :source ~/.config/nvim/init.vim <cr>
-" Remapping the simple yank, delete, paste keys to my functions
-vnoremap <silent> y y:call ClipboardYank()<cr>
-vnoremap <silent> d d:call ClipboardYank()<cr>
-nnoremap <silent> p :call ClipboardPaste()<cr>p
-onoremap <silent> y y:call ClipboardYank()<cr>
-onoremap <silent> d d:call ClipboardYank()<cr>
 
 " Shift+. causes some trouble at times and it is not efficient
 " The first line here is just here so that I get used to
@@ -387,6 +360,9 @@ cmap w!! w !sudo tee % >/dev/null
 " Search down into subfolders
 " Provides tab-completion for all file related tasks
 set path+=**
+
+" Use system clipboard
+set clipboard+=unnamedplus
 
 " Save the undotree to a file when exiting a buffer
 set undofile
