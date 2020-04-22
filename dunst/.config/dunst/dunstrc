@@ -17,7 +17,7 @@
 
     frame_width = 0
     frame_color = ""
-    separator_color = frame
+    separator_color = "#111116"
     sort = yes
     idle_threshold = 120
     font = Hack Nerd Font Mono 10
