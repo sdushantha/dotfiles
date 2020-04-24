@@ -165,3 +165,30 @@ type = custom/script
 exec = $HOME/.config/polybar/scripts/calendar.sh
 interval = 5
 click-left = $HOME/.config/polybar/scripts/calendar.sh --popup &
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+format-padding = 1
+format-background = #000000
+format-foreground = #ffffff
+index-sort = true
+wrapping-scroll = false
+
+enable-click = true
+reverse-scroll = false
+
+label-focused = 
+label-focused-font = 3
+label-focused-foreground = #2eeff3
+label-focused-padding = 1
+
+label-unfocused = 
+label-unfocused-font = 2
+label-unfocused-padding = 1
+label-unfocused-foreground = #ffffff
+
+label-urgent = 
+label-urgent-font = 1
+label-urgent-padding = 1
+label-urgent-foreground = #ff0000

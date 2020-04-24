@@ -280,6 +280,8 @@ nnoremap x :!/home/siddharth/bin/utils/extract %f &<cr>
 
 " Make a new directory
 nnoremap mkd :mkdir<space>
+
+nnoremap o :!dragon %f </dev/null &>/dev/null & <cr>
 "}}}
 
 

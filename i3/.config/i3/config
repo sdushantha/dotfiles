@@ -177,6 +177,7 @@ bindsym $mod+n exec --no-startup-id flash_window
 # The best color picker ;)
 bindsym $mod+Shift+f --release exec farge --image-viewer mpv
 
+bindsym $mod+Shift+w exec python3 $HOME/bin/keybinded/list_workspaces.py
 #}}}
 
 
