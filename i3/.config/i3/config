@@ -233,7 +233,7 @@ for_window [class="^.*"] border pixel 0
 # Dialogs, popups, etc should be floating and in the center of the screen
 for_window [window_role="pop-up"] floating enable,move absolute position center
 for_window [window_role="task_dialog"] floating enable,move absolute position center
-for_window [instance="Dialog"] floating enable,move absolute position center
+for_window [window_role="Dialog"] floating enable,move absolute position center
 
 # Video player floating
 for_window [class="mpv"] floating enable
