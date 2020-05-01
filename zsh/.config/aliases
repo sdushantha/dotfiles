@@ -16,8 +16,8 @@ alias notes="cd ~/documents/notes"
 alias ..="cd .."
 
 # Quickly edit some files
-alias zshrc="nvim $HOME/.zshrc"
-alias aliases="nvim $HOME/.config/aliases"
+alias zshrc="nvim $HOME/.zshrc && source $HOME/.zshrc"
+alias aliases="nvim $HOME/.config/aliases && source $HOME/.config/aliases"
 alias i3config="nvim $HOME/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias vifmrc="nvim $HOME/.config/vifm/vifmrc"

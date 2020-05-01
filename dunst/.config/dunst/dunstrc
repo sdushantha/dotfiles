@@ -3,8 +3,8 @@
     follow = mouse
 
     #[{width}]x{height}[+/-{x}+/-{y}]
-    geometry = "320x5-12+37"
-
+    #geometry = "320x5-12+37"
+    geometry = "300x0-12+37"
     corner_radius = 0
     indicate_hidden = yes
     shrink = no

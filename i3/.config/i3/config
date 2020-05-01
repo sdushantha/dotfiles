@@ -188,9 +188,6 @@ bindsym $mod+Shift+w exec python3 $HOME/bin/keybinded/list_workspaces.py
 # Show lockscreen on start up because thats the only security I have
 exec bash $HOME/bin/keybinded/lock
 
-# Start my pomodoro timer
-exec bash $HOME/bin/pomo 
-
 # Automaticaly sets wallpaper. Just the the wallpaper
 # you want in the Wallpapers directory then it will 
 # automaticaly set it on start up.
@@ -221,6 +218,11 @@ exec_always --no-startup-id xfce4-power-manager
 
 # Start up my notification daemon
 exec_always --no-startup-id dunst
+
+# A neat script which will show a notifiction with the album art when
+# changing music on mpd
+exec_always --no-startup-id bash ~/bin/utils/mpdnotify.sh
+
 
 #}}}
 
