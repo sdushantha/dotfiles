@@ -11,7 +11,6 @@ visualizer_type = spectrum
 visualizer_look = ●┃
 visualizer_color = cyan, green, yellow, magenta, red
 song_list_format = "  %t $R%a %l  "
-#song_status_format = "{{%a{ $2//$9 %b{, %y}} $2//$9 }{%t$/b}}|{$b%f$/b}"
 song_status_format= "$7%t"
 song_library_format = {{%a - %t} (%b)}|{%f}
 now_playing_prefix = "$b$2"

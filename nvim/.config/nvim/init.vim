@@ -189,9 +189,9 @@ if has_key(shells,extension)
 
 	0put = line
 
-	if a:permission
-		:autocmd BufWritePost * :autocmd VimLeave * :!chmod u+x %
-	endif
+	" if a:permission
+	" 	:autocmd BufWritePost * :autocmd VimLeave * :!chmod u+x %
+	" endif
 
 	if a:RemExt
 		:autocmd BufWritePost * :autocmd VimLeave * :!mv % "%:p:r"
