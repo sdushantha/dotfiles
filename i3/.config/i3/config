@@ -223,7 +223,7 @@ exec_always --no-startup-id mpd
 exec_always --no-startup-id mpDris2
 
 # Flash the window you have changed focus to
-exec_always --no-startup-id $HOME/.local/bin/flashfocus
+exec_always --no-startup-id flashfocus
 
 # This fixes some issues with sleeping, closing the lid, and
 # some issues with the power on my Macbook
