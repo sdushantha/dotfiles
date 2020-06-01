@@ -73,9 +73,9 @@ bindsym $mod+comma split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+bindsym $mod+e layout split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle,move absolute position center
@@ -177,7 +177,20 @@ bindsym $mod+n exec --no-startup-id flash_window
 # The best color picker ;)
 bindsym $mod+Shift+f --release exec farge --image-viewer mpv
 
+# Send a notification showing a list of active workspaces
 bindsym $mod+Shift+w exec python3 $HOME/bin/keybinded/list_workspaces.py
+
+# Controling gaps
+bindsym $mod+plus	    gaps inner current plus 5
+bindsym $mod+minus		gaps inner current minus 5
+bindsym $mod+r		    gaps inner current set 6; gaps outer current set 6
+bindsym $mod+z		    gaps inner current set 0; gaps outer current set 0
+
+# Start up firefox
+bindsym $mod+w exec firefox
+
+# Execute a neat OCR script
+bindsym $mod+o --release exec bash $HOME/bin/utils/ocr
 #}}}
 
 
