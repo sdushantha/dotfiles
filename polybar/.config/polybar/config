@@ -79,7 +79,7 @@ padding-left = 2
 padding-right = 2
 module-margin = 1.5
 
-modules-left = now
+modules-left = i3
 modules-center = 
 modules-right = volume battery wlan calendar
 
@@ -169,26 +169,26 @@ click-left = $HOME/.config/polybar/scripts/calendar.sh --popup &
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-format-padding = 1
+format-padding = 0
 format-background = #000000
-format-foreground = #ffffff
+format-foreground = #e6e6e6
 index-sort = true
 wrapping-scroll = false
 
-enable-click = true
+enable-click = false
 reverse-scroll = false
 
 label-focused = 
 label-focused-font = 3
-label-focused-foreground = #2eeff3
+label-focused-foreground = #e5c6aa
 label-focused-padding = 1
 
-label-unfocused = 
+label-unfocused = 
 label-unfocused-font = 2
 label-unfocused-padding = 1
-label-unfocused-foreground = #ffffff
+label-unfocused-foreground = #e5c6aa
 
-label-urgent = 
+label-urgent = 
 label-urgent-font = 1
 label-urgent-padding = 1
-label-urgent-foreground = #ff0000
+label-urgent-foreground = #c73834

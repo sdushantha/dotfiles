@@ -74,4 +74,5 @@ alias pii="comm -23 <(pacman -Qqett | sort) <(pacman -Qqg base -g base-devel | s
 # Start a simple http server
 alias pyserver="python3 -m http.server"
 
+# Upload python project to pypi
 alias pyup="python3 setup.py sdist && python3 -m twine upload dist/*"
