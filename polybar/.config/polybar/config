@@ -168,6 +168,7 @@ click-left = $HOME/.config/polybar/scripts/calendar.sh --popup &
 
 [module/i3]
 type = internal/i3
+
 format = <label-state> <label-mode>
 format-padding = 0
 format-background = #000000
@@ -178,13 +179,11 @@ wrapping-scroll = false
 enable-click = false
 reverse-scroll = false
 
-label-focused = 
-label-focused-font = 3
-label-focused-foreground = #e5c6aa
+label-focused-font = 0
+label-focused-foreground = #e5c
 label-focused-padding = 1
 
-label-unfocused = 
-label-unfocused-font = 2
+label-unfocused-font = 0
 label-unfocused-padding = 1
 label-unfocused-foreground = #e5c6aa
 
