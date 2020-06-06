@@ -38,18 +38,8 @@ set $mod Mod4
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# This is a very usefull script whic starts the terminal. I have a keyboard 
-# shortcut (mod+enter) which runs this script. What this script does is that 
-# if the currect workspace is empty, then it will open the terminal
-# as floating enabled. If there is a window in the current workspace, then the 
-# terminal will open like other windows
-bindsym $mod+Return exec --no-startup-id kitty -d $(xcwd)
-
 # kill focused window
 bindsym $mod+q kill
-
-# start rofi (a program launcher)
-bindsym $mod+d exec rofi -show drun
 
 # change focus
 bindsym $mod+h focus left
@@ -122,72 +112,12 @@ bindsym $mod+Mod1+j resize grow height 10 px or 10 ppt
 bindsym $mod+Mod1+k resize shrink height 10 px or 10 ppt
 bindsym $mod+Mod1+l resize grow width 10 px or 10 ppt
 
-# Pulse Audio controls
-# I have set it so that it if the volume is set to mute, and I try to increase or decrease
-# the volume, it will unmute and then increase or decrease. Because before, it would stay mute
-# and just increase the volume but it would still stay mute. Yes, its strange.
-bindsym XF86AudioRaiseVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh up
-bindsym XF86AudioLowerVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh down
-bindsym XF86AudioMute exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh mute
-
-# Change brightness using xbacklight
-# Check the link below to fix brightness on MacBooks
-# https://medium.com/@philpl/ubuntu-14-10-running-on-my-macbook-18991a697ae0
-bindsym XF86MonBrightnessUp exec bash $HOME/bin/keybinded/brightness/brightnessControl.sh up
-bindsym XF86MonBrightnessDown exec bash $HOME/bin/keybinded/brightness/brightnessControl.sh down
-
-# Launch clearine logout menu
-bindsym $mod+Shift+s exec --no-startup-id clearine
-
-# Locks my screen
-bindsym $mod+x exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv; exec --no-startup-id bash $HOME/bin/keybinded/lock
-
-# Music control
-bindsym XF86AudioNext exec bash /home/siddharth/bin/keybinded/music_ctrl.sh next  
-bindsym XF86AudioPrev exec bash /home/siddharth/bin/keybinded/music_ctrl.sh previous
-bindsym XF86AudioPlay exec bash /home/siddharth/bin/keybinded/music_ctrl.sh toggle
-
-# Screenshot fullscreen
-bindsym $mod+aring exec $HOME/bin/keybinded/screenshot.sh
-
-# Screenshot selected area
-# You need to use `--release` in the binding.
-# See "4.3. Keyboard bindings" on i3wm docs 
-bindsym $mod+oslash --release exec bash $HOME/bin/keybinded/screenshot.sh -s
-
-# A very cool emoji and unicode character picker using rofi
-bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
-
-# Open up vifm 
-bindsym $mod+Shift+Return exec python3 $HOME/bin/keybinded/vifm.py 
-
-# Keyboard backlight for Macbook
-bindsym XF86KbdBrightnessDown exec kbdlight down
-bindsym XF86KbdBrightnessUp exec kbdlight up
-
-# Pop any video from the browser out into mpv
-bindsym --release $mod+p exec bash $HOME/bin/keybinded/pop_mpv.sh
-
-# Flash the current window I am in using flashfocus
-bindsym $mod+n exec --no-startup-id flash_window
-
-# The best color picker ;)
-bindsym $mod+Shift+f --release exec farge --image-viewer mpv
-
-# Send a notification showing a list of active workspaces
-bindsym $mod+Shift+w exec python3 $HOME/bin/keybinded/list_workspaces.py
-
 # Controling gaps
 bindsym $mod+plus	    gaps inner current plus 5
 bindsym $mod+minus		gaps inner current minus 5
 bindsym $mod+r		    gaps inner current set 6; gaps outer current set 6
 bindsym $mod+z		    gaps inner current set 0; gaps outer current set 0
 
-# Start up firefox
-bindsym $mod+w exec firefox
-
-# Execute a neat OCR script
-bindsym $mod+o --release exec bash $HOME/bin/utils/ocr
 #}}}
 
 
@@ -233,7 +163,8 @@ exec_always --no-startup-id dunst
 # changing music on mpd
 exec_always --no-startup-id bash ~/bin/utils/mpdnotify.sh
 
-
+# Start up my hot key daemon
+exec_always --no-startup-id sxhkd
 #}}}
 
 
