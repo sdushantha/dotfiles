@@ -11,7 +11,6 @@
 
 # merge in defaults and keymaps
 xmodmap "$HOME/.Xmodmap"
-# sxhkd &
-# exec /home/siddharth/projects/dwm/dwm
+sxhkd &
 exec i3 --shmlog-size 0
 

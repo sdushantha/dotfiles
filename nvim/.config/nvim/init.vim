@@ -36,6 +36,7 @@ Plug 'tpope/vim-commentary'
 Plug 'lilydjwg/colorizer'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'kovetskiy/sxhkd-vim'
 Plug 'vim-python/python-syntax'
     let g:python_highlight_all = 1
 

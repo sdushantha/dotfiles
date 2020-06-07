@@ -164,7 +164,7 @@ exec_always --no-startup-id dunst
 exec_always --no-startup-id bash ~/bin/utils/mpdnotify.sh
 
 # Start up my hot key daemon
-exec_always --no-startup-id sxhkd
+#exec_always --no-startup-id sxhkd
 #}}}
 
 

@@ -14,7 +14,7 @@ XF86Audio{Raise,Lower}Volume
   bash $HOME/bin/keybinded/volumeControl.sh {up,down}
 XF86AudioMute
   bash $HOME/bin/keybinded/volumeControl.sh mute
-XF86Audio{Next,Prev,Play}
+XF86Audio{Next,Prev,Play,Stop}
   music_ctrl.sh {next,previous,toggle}
 
 # Change brightness using xbacklight
@@ -64,3 +64,6 @@ super + o
 
 super + w
   firefox
+
+super + Escape
+  pkill -USR1 -x sxhkd
