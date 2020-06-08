@@ -12,16 +12,28 @@ super + d
 # and just increase the volume but it would still stay mute. Yes, its strange.
 XF86Audio{Raise,Lower}Volume
   bash $HOME/bin/keybinded/volumeControl.sh {up,down}
+
 XF86AudioMute
   bash $HOME/bin/keybinded/volumeControl.sh mute
-XF86Audio{Next,Prev,Play,Stop}
-  music_ctrl.sh {next,previous,toggle}
+
+XF86AudioNext
+  bash /home/siddharth/bin/keybinded/music_ctrl.sh next  
+
+XF86AudioPrev
+  bash /home/siddharth/bin/keybinded/music_ctrl.sh previous
+
+XF86AudioPlay
+  bash /home/siddharth/bin/keybinded/music_ctrl.sh toggle
 
 # Change brightness using xbacklight
 # Check the link below to fix brightness on MacBooks
 # https://medium.com/@philpl/ubuntu-14-10-running-on-my-macbook-18991a697ae0
 XF86MonBrightness{Up,Down}
   bash $HOME/bin/keybinded/brightness/brightnessControl.sh {up,down}
+
+# Keyboard backlight for Macbook
+XF86KbdBrightness{Down,Up}
+  kbdlight {down,up}
 
 # Launch clearine logout menu
 super + shift + s
@@ -43,10 +55,6 @@ super + shift + d
 super + shift + Return
   python3 $HOME/bin/keybinded/vifm.py
 
-# Keyboard backlight for Macbook
-XF86KbdBrightness{Down,Up}
-  kbdlight {down,up}
-
 # Pop any video from the browser out into mpv
 super + p
   bash $HOME/bin/keybinded/pop_mpv.sh
@@ -66,4 +74,4 @@ super + w
   firefox
 
 super + Escape
-  pkill -USR1 -x sxhkd
+  pkill -USR1 -x sxhkd && notify-send "sxhkd" "config reloaded"

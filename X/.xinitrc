@@ -11,6 +11,6 @@
 
 # merge in defaults and keymaps
 xmodmap "$HOME/.Xmodmap"
-sxhkd &
+#sxhkd &
 exec i3 --shmlog-size 0
 
