@@ -21,6 +21,7 @@ alias aliases="nvim $HOME/.config/aliases && source $HOME/.config/aliases"
 alias i3config="nvim $HOME/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias vifmrc="nvim $HOME/.config/vifm/vifmrc"
+alias binds="nvim $HOME/.config/sxhkd/sxhkdrc"
 
 # Enable colors for some commands
 alias ls='ls --color=auto'
@@ -76,3 +77,10 @@ alias pyserver="python3 -m http.server"
 
 # Upload python project to pypi
 alias pyup="python3 setup.py sdist && python3 -m twine upload dist/*"
+
+# Basically, lets me know what just happened
+# --interactive     prompt before overwrite
+# --verbose         explain what is being done
+alias cp="cp --interactive --verbose"
+alias mv="mv --interactive --verbose"
+alias rm="rm --verbose"
