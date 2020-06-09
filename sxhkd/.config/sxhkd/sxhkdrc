@@ -41,7 +41,7 @@ super + shift + s
 
 # Lock my screen
 super + x
-  lock
+  bash /home/siddharth/bin/keybinded/lock
 
 # Screenshot
 super + {aring,oslash}
@@ -73,5 +73,6 @@ super + o
 super + w
   firefox
 
+# Reload my sxhkdrc file
 super + Escape
   pkill -USR1 -x sxhkd && notify-send "sxhkd" "config reloaded"
