@@ -1,47 +1,109 @@
 [global]
     monitor = 0
+
+    # If this option is set to mouse or keyboard, the monitor option
+    # will be ignored.
     follow = mouse
 
-    #[{width}]x{height}[+/-{x}+/-{y}]
-    #geometry = "320x5-12+37"
+    # Geometery reference --> [{width}]x{height}[+/-{x}+/-{y}]
     geometry = "300x0-12+37"
+
+    # Radius of the four corners of the notification
     corner_radius = 0
+
+    # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
+
+    # Shrink window if it's smaller than the width.  Will be ignored if width is 0.
     shrink = no
+
+    # The transparency of the window.  Range: [0; 100].
     transparency = 0
-    allow_markup = yes
+    
+    # The height of the entire notification.  If the height is smaller
+    # than the font height and padding combined, it will be raised
+    # to the font height and padding.
     notification_height = 0
+
+    # Show multiple notifications in the same box
     separator_height = 2
+
+    # Define a color for the separator.
+    # possible values are:
+    #  * auto: dunst tries to find a color fitting to the background;
+    #  * foreground: use the same color as the foreground;
+    #  * frame: use the same color as the frame;
+    #  * anything else will be interpreted as a X color.
+    separator_color = auto
+
+    # Add vertical padding to the inside of the notification
     padding = 10
+
+    # Add horizontal padding for when the text gets long enough
     horizontal_padding = 10
 
+    # The frame color and width of the notification
     frame_width = 0
     frame_color = ""
-    separator_color = "#111116"
+
+
     sort = yes
+
+    # How long a user needs to be idle for sticky notifications
     idle_threshold = 120
+
+    # Font and typography settings
     font = Hack Nerd Font Mono 10
-    line_height = 0
-    markup = full
-    format = "<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
     alignment = left
-    show_age_threshold = 60
     word_wrap = yes
+
+    # The spacing between lines.  If the height is smaller than the font height, it will get raised to the font height.
+    line_height = 0
+
+    # Allow some HTML tags like <i> and <u> in notifications
+    markup = full
+
+    # Format for how notifications will be displayed
+    #format = "<b>%s</b>\n%b"
+    format = "<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
+
+    show_age_threshold = 60
+
+    # When word_wrap is set to no, specify where to make an ellipsis in long lines.
+    # Possible values are "start", "middle" and "end".
     ellipsize = middle
+
+    # Ignore newlines '\n' in notifications.
     ignore_newline = no
+
+    # Stack together notifications with the same content
     stack_duplicates = true
-    hide_duplicate_count = false
+
+    # Hide the count of stacked notifications with the same content
+    hide_duplicate_count = true 
+
+    # Display indicators for URLs (U) and actions (A).
     show_indicators = no
+
+    # Align icons left/right/off
     icon_position = left
+
+    # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 48
+
     icon_path = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
+
     sticky_history = yes
     history_length = 20
-    always_run_script = true
-    startup_notification = false
-    force_xinerama = false
-    ### mouse
 
+    # Always run rule-defined scripts, even if the notification is suppressed
+    always_run_script = true
+
+    startup_notification = false
+
+    force_xinerama = false
+
+    ### mouse
     # Defines action of mouse event
     # Possible values are:
     # * none: Don't do anything.
@@ -53,6 +115,7 @@
     mouse_middle_click = close_all
     mouse_right_click = close_current
 
+# Set the background and foreground (text) color for all notifications
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
@@ -72,6 +135,7 @@
     foreground = "#a8a8a8"
     timeout = 10
     icon = /dev/null
+
 [urgency_critical]
     background = "#d64e4e"
     foreground = "#f0e0e0"
