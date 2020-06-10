@@ -33,10 +33,6 @@ Plug 'tpope/vim-commentary'
 " Plug 'maxboisvert/vim-simple-complete'
 "     set complete-=t
 "     set complete-=i
-Plug 'lilydjwg/colorizer'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'kovetskiy/sxhkd-vim'
 Plug 'vim-python/python-syntax'
     let g:python_highlight_all = 1
 
@@ -54,6 +50,11 @@ Plug 'itchyny/lightline.vim'
     let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
     let g:lightline.component_type   = {'buffers': 'tabsel'}
     let g:lightline#bufferline#filename_modifier = ':t'
+
+Plug 'lilydjwg/colorizer'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'kovetskiy/sxhkd-vim'
 call plug#end()
 "}}}
 
