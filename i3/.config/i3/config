@@ -126,7 +126,7 @@ bindsym $mod+z		    gaps inner current set 0; gaps outer current set 0
 # exec_always -> On start-up and reload
 
 # Show lockscreen on start up because thats the only security I have
-exec bash $HOME/bin/keybinded/lock
+exec bash $HOME/bin/utils/lock
 
 # Automaticaly sets wallpaper. Just the the wallpaper
 # you want in the Wallpapers directory then it will 

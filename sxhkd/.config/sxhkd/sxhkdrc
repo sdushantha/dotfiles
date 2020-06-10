@@ -11,25 +11,25 @@ super + d
 # the volume, it will unmute and then increase or decrease. Because before, it would stay mute
 # and just increase the volume but it would still stay mute. Yes, its strange.
 XF86Audio{Raise,Lower}Volume
-  bash $HOME/bin/keybinded/volumeControl.sh {up,down}
+  bash ~/.config/sxhkd/scripts/volumeControl.sh {up,down}
 
 XF86AudioMute
-  bash $HOME/bin/keybinded/volumeControl.sh mute
+  bash ~/.config/sxhkd/scripts/volumeControl.sh mute
 
 XF86AudioNext
-  bash /home/siddharth/bin/keybinded/music_ctrl.sh next  
+  bash ~/.config/sxhkd/scripts/music_ctrl.sh next  
 
 XF86AudioPrev
-  bash /home/siddharth/bin/keybinded/music_ctrl.sh previous
+  bash ~/.config/sxhkd/scripts/music_ctrl.sh previous
 
 XF86AudioPlay
-  bash /home/siddharth/bin/keybinded/music_ctrl.sh toggle
+  bash ~/.config/sxhkd/scripts/music_ctrl.sh toggle
 
 # Change brightness using xbacklight
 # Check the link below to fix brightness on MacBooks
 # https://medium.com/@philpl/ubuntu-14-10-running-on-my-macbook-18991a697ae0
 XF86MonBrightness{Up,Down}
-  bash $HOME/bin/keybinded/brightness/brightnessControl.sh {up,down}
+  bash ~/.config/sxhkd/scripts/brightness/brightnessControl.sh {up,down}
 
 # Keyboard backlight for Macbook
 XF86KbdBrightness{Down,Up}
@@ -41,23 +41,23 @@ super + shift + s
 
 # Lock my screen
 super + x
-  bash /home/siddharth/bin/keybinded/lock
+  bash ~/bin/utils/lock
 
 # Screenshot
 super + {aring,oslash}
-  bash $HOME/bin/keybinded/screenshot.sh { ,-s}
+  bash ~/.config/sxhkd/scripts/screenshot.sh { ,-s}
 
 # A very cool emoji and unicode character picker using rofi
 super + shift + d
-  bash $HOME/.config/rofi/scripts/picker.sh
+  bash ~/.config/rofi/scripts/picker.sh
 
 # Open up vifm 
 super + shift + Return
-  python3 $HOME/bin/keybinded/vifm.py
+  python3 ~/.config/sxhkd/scripts/vifm.py
 
 # Pop any video from the browser out into mpv
 super + p
-  bash $HOME/bin/keybinded/pop_mpv.sh
+  bash ~/.config/sxhkd/scripts/pop_mpv.sh
 
 # Flash the current window I am in
 super + n
