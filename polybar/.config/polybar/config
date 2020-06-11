@@ -110,10 +110,6 @@ poll-interval = 1
 
 full-at = 100
 
-# format-discharging = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<ramp-capacity>%{A}
-# format-full = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<ramp-capacity>%{A}
-# format-charging = %{A1:bash $HOME/bin/widgets/battery_widget.sh:}<animation-charging>%{A}
-
 label-discharging = %percentage%%
 label-charging = %percentage%%
 label-full = %percentage%%
@@ -158,7 +154,7 @@ interval = 5
 label-connected =  %essid%
 label-disconnected = 
 
-format-connected = %{A1:$HOME/.config/polybar/scripts/wifi_widget.sh:}<label-connected>%{A}
+format-connected = %{A1:kitty -e /home/siddharth/bin/utils/fwifi:}<label-connected>%{A}
 
 [module/calendar]
 type = custom/script
