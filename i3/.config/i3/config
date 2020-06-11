@@ -184,7 +184,7 @@ for_window [class="mpv"] floating enable
 
 for_window [class="SimpleScreenRecorder"] floating enable
 
-for_window [title="Open File"] fullscreen enable
+for_window [title="(Open File|File Upload)"] fullscreen enable
 
 # Keep my album art displayer floating
 for_window [instance="Kunst"] floating enable
