@@ -65,7 +65,7 @@ super + n
 
 # The best color picker ;)
 super + shift + f
-  farge --image-viewer mpv
+  farge --notify
 
 super + o
   bash $HOME/bin/utils/ocr
