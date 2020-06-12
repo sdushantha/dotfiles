@@ -94,7 +94,6 @@ tray-detached = true
 [module/now]
 type = custom/script
 interval = 1.0
-;exec = date +"%a %H:%M"
 exec = date +"%H:%M"
 trail = true
 click-left = bash $HOME/.config/polybar/scripts/cal_widget.sh
@@ -155,6 +154,7 @@ label-connected =  %essid%
 label-disconnected = 
 
 format-connected = %{A1:kitty -e /home/siddharth/bin/utils/fwifi:}<label-connected>%{A}
+format-disconnected= %{A1:kitty -e /home/siddharth/bin/utils/fwifi:}<label-disconnected>%{A}
 
 [module/calendar]
 type = custom/script
