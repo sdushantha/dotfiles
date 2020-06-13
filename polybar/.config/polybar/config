@@ -171,7 +171,7 @@ format-background = #000000
 format-foreground = #e6e6e6
 index-sort = true
 wrapping-scroll = false
-
+enable-scroll = false
 enable-click = false
 reverse-scroll = false
 
