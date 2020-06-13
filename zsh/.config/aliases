@@ -35,6 +35,13 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Basically, lets me know what just happened
+# --interactive     prompt before overwrite
+# --verbose         explain what is being done
+alias cp="cp --interactive --verbose"
+alias mv="mv --interactive --verbose"
+alias rm="rm --verbose"
+
 # Dont show the annoying banner in ipython3
 alias ipython3="ipython3 --no-banner"
 
@@ -78,9 +85,5 @@ alias pyserver="python3 -m http.server"
 # Upload python project to pypi
 alias pyup="python3 setup.py sdist && python3 -m twine upload dist/*"
 
-# Basically, lets me know what just happened
-# --interactive     prompt before overwrite
-# --verbose         explain what is being done
-alias cp="cp --interactive --verbose"
-alias mv="mv --interactive --verbose"
-alias rm="rm --verbose"
+# Use mpv as the image viewer
+alias farge="farge --image-viewer mpv"
