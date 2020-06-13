@@ -25,8 +25,8 @@ configuration {
 }
 
 #window {
-    width: 47.5%;
-    y-offset: -30%;
+    width: 25%;
+    y-offset: -20%;
     padding: 30px 30px;
     border-radius: 4px;
 }
@@ -44,7 +44,7 @@ configuration {
 #listview {
     fixed-height: 		false;
     dynamic: 			true;
-    lines: 10;
+    lines: 5;
     spacing: 0px;
     padding: 0px -10px;
 }
