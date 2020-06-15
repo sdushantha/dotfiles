@@ -17,7 +17,7 @@
 #
 
 # Where to save the emojis file.
-EMOJI_FILE="$HOME/.config/rofi/scripts/unicode.txt"
+EMOJI_FILE="$HOME/.config/rofi/scripts/chars.txt"
 
 
 function rofi_menu() { # {{{
@@ -42,8 +42,7 @@ function toclipboard() { # {{{
 function display() {
 	local emoji line exit_code quantifier
 
-	emoji=$(cat "$EMOJI_FILE" | grep -v '#' | grep -v '^[[:space:]]*$')
-	line="$(echo "$emoji" | rofi_menu)"
+	line="$(cat "$EMOJI_FILE" | rofi_menu)"
 	exit_code=$?
 
 	line=($line)
