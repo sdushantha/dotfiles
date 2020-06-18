@@ -131,7 +131,7 @@ exec bash $HOME/bin/utils/lock
 # Automaticaly sets wallpaper. Just the the wallpaper
 # you want in the Wallpapers directory then it will 
 # automaticaly set it on start up.
-#exec_always --no-startup-id setroot -z $HOME/pictures/current/*
+# exec_always --no-startup-id setroot -z $HOME/pictures/current/*
 exec_always --no-startup-id setroot --blank-color "#2D333F"
 
 # allows sound
@@ -166,6 +166,10 @@ exec_always --no-startup-id bash ~/bin/utils/mpdnotify.sh
 
 # Start up my hot key daemon
 exec_always --no-startup-id sxhkd
+
+# This has to be run in order for me to run blueman-manager
+# which is the GUI application to manage my bluetooth devices
+exec_always --no-startup-id blueman-applet
 #}}}
 
 
