@@ -107,10 +107,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Resize window
 # Mod1 = Alt
-bindsym $mod+Mod1+h resize shrink width 10 px or 10 ppt
-bindsym $mod+Mod1+j resize grow height 10 px or 10 ppt
-bindsym $mod+Mod1+k resize shrink height 10 px or 10 ppt
-bindsym $mod+Mod1+l resize grow width 10 px or 10 ppt
+bindsym $mod+Mod1+h resize shrink width 1 px or 1 ppt
+bindsym $mod+Mod1+j resize grow height 1 px or 1 ppt
+bindsym $mod+Mod1+k resize shrink height 1 px or 1 ppt
+bindsym $mod+Mod1+l resize grow width 1 px or 1 ppt
 
 # Controling gaps
 bindsym $mod+plus	    gaps inner current plus 5
