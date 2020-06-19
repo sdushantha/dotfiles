@@ -7,6 +7,7 @@
 
 
 #{{{ General 
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -23,10 +24,6 @@ set $ws10 "10"
 # The pixles of the gaps
 gaps inner 6
 gaps outer 6
-
-# Only works on this fork of i3
-# https://github.com/resloved/i3
-#border_radius 0
 
 #}}}
 
