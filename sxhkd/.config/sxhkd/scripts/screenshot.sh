@@ -13,7 +13,7 @@
 
 FNAME="$HOME/pictures/screenshots/shot_$(date +%y-%m-%d_at_%H-%M-%S).png"
 
-if [ $1 == "-s" ];then
+if [ "$1" == "-s" ];then
     # Select an area or click a window to take a screenshot of 
     # just the window
     maim -s -u "$FNAME"
@@ -27,4 +27,4 @@ EXIT_CODE=$?
 
 xclip -selection clipboard -t image/png < "$FNAME"
 
-[[ $(dunstify -A "show,s" "screenshot saved" "$(basename $FNAME)" -i $FNAME) == "show" ]] && mpv $FNAME
+[[ $(dunstify -A "show,s" "screenshot taken" -i "$FNAME") == "show" ]] && mpv "$FNAME"
