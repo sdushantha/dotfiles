@@ -13,9 +13,11 @@ Plug 'Yggdroot/indentLine'
     " on the editor, but that really confuses me when editing
     let g:indentLine_fileTypeExclude = ['md']
     let g:indentLine_fileTypeExclude = ['markdown']
+    let g:indentLine_concealcursor = 0
+    let g:indentLine_conceallevel = 0
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-    let g:mkdp_browser = "qutebrowser"
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    let g:mkdp_browser = "firefox"
 
 Plug 'mboughaba/i3config.vim'
     " Set syntex highlighting for i3 config

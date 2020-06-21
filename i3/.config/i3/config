@@ -124,7 +124,7 @@ bindsym $mod+z		    gaps inner current set 0; gaps outer current set 0
 # you want in the Wallpapers directory then it will 
 # automaticaly set it on start up.
 # exec_always --no-startup-id setroot -z $HOME/pictures/current/*
-exec_always --no-startup-id setroot --blank-color "#2D333F"
+exec_always --no-startup-id setroot --blank-color "#222833"
 
 # allows sound
 exec_always --no-startup-id start-pulseaudio-x11
