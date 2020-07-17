@@ -1,4 +1,4 @@
-
+"!clear && gcc % -o %< && ./%< && read
 "{{{ Plugins  
 filetype plugin on
 
