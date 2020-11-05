@@ -8,7 +8,7 @@
 ## Have any questions?
 Dont hesitate to ask a a question. Like they say, there is no stupid question, only a stupid answer 😊
 
-Just create an issue or email me → siddharth.dushantha[at]gmail[dot]com
+Just create an issue.
 
 ## How to install the dotfiles?
 I use ```stow``` to manage my dotfiles.
