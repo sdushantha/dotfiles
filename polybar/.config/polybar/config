@@ -53,7 +53,7 @@ border-left-size = 0
 ;----------;
 
 bottom = false
-monitor = eDP1
+monitor = eDP-1
 override-redirect = false
 
 ;-------;
@@ -73,7 +73,6 @@ border-color = 0
 ;---------------;
 ; MISCELLANEOUS ;
 ;---------------;
-
 fixed-center = true
 padding-left = 2 
 padding-right = 2
@@ -81,7 +80,7 @@ module-margin = 1.5
 
 modules-left = i3
 modules-center = 
-modules-right = volume battery wlan calendar
+modules-right = micstatus volume battery wlan calendar
 
 tray-position = none
 tray-detached = true
@@ -146,11 +145,12 @@ ramp-volume-2 = 
 [module/wlan]
 type = internal/network
 
-interface = wlp3s0
+interface = wlp1s0
 
 interval = 5
 
-label-connected =  %essid%
+;label-connected =  %essid%
+label-connected =  Fast WiFi
 label-disconnected = 
 
 format-connected = %{A1:kitty -e /home/siddharth/bin/utils/fwifi:}<label-connected>%{A}
@@ -161,6 +161,12 @@ type = custom/script
 exec = $HOME/.config/polybar/scripts/calendar.sh
 interval = 5
 click-left = $HOME/.config/polybar/scripts/calendar.sh --popup &
+
+[module/micstatus]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/mic_status.sh
+interval = 1
+click-left = amixer -D pulse sset Capture toggle
 
 [module/i3]
 type = internal/i3

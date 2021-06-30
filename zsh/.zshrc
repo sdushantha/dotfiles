@@ -6,6 +6,7 @@ prompt pure
 # Load my aliases 
 [ -f ~/.config/aliases ] && source ~/.config/aliases
 
+
 # History in cache directory
 HISTFILE=~/.cache/zsh/zsh_history
 HISTSIZE=1000
@@ -24,18 +25,6 @@ compinit -d "$HOME/.cache/zsh/zcompdump"
 
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# Allows me to run scripts which are installed locally
-export PATH=$PATH":$HOME/.local/bin"
-
-# Scripts installed using gem
-export PATH=$PATH":$HOME/.gem/ruby/2.6.0/bin"
-
-# Scripts installed using cargo
-export PATH=$PATH":$HOME/.cargo/bin"
-
-# Allow all files in bin and the subdirs to be in PATH
-export PATH=$PATH$( find $HOME/bin/ -type d -printf ":%p" )
 
 ### VIM mode config
 # Summery:
@@ -95,14 +84,11 @@ stty -ixon
 
 # This file has some important variables
 source $HOME/.zprofile
+source $HOME/.zshenv
 
 # Load my ZSH plugins
 source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
-
-# Config for kunst
-export KUNST_SIZE="250x250"
-export KUNST_MUSIC_DIR="$HOME/music/"
 
 # Search and install packages with yay and fzf
 yi() {

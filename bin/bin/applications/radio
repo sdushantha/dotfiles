@@ -1,0 +1,167 @@
+#!/usr/bin/env bash
+#
+# Siddharth Dushantha 2020
+#
+
+version="1.0.0"
+config_file="$HOME/.config/radio/config.json"
+cache_dir="$HOME/.cache/radio"
+last_played="$cache_dir/last_played"
+pid_file="$cache_dir/pid"
+notification_icon_path="$cache_dir/icon.png"
+
+usage(){
+    cat << EOF
+radio
+radio -h | -l | --version
+radio {pause|resume}
+radio [STATION]
+
+Play your favorite radio station from the command line with ease
+
+Commands
+kill         Same behavior as 'pause'
+pause        Pause the radio.
+play         Same behavior as 'resume'
+resume       Resume the radio
+stop         Same behavior as 'pause'
+
+Options
+-h, --help     Show help 
+-l, --list     List available radio stations
+--version      Show version
+EOF
+}
+
+print_error() {
+    printf "%b\n" "Error: $1" >&2
+    exit 1
+}
+
+stop(){
+    kill -9 "$(cat "$pid_file")" 2> /dev/null
+    # Remove the $pid_file when we stop the radio or else the script
+    # will think that there is a "radio session" already playing
+    rm "$pid_file" 2> /dev/null
+}
+
+play(){
+    # A very hacky form of fuzzy searching.
+    # We list out the station names and then use grep to find the station name
+    # which the user provided. This prevents the user from having to type out
+    # the exact name of the station name. The reason for using 'head -n 1' is
+    # is so that we can get the first match in case there are multiple matches.
+    station_name=$(printf %s "$radio_stations" | jq -r keys[] | grep -i "$1" | head -n 1)
+
+    if [ "$station_name" = "" ]; then
+        notify-send "Radio" "Could not find a radio station named \"$1\"" -i "$notification_icon_path"
+        exit 1
+    fi
+
+    cover_art_path="$cache_dir/$(printf %s "$station_name" | tr -d ' ').jpg"
+    cover_art_url=$(printf %s "$radio_stations" | jq -r ".\"$station_name\".coverArtUrl")
+    stream_url=$(printf %s "$radio_stations" | jq -r ".\"$station_name\".streamUrl")
+
+    # The cover art of the station is saved in teh cache so that we dont need
+    # redownload it everytime the user listens to a station.
+    [ ! -f "$cover_art_path" ] && curl -s "$cover_art_url" -o "$cover_art_path"
+
+    # If the $pid_file *does not* exist, that means there is no other active radio
+    # playing. But if it does exist, then we must kill the proccess otherwise
+    # there would be multiple audios playing which is unpleasent.
+    if [ -f "$pid_file" ]; then
+        pid=$(cat "$pid_file")
+        # We cannot just 'killall mpv' in order to stop any other radios "sessions"
+        # from playing. This is because the user may be using mpv to view a video/image.
+        # Thus, 'killall mpv' would also kill those proccesses.
+        # Instead, we take the PID and get the exact command belonging to that PID. We
+        # then check if the $streamUrl of the selected station is in the command
+        # belonging to that PID. If so, that mean
+        # shellcheck disable=SC2009
+        if ! ps -p "$pid" -o args | grep "$stream_url" > /dev/null; then
+            stop
+        else
+            # The station the user specified is already being played, so there
+            # there is nothing to do.
+            return 0
+        fi
+    fi
+
+    # This is just for some extra ★bling★
+    # Notify the user what radio is being played along with
+    # the appropriate cover art.
+    notify-send "Radio" "Playing $station_name" -i "$cover_art_path"
+
+    # We save the current station name in the cache so that the user can easily
+    # play/pause the radio without having to provide the station name again when
+    # wanting to play the same station they previoulsy listened to.
+    printf %s "$station_name" > "$last_played"
+
+    # This is where the radio is actually played 
+    mpv --no-terminal "$stream_url" &
+
+    # Save the PID of the command above so that we can kill that proccess
+    # if we need to stop the radio 
+    printf %s "$!" > "$pid_file"
+}
+
+play_last_played(){
+    if [ -f "$last_played" ]; then
+        play "$(cat "$last_played")"
+    else
+        notify-send "Radio" "Couldn't find recently played station" -i "$notification_icon_path"
+    fi
+}
+
+toggle(){
+    if [ -f "$pid_file" ]; then
+        stop
+        exit
+    else
+        play_last_played
+        exit
+    fi
+}
+
+main(){
+    mkdir -p "$cache_dir"
+
+    [ ! -f "$config_file" ] && print_error "Couldn't find config file: $config_file"
+
+    radio_stations=$(jq -r ".stations" < "$config_file")
+    notification_icon_url=$(jq -r ".settings.notifcationIconUrl" < "$config_file")
+
+    [ ! -f "$notification_icon_path" ] && curl -s "$notification_icon_url" -o "$notification_icon_path"
+
+    # Running this script wihtout any arguments, toggles the play/pause
+    [ $# -eq 0 ] && toggle
+
+    while [ "$1" ]; do
+        case "$1" in
+            --help | -h)
+                usage
+                exit ;;
+            --version)
+                echo "$version"
+                exit ;;
+            --list | -l)
+                printf %s "$radio_stations" | jq -r keys[] | sed "s/^/- /g"
+                exit ;;
+            stop|kill|pause)
+                stop
+                exit ;;
+            play|resume)
+                play_last_played
+                exit ;;
+            -*)
+                print_error "option '$1' does not exist"
+                exit 1 ;;
+            *)
+                play "$@"
+                exit ;;
+        esac
+        shift
+    done
+}
+
+main "$@"

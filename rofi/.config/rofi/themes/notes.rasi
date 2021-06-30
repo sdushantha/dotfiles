@@ -2,6 +2,7 @@
  * https://github.com/davatorium/rofi/blob/next/doc/rofi-theme.5.markdown#name-1
  */
 
+
 * {
   accentcolor: #333333;
   backgroundcolor: #111116;
@@ -13,11 +14,11 @@
   text-color: @foregroundcolor;
 }
 
-
 #window {
     width: 25%;
     y-offset: -20%;
     padding: 30px 30px;
+    border-radius: 0px;
     font: "Comfortaa 12";
     location: 0;
     background-color: @backgroundcolor;
@@ -51,11 +52,23 @@
 
 #inputbar {
   border: none;
-  children: [entry];
+  children: [textboxicon, entry];
+}
+
+#textboxicon {
+  font: "Hack Nerd Font 17";
+  str: "ﴬ";
+  text-color: #B9ADAD;
+  padding: 0px 0px 5px 10px;
+  expand: false;
+}
+
+#prompt {
+  color: #cdcbce;
 }
 
 #entry {
-  padding: 2 8 8;
+  padding: 3.5px 0px 10px 10px;
   font: "Comfortaa 14";
 
 }

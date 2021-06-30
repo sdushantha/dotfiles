@@ -34,6 +34,13 @@
 
     /* This padding is given just for aesthetic purposes */
     padding:    40px;
+
+    /* Add a border so that it is noticeable when the prompt appears.
+     * This is because the prompt blends in with my terminal color
+     */
+    border-color: #333333;
+    border: 2px;
+    border-radius: 5px;
 }
 
 

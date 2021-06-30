@@ -21,7 +21,6 @@ alias aliases="nvim $HOME/.config/aliases && source $HOME/.config/aliases"
 alias i3config="nvim $HOME/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias vifmrc="nvim $HOME/.config/vifm/vifmrc"
-alias binds="nvim $HOME/.config/sxhkd/sxhkdrc"
 
 # Enable colors for some commands
 alias ls='ls --color=auto'
@@ -67,8 +66,6 @@ alias gcommit="git commit"
 alias gpush="git push"
 alias gstatus="git status"
 
-alias mail="aerc"
-
 # Quickly blend in with the public by using a light terminal theme.
 # I always get strange looks if Im using the terminal in public with dark colors
 alias blend="wal -l -i $HOME/pictures/current/*"
@@ -85,5 +82,4 @@ alias pyserver="python3 -m http.server"
 # Upload python project to pypi
 alias pyup="python3 setup.py sdist && python3 -m twine upload dist/*"
 
-# Use mpv as the image viewer
-alias farge="farge --image-viewer mpv"
+alias todo="notes && vim todo"

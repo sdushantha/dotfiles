@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#
+# Quickly upload a file to 0x0.st
+curl -F"file=@$1" https://0x0.st

@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Siddharth Dushantha 2020
+#
+# https://github.com/sdushantha/bin
+#
+# ew - Edit Which
+# Quickly edit the source code of a command. This is pretty much a short
+# cut for doing --> vim $(which mycommand)
+
+$EDITOR "$(which "$1")"

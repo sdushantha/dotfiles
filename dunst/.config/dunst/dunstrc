@@ -9,7 +9,7 @@
     geometry = "300x0-12+37"
 
     # Radius of the four corners of the notification
-    corner_radius = 0
+    corner_radius = 5
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -43,8 +43,8 @@
     horizontal_padding = 10
 
     # The frame color and width of the notification
-    frame_width = 0
-    frame_color = ""
+    frame_width = 2
+    frame_color = "#333333"
 
 
     sort = yes

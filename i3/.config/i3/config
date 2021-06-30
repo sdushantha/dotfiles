@@ -1,6 +1,4 @@
 # Norwegian speacial letters
-# Watch the video below, its great :D
-# https://www.youtube.com/watch?v=f488uJAQgmw
 # Æ = ae
 # Ø = oslash
 # Å = aring
@@ -21,8 +19,10 @@ set $ws9 "9"
 set $ws10 "10"
 
 # The pixles of the gaps
-gaps inner 6
-gaps outer 6
+gaps inner 0
+gaps outer 0
+smart_borders on
+
 #}}}
 
 
@@ -58,7 +58,7 @@ bindsym $mod+comma split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+e layout split
+#bindsym $mod+e layout split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle,move absolute position center
@@ -93,11 +93,13 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+
+# Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Resize window
@@ -108,10 +110,68 @@ bindsym $mod+Mod1+k resize shrink height 1 px or 1 ppt
 bindsym $mod+Mod1+l resize grow width 1 px or 1 ppt
 
 # Controling gaps
-bindsym $mod+plus	    gaps inner current plus 5
-bindsym $mod+minus		gaps inner current minus 5
-bindsym $mod+r		    gaps inner current set 6; gaps outer current set 6
-bindsym $mod+z		    gaps inner current set 0; gaps outer current set 0
+bindsym $mod+plus    gaps inner current plus 5
+bindsym $mod+minus   gaps inner current minus 5
+bindsym $mod+z       gaps inner current set 0; gaps outer current set 0
+
+# Launch terminal
+bindsym $mod+Return exec kitty -d "$(command -v xcwd >/dev/null 2>&1 && xcwd)"
+
+bindsym $mod+Shift+Return exec kitty -e vifmrun
+
+# Keybindings that are do things using rofi
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+n exec bash $HOME/bin/keybinded/rofi_notes.sh 
+bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
+bindsym $mod+r exec rofi -disable-history -show run -config .config/rofi/themes/dmenu.rasi
+bindsym $mod+o --release exec find ~ -type f | rofi -dmenu -sorting-method fzf -sort
+# Rof calculator https://github.com/svenstaro/rofi-calc
+bindsym XF86Calculator exec rofi -show calc 
+
+# Pulse Audio controls
+# I have set it so that it if the volume is set to mute, and I try to increase or decrease
+# the volume, it will unmute and then increase or decrease. Because before, it would stay mute
+# and just increase the volume but it would still stay mute. Yes, its strange.
+bindsym XF86AudioRaiseVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh up
+bindsym XF86AudioLowerVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh down
+bindsym XF86AudioMute exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh mute
+
+# Music control
+bindsym XF86AudioNext exec --no-startup-id bash $HOME/bin/keybinded/music_ctrl.sh next  
+bindsym XF86AudioPrev exec --no-startup-id bash $HOME/bin/keybinded/music_ctrl.sh previous
+bindsym XF86AudioPlay exec --no-startup-id bash $HOME/bin/keybinded/music_ctrl.sh toggle
+bindsym XF86AudioStop exec --no-startup-id bash $HOME/bin/keybinded/music_ctrl.sh pause 
+
+# Turn mic on/off
+bindsym XF86AudioMicMute exec --no-startup-id amixer -D pulse sset Capture toggle
+
+# Brightness control
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
+
+# Launch clearine logout menu
+# TODO: use rofi instead
+bindsym $mod+Shift+s exec --no-startup-id clearine
+
+# Lock the screen
+# TODO: use native lock button on keyboard
+bindsym $mod+x exec --no-startup-id bash $HOME/bin/utils/lock
+
+# Screenshot fullscreen
+# TODO: native screenshot button
+bindsym $mod+aring exec $HOME/bin/keybinded/screenshot.sh
+
+# TODO: native Screenshot button along with MOD
+# Screenshot selected area
+# You need to use `--release` in the binding.
+# See "4.3. Keyboard bindings" on i3wm docs 
+bindsym $mod+oslash --release exec bash $HOME/bin/keybinded/screenshot.sh -s
+
+# Emoji and unicode character picker using rofi
+bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
+
+# Select color from screen and save the value to clipboard 
+bindsym $mod+Shift+f --release exec $HOME/.local/bin/farge --notify
 
 #}}}
 
@@ -138,17 +198,6 @@ exec_always --no-startup-id bash $HOME/bin/keybinded/brightness/restoreBrightnes
 # Starts the launch.sh script which launches polybar
 exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
 
-# Start MPD, which is needed for ncmpcpp to work
-exec_always --no-startup-id mpd
-exec_always --no-startup-id mpDris2
-
-# Flash the window you have changed focus to
-exec_always --no-startup-id flashfocus
-
-# This fixes some issues with sleeping, closing the lid, and
-# some issues with the power on my Macbook
-exec_always --no-startup-id xfce4-power-manager
-
 # Start up my notification daemon
 exec_always --no-startup-id dunst
 
@@ -156,19 +205,27 @@ exec_always --no-startup-id dunst
 # changing music on mpd
 exec_always --no-startup-id bash ~/bin/utils/mpdnotify.sh
 
-# Start up my hot key daemon
-exec_always --no-startup-id sxhkd
-
 # This has to be run in order for me to run blueman-manager
 # which is the GUI application to manage my bluetooth devices
 exec_always --no-startup-id blueman-applet
+
+# Allow alternating layout or sometimes known as the fibonacci layout. i3wm
+# doesn't have this by default so a script is needed.
+exec_always --no-startup-id python3 $HOME/.config/i3/scripts/i3-alternating-layout.py
 #}}}
 
 
 # Window rules {{{ 
 
 # Gives a border to the windows. 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #ffffff #ffffff #000000 #ffffff   #ffffff 
+client.focused_inactive #333333 #333333 #000000 #333333   #333333
+client.unfocused        #333333 #333333 #000000 #333333   #333333
+client.urgent           #333333 #333333 #000000 #333333   #333333
+client.placeholder      #333333 #333333 #000000 #333333   #333333
 
 # Dialogs, popups, etc should be floating and in the center of the screen
 for_window [window_role="pop-up"] floating enable,move absolute position center
@@ -178,15 +235,8 @@ for_window [window_role="Dialog"] floating enable,move absolute position center
 # Video player floating
 for_window [class="mpv"] floating enable
 
-for_window [class="SimpleScreenRecorder"] floating enable
-
 for_window [title="(Open File|File Upload)"] fullscreen enable
 
-# Keep my album art displayer floating
-for_window [instance="Kunst"] floating enable
-
-# Let the windows created by Farge be floating
-for_window [instance="Farge"] floating enable
 for_window [instance="fontpreview"] floating enable
 for_window [class="Yad" title="yad-calendar"] floating enable
 

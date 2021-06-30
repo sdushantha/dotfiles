@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Toggle screenkey
+#
+
+if pgrep screenkey > /dev/null 2>&1; then
+    killall screenkey > /dev/null 2>&1
+else
+    screenkey -s small > /dev/null 2>&1
+fi

@@ -1,0 +1,9 @@
+configuration {
+	show-icons: false;
+	drun-display-format: "<b>{name}</b>";
+	cycle: false;
+	sidebar-mode: false;
+	m: "-1";
+	click-to-exit: true;
+	theme: "~/.config/rofi/themes/launcher.rasi";
+}

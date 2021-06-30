@@ -1,0 +1,78 @@
+#!/usr/bin/env sh
+#
+# by Siddharth Dushantha 2021
+#
+# A wrapper around blc[1] and subfinder[2] which finds dead links that 
+# may be used to find broken link hijacking vulnerabilities[3]
+#
+# [1] https://github.com/stevenvachon/broken-link-checker/
+# [2] https://github.com/projectdiscovery/subfinder
+# [3] https://gist.github.com/EdOverflow/24e0bb929169eb948bb7f3d0a2d5528f
+#
+
+version="1.0.0"
+subdomain_file="/tmp/subdomains.txt"
+
+usage(){
+    cat <<EOF
+deadlink -d [DOMAIN]
+deadlink -u [URL]
+
+-d, --domain DOMAIN
+        Scan DOMAIN and it's subdomains for deadlinks
+-u, --url URL
+        Scan the provided URL for deadlinks
+EOF
+}
+
+print_error() {
+    printf "%b\n" "Error: $1" >&2
+    exit 1
+}
+
+scan_url(){
+    if ! printf "%s" "$1" | grep -Eq "https:\/\/"; then
+        print_error "URL doesn't start with 'https://'"
+    fi
+    blc "$1" --user-agent "sdushantha" | grep "─BROKEN─"
+}
+
+scan_domain(){
+    # Add the domain into the list so that it is also included
+    # when we scan the subdomains for dead links.
+    printf "%s\n" "$1" > "$subdomain_file"
+
+    printf "%s\n" "Fetching all subdomains for '$1'"
+    subfinder -d "$1" -silent >> "$subdomain_file"
+
+    while read -r line; do
+        printf "%s\n" "Scanning $line"
+        blc "https://$line" | grep "─BROKEN─"
+    done <"$subdomain_file"
+
+    rm "$subdomain_file" 
+}
+
+main(){
+    for dependency in blc subfinder; do
+        if ! command -v "$dependency" >/dev/null 2>&1; then
+            print_error "Could not find '$dependency', is it installed?"
+        fi
+    done
+
+    [ $# -eq 0 ] && usage && exit
+
+    while [ "$1" ]; do
+        case "$1" in
+            --help | -h) usage && exit ;;
+            --domain | -d) scan_domain "$2" ;;
+            --url| -u) scan_url "$2" ;;
+            --version) echo "$version" && exit ;;
+            -*) print_error "option '$1' does not exist" ;;
+            *) usage && exit ;;
+        esac
+        shift
+    done
+}
+
+main "$@"

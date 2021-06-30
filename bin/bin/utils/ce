@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#
+# This script lets me compile and execute in one go.
+# 
+# Usage: ce CODE OUTPUT
+#
+# Example:
+#  ce test.c test
+#
+
+code="$1"
+output="$2"
+
+gcc "$code" -o "$output"
+
+./"$output"

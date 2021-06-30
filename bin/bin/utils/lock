@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+# by Siddharth Dushantha
+#
+# Since I use betterlockscreen as my greeter, instead of something like
+# GDM, I need to make sure, that there is an image it can use for the
+# lockscreen or else betterlockscreen will crash. This creates a security hole
+# in my system. Since I have autologin, betterlockscreen is my only security
+# I have.
+
+# Send the pause key to all mpv videos
+# before locking the screen
+pauseallmpv > /dev/null 2>&1
+
+output=$(betterlockscreen -l)
+currenWall="$HOME/pictures/current/*"
+
+if [[ $output == *"Could not open directory"* ]]; then
+    dunstify "Lockscreen" "Updating image..."
+    betterlockscreen -u "$currenWall"
+    betterlockscreen -l
+fi

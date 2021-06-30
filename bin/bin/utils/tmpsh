@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# http://github.com/mitchweaver
+#
+# open a shell in a temporary dir without adding commands to history
+#
+
+cd "$(mktemp -d)" || exit
+zsh
