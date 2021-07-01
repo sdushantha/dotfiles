@@ -149,8 +149,7 @@ interface = wlp1s0
 
 interval = 5
 
-;label-connected =  %essid%
-label-connected =  Fast WiFi
+label-connected =  %essid%
 label-disconnected = 
 
 format-connected = %{A1:kitty -e /home/siddharth/bin/utils/fwifi:}<label-connected>%{A}

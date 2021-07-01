@@ -14,12 +14,12 @@ settings:
       wq: quit --save
       wqa: quit --save
   backend:
-    global: webkit
+    global: webengine
   bindings.commands:
     global: null
   scrolling.smooth:
     global: false
-  statusbar.hide:
-    global: true
+  statusbar.show:
+    global: never
   tabs.show:
     global: never

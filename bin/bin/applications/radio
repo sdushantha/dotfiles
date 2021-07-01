@@ -27,9 +27,10 @@ resume       Resume the radio
 stop         Same behavior as 'pause'
 
 Options
--h, --help     Show help 
--l, --list     List available radio stations
---version      Show version
+-h, --help           Show help 
+-l, --list           List available radio stations
+-n, --now-playing    Show which station is playing
+--version            Show version
 EOF
 }
 
@@ -146,6 +147,9 @@ main(){
                 exit ;;
             --list | -l)
                 printf %s "$radio_stations" | jq -r keys[] | sed "s/^/- /g"
+                exit ;;
+            --now-playing | -n)
+                notify-send "Radio" "Now playing $(cat $last_played)" -i "$notification_icon_path"
                 exit ;;
             stop|kill|pause)
                 stop

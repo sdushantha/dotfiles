@@ -34,7 +34,7 @@ scan_url(){
     if ! printf "%s" "$1" | grep -Eq "https:\/\/"; then
         print_error "URL doesn't start with 'https://'"
     fi
-    blc "$1" --user-agent "sdushantha" | grep "─BROKEN─"
+    blc "$1" | grep "─BROKEN─"
 }
 
 scan_domain(){
