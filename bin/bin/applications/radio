@@ -59,7 +59,7 @@ play(){
     fi
 
     cover_art_url=$(printf %s "$radio_stations" | jq -r ".\"$station_name\".coverArtUrl")
-    cover_art_ext=$(echo "${cover_art_url##*.}")
+    cover_art_ext=$(printf "${cover_art_url##*.}")
     cover_art_path="$cache_dir/$(printf %s "$station_name" | tr -d ' ').$cover_art_ext"
     stream_url=$(printf %s "$radio_stations" | jq -r ".\"$station_name\".streamUrl")
 
