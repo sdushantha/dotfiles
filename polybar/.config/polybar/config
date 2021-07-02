@@ -80,7 +80,7 @@ module-margin = 1.5
 
 modules-left = i3
 modules-center = 
-modules-right = micstatus volume battery wlan calendar
+modules-right = todo micstatus volume battery wlan calendar
 
 tray-position = none
 tray-detached = true
@@ -160,6 +160,12 @@ type = custom/script
 exec = $HOME/.config/polybar/scripts/calendar.sh
 interval = 5
 click-left = $HOME/.config/polybar/scripts/calendar.sh --popup &
+
+[module/todo]
+type = custom/script
+exec = echo " $(wc -l $HOME/documents/notes/todo | awk '{print $1}')"
+interval = 1
+click-left = bash $HOME/bin/keybinded/rofi_todo.sh 
 
 [module/micstatus]
 type = custom/script
