@@ -7,4 +7,4 @@ nvim/.config/nvim/.netrwhist
 nvim/.config/nvim/tmp/*
 nvim/.config/nvim/plugged/*
 
-vifm/.config/vifm/vifminfo
+vifminfo.json

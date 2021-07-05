@@ -154,14 +154,11 @@ bindsym XF86MonBrightnessDown exec light -U 5
 bindsym $mod+Shift+s exec --no-startup-id clearine
 
 # Lock the screen
-# TODO: use native lock button on keyboard
-bindsym $mod+x exec --no-startup-id bash $HOME/bin/utils/lock
+bindsym $mod+x exec --no-startup-id bash $HOME/bin/utils/lock calvin
 
 # Screenshot fullscreen
-# TODO: native screenshot button
 bindsym $mod+aring exec $HOME/bin/keybinded/screenshot.sh
 
-# TODO: native Screenshot button along with MOD
 # Screenshot selected area
 # You need to use `--release` in the binding.
 # See "4.3. Keyboard bindings" on i3wm docs 

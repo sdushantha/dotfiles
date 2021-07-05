@@ -22,7 +22,6 @@ Play your favorite radio station from the command line with ease
 Commands
 kill         Same behavior as 'pause'
 pause        Pause the radio.
-play         Same behavior as 'resume'
 resume       Resume the radio
 stop         Same behavior as 'pause'
 
@@ -155,7 +154,7 @@ main(){
             stop|kill|pause)
                 stop
                 exit ;;
-            play|resume)
+            resume)
                 play_last_played
                 exit ;;
             -*)
