@@ -5,6 +5,12 @@
 map r reload
 map R rotate
 
+map p print
+map i recolor
+
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
 # ~/path/to/file
 # instead of 
 # /home/username/path/to/file
@@ -14,13 +20,19 @@ set statusbar-home-tilde
 # Disables the status bar. CTRL+N to enable it.
 set guioptions ""
 
-# Set the background of zathura
-set default-bg "#000000"
-
-# In MuPDF, i is the keybinding to invert the color
-# and I rather stick with that binding
-map i recolor
+# Set the background of zathura (not bg of document)
+set default-bg "#cdcbce"
 
 # Recolor the PDF
-set recolor-darkcolor "#dcdccc" 
-set recolor-lightcolor "#01181D"
+set recolor-darkcolor "#cdcbce" 
+set recolor-lightcolor "#111116"
+
+# Recolor when document is opened
+set recolor "true"
+
+# Better smoth scrolling
+set scroll-step 50
+
+map w adjust_window width
+
+
