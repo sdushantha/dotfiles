@@ -1,6 +1,6 @@
 # Start my graphical interface
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
+  exec startx > $HOME/.cache/startx.log 2>&1
 fi 
 
 # Default programs:
