@@ -373,7 +373,7 @@ set clipboard+=unnamedplus
 " Save the undotree to a file when exiting a buffer
 set undofile
 set undolevels=1000
-set undodir=~/.config/nvim/tmp/undo/
+set undodir=~/.cache/nvim/undo/
 if !isdirectory(expand(&undodir))
     call mkdir(expand(&undodir), 'p')
 endif

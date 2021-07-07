@@ -16,7 +16,7 @@ pauseallmpv > /dev/null 2>&1
 input="$1"
 [ -z "$input" ] && input="$default_theme"
 
-themes=$(find "$lockscreen_config_dir" ! -path . -type d -exec basename {} \;)
+themes=$(find -L "$lockscreen_config_dir" ! -path . -type d -exec basename {} \;)
 theme=$(echo "$themes" | grep -i "$input" | head -n1)
 
 [ -z "$theme" ] && printf %s "Error: $input is an invalid theme" && exit 1

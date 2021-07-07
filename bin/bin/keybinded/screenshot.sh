@@ -27,4 +27,4 @@ EXIT_CODE=$?
 
 xclip -selection clipboard -t image/png < "$FNAME"
 
-[[ $(dunstify -A "show,s" "screenshot taken" -i "$FNAME") == "show" ]] && mpv "$FNAME"
+[[ $(dunstify -A "show,s" "Screenshot taken" -i "$FNAME") == "show" ]] && mpv "$FNAME"
