@@ -35,4 +35,5 @@ set scroll-step 50
 
 map w adjust_window width
 
-
+# Font of the status bar
+set font "Hack 10"
