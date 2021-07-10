@@ -216,7 +216,7 @@ exec_always --no-startup-id python3 $HOME/.config/i3/scripts/i3-alternating-layo
 for_window [class="^.*"] border pixel 1
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #6b6b6b #6b6b6b #ffffff #333333   #ffffff
+client.focused          #6b6b6b #6b6b6b #ffffff #ffffff   #ffffff
 client.focused_inactive #6b6b6b #6b6b6b #ffffff #333333   #333333
 client.unfocused        #333333 #333333 #ffffff #333333   #333333
 client.urgent           #df6b74 #df6b74 #000000 #333333   #df6b74
@@ -227,13 +227,10 @@ for_window [window_role="pop-up"] floating enable,move absolute position center
 for_window [window_role="task_dialog"] floating enable,move absolute position center
 for_window [window_role="Dialog"] floating enable,move absolute position center
 
-# Video player floating
 for_window [class="mpv"] floating enable
-
 for_window [title="(Open File|File Upload)"] fullscreen enable
-
-for_window [instance="fontpreview"] floating enable
 for_window [class="Yad" title="yad-calendar"] floating enable
+for_window [class="[qQ]alculate-gtk"] floating enable
 
 ##### RULES FOR SOME PROGRAMS #####
 # Exmaple:
