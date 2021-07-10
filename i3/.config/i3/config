@@ -23,6 +23,7 @@ gaps inner 0
 gaps outer 0
 smart_borders on
 
+font pango:Hack 9
 #}}}
 
 
@@ -59,6 +60,8 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+e layout split
+bindsym $mod+t layout tabbed 
+bindsym $mod+s layout stacked 
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle,move absolute position center
@@ -108,11 +111,6 @@ bindsym $mod+Mod1+h resize shrink width 1 px or 1 ppt
 bindsym $mod+Mod1+j resize grow height 1 px or 1 ppt
 bindsym $mod+Mod1+k resize shrink height 1 px or 1 ppt
 bindsym $mod+Mod1+l resize grow width 1 px or 1 ppt
-
-# Controling gaps
-bindsym $mod+plus    gaps inner current plus 5
-bindsym $mod+minus   gaps inner current minus 5
-bindsym $mod+z       gaps inner current set 0; gaps outer current set 0
 
 # Launch terminal
 bindsym $mod+Return exec kitty -d "$(command -v xcwd >/dev/null 2>&1 && xcwd)"
@@ -218,10 +216,10 @@ exec_always --no-startup-id python3 $HOME/.config/i3/scripts/i3-alternating-layo
 for_window [class="^.*"] border pixel 1
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #ffffff #ffffff #000000 #ffffff   #ffffff 
-client.focused_inactive #333333 #333333 #000000 #333333   #333333
-client.unfocused        #333333 #333333 #000000 #333333   #333333
-client.urgent           #333333 #333333 #000000 #333333   #333333
+client.focused          #6b6b6b #6b6b6b #ffffff #333333   #ffffff
+client.focused_inactive #6b6b6b #6b6b6b #ffffff #333333   #333333
+client.unfocused        #333333 #333333 #ffffff #333333   #333333
+client.urgent           #df6b74 #df6b74 #000000 #333333   #df6b74
 client.placeholder      #333333 #333333 #000000 #333333   #333333
 
 # Dialogs, popups, etc should be floating and in the center of the screen
