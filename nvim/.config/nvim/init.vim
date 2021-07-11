@@ -1,7 +1,5 @@
 "!clear && gcc % -o %< && ./%< && read
 "{{{ Plugins  
-filetype plugin on
-
 call plug#begin()
 Plug 'junegunn/goyo.vim'
     let g:goyo_width = 82
@@ -56,7 +54,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'lilydjwg/colorizer'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'kovetskiy/sxhkd-vim'
 call plug#end()
 "}}}
 
