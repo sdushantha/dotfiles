@@ -106,6 +106,10 @@ command! reload :write | restart
 
 " Empty the ruler. By default, it shows the number of directories+files.
 set rulerformat=
+
+" Having a relative numberline makes it very easy navigate to files
+set relativenumber
+highlight LineNr ctermbg=NONE ctermfg=243
 " }}}
 
 
@@ -276,11 +280,12 @@ nnoremap cc cw<c-u>
 nnoremap A cw
 
 " Extract an archive
-nnoremap x :!/home/siddharth/bin/utils/extract %f &<cr>
+nnoremap x :!/home/siddharth/bin/utils/ex %f &<cr>
 
 " Make a new directory
 nnoremap mkd :mkdir<space>
 
+" Drag and drop files with ease
 nnoremap o :!dragon %f </dev/null &>/dev/null & <cr>
 "}}}
 
