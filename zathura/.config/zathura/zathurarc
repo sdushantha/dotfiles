@@ -33,7 +33,8 @@ set recolor "true"
 # Better smoth scrolling
 set scroll-step 50
 
-map w adjust_window width
+# Make the document fill the window 
+map f adjust_window width
 
 # Font of the status bar
 set font "Hack 10"
