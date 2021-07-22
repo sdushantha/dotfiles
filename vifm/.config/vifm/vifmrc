@@ -80,7 +80,6 @@ set vifminfo=dhistory,chistory,state,shistory,phistory,fhistory,dirstack,registe
 
 " Dont show delete confirmation
 set confirm-=delete
-
 " ------------------------------------------------------------------------------
 
 " :com[mand][!] command_name action
@@ -110,6 +109,12 @@ set rulerformat=
 " Having a relative numberline makes it very easy navigate to files
 set relativenumber
 highlight LineNr ctermbg=NONE ctermfg=243
+
+command! FZFfind : 
+                \| let $FZF_PICK = term('find . 2>/dev/null | fzf 2>/dev/tty')
+                \| if $FZF_PICK != ''
+                \|     execute 'goto' fnameescape($FZF_PICK)
+                \| endif
 " }}}
 
 
@@ -286,7 +291,13 @@ nnoremap x :!/home/siddharth/bin/utils/ex %f &<cr>
 nnoremap mkd :mkdir<space>
 
 " Drag and drop files with ease
-nnoremap o :!dragon %f </dev/null &>/dev/null & <cr>
+nnoremap o :!dragon-drag-and-drop %f </dev/null &>/dev/null & <cr>
+
+" Toggle showing hidden files 
+nnoremap . za
+
+" Fuzzy search files
+nnoremap F :FZFfind <cr>
 "}}}
 
 
