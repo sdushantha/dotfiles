@@ -81,4 +81,9 @@ alias pyserver="python3 -m http.server"
 # Upload python project to pypi
 alias pyup="python3 setup.py sdist && python3 -m twine upload dist/*"
 
+# Open my todo list
 alias todo="notes && vim todo"
+
+# Kitty terminal tends to have issues with the "clear" command it's terminfo files
+# are not available on the server. The alias below fixes it.
+alias ssh="kitty +kitten ssh"
