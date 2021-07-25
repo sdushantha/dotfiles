@@ -170,6 +170,11 @@ bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
 # Select color from screen and save the value to clipboard 
 bindsym $mod+Shift+f --release exec $HOME/.local/bin/farge --notify
 
+# Rotating the display. Keybinings taken from Windows.
+bindsym Control+Mod1+Up exec xrandr -o normal
+bindsym Control+Mod1+Down exec xrandr -o inverted 
+bindsym Control+Mod1+Right exec xrandr -x 
+
 #}}}
 
 
