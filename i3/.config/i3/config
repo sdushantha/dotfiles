@@ -209,6 +209,9 @@ exec_always --no-startup-id blueman-applet
 # Allow alternating layout or sometimes known as the fibonacci layout. i3wm
 # doesn't have this by default so a script is needed.
 exec_always --no-startup-id python3 $HOME/.config/i3/scripts/i3-alternating-layout.py
+
+exec_always --no-startup-id /usr/lib/kdeconnectd 
+exec_always --no-startup-id kdeconnect-indicator
 #}}}
 
 
@@ -233,16 +236,7 @@ for_window [class="mpv"] floating enable
 for_window [title="(Open File|File Upload)"] fullscreen enable
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="[qQ]alculate-gtk"] floating enable
-
-##### RULES FOR SOME PROGRAMS #####
-# Exmaple:
-#   Spotify will open in workspace 4 only on launch.
-#   This wont effect any other Spotify windows. For example,
-#   Lets say that I have a Spotify window in workspace 2, when I 
-#   relaod i3, it will still stay there. These rules only apply
-#   to new windows which have been launched.
-
-assign [class="discord"] $ws3
+for_window [class="[Ss]imple[Ss]creen[Rr]ecorder"] floating enable
 for_window [class="discord"] focus
 
 for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to workspace 4, focus
