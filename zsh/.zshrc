@@ -90,6 +90,7 @@ source $HOME/.zshenv
 # Load my ZSH plugins
 source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
+source "$HOME/.zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
 
 # Search and install packages with yay and fzf
 yi() {
