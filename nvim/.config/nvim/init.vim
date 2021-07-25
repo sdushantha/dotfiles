@@ -50,10 +50,13 @@ Plug 'itchyny/lightline.vim'
     let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
     let g:lightline.component_type   = {'buffers': 'tabsel'}
     let g:lightline#bufferline#filename_modifier = ':t'
+    let g:lightline#bufferline#enable_devicons = 1
 
 Plug 'lilydjwg/colorizer'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree'
 call plug#end()
 "}}}
 
@@ -113,6 +116,10 @@ autocmd BufEnter,BufRead vifmrc :setfiletype vim
 " Show quotes in JSON files because they are usually hidden and
 " it honestly messes up what you are typing/seeing
 set conceallevel=0
+
+
+highlight VertSplit cterm=NONE
+set fillchars+=vert:\│
 "}}}
 
 
@@ -276,15 +283,6 @@ nmap <C-t> :e
 nmap <C-w> :bp<CR>:bdelete #<CR>  
 
 " Go to Nth buffer
-" nnoremap <silent> <A-1> :b1<CR>
-" nnoremap <silent> <A-2> :b2<CR>
-" nnoremap <silent> <A-3> :b3<CR>
-" nnoremap <silent> <A-4> :b4<CR>
-" nnoremap <silent> <A-5> :b5<CR>
-" nnoremap <silent> <A-6> :b6<CR> 
-" nnoremap <silent> <A-7> :b7<CR>
-" nnoremap <silent> <A-8> :b8<CR>
-" nnoremap <silent> <A-9> :b9<CR>
 nmap <A-1> <Plug>lightline#bufferline#go(1)
 nmap <A-2> <Plug>lightline#bufferline#go(2)
 nmap <A-3> <Plug>lightline#bufferline#go(3)
@@ -301,14 +299,6 @@ nnoremap <silent> Q :Goyo<CR>:setlocal showtabline=0<CR>
 nnoremap <c-o> :Files<CR>
 inoremap <c-o> <Esc>:Files<CR>
 
-" Automatic close certain characters (e.g brackets)
-" inoremap " ""<left>
-" inoremap ' ''<left>
-" inoremap ( ()<left>
-" inoremap [ []<left>
-" inoremap { {}<left>
-" inoremap {<CR> {<CR>}<ESC>O
-
 " Since I have mapped Shift-J or uppercase J to scrolling down, we have to map
 " ctrl-j to join so that we can join two lines
 nnoremap <c-j> :join<CR>
@@ -323,6 +313,11 @@ vnoremap f :!vimfold<cr>za
 inoremap <Tab> <C-n>
 inoremap <S-Tab> <C-p>
 
+" Toggle Comments with
+nnoremap <S-f> :NERDTreeToggle<CR>
+vnoremap <S-f> :NERDTreeToggle<CR>
+
+nmap gx :silent execute "!xdg-open " . shellescape("<cWORD>")<CR>
 " {{{ Code snippets  
 " Jump to <++>, which is used in my mappings
 inoremap ,, <Esc>/<++><Enter>"_c4l
