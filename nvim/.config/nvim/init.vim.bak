@@ -18,128 +18,129 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
     let g:mkdp_browser = "firefox"
 
 Plug 'mboughaba/i3config.vim'
-    " Set syntex highlighting for i3 config
-    aug i3config_ft_detection
-      au!
-      au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
-    aug end
+        " Set syntex highlighting for i3 config
+        aug i3config_ft_detection
+          au!
+          au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+        aug end
 
 
-Plug 'tpope/vim-commentary'
-    " Insert/remove comment, vim-commentary
-    nmap cq gcc
-    vmap cq gcc
+    Plug 'tpope/vim-commentary'
+        " Insert/remove comment, vim-commentary
+        nmap cq gcc
+        vmap cq gcc
 
-" Plug 'maxboisvert/vim-simple-complete'
-"     set complete-=t
-"     set complete-=i
-Plug 'vim-python/python-syntax'
-    let g:python_highlight_all = 1
+    " Plug 'maxboisvert/vim-simple-complete'
+    "     set complete-=t
+    "     set complete-=i
+    Plug 'vim-python/python-syntax'
+        let g:python_highlight_all = 1
 
-Plug 'itchyny/lightline.vim'
-    Plug 'mengelbrecht/lightline-bufferline'
+    Plug 'itchyny/lightline.vim'
+        Plug 'mengelbrecht/lightline-bufferline'
 
-    let g:lightline						= {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ] ],
-      \ }
-      \ }
+        let g:lightline						= {
+          \ 'active': {
+          \   'left': [ [ 'mode', 'paste' ] ],
+          \ }
+          \ }
 
-    let g:lightline.colorscheme = "wombat"
-    let g:lightline.tabline          = {'left': [['buffers']], 'right': [['']]}
-    let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-    let g:lightline.component_type   = {'buffers': 'tabsel'}
-    let g:lightline#bufferline#filename_modifier = ':t'
-    let g:lightline#bufferline#enable_devicons = 1
+        let g:lightline.colorscheme = "wombat"
+        let g:lightline.tabline          = {'left': [['buffers']], 'right': [['']]}
+        let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+        let g:lightline.component_type   = {'buffers': 'tabsel'}
+        let g:lightline#bufferline#filename_modifier = ':t'
+        let g:lightline#bufferline#enable_devicons = 1
 
-Plug 'lilydjwg/colorizer'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'preservim/nerdtree'
-call plug#end()
-"}}}
-
-
-"{{{ Looks  
-" Turn on syntax highlighting.
-syntax on
-
-" Show line numbers
-set number relativenumber 
-hi LineNr ctermbg=NONE ctermfg=darkgrey
-
-" Styling the autocomplete window
-"  == Reference ==
-"  Pmenu – normal item
-"  PmenuSel – selected item
-"  PmenuSbar – scrollbar
-"  PmenuThumb – thumb of the scrollbar
-highlight Pmenu ctermbg=grey
-highlight PmenuSel ctermbg=darkgrey ctermfg=grey
-
-" Always show tabline
-set showtabline=2
-
-" Always show status line
-set laststatus=2
-
-" Dont show --INSERT-- , --NORMAL-- , etc
-set noshowmode
-
-" Display all matching results when we tab complete in command mode
-set wildmenu
-
-" Highlight the 81st charcter
-" I like to stay in the 80 character limit :)
-highlight OverLength ctermbg=magenta ctermfg=black
-match OverLength /\%81v\+/
-
-" Fold the code. I only use this in my config files to organize it.
-set foldmethod=marker
-hi Folded ctermfg=white ctermbg=none
-
-" Have an bar that indicates which line I am on
-set cursorline
-highlight CursorLine ctermbg=236 cterm=None
-hi CursorLineNR ctermbg=236
-
-highlight LineNr ctermfg=darkgrey
-
-" Enable syntax highlighting for files formats that are not known by
-" vim, but use the same syntax as file that are known to vim
-" Example:
-"    vifmrc uses the same syntax as .vim files
-"    rofi themes (*.rasi) uses the same syntax as css
-autocmd BufEnter,BufRead vifmrc :setfiletype vim
-
-" Show quotes in JSON files because they are usually hidden and
-" it honestly messes up what you are typing/seeing
-set conceallevel=0
+    Plug 'lilydjwg/colorizer'
+    Plug '/usr/local/opt/fzf'
+    Plug 'junegunn/fzf.vim'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'preservim/nerdtree'
+    Plug 'altercation/vim-colors-solarized'
+    call plug#end()
+    "}}}'
 
 
-highlight VertSplit cterm=NONE
-set fillchars+=vert:\│
-"}}}
+    "{{{ Looks  
+    " Turn on syntax highlighting.
+    syntax on
+
+    " Show line numbers
+    set number relativenumber 
+    hi LineNr ctermbg=NONE ctermfg=darkgrey
+
+    " Styling the autocomplete window
+    "  == Reference ==
+    "  Pmenu – normal item
+    "  PmenuSel – selected item
+    "  PmenuSbar – scrollbar
+    "  PmenuThumb – thumb of the scrollbar
+    highlight Pmenu ctermbg=grey
+    highlight PmenuSel ctermbg=darkgrey ctermfg=grey
+
+    " Always show tabline
+    set showtabline=2
+
+    " Always show status line
+    set laststatus=2
+
+    " Dont show --INSERT-- , --NORMAL-- , etc
+    set noshowmode
+
+    " Display all matching results when we tab complete in command mode
+    set wildmenu
+
+    " Highlight the 81st charcter
+    " I like to stay in the 80 character limit :)
+    highlight OverLength ctermbg=magenta ctermfg=black
+    match OverLength /\%81v\+/
+
+    " Fold the code. I only use this in my config files to organize it.
+    set foldmethod=marker
+    hi Folded ctermfg=white ctermbg=none
+
+    " Have an bar that indicates which line I am on
+    set cursorline
+    highlight CursorLine ctermbg=236 cterm=None
+    hi CursorLineNR ctermbg=236
+
+    highlight LineNr ctermfg=darkgrey
+
+    " Enable syntax highlighting for files formats that are not known by
+    " vim, but use the same syntax as file that are known to vim
+    " Example:
+    "    vifmrc uses the same syntax as .vim files
+    "    rofi themes (*.rasi) uses the same syntax as css
+    autocmd BufEnter,BufRead vifmrc :setfiletype vim
+
+    " Show quotes in JSON files because they are usually hidden and
+    " it honestly messes up what you are typing/seeing
+    set conceallevel=0
 
 
-"{{{ Search  
-" Ignore case when searching
-set ignorecase
+    highlight VertSplit cterm=NONE
+    set fillchars+=vert:\│
+    "}}}
 
-" When searching try to be smart about cases.
-" What I have notcied is that, when searching with
-" only lowercase, the upper case words are also shown.
-" But if you search with uppercase, only uppercase is shown
-set smartcase
 
-" show search matches as you type
-set incsearch
+    "{{{ Search  
+    " Ignore case when searching
+    set ignorecase
 
-" Highlight matching search patterns
-set hlsearch
+    " When searching try to be smart about cases.
+    " What I have notcied is that, when searching with
+    " only lowercase, the upper case words are also shown.
+    " But if you search with uppercase, only uppercase is shown
+    set smartcase
 
-" Make double <Esc> clear search highlights
+    " show search matches as you type
+    set incsearch
+
+    " Highlight matching search patterns
+    set hlsearch
+
+    " Make double <Esc> clear search highlights
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 " }}}
 
@@ -362,7 +363,7 @@ set path+=**
 " Use system clipboard
 set clipboard+=unnamedplus
 
-" Save the undotree to a file when exiting a buffer
+" save the undotree to a file when exiting a buffer
 set undofile
 set undolevels=1000
 set undodir=~/.cache/nvim/undo/
