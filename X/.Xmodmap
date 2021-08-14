@@ -1,12 +1,15 @@
 !pointer = 1 2 3 5 4 6 7 8 9 10 11 12
 pointer = 1 2 3 5 4 7 6 8 9 10 11 12
 
-! 66 is the keycode of Caps_Lock
+! Caps Lock --> Esacpe
+! Escape --> Caps Lock
 clear    Lock
 keycode  66 = Escape
-
-! ESC is now caps lock
 keycode 9 = Caps_Lock
 
 ! SHIFT+4 --> $
 keycode 13 = 4 dollar 
+
+! I use tilde (~) too much and never use diaeresis (¨) so making
+! diaeresis my asciitilde key makes my workflow smoother.
+keysym diaeresis = asciitilde
