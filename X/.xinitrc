@@ -11,7 +11,7 @@
 # Set keyboard layout to Norwegian for Xorg. Seems like 'loadkeys' is not
 # persistant and might only affect the TTY session. Same goes with the
 # /etc/vconsole.conf
-setxkbmap -layout no
+setxkbmap -layout no -variant nodeadkeys
 
 # Merge in defaults and keymaps
 xmodmap "$HOME/.Xmodmap"
