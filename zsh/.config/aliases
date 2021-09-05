@@ -19,7 +19,7 @@ alias ..="cd .."
 alias zshrc="nvim $HOME/.zshrc && source $HOME/.zshrc"
 alias aliases="nvim $HOME/.config/aliases && source $HOME/.config/aliases"
 alias i3config="nvim $HOME/.config/i3/config"
-alias vimrc="nvim ~/.config/nvim/init.vim"
+alias vimrc="nvim ~/.config/nvim/init.lua"
 alias vifmrc="nvim $HOME/.config/vifm/vifmrc"
 
 # Enable colors for some commands
@@ -44,8 +44,9 @@ alias rm="rm --verbose"
 # Dont show the annoying banner in ipython3
 alias ipython3="ipython3 --no-banner"
 
-# I prefer neovim, but I am used to typing vim
+# Old habits and typos
 alias vim="nvim"
+alias vi="nvim"
 
 # The remaining storage
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
