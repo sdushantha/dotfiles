@@ -8,6 +8,7 @@
 TEXT_FILE="/tmp/ocr.txt"
 IMAGE_FILE="/tmp/ocr.png"
 
+
 # Check if the needed dependencies are installed
 dependencies=(tesseract maim notify-send xclip)
 for dependency in "${dependencies[@]}"; do

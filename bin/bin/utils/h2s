@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+#
+# by Siddharth Dushantha
+#
+# Change the HTTPS git url to a SSH git url
+#
+url=$(git config --get remote.origin.url)
+
+if [ $(echo "$url" | grep "git@github.com") ]; then
+    printf "%s\n" "Already SSH compatible url"
+    exit
+fi
+
+username_reponame=$(echo $url | cut -d "/" -f 4-5)
+ssh_url="git@github.com:$username_reponame"
+
+git remote set-url origin "$ssh_url"
+printf "Changed remote git url to SSH compatible: %s\n" "$ssh_url"
