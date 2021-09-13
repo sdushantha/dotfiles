@@ -151,8 +151,8 @@ filetype *.csv,*.xlsx libreoffice %c %i
 fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g" | cut -c -%pw
 
 " HTMLs
-fileviewer *.html w3m -dump %c
-filextype *.html,*.htm nvim %f 2>/dev/null &
+fileviewer *.html, *.htm, *.xhtml w3m -dump %c
+filextype *.html, *.htm, *.xhtml nvim %f 2>/dev/null &
 
 " Text based files
 filetype <text/*> nvim
@@ -254,6 +254,7 @@ nnoremap vids :cd ~/videos<cr>
 nnoremap dots :cd ~/dotfiles<cr>
 nnoremap shots :cd ~/pictures/screenshots<cr>
 nnoremap music :cd ~/music<cr>
+nnoremap prjs :cd ~/projects<cr>
 nnoremap cd :cd<cr>
 
 
