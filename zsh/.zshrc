@@ -53,6 +53,9 @@ bindkey -M vicmd 'L' end-of-line
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd ' ' edit-command-line
 
+# Prevent backspace key from not working: https://git.io/J48z9
+bindkey "^?" backward-delete-char
+
 # This brings the cursor back to the beam instead of the block cursor
 _fix_cursor() {
    echo -ne '\e[5 q'
@@ -107,3 +110,5 @@ yr() {
 		yay -Rns $(echo $SELECTED_PKGS)
 	fi
 }
+
+export PURE_PROMPT_SYMBOL="$"
