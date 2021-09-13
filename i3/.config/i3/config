@@ -3,7 +3,6 @@
 # Ø = oslash
 # Å = aring
 
-
 # General {{{  
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -59,7 +58,7 @@ bindsym $mod+comma split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+e layout split
+bindsym $mod+Shift+s layout splith
 bindsym $mod+t layout tabbed 
 bindsym $mod+s layout stacked 
 
@@ -122,7 +121,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+n exec bash $HOME/bin/keybinded/rofi_notes.sh 
 bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
 bindsym $mod+r exec rofi -disable-history -show run -config .config/rofi/themes/dmenu.rasi
-bindsym $mod+c --release exec find ~ -type f | rofi -dmenu -sorting-method fzf -sort
+bindsym $mod+o --release exec find ~ -type f | rofi -dmenu -sorting-method fzf -sort
 
 # Rof calculator https://github.com/svenstaro/rofi-calc
 bindsym XF86Calculator exec rofi -show calc 
@@ -151,7 +150,7 @@ bindsym XF86MonBrightnessDown exec light -U 5
 
 # Launch clearine logout menu
 # TODO: use rofi instead
-bindsym $mod+Shift+s exec --no-startup-id clearine
+#bindsym $mod+Shift+s exec --no-startup-id clearine
 
 # Lock the screen
 bindsym $mod+x exec --no-startup-id bash $HOME/bin/utils/lock calvin
@@ -185,8 +184,8 @@ bindsym Control+Mod1+Right exec xrandr -x
 # Automaticaly sets wallpaper. Just the the wallpaper
 # you want in the Wallpapers directory then it will 
 # automaticaly set it on start up.
-# exec_always --no-startup-id setroot -z $HOME/pictures/current/*
-exec_always --no-startup-id setroot --blank-color "#222833"
+exec_always --no-startup-id setroot -z $HOME/pictures/current/*
+#exec_always --no-startup-id setroot --blank-color "#222833"
 
 # allows sound
 exec_always --no-startup-id start-pulseaudio-x11
@@ -226,9 +225,9 @@ exec_always --no-startup-id kdeconnect-indicator
 for_window [class="^.*"] border pixel 1
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #6b6b6b #6b6b6b #ffffff #ffffff   #ffffff
-client.focused_inactive #6b6b6b #6b6b6b #ffffff #333333   #333333
-client.unfocused        #333333 #333333 #ffffff #333333   #333333
+client.focused          #6b6b6b #6b6b6b #eadab1 #eadab1   #eadab1
+client.focused_inactive #6b6b6b #6b6b6b #eadab1 #333333   #333333
+client.unfocused        #333333 #333333 #eadab1 #333333   #333333
 client.urgent           #df6b74 #df6b74 #000000 #333333   #df6b74
 client.placeholder      #333333 #333333 #000000 #333333   #333333
 
