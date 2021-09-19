@@ -3,9 +3,33 @@ local cmd = vim.cmd
 
 return require('packer').startup(
     function()
+
         use "Pocco81/TrueZen.nvim"
         use "lilydjwg/colorizer"
-        
+        use "iamcco/markdown-preview.nvim"
+        use "shime/vim-livedown"
+        use "dkarter/bullets.vim"
+        use "matze/vim-move"
+        use "turbio/bracey.vim"
+        use "windwp/nvim-autopairs"
+        require('nvim-autopairs').setup{}
+
+        -- use "windwp/nvim-ts-autotag"
+        -- require('nvim-ts-autotag').setup()
+
+        use "junegunn/fzf.vim"
+        use "nvim-treesitter/nvim-treesitter"
+        require'nvim-treesitter.configs'.setup {
+          highlight = {
+            enable = true,
+            -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+            -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+            -- Using this option may slow down your editor, and you may see some duplicate highlights.
+            -- Instead of true it can also be a list of languages
+            additional_vim_regex_highlighting = false,
+          },
+        }
+
         use "morhetz/gruvbox"
         g.gruvbox_contrast_dark = "hard"
 
@@ -33,8 +57,15 @@ return require('packer').startup(
 
 
         use "neovim/nvim-lspconfig"
-        g.lsp_diagnostics_enabled = 0
         require'lspconfig'.pyright.setup{}
+        vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+          vim.lsp.diagnostic.on_publish_diagnostics, {
+            signs = false,
+            virtual_text = false,
+            underline = false,
+            update_in_insert = false,
+          }
+        )
 
         use "hrsh7th/nvim-compe"
         require'compe'.setup {
@@ -166,6 +197,5 @@ return require('packer').startup(
         }
 
         vim.g.nvim_tree_root_folder_modifier = ":t"
-
     end
 )
