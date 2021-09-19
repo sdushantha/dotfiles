@@ -8,4 +8,11 @@
 # Quickly edit the source code of a command. This is pretty much a short
 # cut for doing --> vim $(which mycommand)
 
-$EDITOR "$(which "$1")"
+file_path=$(which "$1" 2>/dev/null)
+
+if printf "%s" "which : no" | grep "$file_path" > /dev/null; then
+    printf "%s\n" "Error: $1 not found"
+    exit 1
+fi
+
+$EDITOR "$file_path"
