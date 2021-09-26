@@ -57,10 +57,10 @@ bindsym $mod+comma split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+s layout splith
+# change container layout (tacked, tabbed, toggle split)
+bindsym $mod+s layout splith
 bindsym $mod+t layout tabbed 
-bindsym $mod+s layout stacked 
+bindsym $mod+Shifts layout stacked 
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle,move absolute position center
@@ -232,9 +232,13 @@ client.urgent           #df6b74 #df6b74 #000000 #333333   #df6b74
 client.placeholder      #333333 #333333 #000000 #333333   #333333
 
 # Dialogs, popups, etc should be floating and in the center of the screen
-for_window [window_role="pop-up"] floating enable,move absolute position center
-for_window [window_role="task_dialog"] floating enable,move absolute position center
-for_window [window_role="Dialog"] floating enable,move absolute position center
+for_window [window_role="task_dialog"]      floating enable,move absolute position center
+for_window [window_role="Dialog"]           floating enable,move absolute position center
+for_window [window_role="pop-up"]           floating enable,move absolute position center                     
+for_window [window_role="bubble"]           floating enable,move absolute position center
+for_window [window_role="Preferences"]      floating enable,move absolute position center
+for_window [window_type="dialog"]           floating enable,move absolute position center
+for_window [window_type="menu"]             floating enable,move absolute position center
 
 for_window [class="mpv"] floating enable
 for_window [title="(Open File|File Upload)"] fullscreen enable
