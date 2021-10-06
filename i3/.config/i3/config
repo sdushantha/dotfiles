@@ -155,13 +155,10 @@ bindsym XF86MonBrightnessDown exec light -U 5
 # Lock the screen
 bindsym $mod+x exec --no-startup-id bash $HOME/bin/utils/lock calvin
 
-# Screenshot fullscreen
-bindsym $mod+aring exec $HOME/bin/keybinded/screenshot.sh
-
 # Screenshot selected area
 # You need to use `--release` in the binding.
 # See "4.3. Keyboard bindings" on i3wm docs 
-bindsym $mod+oslash --release exec bash $HOME/bin/keybinded/screenshot.sh -s
+bindsym $mod+oslash --release exec flameshot gui
 
 # Emoji and unicode character picker using rofi
 bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
@@ -246,10 +243,8 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="[qQ]alculate-gtk"] floating enable
 for_window [class="[Ss]imple[Ss]creen[Rr]ecorder"] floating enable
 for_window [class="discord"] focus
-
 for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to workspace 4, focus
-###################################
-
+for_window [class="zoom"] floating enable
 
 # Prevent mouse from changing the focus
 focus_follows_mouse no
