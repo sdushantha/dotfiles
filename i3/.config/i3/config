@@ -171,6 +171,9 @@ bindsym Control+Mod1+Up exec xrandr -o normal
 bindsym Control+Mod1+Down exec xrandr -o inverted 
 bindsym Control+Mod1+Right exec xrandr -x 
 
+bindsym $mod+m move scratchpad
+bindsym $mod+Shift+m scratchpad show
+
 #}}}
 
 
@@ -213,6 +216,9 @@ exec_always --no-startup-id python3 $HOME/.config/i3/scripts/i3-alternating-layo
 
 exec_always --no-startup-id /usr/lib/kdeconnectd 
 exec_always --no-startup-id kdeconnect-indicator
+
+# Start up flameshot daemon
+exec_always --no-startup-id flameshot 
 #}}}
 
 
