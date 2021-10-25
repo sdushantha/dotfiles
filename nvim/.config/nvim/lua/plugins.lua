@@ -8,27 +8,15 @@ return require('packer').startup(
         use "lilydjwg/colorizer"
         use "iamcco/markdown-preview.nvim"
         use "shime/vim-livedown"
-        use "dkarter/bullets.vim"
+        use "dkarter/bullets.vim" 
         use "matze/vim-move"
+        use "mg979/vim-visual-multi"
         use "turbio/bracey.vim"
         use "windwp/nvim-autopairs"
         require('nvim-autopairs').setup{}
 
-        -- use "windwp/nvim-ts-autotag"
-        -- require('nvim-ts-autotag').setup()
 
         use "junegunn/fzf.vim"
-        use "nvim-treesitter/nvim-treesitter"
-        require'nvim-treesitter.configs'.setup {
-          highlight = {
-            enable = true,
-            -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-            -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-            -- Using this option may slow down your editor, and you may see some duplicate highlights.
-            -- Instead of true it can also be a list of languages
-            additional_vim_regex_highlighting = false,
-          },
-        }
 
         use "morhetz/gruvbox"
         g.gruvbox_contrast_dark = "hard"
@@ -58,6 +46,14 @@ return require('packer').startup(
 
         use "neovim/nvim-lspconfig"
         require'lspconfig'.pyright.setup{}
+        require'lspconfig'.html.setup{}
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+        require'lspconfig'.html.setup {
+          capabilities = capabilities,
+        }
+
         vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
           vim.lsp.diagnostic.on_publish_diagnostics, {
             signs = false,
@@ -172,17 +168,18 @@ return require('packer').startup(
         }
 
         use "kyazdani42/nvim-tree.lua"
+        require'nvim-tree'.setup {}
         g.nvim_tree_icons = {
             default = "",
             symlink = "",
             git = {
-                unstaged = "",
-                staged = "",
-                unmerged = "",
-                renamed = "",
-                untracked = "",
-                deleted = "",
-                ignored = ""
+                unstaged = "✗",
+                staged = "✓",
+                unmerged = "",
+                renamed = "➜",
+                untracked = "★",
+                deleted = "",
+                ignored = "◌"
             },
             folder = {
                 arrow_open = "",

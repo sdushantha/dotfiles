@@ -2,16 +2,15 @@ local opt = vim.opt
 local g = vim.g
 local cmd = vim.cmd
 
-
 opt.relativenumber = true
 opt.lazyredraw = true
 opt.termguicolors = true
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
 opt.ignorecase = true
-opt.syntax = "on"
 opt.undofile = true
 opt.foldmethod="marker"
+opt.mouse="a"
 --g.mapleader = " "
 
 -- Autowrite, this is very useful because when you have edited a file
