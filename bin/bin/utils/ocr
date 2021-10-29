@@ -17,6 +17,7 @@ for dependency in "${dependencies[@]}"; do
         # user is most likely going to run this script by binding it to their
         # keyboard, therefor they cant see any text that is outputed using echo
         notify-send "ocr" "Could not find '${dependency}', is it installed?"
+        echo "Could not find '${dependency}', is it installed?"
         exit 1
     }
 done
