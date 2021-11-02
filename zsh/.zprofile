@@ -38,3 +38,6 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 # Other
 export SUDO_ASKPASS=~/bin/utils/rofi-askpass
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
+# https://github.com/pypa/pip/issues/8090#issuecomment-803363268
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
