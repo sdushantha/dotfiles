@@ -120,7 +120,7 @@ bindsym $mod+Shift+Return exec kitty -e vifmrun
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+n exec bash $HOME/bin/keybinded/rofi_notes.sh 
 bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
-bindsym $mod+r exec rofi -disable-history -show run -config .config/rofi/themes/dmenu.rasi
+bindsym $mod+r exec rofi -disable-history -show run -config .config/rofi/dmenu.rasi
 bindsym $mod+o --release exec find ~ -type f | rofi -dmenu -sorting-method fzf -sort
 
 # Rof calculator https://github.com/svenstaro/rofi-calc
