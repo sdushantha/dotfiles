@@ -98,17 +98,13 @@ source "$HOME/.zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
 # Search and install packages with yay and fzf
 yi() {
 	SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
-	if [ -n "$SELECTED_PKGS" ]; then
-		yay -S $(echo $SELECTED_PKGS)
-	fi
+    [[ -n "$SELECTED_PKGS" ]] && yay -S "$SELECTED_PKGS"
 }
 
 # Search and remove packages with yay and fzf
 yr() {
 	SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
-	if [ -n "$SELECTED_PKGS" ]; then
-		yay -Rns $(echo $SELECTED_PKGS)
-	fi
+    [[ -n "$SELECTED_PKGS" ]] && yay -Rns "$SELECTED_PKGS"
 }
 
 export PURE_PROMPT_SYMBOL="$"
