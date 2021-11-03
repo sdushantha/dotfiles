@@ -115,13 +115,6 @@
     mouse_middle_click = close_all
     mouse_right_click = close_current
 
-# Set the background and foreground (text) color for all notifications
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
-
 [urgency_low]
     # This urgency should be used only 
     # for volume/brightness notification
