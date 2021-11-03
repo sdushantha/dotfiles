@@ -249,9 +249,9 @@ for_window [window_role="bubble"]           floating enable,move absolute positi
 for_window [window_role="Preferences"]      floating enable,move absolute position center
 for_window [window_type="dialog"]           floating enable,move absolute position center
 for_window [window_type="menu"]             floating enable,move absolute position center
+for_window [title="(Open File|File Upload)"] floating enable,move absolute position center
 
 for_window [class="mpv"] floating enable
-for_window [title="(Open File|File Upload)"] fullscreen enable
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="[qQ]alculate-gtk"] floating enable
 for_window [class="[Ss]imple[Ss]creen[Rr]ecorder"] floating enable
