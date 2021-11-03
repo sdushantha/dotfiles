@@ -171,8 +171,15 @@ bindsym Control+Mod1+Up exec xrandr -o normal
 bindsym Control+Mod1+Down exec xrandr -o inverted 
 bindsym Control+Mod1+Right exec xrandr -x 
 
+# Hide/unhide windows. A little similar to minimizing/maximizing
+# windows on a DE 
 bindsym $mod+m move scratchpad
-bindsym $mod+Shift+m scratchpad show
+bindsym $mod+shift+m scratchpad show
+
+# Control dunst notifications
+bindsym Control+space exec dunstctl close
+bindsym Control+Shift+space exec dunstctl all 
+bindsym Control+Shift+period exec dunstctl context 
 
 #}}}
 
