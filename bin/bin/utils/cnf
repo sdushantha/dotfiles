@@ -29,6 +29,7 @@
 
 command_name=$(cat "/tmp/command_not_found/command")
 
+# Fetch the package name which contains the file /usr/bin/COMMAND
 package_name=$(pacman -Fq "/usr/bin/$command_name" | head)
 
 # If no package is found output the error message which ZSH shows by default
@@ -40,17 +41,11 @@ fi
 # Notify user and ask whether or not they want to install the package
 printf "%b\n" "Command '\e[1m$command_name\e[0m' not found, but was found in the '\e[1m$package_name\e[0m' package."
 
-printf %s "Would you like to install it? [Y/n] "
+read -p "Would you like to install it? [Y/n] " -N1 confirm
 
-# Hacky way to ask the user for a single character as input without
-# having them to hit Return/Enter
-# Source: https://stackoverflow.com/a/30022297/9215267
-stty -icanon -echo
-confirm=$(dd bs=1 count=1 2> /dev/null)
-stty icanon echo
+# Just adding a few blank lines so that things look clean
+printf "%b" "\n\n"
 
-printf "%b" "\r\n"
-
-if  printf %s "$confirm" | grep -E "[yY]"; then
+if  printf %s "$confirm" | grep -Eq "[yY]"; then
     sudo pacman -S "$package_name"
 fi
