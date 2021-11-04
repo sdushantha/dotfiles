@@ -1,0 +1,56 @@
+#!/usr/bin/env sh
+#
+# by Siddharth Dushantha 2021
+#
+# cnf - Command Not Found
+#
+# An utility which get the previous command that returned a
+# command not found error and then checks if there is package
+# which has that command. If a package is found, then it asks
+# you if you want to intall it.
+#
+# !!README!! 
+# In order for this scrip to work, create a command-not-found handler
+# function in your shell's config file (e.g bashrc, zshrc, etc) and put the
+# command below in the function:
+#
+#   mkdir -p "/tmp/command_not_found"
+#   echo -n "$1" > "/tmp/command_not_found/command"
+#
+#   echo "zsh: command not found: $1" && exit 1
+#
+# Each shell has a different command-not-found handler function name:
+# In the zsh its a function named command_not_found_handler[1]
+# In the bash its a function named command_not_found_handle[2]
+#
+# [1] https://zsh.sourceforge.io/Doc/Release/Command-Execution.html#Command-Execution
+# [2] https://www.gnu.org/software/bash/manual/bash.html#Command-Search-and-Execution
+#
+
+command_name=$(cat "/tmp/command_not_found/command")
+
+package_name=$(pacman -Fq "/usr/bin/$command_name" | head)
+
+# If no package is found output the error message which ZSH shows by default
+if [ -z "$package_name" ]; then
+    printf "%b\n" "Couldn't find the package containing the '\e[1m$command_name\e[0m' command"
+    exit 1
+fi
+
+# Notify user and ask whether or not they want to install the package
+printf "%b\n" "Command '\e[1m$command_name\e[0m' not found, but was found in the '\e[1m$package_name\e[0m' package."
+
+printf %s "Would you like to install it? [Y/n] "
+
+# Hacky way to ask the user for a single character as input without
+# having them to hit Return/Enter
+# Source: https://stackoverflow.com/a/30022297/9215267
+stty -icanon -echo
+confirm=$(dd bs=1 count=1 2> /dev/null)
+stty icanon echo
+
+printf "%b" "\r\n"
+
+if  printf %s "$confirm" | grep -E "[yY]"; then
+    sudo pacman -S "$package_name"
+fi
