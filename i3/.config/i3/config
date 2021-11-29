@@ -180,7 +180,6 @@ bindsym $mod+shift+m scratchpad show
 bindsym Control+space exec dunstctl close
 bindsym Control+Shift+space exec dunstctl all 
 bindsym Control+Shift+period exec dunstctl context 
-
 #}}}
 
 
@@ -251,13 +250,16 @@ for_window [window_type="dialog"]           floating enable,move absolute positi
 for_window [window_type="menu"]             floating enable,move absolute position center
 for_window [title="(Open File|File Upload)"] floating enable,move absolute position center
 
+for_window [class="zoom"] floating enable
+for_window [class="[Bb]lueberry.py"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="[qQ]alculate-gtk"] floating enable
 for_window [class="[Ss]imple[Ss]creen[Rr]ecorder"] floating enable
+
 for_window [class="discord"] focus
 for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to workspace 4, focus
-for_window [class="zoom"] floating enable
+
 
 # Prevent mouse from changing the focus
 focus_follows_mouse no
