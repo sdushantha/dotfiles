@@ -58,9 +58,8 @@ bindsym $mod+comma split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (tacked, tabbed, toggle split)
-bindsym $mod+s layout splith
 bindsym $mod+t layout tabbed 
-bindsym $mod+Shifts layout stacked 
+bindsym $mod+Shift+t layout splith
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle,move absolute position center
@@ -148,17 +147,10 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer -D pulse sset Capture toggl
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
-# Launch clearine logout menu
-# TODO: use rofi instead
-#bindsym $mod+Shift+s exec --no-startup-id clearine
-
-# Lock the screen
-bindsym $mod+x exec --no-startup-id bash $HOME/bin/utils/lock calvin
-
 # Screenshot selected area
 # You need to use `--release` in the binding.
 # See "4.3. Keyboard bindings" on i3wm docs 
-bindsym $mod+oslash --release exec flameshot gui
+bindsym $mod+s --release exec flameshot gui
 
 # Emoji and unicode character picker using rofi
 bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
@@ -180,6 +172,9 @@ bindsym $mod+shift+m scratchpad show
 bindsym Control+space exec dunstctl close
 bindsym Control+Shift+space exec dunstctl all 
 bindsym Control+Shift+period exec dunstctl context 
+
+# Launch powermenu
+bindsym $mod+Shift+s exec bash $HOME/.config/rofi/powermenu.sh
 #}}}
 
 
