@@ -88,3 +88,6 @@ alias todo="notes && vim todo"
 # Kitty terminal tends to have issues with the "clear" command it's terminfo files
 # are not available on the server. The alias below fixes it.
 alias ssh="kitty +kitten ssh"
+
+# Launch jupyter notebook
+alias jpn="jupyter notebook"
