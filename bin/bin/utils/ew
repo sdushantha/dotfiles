@@ -8,9 +8,9 @@
 # Quickly edit the source code of a command. This is pretty much a short
 # cut for doing --> vim $(which mycommand)
 
-file_path=$(which "$1" 2>/dev/null)
+file_path=$(command -v "$1" 2>/dev/null)
 
-if printf "%s" "which : no" | grep "$file_path" > /dev/null; then
+if [ -z "$file_path" ]; then
     printf "%s\n" "Error: $1 not found"
     exit 1
 fi
