@@ -17,7 +17,7 @@ setxkbmap -layout no -variant nodeadkeys
 xmodmap "$HOME/.Xmodmap"
 
 # Show lockscreen on start up because thats the only security I have
-bash $HOME/bin/utils/lock
+betterlockscreen -l
 
 exec i3 --shmlog-size 0
 
