@@ -1,4 +1,12 @@
 #!/bin/bash
+#
+# By Siddharth Dushantha
+#
+# Simple script to open files. Similar to the 'open' command in macOS.
+#
+# Inspired by https://github.com/mitchweaver/bin/blob/master/application/opn
+#
+
 
 # Fork process without any terminal output
 launch() {
