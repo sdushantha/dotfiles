@@ -90,4 +90,4 @@ alias todo="notes && vim todo"
 alias ssh="kitty +kitten ssh"
 
 # Launch jupyter notebook
-alias jpn="jupyter notebook"
+alias jn="jupyter notebook"
