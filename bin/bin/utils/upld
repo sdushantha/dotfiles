@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 if [ $# -eq 0 ];then
-    echo "No arguments specified.\nUsage:\n  transfer <file|directory>\n  ... | transfer <file_name>">&2
-    return 1
+    echo -e "No arguments specified.\nUsage:\n  transfer <file|directory>\n  ... | transfer <file_name>">&2
+    exit 1
 fi
 
 if tty -s;then
