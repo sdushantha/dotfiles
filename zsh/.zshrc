@@ -3,6 +3,9 @@ fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 
+export PURE_PROMPT_SYMBOL="$"
+export PURE_PROMPT_VICMD_SYMBOL="$"
+
 # Load my aliases 
 [ -f ~/.config/aliases ] && source ~/.config/aliases
 
@@ -91,7 +94,7 @@ source $HOME/.zprofile
 source $HOME/.zshenv
 
 # Load my ZSH plugins
-source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+#source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
 source "$HOME/.zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
 
@@ -106,8 +109,6 @@ yr() {
 	SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
     [[ -n "$SELECTED_PKGS" ]] && yay -Rns "$SELECTED_PKGS"
 }
-
-export PURE_PROMPT_SYMBOL="$"
 
 PATH="/home/siddharth/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/siddharth/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
