@@ -91,3 +91,8 @@ alias ssh="kitty +kitten ssh"
 
 # Launch jupyter notebook
 alias jn="jupyter notebook"
+
+# [J]ust [P]ush
+# Sometimes I just need to push the code and dont care about
+# the commit message
+alias jp="git add . && git commit -m \"$(date)\" && git push"
