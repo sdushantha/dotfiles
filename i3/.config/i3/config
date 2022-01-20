@@ -255,7 +255,7 @@ for_window [title="(Open File|File Upload)"] floating enable,move absolute posit
 for_window [class="zoom"] floating enable
 for_window [class="[Bb]lueberry.py"] floating enable
 for_window [class="mpv"] floating enable
-for_window [class="Yad" title="yad-calendar"] floating enable
+for_window [class="[Gg]nome-calendar"] floating enable
 for_window [class="[qQ]alculate-gtk"] floating enable
 for_window [class="[Ss]imple[Ss]creen[Rr]ecorder"] floating enable
 
