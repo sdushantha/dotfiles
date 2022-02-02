@@ -73,3 +73,7 @@ map("n", "<C-o>", ":Files<CR>", {silent = true})
 
 map("n", "<C-A-l>", ":BufferLineMoveNext<CR>", {silent = true})
 map("n", "<C-A-h>", ":BufferLineMovePrev<CR>", {silent = true})
+
+map('i', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+map('n', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+map('v', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })

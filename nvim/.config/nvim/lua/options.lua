@@ -11,7 +11,7 @@ opt.ignorecase = true
 opt.undofile = true
 opt.foldmethod="marker"
 opt.mouse="a"
---g.mapleader = " "
+g.mapleader = " "
 
 -- Autowrite, this is very useful because when you have edited a file
 -- and want to edit another one using :e or move to another buffer,
@@ -37,4 +37,9 @@ opt.expandtab = true
 -- Dont show "INSERT", "VISUAL BLOCK", etc
 cmd("set noshowmode")
 
-cmd("colorscheme gruvbox")
+-- Colorscheme
+opt.background = "dark"
+cmd("colorscheme catppuccin")
+
+-- Don't wrap lines
+vim.wo.wrap = false
