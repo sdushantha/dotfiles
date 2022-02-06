@@ -46,23 +46,21 @@ module-margin = 1.5
 
 modules-left = i3
 modules-center = 
-modules-right = todo micstatus volume battery wlan calendar
+modules-right = micstatus volume battery bluetooth  wlan today
 
-tray-position = none
-tray-detached = true
+tray-position = right 
+tray-detached = false 
 
 ;---------;
 ; MODULES ;
 ;---------;
 
 
-[module/now]
+[module/today]
 type = custom/script
-interval = 1.0
-exec = date +"%H:%M"
-trail = true
-click-left = bash $HOME/.config/polybar/scripts/cal_widget.sh
-
+exec = $HOME/.config/polybar/scripts/today.sh
+interval = 5
+click-left = $HOME/.config/polybar/scripts/today.sh --calendar &
 
 [module/battery]
 type = internal/battery
@@ -118,20 +116,8 @@ interval = 5
 label-connected =  %essid%
 label-disconnected = 
 
-format-connected = %{A1:kitty -e /home/siddharth/bin/utils/fwifi:}<label-connected>%{A}
-format-disconnected= %{A1:kitty -e /home/siddharth/bin/utils/fwifi:}<label-disconnected>%{A}
-
-[module/calendar]
-type = custom/script
-exec = $HOME/.config/polybar/scripts/calendar.sh
-interval = 5
-click-left = $HOME/.config/polybar/scripts/calendar.sh --popup &
-
-[module/todo]
-type = custom/script
-exec = echo " $(wc -l $HOME/documents/notes/todo | awk '{print $1}')"
-interval = 1
-click-left = bash $HOME/bin/keybinded/rofi_todo.sh 
+format-connected = %{A1:kitty -e $HOME/bin/utils/fwifi:}<label-connected>%{A}
+format-disconnected= %{A1:kitty -e $HOME/bin/utils/fwifi:}<label-disconnected>%{A}
 
 [module/micstatus]
 type = custom/script
@@ -171,5 +157,10 @@ label-urgent = %index%
 label-urgent-background = #bd2c40
 label-urgent-padding = 1
 
+[module/bluetooth]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/bluetooth.sh
+interval = 1
+click-left = blueberry 
 
 ; vim:ft=dosini
