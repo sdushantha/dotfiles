@@ -235,11 +235,12 @@ exec_always --no-startup-id flameshot
 # Gives a border to the windows. 
 for_window [class="^.*"] border pixel 1
 
+# TODO: have to fix the colors for this
 # class                 border  backgr. text    indicator child_border
-client.focused          #6b6b6b #6b6b6b #eadab1 #eadab1   #eadab1
-client.focused_inactive #6b6b6b #6b6b6b #eadab1 #333333   #333333
-client.unfocused        #333333 #333333 #eadab1 #333333   #333333
-client.urgent           #df6b74 #df6b74 #000000 #333333   #df6b74
+client.focused          #575268 #575268 #F5C2E7 #d9e0ee   #d9e0ee
+client.focused_inactive #575268 #575268 #F5C2E7 #333333   #333333
+client.unfocused        #302D41 #302D41 #D9E0EE #333333   #333333
+client.urgent           #f28fad #f28fad #000000 #333333   #f28fad
 client.placeholder      #333333 #333333 #000000 #333333   #333333
 
 # Dialogs, popups, etc should be floating and in the center of the screen
@@ -255,9 +256,9 @@ for_window [title="(Open File|File Upload)"] floating enable,move absolute posit
 for_window [class="zoom"] floating enable
 for_window [class="[Bb]lueberry.py"] floating enable
 for_window [class="mpv"] floating enable
-for_window [class="[Gg]nome-calendar"] floating enable
 for_window [class="[qQ]alculate-gtk"] floating enable
 for_window [class="[Ss]imple[Ss]creen[Rr]ecorder"] floating enable
+for_window [class="[Gg]nome-calendar"] floating enable
 
 for_window [class="discord"] focus
 for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to workspace 4, focus
