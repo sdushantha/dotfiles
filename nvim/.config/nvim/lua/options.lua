@@ -18,7 +18,7 @@ g.mapleader = " "
 -- you dont have to write the current one manually every time you switch
 -- buffers.
 opt.autowriteall = true
-
+-- 
 -- Show quotes in JSON files because they are usually hidden and
 -- it honestly messes up what you are typing/seeing
 opt.conceallevel = 0
@@ -43,3 +43,24 @@ cmd("colorscheme catppuccin")
 
 -- Don't wrap lines
 vim.wo.wrap = false
+
+
+fg_bg = function(group, fgcol, bgcol)
+   cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
+end
+
+bg = function(group, col)
+   cmd("hi " .. group .. " guibg=" .. col)
+end
+
+fg_bg("TelescopeBorder", "#1a1826", "#1a1826")
+fg_bg("TelescopePromptBorder", "#262638", "#262638")
+
+fg_bg("TelescopePromptNormal", "#d9e0ee", "#262638")
+fg_bg("TelescopePromptPrefix", "#f28fad", "#262638")
+-- 
+bg("TelescopeNormal", "#1a1826")
+-- 
+fg_bg("TelescopePreviewTitle", "#000000", "#abe9b3")
+fg_bg("TelescopePromptTitle", "#000000", "#f28fad")
+fg_bg("TelescopeResultsTitle", "#1a1826", "#1a1826")

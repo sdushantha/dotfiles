@@ -1,9 +1,12 @@
-local modules = {
-    "options",
-    "keymappings",
-    "plugins"
+local core_modules = {
+  "options",
+  "plugins",
+  "mappings",
 }
 
-for i = 1, #modules, 1 do
-    pcall(require, modules[i])
+for _, module in ipairs(core_modules) do
+  local ok, err = pcall(require, module)
+  if not ok then
+      vim.notify("Failed to load " .. module .. "\n\n" .. err)
+  end
 end

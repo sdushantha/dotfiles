@@ -69,7 +69,7 @@ map("n", "<S-f>", ":NvimTreeToggle<CR>", {silent = true})
 map("n", "<Esc>", ":noh<CR>", {silent = true})
 
 -- Open a file through Telescope
-map("n", "<C-o>", ":Files<CR>", {silent = true})
+map("n", "<C-o>", ":Telescope find_files<CR>", {silent = true})
 
 map("n", "<C-A-l>", ":BufferLineMoveNext<CR>", {silent = true})
 map("n", "<C-A-h>", ":BufferLineMovePrev<CR>", {silent = true})
