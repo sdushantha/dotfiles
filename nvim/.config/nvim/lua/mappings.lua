@@ -38,7 +38,7 @@ map("n", "fj", "zo]zk")
 map("n", "fk", "zo[zj")
 
 -- Create new file or edit an existing file
-map("n", "<C-n>", ":e ")
+map("n", "<C-n>", ":e " .. vim.fn.expand('%:p:h') .. "/")
 
 -- Close current buffer
 map("n", "<C-w>", ":bp<CR>:bdelete #<CR>", {silent = true})
@@ -55,6 +55,10 @@ map("", "<M-8>", "<CMD>lua require'bufferline'.go_to_buffer(8)<CR>")
 map("", "<M-9>", "<CMD>lua require'bufferline'.go_to_buffer(9)<CR>")
 map("", "<M-0>", "<CMD>lua require'bufferline'.go_to_buffer(10)<CR>")
 
+-- Move buffer tabs (like moving tabs in web browser)
+map("n", "<C-A-l>", ":BufferLineMoveNext<CR>", {silent = true})
+map("n", "<C-A-h>", ":BufferLineMovePrev<CR>", {silent = true})
+
 -- Tab completion
 map("i", "<Tab>", "<C-n>")
 map("i", "<S-Tab>", "<C-p>")
@@ -66,11 +70,13 @@ map("n", "<S-f>", ":NvimTreeToggle<CR>", {silent = true})
 map("n", "<Esc>", ":noh<CR>", {silent = true})
 
 -- Open a file through Telescope
-map("n", "<C-o>", ":Telescope find_files<CR>", {silent = true})
+map("n", "<C-o>", ":Telescope find_files hidden=true<CR>", {silent = true})
 
-map("n", "<C-A-l>", ":BufferLineMoveNext<CR>", {silent = true})
-map("n", "<C-A-h>", ":BufferLineMovePrev<CR>", {silent = true})
-
+-- Rename a variable throughout the file
 map('i', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 map('n', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 map('v', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+
+-- Presistant indent mode
+map("v", "<", "<gv")
+map("v", ">", ">gv")

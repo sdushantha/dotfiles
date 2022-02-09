@@ -44,7 +44,7 @@ cmd("colorscheme catppuccin")
 -- Don't wrap lines
 vim.wo.wrap = false
 
-
+-- Telescope colors (TODO: need organise this)
 fg_bg = function(group, fgcol, bgcol)
    cmd("hi " .. group .. " guifg=" .. fgcol .. " guibg=" .. bgcol)
 end
@@ -60,6 +60,6 @@ fg_bg("TelescopePromptPrefix", "#c5c8c9", "#202729")
 fg_bg("TelescopePreviewBorder", "#192022", "#192022")
 bg("TelescopeNormal", "#192022")
 bg("TelescopePreviewNormal", "#192022")
-fg_bg("TelescopePreviewTitle", "#000000", "#abe9b3")
-fg_bg("TelescopePromptTitle", "#000000", "#f28fad")
-fg_bg("TelescopeResultsTitle", "#1a1826", "#1a1826")
+fg_bg("TelescopePreviewTitle", "#192022", "#192022")
+fg_bg("TelescopePromptTitle", "#202729", "#202729")
+fg_bg("TelescopeResultsTitle", "#192022", "#192022")
