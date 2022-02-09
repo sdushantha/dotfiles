@@ -159,14 +159,14 @@ filetype <text/*> nvim
 fileviewer <text/*> env -uCOLORTERM bat --color always --wrap never --pager never %c -p
 
 " PDFs
-filextype *.pdf zathura %c %i &
+filextype *.pdf open %c %i &
 fileviewer *.pdf
         \ vifmimg pdf %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
 " ePUBs
-filextype *.epub zathura %c %i &
+filextype *.epub open %c %i &
 fileviewer *.epub
         \ vifmimg epub %px %py %pw %ph %c
         \ %pc
@@ -179,21 +179,21 @@ fileviewer *.otf,*.ttf,*.woff
         \ vifmimg clear
 
 " Audios
-filetype <audio/*> mpv %c %i </dev/null &>/dev/null &
+filetype <audio/*> open %c %i </dev/null &>/dev/null &
 fileviewer <audio/*>
         \ vifmimg audio %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
 " Videos
-filetype <video/*> mpv %c %i </dev/null &>/dev/null &
+filetype <video/*> open %c %i </dev/null &>/dev/null &
 fileviewer <video/*>
         \ vifmimg video %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
 " Images
-filextype <image/*> mpv %c %i </dev/null &>/dev/null &
+filextype <image/*> open %c %i </dev/null &>/dev/null &
 fileviewer <image/*>
         \ vifmimg draw %px %py %pw %ph %c
         \ %pc
@@ -220,7 +220,7 @@ fileviewer .*/ ls --color --group-directories-first
 " Using xdg-open to open the highlighted file with a compatible program and
 " the reason why I am using "file" to preview other files is so that "vifm" 
 " does not lag when trying "cat" the file
-filetype * xdg-open %c
+filetype * xdg-open %c &
 fileviewer * file -b %c
 " }}}
 
@@ -232,8 +232,8 @@ nmap q ZQ
 " Use comma to enter command mode
 nnoremap , : 
 
-" Set highlighted image as wallpaper
-nnoremap <C-w> :!bash ~/.config/ranger/scripts/wall.sh %c &<cr>
+" Set highlighted image as wallpaper and lockscreen image
+nnoremap <C-w> :!setroot -z %c && betterlockscreen -u %c && rm ~/pictures/current/* && cp %c ~/pictures/current/ &<cr>
 
 " Upload highlighted file to 0x0.st and then save url to clipboard
 nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)" &<cr> 
