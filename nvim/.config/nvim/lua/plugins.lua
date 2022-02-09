@@ -12,8 +12,19 @@ packer.startup {
     use {"kyazdani42/nvim-tree.lua"}
     require("nvim-tree").setup{}
     g.nvim_tree_indent_markers = 1
+    require("nvim-tree.view").View.winopts.cursorline = true
 
-    
+    nvimTreeEnter = function()
+      vim.cmd "highlight! Cursor blend=100"
+      vim.opt.guicursor = { "n:Cursor/lCursor", "v-c-sm:block", "i-ci-ve:ver25", "r-cr-o:hor2" }
+    end
+
+    nvimTreeLeave = function()
+      vim.cmd "highlight! Cursor blend=NONE"
+      vim.opt.guicursor = { "n-v-c-sm:block", "i-ci-ve:ver25", "r-cr-o:hor20" }
+    end
+
+
     -- Boost startup time
     use {
       "nathom/filetype.nvim",
@@ -50,15 +61,9 @@ packer.startup {
     use {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
     require("bufferline").setup {
         options = {
-            offsets = {
-                {
-                    filetype = "NvimTree",
-                    text = "Explorer"
-                }
-            }
+            offsets = { {filetype = "NvimTree", text = "Explorer", adding = 1}}
         }
     }
-
 
     -- Syntax Highlighting
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
@@ -119,6 +124,20 @@ packer.startup {
     }
 
 
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    require('telescope').setup {
+      extensions = {
+        fzf = {
+          fuzzy = true,                    -- false will only do exact matching
+          override_generic_sorter = true,  -- override the generic sorter
+          override_file_sorter = true,     -- override the file sorter
+          case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                           -- the default case_mode is "smart_case"
+        }
+      }
+    }
+    require('telescope').load_extension('fzf')
+
     -- Autopairs
     use {"windwp/nvim-autopairs"}
     require("nvim-autopairs").setup{
@@ -161,5 +180,9 @@ packer.startup {
     
     -- Profile the startup time
     use {"dstein64/vim-startuptime"}
+
+
+    use {"mboughaba/i3config.vim"}
+    cmd("au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config")
   end
 }

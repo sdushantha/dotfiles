@@ -37,9 +37,6 @@ map("n", "<C-H>", "<C-W><C-H>")
 map("n", "fj", "zo]zk")
 map("n", "fk", "zo[zj")
 
--- Toggle folds with space bar
-map("n", "<space>", "za")
-
 -- Create new file or edit an existing file
 map("n", "<C-n>", ":e ")
 
