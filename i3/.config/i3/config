@@ -182,6 +182,8 @@ bindsym $mod+x exec betterlockscreen -l
 
 # Launch Thunar
 bindsym $mod+E exec thunar &
+
+bindsym $mod+Shift+x exec drawterm
 #}}}
 
 
@@ -259,6 +261,7 @@ for_window [class="mpv"] floating enable
 for_window [class="[qQ]alculate-gtk"] floating enable
 for_window [class="[Ss]imple[Ss]creen[Rr]ecorder"] floating enable
 for_window [class="[Gg]nome-calendar"] floating enable
+for_window [title="kitty-float"] floating enable
 
 for_window [class="discord"] focus
 for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to workspace 4, focus
