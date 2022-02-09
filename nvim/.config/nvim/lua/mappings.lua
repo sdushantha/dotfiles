@@ -80,3 +80,6 @@ map('v', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = t
 -- Presistant indent mode
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- Reload current file
+map("n", "<M-r>", ":luafile %<cr>", {silent = true})
