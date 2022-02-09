@@ -5,24 +5,8 @@ configuration {
 }
 
 * {
-    background-color:               @bg;
-    text-color:                     @fg2;
-    bg:#2E3440;
-    bg1:#3B4252;
-    bg2:#434C5E;
-    bg3:#4C566A;
-    fg:#ECEFF4;
-    fg1:#E5E9F0;
-    fg2:#D8DEE9;
-    red: #BF616A;
-    orange:#D08770;
-    yellow:#EBCB8B;
-    magenta:#B48EAD;
-    cyan:#88C0D0;
-    blue:#81A1C1;
-    green:#A3BE8C;
-    transparent: #00000000;
-
+    background-color:               #0d1416;
+    text-color:                     #d6dcdc;
 }
 
 window {
@@ -44,13 +28,13 @@ listview {
 }
 
 mainbox {
-    background-color:               @bg;
+    background-color:               @background-color;
     children:                       [ listview ];
 }
 
 element {
-    background-color:               @bg1;
-    text-color:                     @fg2;
+    background-color:               #192022;
+    text-color:                     #d6dcdc;
     orientation:                    vertical;
     border-radius:                  10px;
 }
@@ -64,34 +48,10 @@ element-text {
     vertical-align:                 0.5;
     margin:                         26px 26px 26px 26px;
 }
-
-element normal.urgent,
-element alternate.urgent {
-    background-color:               @bg;
-    text-color:                     @cyan;
-    border-radius:                  10px;
-}
-
-element normal.active,
-element alternate.active {
-    background-color:               @fg2;
-    text-color:                     @cyan;
-}
-
 element selected {
-    background-color:               @cyan;
-    text-color:                     @bg;
+    background-color:               #363D3E;
+    text-color:                     #d6dcdc;
     border:                  		0px;
     border-radius:                  10px;
     border-color:                  	@bg;
-}
-
-element selected.urgent {
-    background-color:               @cyan;
-    text-color:                     @fg;
-}
-
-element selected.active {
-    background-color:               @bg;
-    color:                          @fg;
 }

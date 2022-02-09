@@ -5,5 +5,7 @@ configuration {
 	sidebar-mode: false;
 	m: "-1";
 	click-to-exit: true;
-	theme: "~/.config/rofi/themes/launcher.rasi";
 }
+
+
+@theme "~/.config/rofi/themes/launcher.rasi"

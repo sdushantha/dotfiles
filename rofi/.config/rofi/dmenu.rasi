@@ -1,4 +1,6 @@
 configuration {
 	click-to-exit: true;
-	theme: "~/.config/rofi/themes/dmenu.rasi";
 }
+
+
+@theme "~/.config/rofi/themes/dmenu.rasi"

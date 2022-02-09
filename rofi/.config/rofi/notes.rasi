@@ -1,4 +1,5 @@
 configuration {
 	click-to-exit: true;
-	theme: "~/.config/rofi/themes/notes.rasi";
 }
+
+@theme "~/.config/rofi/themes/notes.rasi"
