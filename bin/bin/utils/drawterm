@@ -1,0 +1,7 @@
+read -r X Y W H < <(slop -f "%x %y %w %h" -b 1 -t 0 -q)
+
+kitty  --title="kitty-float" &
+
+sleep 0.245
+xdotool windowsize $(xdotool getactivewindow) "$W" "$H"
+xdotool windowmove $(xdotool getactivewindow) "$X" "$Y"
