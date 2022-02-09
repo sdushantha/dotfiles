@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 has() {
   local verbose=false
   if [[ $1 == '-v' ]]; then
@@ -30,7 +31,7 @@ network=$(nmcli --color yes device wifi | fzf --ansi --height=40% --reverse --cy
 #network=$(nmcli device wifi | dmenu)
 [[ -z "$network" ]] && exit
 network=$(sed -r 's/^\s*\*?\s*//; s/\s*(Ad-Hoc|Infra).*//' <<< "$network")
-SSID=$(echo "$network" | grep -o "\s.*$" | sed "s/\s//g")
+SSID=$(echo "$network" | grep -o "\s.*$" | xargs)
 echo "connecting to \"${SSID}\"..."
 nmcli -a device wifi connect "$SSID"
 
