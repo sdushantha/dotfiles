@@ -32,8 +32,8 @@ font-1 = Symbols Nerd Font:pixelsize=12;3
 ; COLORS ;
 ;--------;
 
-background = #0d0b0a
-foreground = ${colors.color7}
+background = #0d1416
+foreground = #d6dcdc
 border-color = 0
 
 ;---------------;
