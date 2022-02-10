@@ -17,7 +17,7 @@ launch() {
 file_path="$@"
 
 if [ -z "$file_path" ]; then
-    file_path=$(fzf)
+    file_path=$(fzf --prompt " " --pointer "❯")
     [ -z "$file_path" ] && exit
 fi
 
