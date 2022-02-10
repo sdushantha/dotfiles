@@ -14,44 +14,54 @@ launch() {
     exit
 }
 
-file_ext=$(printf "%s" "${1##*.}" | tr "[:upper:]" "[:lower:]")
+file_path="$@"
 
-[ -d "$1" ] && launch thunar "$1"
+if [ -z "$file_path" ]; then
+    file_path=$(fzf)
+fi
+
+file_ext=$(printf "%s" "${file_path##*.}" | tr "[:upper:]" "[:lower:]")
+
+[ -d "$file_path" ] && launch thunar "$file_path"
 
 case "$file_ext" in
         mp4|mov|webm|gif|mkv|avi)
-            launch mpv "$@" ;;
+            launch mpv "$file_path" ;;
 
         jpg|jpeg|png)
-            launch sxiv -a -b -N sxiv -p -r "$@" ;;
+            launch sxiv -a -b -N sxiv -p -r "$file_path" ;;
 
         otf|ttf|woff)
-            launch fontpreview "$@" ;;
+            launch fontpreview "$file_path" ;;
 
         mp3|flac|ogg|opus|wav)
-            launch mpv "$@" ;;
+            launch mpv "$file_path" ;;
 
         pdf|epub)
-            launch evince "$@" ;;
+            launch evince "$file_path" ;;
 
         docx|rtf|odt|ods|pptx|xlsx|csv)
-            launch libreoffice "$1" ;;
+            launch libreoffice "$file_path" ;;
 
         xcf)
-            launch gimp "$1" ;;
+            launch gimp "$file_path" ;;
 
         pcap)
-            launch wireshark "$1" ;;
+            launch wireshark "$file_path" ;;
 
         svg)
-            launch firefox "$@" ;;
+            launch firefox "$file_path" ;;
 
         html|htm|xhtml)
-            launch firefox "$@" ;;
+            launch firefox "$file_path" ;;
 
         openshot|osp)
-            launch openshot-qt "$1" ;;
+            launch openshot-qt "$file_path" ;;
 
         *)
-            echo "Not sure how to open $1"
+            if [[ $(file --mime-type $file_path) == *"text/plain"* ]]; then
+                $EDITOR "$file_path"
+            else
+                echo "Not sure how to open $file_path"
+            fi
 esac
