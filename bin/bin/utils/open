@@ -60,7 +60,7 @@ case "$file_ext" in
             launch openshot-qt "$file_path" ;;
 
         *)
-            if [[ $(file --mime-type $file_path 2>/dev/null) == *"text/plain"* ]]; then
+            if [[ $(file --mime-type $file_path 2>/dev/null) == *"text/"* ]]; then
                 $EDITOR "$file_path"
             else
                 echo "Not sure how to open $file_path"
