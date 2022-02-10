@@ -18,6 +18,7 @@ file_path="$@"
 
 if [ -z "$file_path" ]; then
     file_path=$(fzf)
+    [ -z "$file_path" ] && exit
 fi
 
 file_ext=$(printf "%s" "${file_path##*.}" | tr "[:upper:]" "[:lower:]")
@@ -59,7 +60,7 @@ case "$file_ext" in
             launch openshot-qt "$file_path" ;;
 
         *)
-            if [[ $(file --mime-type $file_path) == *"text/plain"* ]]; then
+            if [[ $(file --mime-type $file_path > /dev/null 2>&1) == *"text/plain"* ]]; then
                 $EDITOR "$file_path"
             else
                 echo "Not sure how to open $file_path"
