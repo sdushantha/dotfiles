@@ -47,6 +47,7 @@ alias ipython3="ipython3 --no-banner"
 # Old habits and typos
 alias vim="nvim"
 alias vi="nvim"
+alias v="nvim"
 
 # The remaining storage
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
@@ -97,3 +98,10 @@ alias jn="jupyter notebook"
 # the commit message
 # git rev-parse --show-toplevel
 alias jp="git add . && git commit -m \"$(date)\" && git push"
+
+# Much quicker to just run 'o' instead of
+# typing out the whole command 
+alias o="open"
+
+# Keep newsboat quiet
+alias newsboat="newsboat -q"
