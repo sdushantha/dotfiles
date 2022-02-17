@@ -42,7 +42,9 @@ opt.background = "dark"
 cmd("colorscheme catppuccin")
 
 -- Don't wrap lines
-vim.wo.wrap = false
+-- vim.wo.wrap = false
+
+g.python3_host_prog = "python3"
 
 -- Telescope colors (TODO: need organise this)
 fg_bg = function(group, fgcol, bgcol)

@@ -21,8 +21,8 @@ map("n", "L", "A")    -- going to end of line and appending in normal mode
 map("v", "L", "$")    -- going to end of line in visual mode
 
 -- Move up and down visual lines
-map("n", "j", "gj")
-map("n", "k", "gk")
+map("n", "j", "v:count == 0 ? 'gj' : 'j'", {expr = true})
+map("n", "k", "v:count == 0 ? 'gk' : 'k'", {expr = true})
 
 -- Quickly access the vim command line
 map("n", ",", ":")
@@ -59,14 +59,10 @@ map("", "<M-0>", "<CMD>lua require'bufferline'.go_to_buffer(10)<CR>")
 map("n", "<C-A-l>", ":BufferLineMoveNext<CR>", {silent = true})
 map("n", "<C-A-h>", ":BufferLineMovePrev<CR>", {silent = true})
 
--- Tab completion
-map("i", "<Tab>", "<C-n>")
-map("i", "<S-Tab>", "<C-p>")
-
 -- Toggle the NvimTree
 map("n", "<S-f>", ":NvimTreeToggle<CR>", {silent = true})
 
--- Turn off highlighting 
+-- Turn off highlighting
 map("n", "<Esc>", ":noh<CR>", {silent = true})
 
 -- Open a file through Telescope

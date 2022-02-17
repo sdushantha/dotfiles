@@ -1,4 +1,5 @@
 local g = vim.g
+local fn = vim.fn
 local cmd = vim.cmd
 
 local packer_status_ok, packer = pcall(require, "packer")
@@ -8,6 +9,9 @@ end
 
 packer.startup {
   function(use)
+    -- Package mananger
+    use {"wbthomason/packer.nvim"}
+
     -- File explorer
     use {"kyazdani42/nvim-tree.lua"}
     require("nvim-tree").setup{}
@@ -61,16 +65,19 @@ packer.startup {
 
 
     -- Completion engine
-    use {"hrsh7th/nvim-cmp", event = "BufRead"}
-
+    use {'hrsh7th/cmp-nvim-lsp'}
+    use {'hrsh7th/cmp-buffer'}
+    use {'hrsh7th/cmp-path'}
+    use {'hrsh7th/cmp-cmdline'}
+    use {'hrsh7th/nvim-cmp'}
+    require("plugins.configs.cmp")
     
     -- Built-in LSP 
     use {"neovim/nvim-lspconfig"}
-
+    require("plugins.configs.lsp")
 
     -- LSP manager
     use {"williamboman/nvim-lsp-installer"}
-
 
     -- Fuzzy finder
     use {"nvim-telescope/telescope.nvim"}
@@ -110,5 +117,11 @@ packer.startup {
     -- Syntax highlighting for i3 config
     use {"mboughaba/i3config.vim"}
     cmd("au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config")
+
+    use {"L3MON4D3/LuaSnip"}
+    require("luasnip.loaders.from_vscode").load()
+    use {"rafamadriz/friendly-snippets"}
+    use {"onsails/lspkind-nvim"}
+
   end
 }
