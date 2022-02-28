@@ -95,7 +95,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload; exec notify-send "i3wm" "Config reloaded!"
 
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -123,9 +123,8 @@ bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
 bindsym $mod+r exec rofi -disable-history -show run -config .config/rofi/dmenu.rasi
 bindsym $mod+o --release exec ocr 
 
-# Rof calculator https://github.com/svenstaro/rofi-calc
-bindsym XF86Calculator exec rofi -show calc 
-bindsym Shift+XF86Calculator exec qalculate-gtk 
+# Lauch my Calculator 
+bindsym XF86Calculator exec qalculate-gtk 
 
 # Pulse Audio controls
 # I have set it so that it if the volume is set to mute, and I try to increase or decrease
@@ -183,7 +182,10 @@ bindsym $mod+x exec betterlockscreen -l
 # Launch Thunar
 bindsym $mod+E exec thunar &
 
+# Just a silly script to draw terminal onto the screen
 bindsym $mod+Shift+x exec drawterm
+
+bindsym $mod+Shift+v exec caps
 #}}}
 
 
@@ -200,7 +202,7 @@ exec_always --no-startup-id setroot -z $HOME/pictures/current/*
 # allows sound
 exec_always --no-startup-id start-pulseaudio-x11
 
-# Enable compton without any shadows
+# Enable picom without any shadows
 exec_always --no-startup-id picom 
 
 # Restore the brightness by taking the value in the file, brightness
@@ -229,6 +231,12 @@ exec_always --no-startup-id kdeconnect-indicator
 
 # Start up flameshot daemon
 exec_always --no-startup-id flameshot 
+
+# Start GNOME settings daemon
+exec --no-startup-id /usr/lib/gsd-xsettings
+
+# Start the GNOME polkit
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #}}}
 
 
@@ -246,14 +254,14 @@ client.urgent           #f28fad #f28fad #000000 #333333   #f28fad
 client.placeholder      #333333 #333333 #000000 #333333   #333333
 
 # Dialogs, popups, etc should be floating and in the center of the screen
-for_window [window_role="task_dialog"]      floating enable,move absolute position center
-for_window [window_role="Dialog"]           floating enable,move absolute position center
-for_window [window_role="pop-up"]           floating enable,move absolute position center                     
-for_window [window_role="bubble"]           floating enable,move absolute position center
-for_window [window_role="Preferences"]      floating enable,move absolute position center
-for_window [window_type="dialog"]           floating enable,move absolute position center
-for_window [window_type="menu"]             floating enable,move absolute position center
-for_window [title="(Open File|File Upload)"] floating enable,move absolute position center
+for_window [window_role="task_dialog"]      floating enable, move absolute position center, border pixel 0
+for_window [window_role="Dialog"]           floating enable, move absolute position center, border pixel 0
+for_window [window_role="pop-up"]           floating enable, move absolute position center                     
+for_window [window_role="bubble"]           floating enable, move absolute position center
+for_window [window_role="Preferences"]      floating enable, move absolute position center
+for_window [window_type="dialog"]           floating enable, move absolute position center, border pixel 0
+for_window [window_type="menu"]             floating enable, move absolute position center
+for_window [title="(Open File|File Upload)"] floating enable, move absolute position center
 
 for_window [class="zoom"] floating enable
 for_window [class="[Bb]lueberry.py"] floating enable
@@ -261,10 +269,8 @@ for_window [class="mpv"] floating enable
 for_window [class="[qQ]alculate-gtk"] floating enable
 for_window [class="[Ss]imple[Ss]creen[Rr]ecorder"] floating enable
 for_window [class="[Gg]nome-calendar"] floating enable
+for_window [class="[Dd]ragon-drag-and-drop"] floating enable, border pixel 0
 for_window [title="kitty-float"] floating enable
-
-for_window [class="discord"] focus
-for_window [class="Spotify" instance="spotify" title="Spotify Free"] move to workspace 4, focus
 
 
 # Prevent mouse from changing the focus
