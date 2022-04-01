@@ -67,6 +67,7 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 alias gs="git status"
+alias gd="git diff"
 
 # Some tmux aliases
 alias tl='tmux list-sessions'
