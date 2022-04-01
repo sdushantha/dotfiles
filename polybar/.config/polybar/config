@@ -78,22 +78,13 @@ label-full = %percentage%%
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
-format-charging = <animation-charging> <label-charging>
+format-charging =  <label-charging>
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-; Framerate in milliseconds
-animation-charging-framerate = 750
 
 [module/volume]
 type = internal/alsa
@@ -130,9 +121,9 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-enable-scroll = true 
-enable-click = true
-reverse-scroll = true
+enable-scroll = false
+enable-click = false
+reverse-scroll = false
 
 label-mode-padding = 2
 label-mode-foreground = #000
