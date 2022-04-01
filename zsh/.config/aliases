@@ -28,6 +28,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias tree="tree -C"
+alias diff="diff --color"
 
 # Some more ls aliases
 alias ll='ls -alF'
@@ -57,7 +58,7 @@ alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
 alias cat="bat -p"
 
 # https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/
-alias ytdl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
+alias ytdl="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
 
 alias gif2mp4='ffmpeg -i $1 -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $2'
 
@@ -66,6 +67,11 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 alias gs="git status"
+
+# Some tmux aliases
+alias tl='tmux list-sessions'
+alias tk="tmux kill-session -t tmux list-sessions | fzf | cut -d ':' -f1"
+alias td='tmux detach'
 
 # Quickly blend in with the public by using a light terminal theme.
 # I always get strange looks if Im using the terminal in public with dark colors
@@ -105,3 +111,6 @@ alias o="open"
 
 # Keep newsboat quiet
 alias newsboat="newsboat -q"
+
+# A nmap alias that makes me go woah!makes me go woah!
+alias woah="nmap -sC -sV -A -T5 -Pn"
