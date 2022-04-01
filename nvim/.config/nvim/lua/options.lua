@@ -39,7 +39,7 @@ cmd("set noshowmode")
 
 -- Colorscheme
 opt.background = "dark"
-cmd("colorscheme catppuccin")
+cmd("colorscheme base16-tomorrow-night")
 
 -- Don't wrap lines
 -- vim.wo.wrap = false
@@ -65,3 +65,5 @@ bg("TelescopePreviewNormal", "#192022")
 fg_bg("TelescopePreviewTitle", "#192022", "#192022")
 fg_bg("TelescopePromptTitle", "#202729", "#202729")
 fg_bg("TelescopeResultsTitle", "#192022", "#192022")
+
+

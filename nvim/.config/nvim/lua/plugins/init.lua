@@ -15,7 +15,7 @@ packer.startup {
     -- File explorer
     use {"kyazdani42/nvim-tree.lua"}
     require("nvim-tree").setup{}
-    g.nvim_tree_indent_markers = 1
+    --g.nvim_tree_indent_markers = 1
     require("nvim-tree.view").View.winopts.cursorline = true
 
     nvimTreeEnter = function()
@@ -91,8 +91,8 @@ packer.startup {
 
 
     -- Indentation
-    use {"lukas-reineke/indent-blankline.nvim"}
-    require("plugins.configs.indent")
+    -- use {"lukas-reineke/indent-blankline.nvim"}
+    -- require("plugins.configs.indent")
 
 
     -- Smooth scrolling
@@ -122,6 +122,10 @@ packer.startup {
     require("luasnip.loaders.from_vscode").load()
     use {"rafamadriz/friendly-snippets"}
     use {"onsails/lspkind-nvim"}
+
+    use {"chriskempson/base16-vim"}
+
+    use {"altercation/vim-colors-solarized"}
 
   end
 }
