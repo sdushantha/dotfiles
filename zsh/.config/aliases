@@ -115,3 +115,6 @@ alias newsboat="newsboat -q"
 
 # A nmap alias that makes me go woah!makes me go woah!
 alias woah="nmap -sC -sV -A -T5 -Pn"
+
+# Use fzf to search through the zsh history
+alias his="fzf < $HISTFILE"

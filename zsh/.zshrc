@@ -6,14 +6,15 @@ prompt pure
 export PURE_PROMPT_SYMBOL="$"
 export PURE_PROMPT_VICMD_SYMBOL="$"
 
+
 # Load my aliases 
 [ -f ~/.config/aliases ] && source ~/.config/aliases
 
 
 # History in cache directory
 HISTFILE=~/.cache/zsh/zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=100000
+SAVEHIST=100000
 
 # Automatically cd into directories by just typing the directory name
 setopt autocd
@@ -29,6 +30,7 @@ compinit -d "$HOME/.cache/zsh/zcompdump"
 
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 
 ### VIM mode config
 # Summery:
