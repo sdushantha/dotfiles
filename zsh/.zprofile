@@ -25,6 +25,10 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export PYLINTHOME="$XDG_CACHE_HOME"/pylint
 export CARGO_HOME="$XDG_DATA_HOME"/cargo 
+export ATOM_HOME="$XDG_DATA_HOME"/atom 
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle 
 
 # This lets me have a colorful man page :)
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
