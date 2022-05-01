@@ -60,6 +60,14 @@ case "$file_ext" in
             launch openshot-qt "$file_path" ;;
 
         *)
+            # If the unknown file is a symlink then we need the actual path so that
+            # we can check if it a text file that can be opened using $EDITOR
+            if [[ $(file --mime-type $file_path 2>/dev/null) == *"/symlink"* ]]; then
+                file_path="$(readlink -f $file_path)"
+            fi
+
+            # This is kinda like a last resort. If the file is just a text file, then
+            # use the $EDITOR to open it
             if [[ $(file --mime-type $file_path 2>/dev/null) == *"text/"* ]]; then
                 $EDITOR "$file_path"
             else
