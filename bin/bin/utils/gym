@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+#
+# Siddharth Dushantha 2022
+#
+# Check number of people at the gym 
+#
+
+import requests
+import re
+
+r = requests.get("https://spicheren.no/besokstall/")
+html = r.text
+
+total_visits = re.findall(r"Total visits: (\d+) -->", html)
+
+print(f"Total visitors: {total_visits[0]}")
