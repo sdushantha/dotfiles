@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#
+# Siddharth Dushantha 2022
+# 
+# https://github.com/sdushantha/bin
+#
+
+image_file="/tmp/ocr.png"
+
+# Take screenshot by selecting the area
+maim -s "$image_file"
+
+# Get the exit code of the previous command.
+# So in this case, it is the screenshot command. If it did not exit with an
+# exit code 0, then it means the user canceled the process of taking a
+# screenshot by doing something like pressing the escape key
+status=$?
+
+# If the user pressed the escape key or did something to terminate the proccess
+# taking a screenshot, then just exit
+[ $status -ne 0 ] && exit 1
+
+output=$(zbarimg "$image_file" -q | sed "s/QR-Code://")
+
+if [ -z "$output" ]; then
+    notify-send "ocr" "no text was detected"
+    exit 1
+fi
+
+# Copy text to clipboard
+printf %b "$output" | xclip -selection clip
+
