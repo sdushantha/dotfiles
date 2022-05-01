@@ -121,7 +121,12 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+n exec bash $HOME/bin/keybinded/rofi_notes.sh 
 bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
 bindsym $mod+r exec rofi -disable-history -show run -config .config/rofi/dmenu.rasi
-bindsym $mod+o --release exec ocr 
+
+# Select an area and extract the text using ocr
+bindsym $mod+o --release exec ocr
+
+# Screenshot a QR code and decode it
+bindsym $mod+shift+o --release exec qrshot
 
 # Lauch my Calculator 
 bindsym XF86Calculator exec qalculate-gtk 
