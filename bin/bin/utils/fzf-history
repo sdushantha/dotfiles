@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-#
-# by Siddharth Dushantha 2020
-#
-# Dependencies: fzf, xdotool
-#
-
-output=$(fzf < "$HISTFILE")
-xdotool type --delay 0 "$output" &
