@@ -12,7 +12,6 @@ alias bin="cd ~/bin"
 alias lbin="cd $HOME/.local/bin"
 alias tmp="cd /tmp"
 alias shots="cd ~/pictures/screenshots"
-alias notes="cd ~/documents/notes"
 alias ..="cd .."
 
 # Quickly edit some files
@@ -32,7 +31,7 @@ alias diff="diff --color"
 # Use 'exa' instead of 'ls'
 alias ls="exa"
 alias ll='exa -alF'
-alias la='exa -A'
+alias la='exa -a'
 alias l='exa -CF'
 
 # Basically, lets me know what just happened
@@ -114,7 +113,4 @@ alias o="open"
 alias newsboat="newsboat -q"
 
 # A nmap alias that makes me go woah!makes me go woah!
-alias woah="nmap -sC -sV -A -T5 -Pn"
-
-# Use fzf to search through the zsh history
-alias h="fzf < $HISTFILE"
+alias woah="nmap -sC -sV -A -Pn"
