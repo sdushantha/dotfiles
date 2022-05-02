@@ -12,12 +12,14 @@ export PURE_PROMPT_VICMD_SYMBOL="$"
 
 
 # History in cache directory
-HISTFILE=~/.cache/zsh/zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
+export HISTFILE=~/.cache/zsh/zsh_history
+export HISTSIZE=1000000  # How many lines of history to keep in memory
+export SAVEHIST=1000000  # Number of history entries to save to disk 
+setopt appendhistory     # Append history to the history file (no overwriting)
+setopt sharehistory      # Share history across terminals
+setopt incappendhistory  # Immediately append to the history file, not just when a term is killed 
+setopt extended_history  # Adds a unix timestamp to the history
 
-# Automatically cd into directories by just typing the directory name
-setopt autocd
 
 # Basic auto/tab complete
 autoload -U compinit
@@ -26,6 +28,9 @@ zmodload zsh/complist
 _comp_options+=(globdots)	
 [ ! -d "$HOME/.cache/zsh" ] && mkdir "$HOME/.cache/zsh"
 compinit -d "$HOME/.cache/zsh/zcompdump"
+
+# Automatically cd into directories by just typing the directory name
+setopt autocd
 
 
 # Colored GCC warnings and errors
@@ -100,6 +105,9 @@ source $HOME/.zshenv
 source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
 source "$HOME/.zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
 
+# Use fzf when doing CTRL-r
+[[ -e "/usr/share/fzf/key-bindings.zsh" ]] && source "/usr/share/fzf/key-bindings.zsh" 
+
 # Search and install packages with yay and fzf
 yi() {
 	SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
@@ -112,15 +120,11 @@ yr() {
     [[ -n "$SELECTED_PKGS" ]] && yay -Rns "$SELECTED_PKGS"
 }
 
-PATH="/home/siddharth/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/siddharth/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/siddharth/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/siddharth/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/siddharth/perl5"; export PERL_MM_OPT;
-
-# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#   exec tmux
-# fi
+export PATH="/home/siddharth/perl5/bin${PATH:+:${PATH}}"
+export PERL5LIB="/home/siddharth/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+export PERL_LOCAL_LIB_ROOT="/home/siddharth/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+export PERL_MB_OPT="--install_base \"/home/siddharth/perl5\""
+export PERL_MM_OPT="INSTALL_BASE=/home/siddharth/perl5"
 
 # The 'cnf' command is needed. Check the 'bin' directory.
 command_not_found_handler() {
@@ -129,3 +133,4 @@ command_not_found_handler() {
 
     echo "zsh: command not found: $1" && exit 1
 }
+
