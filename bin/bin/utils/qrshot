@@ -33,9 +33,8 @@ status=$?
 # taking a screenshot, then just exit
 [ $status -ne 0 ] && exit 1
 
-# Use zbarimg to decode the text from the QR code and remove
-# the unecessary "QR-Code://" prefix
-decoded_text=$(zbarimg "$image_file" -q | sed "s/QR-Code://")
+# Use zbarimg to decode the text from the QR code
+decoded_text=$(zbarimg "$image_file" -q --raw)
 
 if [ -z "$decoded_text" ]; then
     notify-send "qrshot" "no text was detected"
