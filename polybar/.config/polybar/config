@@ -46,7 +46,7 @@ module-margin = 1.5
 
 modules-left = i3
 modules-center = 
-modules-right = micstatus volume battery bluetooth  wlan today
+modules-right = micstatus volume battery bluetooth wlan today
 
 tray-position = right 
 tray-detached = false 
@@ -153,5 +153,4 @@ type = custom/script
 exec = $HOME/.config/polybar/scripts/bluetooth.sh
 interval = 1
 click-left = blueberry 
-
 ; vim:ft=dosini
