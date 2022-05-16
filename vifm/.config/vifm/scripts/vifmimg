@@ -80,7 +80,6 @@ for dependency in "${dependencies[@]}"; do
     }
 done
 
-
 # Make sure ueberzug's fifo exists
 if [ -e "$FIFO_UEBERZUG" ]; then
   # Make a temp dir for rendering if not exists
