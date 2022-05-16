@@ -38,7 +38,7 @@ decoded_text=$(zbarimg "$image_file" -q --raw)
 
 if [ -z "$decoded_text" ]; then
     notify-send "qrshot" "no text was detected"
-    exit 1
+    rm $image_file && exit 1
 fi
 
 # Copy text to clipboard
