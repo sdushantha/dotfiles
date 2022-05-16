@@ -65,5 +65,3 @@ bg("TelescopePreviewNormal", "#192022")
 fg_bg("TelescopePreviewTitle", "#192022", "#192022")
 fg_bg("TelescopePromptTitle", "#202729", "#202729")
 fg_bg("TelescopeResultsTitle", "#192022", "#192022")
-
-

@@ -127,5 +127,7 @@ packer.startup {
 
     use {"altercation/vim-colors-solarized"}
 
+    use {"folke/zen-mode.nvim"}
+
   end
 }
