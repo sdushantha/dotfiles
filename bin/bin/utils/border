@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+#
+# Siddharth Dushantha
+#
+# Turn the i3wm border on/off and change the size
+#
+
+set_border(){
+    i3-msg "[class=.*] border pixel $1" > /dev/null 2>&1
+}
+
+# RegEx to match integers
+regex="^[0-9]+$"
+
+if [ "$1" = "on" ]; then
+    set_border 1
+elif [ "$1" = "off" ]; then
+    set_border 0
+elif printf %b "$1" | grep -Eq "$regex"; then
+    set_border $1
+fi
+
