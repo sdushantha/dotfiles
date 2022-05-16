@@ -114,3 +114,8 @@ alias newsboat="newsboat -q"
 
 # A nmap alias that makes me go woah!makes me go woah!
 alias woah="nmap -sC -sV -A -Pn"
+
+# Aliases to prevent leaving junk in $HOME
+alias feh="feh --no-fehbg"
+alias mitmproxy="mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy"                             
+alias mitmweb="mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy"
