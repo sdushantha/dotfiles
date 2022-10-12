@@ -26,12 +26,7 @@ die() {
 
 has -v nmcli fzf || die
 
-nmcli -d wifi rescan 2> /dev/null
-network=$(nmcli --color yes device wifi | fzf --ansi --height=40% --reverse --cycle --inline-info --header-lines=1)
-#network=$(nmcli device wifi | dmenu)
-[[ -z "$network" ]] && exit
-network=$(sed -r 's/^\s*\*?\s*//; s/\s*(Ad-Hoc|Infra).*//' <<< "$network")
-SSID=$(echo "$network" | grep -o "\s.*$" | xargs)
+SSID=$(nmcli --color yes device wifi | fzf --ansi --height=40% --reverse --cycle --inline-info --header-lines=1 | awk '{print $2}')
+[[ -z "$SSID" ]] && exit
 echo "connecting to \"${SSID}\"..."
 nmcli -a device wifi connect "$SSID"
-
