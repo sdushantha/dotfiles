@@ -1,15 +1,8 @@
-# Set my prompt
-fpath+=$HOME/.zsh/pure
-autoload -U promptinit; promptinit
-prompt pure
-
 export PURE_PROMPT_SYMBOL="$"
 export PURE_PROMPT_VICMD_SYMBOL="$"
 
-
 # Load my aliases 
 [ -f ~/.config/aliases ] && source ~/.config/aliases
-
 
 # History in cache directory
 export HISTFILE=~/.cache/zsh/zsh_history
@@ -18,8 +11,6 @@ export SAVEHIST=1000000  # Number of history entries to save to disk
 setopt appendhistory     # Append history to the history file (no overwriting)
 setopt sharehistory      # Share history across terminals
 setopt incappendhistory  # Immediately append to the history file, not just when a term is killed 
-setopt extended_history  # Adds a unix timestamp to the history
-
 
 # Basic auto/tab complete
 autoload -U compinit
@@ -32,10 +23,8 @@ compinit -d "$HOME/.cache/zsh/zcompdump"
 # Automatically cd into directories by just typing the directory name
 setopt autocd
 
-
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 
 ### VIM mode config
 # Summery:
@@ -90,29 +79,23 @@ echo -ne '\e[5 q'
 
 precmd_functions+=(_fix_cursor)
 
-
 # Disable ctrl-s and ctrl-q because they for some reason
 # freezes my terminal
 stty -ixon 
 
-
-# This file has some important variables
+# These files have some important variables
 source $HOME/.zprofile
 source $HOME/.zshenv
 
 # Load my ZSH plugins
-#source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
-source "$HOME/.zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
+source /usr/share/zinit/zinit.zsh
+zinit light kutsan/zsh-system-clipboard
+zinit light Aloxaf/fzf-tab
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
 
 # Use fzf when doing CTRL-r
 [[ -e "/usr/share/fzf/key-bindings.zsh" ]] && source "/usr/share/fzf/key-bindings.zsh" 
-
-# Search and install packages with yay and fzf
-yi() {
-	SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
-    [[ -n "$SELECTED_PKGS" ]] && yay -S "$SELECTED_PKGS"
-}
 
 # Search and remove packages with yay and fzf
 yr() {
@@ -133,4 +116,5 @@ command_not_found_handler() {
 
     echo "zsh: command not found: $1" && exit 1
 }
+
 

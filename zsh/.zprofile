@@ -48,3 +48,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden -g "" --ignore ".git" --ignore .npm --ig
 
 # https://github.com/pypa/pip/issues/8090#issuecomment-803363268
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+
+# Pinch to zoom for Firefox
+export MOZ_USE_XINPUT2=1

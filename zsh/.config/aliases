@@ -27,6 +27,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias tree="tree -C"
 alias diff="diff --color"
+alias ip="ip -c=always"
 
 # Use 'exa' instead of 'ls'
 alias ls="exa"
@@ -41,6 +42,11 @@ alias cp="cp --interactive --verbose"
 alias mv="mv --interactive --verbose"
 alias rm="rm --verbose"
 
+# Aliases to prevent leaving junk in $HOME
+alias feh="feh --no-fehbg"
+alias mitmproxy="mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy"                             
+alias mitmweb="mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy"
+
 # Dont show the annoying banner in ipython3
 alias ipython3="ipython3 --no-banner"
 
@@ -52,9 +58,8 @@ alias v="nvim"
 # The remaining storage
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
 
-# cat, but with syntax highlighting and it is automaticaly piped to less if 
-# the whole text does not fit in in the terminal
-alias cat="bat -p"
+# cat, but with syntax highlighting
+alias cat="bat --theme base16"
 
 # https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/
 alias ytdl="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
@@ -115,7 +120,7 @@ alias newsboat="newsboat -q"
 # A nmap alias that makes me go woah!makes me go woah!
 alias woah="nmap -sC -sV -A -Pn"
 
-# Aliases to prevent leaving junk in $HOME
-alias feh="feh --no-fehbg"
-alias mitmproxy="mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy"                             
-alias mitmweb="mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy"
+# Launch fontpreview
+alias fp="fontpreview-ueberzug -b #1d1f21 -f #c5c8c6"
+
+alias thm="sudo openvpn ~/documents/sdushantha.ovpn"
