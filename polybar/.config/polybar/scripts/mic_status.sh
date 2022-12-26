@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-mic_is_on=$(amixer -D pulse get Capture | grep "\[on\]")
+current_source=$(pactl info | grep "Default Source" | cut -f3 -d" ")
+mic_is_on=$(pactl list sources | grep -A 10 $current_source | grep "Mute: no" )
 
 if [ $? -eq 0 ]; then
     printf %s ""
