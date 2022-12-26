@@ -8,4 +8,4 @@ configuration {
 }
 
 
-@theme "~/.config/rofi/themes/launcher.rasi"
+@theme "~/.config/rofi/themes/default.rasi"

@@ -1,0 +1,89 @@
+/*
+ * TODO: Maybe use theme of powermenu
+ */
+
+configuration {
+  font: "JetBrainsMono Nerd Font Medium 11";
+
+  drun {
+    display-name: "";
+  }
+
+  run {
+    display-name: "";
+  }
+
+  window {
+    display-name: "";
+  }
+
+  clipboard {
+    display-name: "";
+  }
+
+  ssh {
+    display-name: "ﲃ";
+  }
+
+  timeout {
+    delay: 30;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  background-color: #2a272a;
+  text-color: #c5c8c6;
+}
+
+window {
+  transparency: "real";
+  width: 500px;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  background-color: #393c43;
+  children: [prompt, entry];
+}
+
+entry {
+  background-color: inherit;
+  padding: 12px 3px;
+}
+
+prompt {
+  background-color: inherit;
+  padding: 12px;
+}
+
+listview {
+  lines: 8;
+}
+
+element {
+  children: [element-icon, element-text];
+  text-color: #6c6c6c;
+}
+
+element-icon {
+  padding: 10px 10px;
+  size: 20px;
+}
+
+element-text {
+  padding: 10px 0;
+  text-color: inherit;
+}
+
+element-text selected {
+  text-color: #a4aeab;
+}

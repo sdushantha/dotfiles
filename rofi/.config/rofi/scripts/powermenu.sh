@@ -19,13 +19,13 @@ options="$lock\n$shutdown\n$reboot\n$logout"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -selected-row 0)"
 case $chosen in
 $shutdown)
-  poweroff
+    poweroff
   ;;
 $reboot)
-  reboot
+    reboot
   ;;
 $lock)
-  betterlockscreen -l
+    dm-tool lock
   ;;
 $logout)
     i3-msg exit
