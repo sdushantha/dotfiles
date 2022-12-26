@@ -120,13 +120,15 @@ bindsym $mod+Shift+Return exec kitty -e vifmrun
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+n exec bash $HOME/bin/keybinded/rofi_notes.sh 
 bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
-bindsym $mod+r exec rofi -disable-history -show run -config .config/rofi/dmenu.rasi
+bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' && xdotool key ctrl+v
+bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
+bindsym $mod+Shift+s exec bash $HOME/.config/rofi/scripts/powermenu.sh
 
 # Select an area and extract the text using ocr
-bindsym $mod+o --release exec ocr
+bindsym $mod+o --release exec $HOME/bin/utils/ocr
 
 # Screenshot a QR code and decode it
-bindsym $mod+shift+o --release exec qrshot
+bindsym $mod+shift+o --release exec $HOME/bin/utils/qrshot
 
 # Lauch my Calculator 
 bindsym XF86Calculator exec qalculate-gtk 
@@ -157,9 +159,6 @@ bindsym XF86MonBrightnessDown exec light -U 5
 # See "4.3. Keyboard bindings" on i3wm docs 
 bindsym $mod+s --release exec flameshot gui
 
-# Emoji and unicode character picker using rofi
-bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
-
 # Select color from screen and save the value to clipboard 
 bindsym $mod+Shift+f --release exec $HOME/.local/bin/farge --notify
 
@@ -178,19 +177,12 @@ bindsym Control+space exec dunstctl close
 bindsym Control+Shift+space exec dunstctl all 
 bindsym Control+Shift+period exec dunstctl context 
 
-# Launch powermenu
-bindsym $mod+Shift+s exec bash $HOME/.config/rofi/powermenu.sh
-
 # Lock my screen
-bindsym $mod+x exec betterlockscreen -l 
+bindsym $mod+x exec dm-tool lock
 
 # Launch Thunar
 bindsym $mod+E exec thunar &
 
-# Just a silly script to draw terminal onto the screen
-bindsym $mod+Shift+x exec drawterm
-
-bindsym $mod+Shift+v exec caps
 #}}}
 
 
@@ -275,6 +267,7 @@ for_window [class="[qQ]alculate-gtk"] floating enable
 for_window [class="[Ss]imple[Ss]creen[Rr]ecorder"] floating enable
 for_window [class="[Gg]nome-calendar"] floating enable
 for_window [class="[Dd]ragon-drag-and-drop"] floating enable, border pixel 0
+for_window [class="Windscribe[2]"] floating enable, border pixel 0
 for_window [title="kitty-float"] floating enable
 
 
