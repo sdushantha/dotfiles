@@ -54,14 +54,3 @@ end
 bg = function(group, col)
    cmd("hi " .. group .. " guibg=" .. col)
 end
-
-fg_bg("TelescopeBorder", "#192022", "#192022")
-fg_bg("TelescopePromptBorder", "#202729", "#202729")
-fg_bg("TelescopePromptNormal", "#c5c8c9", "#202729")
-fg_bg("TelescopePromptPrefix", "#c5c8c9", "#202729")
-fg_bg("TelescopePreviewBorder", "#192022", "#192022")
-bg("TelescopeNormal", "#192022")
-bg("TelescopePreviewNormal", "#192022")
-fg_bg("TelescopePreviewTitle", "#192022", "#192022")
-fg_bg("TelescopePromptTitle", "#202729", "#202729")
-fg_bg("TelescopeResultsTitle", "#192022", "#192022")
