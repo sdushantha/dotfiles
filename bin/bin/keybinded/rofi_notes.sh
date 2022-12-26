@@ -4,7 +4,7 @@
 #
 
 notes_directory="$HOME/documents/notes"
-note_name=$(ls ~/documents/notes | rofi -dmenu -config $HOME/.config/rofi/notes.rasi)
+note_name=$(ls ~/documents/notes | rofi -dmenu)
 note_path="$notes_directory/$note_name"
 
 [ -n "$note_name" ] && kitty -e nvim "$note_path"
