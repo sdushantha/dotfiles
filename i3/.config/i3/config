@@ -94,9 +94,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# Reload the configuration file
-bindsym $mod+Shift+c reload; exec notify-send "i3wm" "Config reloaded!"
-
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
@@ -160,7 +157,7 @@ bindsym XF86MonBrightnessDown exec light -U 5
 bindsym $mod+s --release exec flameshot gui
 
 # Select color from screen and save the value to clipboard 
-bindsym $mod+Shift+f --release exec $HOME/.local/bin/farge --notify
+bindsym $mod+Shift+c --release exec $HOME/.local/bin/farge --notify
 
 # Rotating the display. Keybinings taken from Windows.
 bindsym Control+Mod1+Up exec xrandr -o normal
@@ -189,55 +186,31 @@ bindsym $mod+E exec thunar &
 # Autorun {{{ 
 # exec -> On start-up
 # exec_always -> On start-up and reload
-
-# Automaticaly sets wallpaper. Just the the wallpaper
-# you want in the Wallpapers directory then it will 
-# automaticaly set it on start up.
-exec_always --no-startup-id setroot -z $HOME/pictures/current/*
-#exec_always --no-startup-id setroot --blank-color "#222833"
-
-# allows sound
-exec_always --no-startup-id start-pulseaudio-x11
-
-# Enable picom without any shadows
+exec_always --no-startup-id feh pictures/current/* --bg-fill
 exec_always --no-startup-id picom 
-
-# Restore the brightness by taking the value in the file, brightness
 exec_always --no-startup-id bash $HOME/bin/keybinded/brightness/restoreBrightness.sh
-
-# Starts the launch.sh script which launches polybar
 exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
-
-# Start up my notification daemon
 exec_always --no-startup-id dunst
-
-# A neat script which will show a notifiction with the album art when
-# changing music on mpd
-exec_always --no-startup-id bash ~/bin/utils/mpdnotify.sh
-
-# This has to be run in order for me to run blueman-manager
-# which is the GUI application to manage my bluetooth devices
-exec_always --no-startup-id blueman-applet
-
-# Allow alternating layout or sometimes known as the fibonacci layout. i3wm
-# doesn't have this by default so a script is needed.
 exec_always --no-startup-id python3 $HOME/.config/i3/scripts/i3-alternating-layout.py
-
-exec_always --no-startup-id /usr/lib/kdeconnectd 
-exec_always --no-startup-id kdeconnect-indicator
-
-# Start up flameshot daemon
 exec_always --no-startup-id flameshot 
+exec_always --no-startup-id xfce4-power-manager
+exec_always --no-startup-id greenclip daemon
+exec_always --no-startup-id nm-applet 
 
-# Start GNOME settings daemon
 exec --no-startup-id /usr/lib/gsd-xsettings
-
-# Start the GNOME polkit
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec discord
+exec obsidian 
+exec bitwarden-desktop 
 #}}}
 
 
 # Window rules {{{ 
+
+# Auto start apps on startup
+assign [class="discord"] 3
+assign [class="obsidian"] 4
+assign [class="[Bb]itwarden"] 0
 
 # Gives a border to the windows. 
 for_window [class="^.*"] border pixel 1
@@ -272,7 +245,7 @@ for_window [title="kitty-float"] floating enable
 
 
 # Prevent mouse from changing the focus
-focus_follows_mouse no
+focus_follows_mouse yes
 
 # Fixes graphics glitch
 new_window none
