@@ -5,9 +5,9 @@
 
 if pgrep screenkey > /dev/null 2>&1; then
     killall screenkey > /dev/null 2>&1 &
-    notify-send "Screenkey" "Turned on"
+    notify-send "Screenkey" "Turned off"
 else
     screenkey -g 350x700-20+430 --font "DejaVu" > /dev/null 2>&1 &
-    notify-send "Screenkey" "Turned off"
+    notify-send "Screenkey" "Turned on"
 
 fi
