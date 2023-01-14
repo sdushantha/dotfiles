@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+#
+# by Siddharth Dushantha 2022
+#
+
+usage(){
+    cat <<EOF
+vdp [OPTIONS]
+
+OPTIONS
+-d, --domain  Domain to scan
+-l, --list    Scan from a text file containing a list of domains
+-t, --target  Name of target/scan. Must be used when using --list
+--version     Show version
+--help        Show this help message
+EOF
+}
+
+for dependency in subfinder nuclei httpx; do
+    if ! command -v "$dependency" >/dev/null 2>&1; then
+        # Append to our list of missing dependencies
+        dep_missing="$dep_missing $dependency"
+    fi
+done
+
+if [ "${#dep_missing}" -gt 0 ]; then
+    printf %s "Could not find the following dependencies: $dep_missing"
+    exit 1
+fi
+
+while [ "$1" ]; do
+    case "$1" in
+        --help | -h) usage && exit ;;
+        --domain | -d) domain="$2" ;;
+        --list | -l) list="$2" ;;
+        --target | -t) target="$2";;
+        --version) echo "$version" && exit ;;
+        -*) usage ;;
+    esac
+    shift
+done
+
+
+if [ ! -z "$domain" ]; then
+    target=$domain
+    tmp_dir="$target/tmp"
+    
+    mkdir -p "$target"
+    mkdir -p "$tmp_dir"
+    
+    # If using screen or tmux, change the name of the window to the name of the target
+    if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+              tmux rename-window -t${TMUX_PANE} "$target"
+    fi
+
+    printf %b "[\e[34mi\e[0m] Finding subdomains for $target"
+    subfinder -d "$target" > "$tmp_dir/subdomains.txt" --silent
+    printf %b "\e[2K\r[\e[34mi\e[0m] Found $(cat "$tmp_dir/subdomains.txt" | wc -l) subdomains on \e[34m$target\e[0m\n"
+
+    # Remove duplicates
+    sort -u "$tmp_dir/subdomains.txt" > "$tmp_dir/sorted_subdomains.txt"
+
+    printf %b "[\e[34mi\e[0m] Removing dead subdomains\n"
+    httpx -l "$tmp_dir/sorted_subdomains.txt" > "$tmp_dir/working_subdomains.txt" --silent
+
+    printf %b "[\e[34mi\e[0m] Scanning vulnerabilities on $(cat "$tmp_dir/working_subdomains.txt" | wc -l) subdomains\n"
+    nuclei -es info -list "$tmp_dir/working_subdomains.txt" -me "$target" --silent
+
+elif [ ! -z "$list" ] && [ ! -z "$target" ]; then
+    printf %b "[\e[34mi\e[0m] Scanning for vulnerabilities"
+    mkdir -p "$target"
+
+    # If using screen or tmux, change the name of the window to the name of the target
+    if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+              tmux rename-window -t${TMUX_PANE} "$target"
+    fi
+
+    # Find vulnerabilities
+    nuclei -es info -list "$list" -me "$target" --silent
+fi
+
