@@ -118,8 +118,9 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+n exec bash $HOME/bin/keybinded/rofi_notes.sh 
 bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
 bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' && xdotool key ctrl+v
-bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/picker.sh
-bindsym $mod+Shift+s exec bash $HOME/.config/rofi/scripts/powermenu.sh
+bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/rofi-picker.sh
+bindsym $mod+Shift+x exec bash $HOME/.config/rofi/scripts/rofi-powermenu.sh
+bindsym $mod+r exec bash $HOME/.config/rofi/scripts/rofi-run.sh 
 
 # Select an area and extract the text using ocr
 bindsym $mod+o --release exec $HOME/bin/utils/ocr
@@ -154,7 +155,7 @@ bindsym XF86MonBrightnessDown exec light -U 5
 # Screenshot selected area
 # You need to use `--release` in the binding.
 # See "4.3. Keyboard bindings" on i3wm docs 
-bindsym $mod+s --release exec flameshot gui
+bindsym $mod+Shift+s --release exec flameshot gui
 
 # Select color from screen and save the value to clipboard 
 bindsym $mod+Shift+c --release exec $HOME/.local/bin/farge --notify
@@ -201,7 +202,6 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec discord
 exec obsidian 
-exec bitwarden-desktop 
 #}}}
 
 
@@ -210,7 +210,6 @@ exec bitwarden-desktop
 # Auto start apps on startup
 assign [class="discord"] 3
 assign [class="obsidian"] 4
-assign [class="[Bb]itwarden"] 0
 
 # Gives a border to the windows. 
 for_window [class="^.*"] border pixel 1
