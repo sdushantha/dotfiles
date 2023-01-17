@@ -59,7 +59,7 @@ alias v="nvim"
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
 
 # cat, but with syntax highlighting
-alias cat="bat --theme base16"
+alias cat="bat --theme base16 -p"
 
 # https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/
 alias ytdl="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
@@ -114,13 +114,11 @@ alias jp="git add . && git commit -m \"$(date)\" && git push"
 # typing out the whole command 
 alias o="open"
 
-# Keep newsboat quiet
-alias newsboat="newsboat -q"
-
 # A nmap alias that makes me go woah!makes me go woah!
 alias woah="nmap -sC -sV -A -Pn"
 
 # Launch fontpreview
 alias fp="fontpreview-ueberzug -b #1d1f21 -f #c5c8c6"
 
-alias thm="sudo openvpn ~/documents/sdushantha.ovpn"
+# Connect to TryHackMe VPN
+alias thm="sudo openvpn ~/documents/tryhackme.ovpn"
