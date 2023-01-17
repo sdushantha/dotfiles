@@ -131,13 +131,10 @@ bindsym $mod+shift+o --release exec $HOME/bin/utils/qrshot
 # Lauch my Calculator 
 bindsym XF86Calculator exec qalculate-gtk 
 
-# Pulse Audio controls
-# I have set it so that it if the volume is set to mute, and I try to increase or decrease
-# the volume, it will unmute and then increase or decrease. Because before, it would stay mute
-# and just increase the volume but it would still stay mute. Yes, its strange.
-bindsym XF86AudioRaiseVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh up
-bindsym XF86AudioLowerVolume exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh down
-bindsym XF86AudioMute exec --no-startup-id bash $HOME/bin/keybinded/volumeControl.sh mute
+# Volume controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ +5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5% 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Music control
 bindsym XF86AudioNext exec --no-startup-id bash $HOME/bin/keybinded/music_ctrl.sh next  
