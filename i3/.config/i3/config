@@ -145,8 +145,8 @@ bindsym XF86AudioPrev exec --no-startup-id bash $HOME/bin/keybinded/music_ctrl.s
 bindsym XF86AudioPlay exec --no-startup-id bash $HOME/bin/keybinded/music_ctrl.sh toggle
 bindsym XF86AudioStop exec --no-startup-id bash $HOME/bin/keybinded/music_ctrl.sh pause 
 
-# Turn mic on/off
-bindsym XF86AudioMicMute exec --no-startup-id amixer -D pulse sset Capture toggle
+# Toggle mic
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 0 toggle
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec light -A 5
