@@ -199,15 +199,13 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec discord
 exec obsidian 
+
+exec --no-startup-id i3-msg 'workspace 3; exec discord'
+exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
 #}}}
 
 
 # Window rules {{{ 
-
-# Auto start apps on startup
-assign [class="discord"] 3
-assign [class="obsidian"] 4
-
 # Gives a border to the windows. 
 for_window [class="^.*"] border pixel 1
 
