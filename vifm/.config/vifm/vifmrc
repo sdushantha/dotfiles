@@ -147,26 +147,26 @@ command! FZFfind :
 
 
 " CSV/Excel
-filetype *.csv,*.xlsx libreoffice %c %i
+filetype *.csv,*.xlsx $HOME/bin/utils/open %c %i
 fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g" | cut -c -%pw
 
 " HTMLs
+filextype *.html, *.htm, *.xhtml $HOME/bin/utils/open %f 2>/dev/null &
 fileviewer *.html, *.htm, *.xhtml w3m -dump %c
-filextype *.html, *.htm, *.xhtml nvim %f 2>/dev/null &
 
 " Text based files
-filetype <text/*> nvim
+filetype <text/*> $HOME/bin/utils/open
 fileviewer <text/*> env -uCOLORTERM bat --color always --wrap never --pager never %c -p
 
 " PDFs
-filextype *.pdf open %c %i &
+filextype *.pdf $HOME/bin/utils/open %c %i &
 fileviewer *.pdf
         \ vifmimg pdf %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
 " ePUBs
-filextype *.epub open %c %i &
+filextype *.epub $HOME/bin/utils/open %c %i &
 fileviewer *.epub
         \ vifmimg epub %px %py %pw %ph %c
         \ %pc
@@ -179,21 +179,21 @@ fileviewer *.otf,*.ttf,*.woff
         \ vifmimg clear
 
 " Audios
-filetype <audio/*> open %c %i </dev/null &>/dev/null &
+filetype <audio/*> $HOME/bin/utils/open %c %i </dev/null &>/dev/null &
 fileviewer <audio/*>
         \ vifmimg audio %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
 " Videos
-filetype <video/*> open %c %i </dev/null &>/dev/null &
+filetype <video/*> $HOME/bin/utils/open %c %i </dev/null &>/dev/null &
 fileviewer <video/*>
         \ vifmimg video %px %py %pw %ph %c
         \ %pc
         \ vifmimg clear
 
 " Images
-filextype <image/*> open %c %i </dev/null &>/dev/null &
+filextype <image/*> $HOME/bin/utils/open %c %i </dev/null &>/dev/null &
 fileviewer <image/*>
         \ vifmimg draw %px %py %pw %ph %c
         \ %pc
@@ -219,7 +219,7 @@ fileviewer .*/ ls
 " Using xdg-open to open the highlighted file with a compatible program and
 " the reason why I am using "file" to preview other files is so that "vifm" 
 " does not lag when trying "cat" the file
-filetype * xdg-open %c &
+filetype * open %c </dev/null &>/dev/null &
 fileviewer * file -b %c
 " }}}
 
@@ -232,7 +232,7 @@ nmap q ZQ
 nnoremap , : 
 
 " Set highlighted image as wallpaper and lockscreen image
-nnoremap <C-w> :!setroot -z %c && betterlockscreen -u %c && rm ~/pictures/current/* && cp %c ~/pictures/current/ &<cr>
+nnoremap <C-w> :!feh --bg-fill %c && rm ~/pictures/current/* && cp %c ~/pictures/current/ &<cr>
 
 " Upload highlighted file to 0x0.st and then save url to clipboard
 nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)" &<cr> 
@@ -248,7 +248,7 @@ nnoremap bin :cd ~/bin<cr>
 nnoremap docs :cd ~/documents<cr>
 nnoremap dls :cd ~/downloads<cr>
 nnoremap pics :cd ~/pictures<cr>
-nnoremap walls :cd ~/pictures/walls<cr>
+nnoremap walls :cd ~/pictures/wallpapers<cr>
 nnoremap vids :cd ~/videos<cr>
 nnoremap dots :cd ~/dotfiles<cr>
 nnoremap shots :cd ~/pictures/screenshots<cr>
