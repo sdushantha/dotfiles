@@ -108,10 +108,10 @@ bindsym $mod+Mod1+k resize shrink height 1 px or 1 ppt
 bindsym $mod+Mod1+l resize grow width 1 px or 1 ppt
 
 # Launch terminal
-bindsym $mod+Return exec kitty -d "$(command -v xcwd >/dev/null 2>&1 && xcwd)"
+bindsym $mod+Return exec alacritty --working-directory=$($HOME/bin/utils/xcwd-helper)
 
 # Launch a terminal with vifm
-bindsym $mod+Shift+Return exec kitty -e vifmrun
+bindsym $mod+Shift+Return exec alacritty -e $HOME/bin/utils/vifmrun
 
 # Keybindings that are do things using rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -169,7 +169,7 @@ bindsym $mod+shift+m scratchpad show
 
 # Control dunst notifications
 bindsym Control+space exec dunstctl close
-bindsym Control+Shift+space exec dunstctl all 
+#bindsym Control+Shift+space exec dunstctl all 
 bindsym Control+Shift+period exec dunstctl context 
 
 # Lock my screen
@@ -197,11 +197,6 @@ exec_always --no-startup-id nm-applet
 
 exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec discord
-exec obsidian 
-
-exec --no-startup-id i3-msg 'workspace 3; exec discord'
-exec --no-startup-id i3-msg 'workspace 4; exec obsidian'
 #}}}
 
 
