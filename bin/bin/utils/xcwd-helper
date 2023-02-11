@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# by Siddharth Dushantha 2023
+#
+# A script that only allows xcwd to be used for opening a terminal from certain applications.
+# If the current window is Discord, the xcwd will return '/usr/bin/' and that's not where we
+# want to open our terminal. So 'xcwd' only works properly when launching while our focused
+# window is a terminal such as Alacritty. Thunar used work, but no longer works.
+#
+# Example usage:
+#   alacritty --working-directory=$(xcwd-helper)
+#
+
+current_dir="$(xcwd)"
+allowed_program_classes="Alacritty"
+active_window_class=$(xdotool getactivewindow getwindowclassname)
+
+if ! printf %s "$allowed_program_classes" | grep -q "$active_window_class"; then
+    printf %s "$HOME"
+    exit
+fi
+
+printf %s "$current_dir"
+
