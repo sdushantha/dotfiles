@@ -232,7 +232,7 @@ nmap q ZQ
 nnoremap , : 
 
 " Set highlighted image as wallpaper and lockscreen image
-nnoremap <C-w> :!feh --bg-fill %c && rm ~/pictures/current/* && cp %c ~/pictures/current/ &<cr>
+nnoremap <C-w> :!feh --bg-fill --no-fehbg %c && rm ~/pictures/current/* && cp %c ~/pictures/current/ &<cr>
 
 " Upload highlighted file to 0x0.st and then save url to clipboard
 nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)" &<cr> 
