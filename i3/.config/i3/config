@@ -184,7 +184,7 @@ bindsym $mod+E exec thunar &
 # Autorun {{{ 
 # exec -> On start-up
 # exec_always -> On start-up and reload
-exec_always --no-startup-id feh pictures/current/* --bg-fill
+exec_always --no-startup-id feh pictures/current/* --bg-fill --no-fehbg
 exec_always --no-startup-id picom 
 exec_always --no-startup-id bash $HOME/bin/keybinded/brightness/restoreBrightness.sh
 exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
