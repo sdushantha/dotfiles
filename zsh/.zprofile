@@ -15,24 +15,29 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"
-export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-export LESSHISTFILE="$HOME/.cache/lesshst"
-export PYTHONHISTFILE="$HOME/.cache/python_history"
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
-export GOPATH="$XDG_DATA_HOME"/go
-export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
-export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
-export PYLINTHOME="$XDG_CACHE_HOME"/pylint
-export CARGO_HOME="$XDG_DATA_HOME"/cargo 
-export ATOM_HOME="$XDG_DATA_HOME"/atom 
-export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
-export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle 
 export ATOM_HOME="$XDG_DATA_HOME"/atom
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export ATOM_HOME="$XDG_DATA_HOME"/atom 
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GOPATH="$XDG_DATA_HOME"/go
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle 
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+export LESSHISTFILE="$HOME/.cache/lesshst"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export PYLINTHOME="$XDG_CACHE_HOME"/pylint
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export W3M_DIR="$XDG_DATA_HOME/w3m"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 
 # This lets me have a colorful man page :)
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
@@ -52,3 +57,8 @@ export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 # Pinch to zoom for Firefox
 export MOZ_USE_XINPUT2=1
+
+# https://github.com/open-mpi/hwloc/issues/354                                                                                                                                                              
+export HWLOC_HIDE_ERRORS=2 
+# https://github.com/openwall/john/issues/4765   
+export OMPI_MCA_opal_warn_on_missing_libcuda=0

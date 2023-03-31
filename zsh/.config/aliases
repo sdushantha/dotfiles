@@ -46,6 +46,9 @@ alias rm="rm --verbose"
 alias feh="feh --no-fehbg"
 alias mitmproxy="mitmproxy --set confdir=$XDG_CONFIG_HOME/mitmproxy"                             
 alias mitmweb="mitmweb --set confdir=$XDG_CONFIG_HOME/mitmproxy"
+alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
+alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 
 # Dont show the annoying banner in ipython3
 alias ipython3="ipython3 --no-banner"
@@ -99,7 +102,7 @@ alias todo="notes && vim todo"
 
 # Kitty terminal tends to have issues with the "clear" command it's terminfo files
 # are not available on the server. The alias below fixes it.
-alias ssh="kitty +kitten ssh"
+#alias ssh="kitty +kitten ssh"
 
 # Launch jupyter notebook
 alias jn="jupyter notebook"
@@ -122,3 +125,7 @@ alias fp="fontpreview-ueberzug -b #1d1f21 -f #c5c8c6"
 
 # Connect to TryHackMe VPN
 alias thm="sudo openvpn ~/documents/tryhackme.ovpn"
+
+alias se="sudoedit"
+
+alias rand="tr -dc a-z </dev/urandom | head -c 15 ; echo ''"

@@ -9,7 +9,7 @@ export PATH=$PATH":$HOME/.gem/ruby/2.6.0/bin"
 
 # Scripts installed using cargo
 export PATH=$PATH":$HOME/.cargo/bin"
-
+export PATH=$PATH":$HOME/.local/share/cargo/bin"
 export PATH=$PATH":$GOPATH/bin"
 export PATH=~/.node_modules/bin:$PATH
 
