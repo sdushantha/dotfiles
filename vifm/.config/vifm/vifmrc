@@ -111,7 +111,7 @@ set relativenumber
 highlight LineNr ctermbg=NONE ctermfg=243
 
 command! FZFfind : 
-                \| let $FZF_PICK = term('find . 2>/dev/null | fzf 2>/dev/tty')
+                \| let $FZF_PICK = term('find . 2>/dev/null | fzf --reverse 2>/dev/tty')
                 \| if $FZF_PICK != ''
                 \|     execute 'goto' fnameescape($FZF_PICK)
                 \| endif
@@ -291,7 +291,7 @@ nnoremap x :!/home/siddharth/bin/utils/ex %f &<cr>
 nnoremap mkd :mkdir<space>
 
 " Drag and drop files with ease
-nnoremap o :!dragon-drag-and-drop %f </dev/null &>/dev/null & <cr>
+nnoremap O :!dragon-drag-and-drop %f </dev/null &>/dev/null & <cr>
 
 " Toggle showing hidden files 
 nnoremap . za
@@ -303,7 +303,7 @@ nnoremap F :FZFfind <cr>
 
 " {{{ Icons 
 " Filetypes/directories
-set classify=' :dir:, :exe:, :reg:, :link:,? :?:, ::../::'
+set classify=' :dir:, :exe:, :reg:, :link:,? :?:, ::../::'
 
 " Specific files
 set classify+=' ::.Xdefaults,,.Xresources,,.bashprofile,,.bash_profile,,.bashrc,,.dmrc,,.d_store,,.fasd,,.gitconfig,,.gitignore,,.jack-settings,,.mime.types,,.nvidia-settings-rc,,.pam_environment,,.profile,,.recently-used,,.selected_editor,,.xinitpurc,,.zprofile,,.yarnc,,.snclirc,,.tmux.conf,,.urlview,,.config,,.ini,,.user-dirs.dirs,,.mimeapps.list,,.offlineimaprc,,.msmtprc,,.Xauthority,,config::'
