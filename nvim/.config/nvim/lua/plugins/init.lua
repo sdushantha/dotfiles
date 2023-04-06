@@ -24,9 +24,6 @@ packer.startup {
     use {"mboughaba/i3config.vim"}
     cmd("au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config")
 
-    -- Base16 colorscheme
-    use {"chriskempson/base16-vim"}
-
     -- Highlight/colorize hexcolors
     use {
       "norcalli/nvim-colorizer.lua",

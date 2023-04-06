@@ -39,7 +39,7 @@ cmd("set noshowmode")
 
 -- Colorscheme
 opt.background = "dark"
-cmd("colorscheme base16-tomorrow-night")
+cmd("colorscheme idk")
 
 -- Don't wrap lines
 -- vim.wo.wrap = false
