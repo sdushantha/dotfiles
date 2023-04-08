@@ -1,14 +1,23 @@
 " vi:syntax=vim
-" 
-" Modified version of Base16 Tomorrow Night to tailored to my liking
-" Original by Chris Kempson
-" Modified by Siddharth Dushantha
 
+" base16-vim (https://github.com/chriskempson/base16-vim)
+" by Chris Kempson (http://chriskempson.com)
+" Tomorrow Night scheme by Chris Kempson (http://chriskempson.com)
+
+" This enables the coresponding base16-shell script to run so that
+" :colorscheme works in terminals supported by base16-shell scripts
+" User must set this variable in .vimrc
+"   let g:base16_shell_path=base16-builder/output/shell/
+if !has("gui_running")
+  if exists("g:base16_shell_path")
+    execute "silent !/bin/sh ".g:base16_shell_path."/base16-tomorrow-night.sh"
+  endif
+endif
 
 " GUI color definitions
-let s:gui00        = "101213"
-let g:base16_gui00 = "101213"
-let s:gui01        = "101213"
+let s:gui00        = "1d1f21"
+let g:base16_gui00 = "1d1f21"
+let s:gui01        = "282a2e"
 let g:base16_gui01 = "282a2e"
 let s:gui02        = "373b41"
 let g:base16_gui02 = "373b41"
@@ -109,7 +118,7 @@ if has("nvim")
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_5
   if &background == "light"
-    let g:terminal_color_background = "#000000"
+    let g:terminal_color_background = g:terminal_color_7
     let g:terminal_color_foreground = g:terminal_color_2
   endif
 elseif has("terminal")
