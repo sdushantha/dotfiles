@@ -129,3 +129,5 @@ alias thm="sudo openvpn ~/documents/tryhackme.ovpn"
 alias se="sudoedit"
 
 alias rand="tr -dc a-z </dev/urandom | head -c 15 ; echo ''"
+
+alias anon="export HISTFILE='' && echo 'Incognito mode activated'"
