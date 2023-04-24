@@ -7,7 +7,6 @@
 # Inspired by https://github.com/mitchweaver/bin/blob/master/application/opn
 #
 
-
 # Fork process without any terminal output
 launch() {
     nohup "$@" >/dev/null 2>&1 &
@@ -59,6 +58,8 @@ case "$file_ext" in
         openshot|osp)
             launch openshot-qt "$file_path" ;;
 
+        json)
+            $EDITOR "$file_path" ;;
         *)
             # If the unknown file is a symlink then we need the actual path so that
             # we can check if it a text file that can be opened using $EDITOR
