@@ -3,4 +3,9 @@
 # Show webcam
 #
 
-mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:"/dev/video0" --profile=low-latency --untimed --vf=hflip --no-keepaspect-window &> /dev/null &
+mpv --demuxer-lavf-format=video4linux2 \
+    --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:"/dev/video0" \
+    --profile=low-latency \
+    --untimed \
+    --vf=hflip \
+    --no-keepaspect-window &> /dev/null &
