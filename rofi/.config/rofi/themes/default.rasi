@@ -21,6 +21,10 @@ configuration {
     display-name: "";
   }
 
+  emoji {
+    display-name: ":)";
+  }
+
   timeout {
     delay: 30;
     action: "kb-cancel";
