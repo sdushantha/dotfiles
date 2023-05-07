@@ -38,7 +38,7 @@ case "$file_ext" in
             launch mpv "$file_path" ;;
 
         pdf|epub)
-            launch firefox "$file_path" ;;
+            launch firefox --profile "/home/siddharth/.mozilla/firefox/7fqoq59v.PDF Reader" --new-window "$file_path" ;;
 
         docx|rtf|odt|ods|pptx|xlsx|csv)
             launch libreoffice "$file_path" ;;
