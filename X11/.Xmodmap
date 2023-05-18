@@ -7,9 +7,6 @@ clear    Lock
 keycode  66 = Escape
 keycode 9 = Caps_Lock
 
-! SHIFT+4 --> $
-keycode 13 = 4 dollar 
-
 ! I use tilde (~) too much and never use diaeresis (¨) so making
 ! diaeresis my asciitilde key makes my workflow smoother.
 keysym diaeresis = asciitilde
