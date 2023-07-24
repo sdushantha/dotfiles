@@ -130,7 +130,7 @@ main(){
     [ ! -f "$config_file" ] && print_error "Couldn't find config file: $config_file"
 
     radio_stations=$(jq -r ".stations" < "$config_file")
-    notification_icon_url=$(jq -r ".settings.notifcationIconUrl" < "$config_file")
+    notification_icon_url=$(jq -r ".settings.notificationIconUrl" < "$config_file")
 
     [ ! -f "$notification_icon_path" ] && curl -s "$notification_icon_url" -o "$notification_icon_path"
 
