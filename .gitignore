@@ -8,3 +8,4 @@ nvim/.config/nvim/tmp/*
 nvim/.config/nvim/plugged/*
 
 vifminfo.json
+token.txt
