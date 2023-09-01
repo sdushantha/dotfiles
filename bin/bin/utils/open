@@ -13,6 +13,18 @@ launch() {
     exit
 }
 
+output(){
+    # This function show output to STDOUT or as a notification depending on whether or not
+    # the user executes duckmail through the terminal or a program such as 'rofi'
+    message="$1"
+    if [ -z "$TERM" ] || [ "$TERM" = "dumb" ]; then
+        notify-send "$message"
+    else
+        printf "%b\n" "$message"
+    fi
+
+}
+
 file_path="$@"
 
 if [ -z "$file_path" ]; then
@@ -70,8 +82,16 @@ case "$file_ext" in
             # This is kinda like a last resort. If the file is just a text file, then
             # use the $EDITOR to open it
             if [[ $(file --mime-type $file_path 2>/dev/null) == *"text/"* ]]; then
-                $EDITOR "$file_path"
+                if [ -z "$TERM" ] || [ "$TERM" = "dumb" ]; then
+                    # nvim is hard coded here because I had problems with not being
+                    # able to fetch the value of $EDITOR when this script is run
+                    # from rofi for finding files. See the mod+o bindings in the
+                    # i3wm config for context
+                    alacritty -e nvim $file_path >/dev/null 2>&1 &
+                else
+                    $EDITOR "$file_path"
+                fi
             else
-                echo "Not sure how to open $file_path"
+                output "Not sure how to open $file_path"
             fi
 esac
