@@ -1,5 +1,9 @@
 configuration {
   font: "JetBrainsMono Nerd Font Medium 11";
+  kb-row-up: "Up,Alt+k";
+  kb-row-down: "Down,Alt+j";
+  kb-mode-next: "Tab";
+  kb-element-next: "";
 
   drun {
     display-name: "";
