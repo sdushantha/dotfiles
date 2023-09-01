@@ -58,6 +58,11 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 
+# [R]aw ViM
+# Open vim with default config
+alias rvim="nvim -u NONE"
+alias rvi="nvim -u NONE"
+
 # The remaining storage
 alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
 
@@ -123,11 +128,16 @@ alias woah="nmap -sC -sV -A -Pn"
 # Launch fontpreview
 alias fp="fontpreview-ueberzug -b #1d1f21 -f #c5c8c6"
 
-# Connect to TryHackMe VPN
-alias thm="sudo openvpn ~/documents/tryhackme.ovpn"
-
 alias se="sudoedit"
 
-alias rand="tr -dc a-z </dev/urandom | head -c 15 ; echo ''"
-
+# Incognito mode. Useful for when some commands must have secrets through the command
 alias anon="export HISTFILE='' && echo 'Incognito mode activated'"
+
+# Connect to TryHackMe VPN
+alias thm="sudo openvpn ~/documents/sdushantha.ovpn"
+
+# Get TryHackMe machine IP
+alias thmip="ip -o -4 addr show dev tun0 | awk '{print $4}' | cut -d/ -f1 | tr -d '[:space:]'"
+
+# Disable splash screen for Sonic Visualiser as its annoying
+alias sonic-visualiser="sonic-visualiser --no-splash"
