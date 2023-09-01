@@ -79,3 +79,7 @@ map("v", ">", ">gv")
 
 -- Reload current file
 map("n", "<M-r>", ":luafile %<cr>", {silent = true})
+
+-- More sensible undo
+-- https://stackoverflow.com/a/4360415/9215267
+map("i", "<Space>", "<Space><C-g>u")
