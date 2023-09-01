@@ -120,13 +120,10 @@ bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
 bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' && xdotool key ctrl+shift+v
 bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/rofi-picker.sh
 bindsym $mod+Shift+x exec bash $HOME/.config/rofi/scripts/rofi-powermenu.sh
-bindsym $mod+r exec bash $HOME/.config/rofi/scripts/rofi-run.sh 
-
-# Select an area and extract the text using ocr
-bindsym $mod+o --release exec $HOME/bin/utils/ocr
-
-# Screenshot a QR code and decode it
-bindsym $mod+shift+o --release exec $HOME/bin/utils/qrshot
+bindsym $mod+r exec bash $HOME/.config/rofi/scripts/rofi-run.sh
+bindsym $mod+o exec bash $HOME/.config/rofi/scripts/rofi-finder.sh "$HOME"
+bindsym $mod+Shift+o exec bash $HOME/.config/rofi/scripts/rofi-finder.sh "/"
+bindsym $mod+Shift+c exec bash $HOME/.config/rofi/scripts/rofi-farge.sh
 
 # Lauch my Calculator 
 bindsym XF86Calculator exec qalculate-gtk 
@@ -155,7 +152,7 @@ bindsym XF86MonBrightnessDown exec light -U 5
 bindsym $mod+Shift+s --release exec flameshot gui
 
 # Select color from screen and save the value to clipboard 
-bindsym $mod+Shift+c --release exec $HOME/.local/bin/farge --notify
+bindsym $mod+c --release exec $HOME/.local/bin/farge --no-preview
 
 # Rotating the display. Keybinings taken from Windows.
 bindsym Control+Mod1+Up exec xrandr -o normal
@@ -204,9 +201,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Gives a border to the windows. 
 for_window [class="^.*"] border pixel 1
 
-# TODO: have to fix the colors for this
 # class                 border  backgr. text    indicator child_border
-client.focused          #575268 #575268 #F5C2E7 #d9e0ee   #d9e0ee
+client.focused          #575268 #575268 #F5C2E7 #8c8c8c   #8c8c8c
 client.focused_inactive #575268 #575268 #F5C2E7 #333333   #333333
 client.unfocused        #302D41 #302D41 #D9E0EE #333333   #333333
 client.urgent           #f28fad #f28fad #000000 #333333   #f28fad
@@ -230,8 +226,7 @@ for_window [class="[Ss]imple[Ss]creen[Rr]ecorder"] floating enable
 for_window [class="[Gg]nome-calendar"] floating enable
 for_window [class="[Dd]ragon-drag-and-drop"] floating enable, border pixel 0
 for_window [class="Windscribe[2]"] floating enable, border pixel 0
-for_window [title="kitty-float"] floating enable
-
+for_window [class="die"] floating enable
 
 # Prevent mouse from changing the focus
 focus_follows_mouse yes
