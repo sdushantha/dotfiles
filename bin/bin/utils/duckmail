@@ -1,0 +1,98 @@
+#!/usr/bin/env sh
+#
+# by Siddharth Dushantha 2023
+#
+# Dependencies: jq, curl, xclip
+#
+# duckmail is a POSIX shell script that generates @duck.com email address using
+# Duck Duck Go's Email Protection service.
+#
+
+# This file contains the auth token that is needed inorder to generate a duck email address
+auth_token_path="$HOME/.config/duckmail/token.txt"
+auth_token=$(cat "$auth_token_path")
+
+# This is DuckDuckGo's logo. This image gets used as an icon for notifications thats are sent
+ddg_icon_path="$HOME/.config/duckmail/ddg.png"
+
+output(){
+    # This function show output to STDOUT or as a notification depending on whether or not
+    # the user executes duckmail through the terminal or a program such as 'rofi'
+    message="$1"
+    if [ -z "$TERM" ] || [ "$TERM" = "dumb" ]; then
+        notify-send "DuckDuckGo" "$message" --icon "$ddg_icon_path"
+    else
+        printf "%b\n" "$message"
+    fi
+
+}
+
+main(){
+    # Iterate of the array of dependencies and check if the user has them installed.
+    #
+    # dep_missing allows us to keep track of how many dependencies the user is missing
+    # and then print out the missing dependencies once the checking is done.
+    dep_missing=""
+
+    for dependency in jq curl xclip; do
+        if ! command -v "$dependency" >/dev/null 2>&1; then
+            # Append to our list of missing dependencies
+            dep_missing="$dep_missing $dependency"
+        fi
+    done
+
+    if [ "${#dep_missing}" -gt 0 ]; then
+        printf %s "Could not find the following dependencies:$dep_missing"
+        exit 1
+    fi
+
+    # The user may provide a flag such as the ones mentioed in the list below:
+    #   --clipboard
+    #   --copy
+    #   -c
+    # 
+    # Since they all start with one or more '-' and a 'c' we can simply check for "-{1,2}c"
+    if printf "%b" "$1" | grep -Eq -- "-{1,2}c"; then
+        copy_to_clipboard=true
+    fi
+
+    # Without the auth token, we're unable to genereate a @duck.com address
+    if [ ! -f "$auth_token_path" ]; then
+        output "Auth token file could not be found at $auth_token_path"
+        exit 1
+    fi
+
+    if [ -z "$auth_token" ];then
+        output "Auth token file is empty"
+        exit 1
+    fi
+
+    # Using the DuckDuckGo's Email Protection service's API endpoint, we fetch the username
+    response=$(curl -s "https://quack.duckduckgo.com/api/email/addresses" -X POST -H "Authorization: Bearer $auth_token")
+
+    if printf "%b" "$response" | grep -Eq "invalid_token"; then
+        output "Your token is invalid"
+        exit 1
+    fi
+
+    username=$(printf "%b" "$response" | jq -r .address)
+    duck_address="$username@duck.com"
+
+    # If $TERM is not present or is set to 'dumb', we asume the user is executing duckmail
+    # through a program such as 'rofi'. Therefore, we much force duckmail to save the duck
+    # adress to the clipboard as the user will be unable to copy the output sent to STDOUT
+    if [ -z "$TERM" ] || [ "$TERM" = "dumb" ]; then
+        copy_to_clipboard=true
+    fi
+
+    if [ "$copy_to_clipboard" = true ]; then
+        printf "%b" "$duck_address" | xclip -sel c
+        output "Duck address copied!"
+        exit
+    fi
+
+    printf "%b\n" "$duck_address"
+
+}
+
+main "$@"
