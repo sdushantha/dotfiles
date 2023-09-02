@@ -121,9 +121,8 @@ bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-
 bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/rofi-picker.sh
 bindsym $mod+Shift+x exec bash $HOME/.config/rofi/scripts/rofi-powermenu.sh
 bindsym $mod+r exec bash $HOME/.config/rofi/scripts/rofi-run.sh
-bindsym $mod+o exec bash $HOME/.config/rofi/scripts/rofi-finder.sh "$HOME"
-bindsym $mod+Shift+o exec bash $HOME/.config/rofi/scripts/rofi-finder.sh "/"
-bindsym $mod+Shift+c exec bash $HOME/.config/rofi/scripts/rofi-farge.sh
+bindsym $mod+o exec zsh -c "bash $HOME/.config/rofi/scripts/rofi-finder.sh $HOME"
+bindsym $mod+Shift+c exec rofi -show farge -modes "farge:$HOME/.local/bin/farge --rofi" | xclip -sel c
 
 # Lauch my Calculator 
 bindsym XF86Calculator exec qalculate-gtk 
@@ -152,7 +151,7 @@ bindsym XF86MonBrightnessDown exec light -U 5
 bindsym $mod+Shift+s --release exec flameshot gui
 
 # Select color from screen and save the value to clipboard 
-bindsym $mod+c --release exec $HOME/.local/bin/farge --no-preview
+bindsym $mod+c --release exec $HOME/.local/bin/farge --no-color-code --no-preview
 
 # Rotating the display. Keybinings taken from Windows.
 bindsym Control+Mod1+Up exec xrandr -o normal
