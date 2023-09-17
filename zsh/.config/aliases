@@ -29,11 +29,11 @@ alias tree="tree -C"
 alias diff="diff --color"
 alias ip="ip -c=always"
 
-# Use 'exa' instead of 'ls'
-alias ls="exa"
-alias ll='exa -alF'
-alias la='exa -a'
-alias l='exa -CF'
+# Use 'eza' instead of 'ls'
+alias ls="eza"
+alias ll='eza -alF'
+alias la='eza -a'
+alias l='eza -CF'
 
 # Basically, lets me know what just happened
 # --interactive     prompt before overwrite
@@ -69,7 +69,7 @@ alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
 # cat, but with syntax highlighting
 alias cat="bat --theme base16 -p"
 
-# https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/
+# https://www.ostechnix.com/youtube-dl-tutorial-with-ezamples-for-beginners/
 alias ytdl="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
 
 alias gif2mp4='ffmpeg -i $1 -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $2'
