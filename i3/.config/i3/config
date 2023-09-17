@@ -121,7 +121,8 @@ bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-
 bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/rofi-picker.sh
 bindsym $mod+Shift+x exec bash $HOME/.config/rofi/scripts/rofi-powermenu.sh
 bindsym $mod+r exec bash $HOME/.config/rofi/scripts/rofi-run.sh
-bindsym $mod+o exec zsh -c "bash $HOME/.config/rofi/scripts/rofi-finder.sh $HOME"
+bindsym $mod+o exec zsh -c "bash $HOME/.config/rofi/scripts/rofi-finder.sh open"
+bindsym $mod+Shift+o exec zsh -c "bash $HOME/.config/rofi/scripts/rofi-finder.sh 'dragon-drop -x'"
 bindsym $mod+Shift+c exec rofi -show farge -modes "farge:$HOME/.local/bin/farge --rofi" | xclip -sel c
 
 # Lauch my Calculator 
@@ -173,7 +174,6 @@ bindsym $mod+x exec dm-tool lock
 
 # Launch Thunar
 bindsym $mod+E exec thunar &
-
 #}}}
 
 
