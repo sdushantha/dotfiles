@@ -1,0 +1,108 @@
+configuration {
+  font: "JetBrainsMono Nerd Font Medium 11";
+  kb-row-up: "Up,Alt+k";
+  kb-row-down: "Down,Alt+j";
+  kb-mode-next: "Tab";
+  kb-element-next: "";
+
+  drun {
+    display-name: "";
+  }
+
+  run {
+    display-name: "";
+  }
+
+  window {
+    display-name: "";
+  }
+
+  clipboard {
+    display-name: "";
+  }
+
+  ssh {
+    display-name: "";
+  }
+
+  emoji {
+    display-name: ":)";
+  }
+
+  timeout {
+    delay: 30;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  /* 
+    We use full transparency here so that we can simiulate the effect where
+    the height gets reduced. Difficult to explain, easier to understand when
+    the config is used.
+   */
+  background-color: #00000000;
+  text-color: #c5c8c6;
+}
+
+window {
+  transparency: "real";
+  width: 500px;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  background-color: #17191d;
+  children: [prompt, entry];
+}
+
+prompt {
+  background-color: inherit;
+  padding: 12px;
+}
+
+entry {
+  background-color: inherit;
+  padding: 12px 3px;
+}
+
+listview {
+  lines: 5;
+}
+
+element {
+  children: [element-text];
+  text-color: #6c6c6c;
+  background-color: #121416;
+  padding: 8px 10px 8px 10px;
+}
+
+element run {
+  children: [element-icon, element-text];
+  text-color: #6c6c6c;
+}
+element-icon {
+  padding: 10px 10px;
+  size: 20px;
+}
+
+element-icon selected {
+  background-color: #17191d;
+}
+
+element-text {
+  padding: 10px 0;
+  text-color: inherit;
+}
+
+element-text selected {
+  text-color: #a4aeab;
+  background-color: #17191d;
+}
