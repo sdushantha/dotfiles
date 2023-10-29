@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-for i in /tmp/mpvsoc*; do
-    [ -e "$i" ] || break
-	echo '{ "command": ["set_property", "pause", true] }' | socat - "$i";
-done

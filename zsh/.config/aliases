@@ -19,7 +19,6 @@ alias zshrc="nvim $HOME/.zshrc && source $HOME/.zshrc"
 alias aliases="nvim $HOME/.config/aliases && source $HOME/.config/aliases"
 alias i3config="nvim $HOME/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/init.lua"
-alias vifmrc="nvim $HOME/.config/vifm/vifmrc"
 
 # Enable colors for some commands
 alias grep='grep --color=auto'
@@ -28,6 +27,44 @@ alias egrep='egrep --color=auto'
 alias tree="tree -C"
 alias diff="diff --color"
 alias ip="ip -c=always"
+alias colourify="grc -es"
+alias blkid='colourify blkid'
+alias configure='colourify ./configure'
+alias df='colourify df'
+alias du='colourify du'
+alias env='colourify env'
+alias free='colourify free'
+alias fdisk='colourify fdisk'
+alias findmnt='colourify findmnt'
+alias make='colourify make'
+alias gcc='colourify gcc'
+alias g++='colourify g++'
+alias id='colourify id'
+alias ip='colourify ip'
+alias iptables='colourify iptables'
+alias as='colourify as'
+alias gas='colourify gas'
+alias journalctl='colourify journalctl'
+alias kubectl='colourify kubectl'
+alias ld='colourify ld'
+alias lsof='colourify lsof'
+alias lsblk='colourify lsblk'
+alias lspci='colourify lspci'
+alias netstat='colourify netstat'
+alias ping='colourify ping'
+alias ss='colourify ss'
+alias traceroute='colourify traceroute'
+alias traceroute6='colourify traceroute6'
+alias head='colourify head'
+alias tail='colourify tail'
+alias dig='colourify dig'
+alias mount='colourify mount'
+alias ps='colourify ps'
+alias mtr='colourify mtr'
+alias semanage='colourify semanage'
+alias getsebool='colourify getsebool'
+alias ifconfig='colourify ifconfig'
+alias sockstat='colourify sockstat'
 
 # Use 'eza' instead of 'ls'
 alias ls="eza"
@@ -70,7 +107,7 @@ alias storage="df -h / --output=avail | tail -1 | xargs echo | sed 's/G/ GB/g'"
 alias cat="bat --theme base16 -p"
 
 # https://www.ostechnix.com/youtube-dl-tutorial-with-ezamples-for-beginners/
-alias ytdl="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
+alias ytdl="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -o '/mnt/c/Users/Siddharth.Dushantha/Downloads/%(title)s.%(ext)s' --restrict-filenames"
 
 alias gif2mp4='ffmpeg -i $1 -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" $2'
 
@@ -120,7 +157,7 @@ alias jp="git add . && git commit -m \"$(date)\" && git push"
 
 # Much quicker to just run 'o' instead of
 # typing out the whole command 
-alias o="open"
+alias o="explorer.exe"
 
 # A nmap alias that makes me go woah!makes me go woah!
 alias woah="nmap -sC -sV -A -Pn"
@@ -140,4 +177,9 @@ alias thm="sudo openvpn ~/documents/sdushantha.ovpn"
 alias thmip="ip -o -4 addr show dev tun0 | awk '{print $4}' | cut -d/ -f1 | tr -d '[:space:]'"
 
 # Disable splash screen for Sonic Visualiser as its annoying
-alias sonic-visualiser="sonic-visualiser --no-splash"
+alias sonic-visualiser="/mnt/c/Program\ Files/Sonic\ Visualiser/Sonic\ Visualiser.exe --no-splash"
+
+alias wl='echo "$HOME/wordlists/$(fd . $HOME/wordlists -t f | sed "s/\/home\/siddharth\/wordlists\///g" | fzf)"'
+
+alias rh='sudo cp /mnt/c/Windows/System32/drivers/etc/hosts /etc/hosts'
+alias die="/mnt/c/Users/Siddharth.Dushantha/scoop/apps/detect-it-easy/current/die.exe"
