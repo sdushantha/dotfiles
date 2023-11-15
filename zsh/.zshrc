@@ -1,4 +1,5 @@
 export PURE_PROMPT_SYMBOL="$"
+zstyle ':prompt:*' color yellow
 export PURE_PROMPT_VICMD_SYMBOL="$"
 
 # Load my aliases 
@@ -110,12 +111,6 @@ export PERL_LOCAL_LIB_ROOT="/home/siddharth/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_
 export PERL_MB_OPT="--install_base \"/home/siddharth/perl5\""
 export PERL_MM_OPT="INSTALL_BASE=/home/siddharth/perl5"
 
-# The 'cnf' command is needed. Check the 'bin' directory.
-command_not_found_handler() {
-    mkdir -p "/tmp/command_not_found"
-    echo -n "$1" > "/tmp/command_not_found/command"
-
-    echo "zsh: command not found: $1" && exit 1
-}
-
-
+# Dont overwrite files when redirecting output
+# Source: https://ngurajeka.com/post/zsh-no-clobber/
+set -o noclobber

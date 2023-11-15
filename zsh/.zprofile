@@ -62,3 +62,7 @@ export MOZ_USE_XINPUT2=1
 export HWLOC_HIDE_ERRORS=2 
 # https://github.com/openwall/john/issues/4765   
 export OMPI_MCA_opal_warn_on_missing_libcuda=0
+
+# Path to Windows Home Dir
+export WH="/mnt/c/Users/Siddharth.Dushantha"
+export WD="$WH/Downloads"
