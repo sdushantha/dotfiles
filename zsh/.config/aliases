@@ -19,6 +19,7 @@ alias zshrc="nvim $HOME/.zshrc && source $HOME/.zshrc"
 alias aliases="nvim $HOME/.config/aliases && source $HOME/.config/aliases"
 alias i3config="nvim $HOME/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/init.lua"
+alias vifmrc="nvim $HOME/.config/vifm/vifmrc"
 
 # Enable colors for some commands
 alias grep='grep --color=auto'
@@ -31,6 +32,9 @@ alias colourify="grc -es"
 alias blkid='colourify blkid'
 alias configure='colourify ./configure'
 alias df='colourify df'
+alias docker='colourify docker'
+alias docker-compose='colourify docker-compose'
+alias docker-machine='colourify docker-machine'
 alias du='colourify du'
 alias env='colourify env'
 alias free='colourify free'
@@ -127,9 +131,6 @@ alias td='tmux detach'
 # I always get strange looks if Im using the terminal in public with dark colors
 alias blend="wal -l -i $HOME/pictures/current/*"
 
-# Launch vifm using vifmrun so that I can have file previews
-alias vifm="vifmrun"
-
 # Packages I Installed
 alias pii="comm -23 <(pacman -Qqett | sort) <(pacman -Qqg base -g base-devel | sort | uniq)"
 
@@ -138,9 +139,6 @@ alias pyserver="python3 -m http.server"
 
 # Upload python project to pypi
 alias pyup="python3 setup.py sdist && python3 -m twine upload dist/*"
-
-# Open my todo list
-alias todo="notes && vim todo"
 
 # Kitty terminal tends to have issues with the "clear" command it's terminfo files
 # are not available on the server. The alias below fixes it.
