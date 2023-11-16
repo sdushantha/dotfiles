@@ -245,14 +245,8 @@ nnoremap gg ggj
 
 " Quick shortcuts to some dirs 
 nnoremap bin :cd ~/bin<cr>
-nnoremap docs :cd ~/documents<cr>
-nnoremap dls :cd ~/downloads<cr>
-nnoremap pics :cd ~/pictures<cr>
-nnoremap walls :cd ~/pictures/wallpapers<cr>
-nnoremap vids :cd ~/videos<cr>
+nnoremap dls :cd $WD<cr>
 nnoremap dots :cd ~/dotfiles<cr>
-nnoremap shots :cd ~/pictures/screenshots<cr>
-nnoremap music :cd ~/music<cr>
 nnoremap prjs :cd ~/projects<cr>
 nnoremap cd :cd<cr>
 
