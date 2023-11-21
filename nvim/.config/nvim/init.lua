@@ -130,23 +130,8 @@ map("", "<M-8>", "<CMD>lua require'bufferline'.go_to_buffer(8)<CR>")
 map("", "<M-9>", "<CMD>lua require'bufferline'.go_to_buffer(9)<CR>")
 map("", "<M-0>", "<CMD>lua require'bufferline'.go_to_buffer(10)<CR>")
 
--- Move buffer tabs (like moving tabs in web browser)
-map("n", "<C-A-l>", ":BufferLineMoveNext<CR>", {silent = true})
-map("n", "<C-A-h>", ":BufferLineMovePrev<CR>", {silent = true})
-
--- Toggle the NvimTree
-map("n", "<S-f>", ":NvimTreeToggle<CR>", {silent = true})
-
 -- Turn off highlighting
 map("n", "<Esc>", ":noh<CR>", {silent = true})
-
--- Open a file through Telescope
-map("n", "<C-o>", ":Telescope find_files hidden=true<CR>", {silent = true})
-
--- Rename a variable throughout the file
-map('i', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
-map('n', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
-map('v', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 
 -- Presistant indent mode
 map("v", "<", "<gv")
@@ -158,4 +143,23 @@ map("n", "<M-r>", ":luafile %<cr>", {silent = true})
 -- More sensible undo
 -- https://stackoverflow.com/a/4360415/9215267
 map("i", "<Space>", "<Space><C-g>u")
+
+vim.o.statusline = ' %{expand("%:t") == "" ? "No Name" : expand("%:t")} %= %l/%L '
+vim.cmd('highlight StatusLine guibg=#272727')
+
+vim.cmd [[packadd packer.nvim]]
+return require('packer').startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  -- Embed vim status line into tmux
+  use 'vimpostor/vim-tpipeline'
+end)
+
+
 
