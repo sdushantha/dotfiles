@@ -1,5 +1,3 @@
-xrdb -load "$XDG_CONFIG_HOME/X11/xresources"
-
 # Default programs
 export EDITOR="nvim"
 
@@ -32,6 +30,7 @@ export W3M_DIR="$XDG_DATA_HOME/w3m"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export AZURE_CONFIG_DIR="$XDG_DATA_HOME"/azure
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 
 # This lets me have a colorful man page :)
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
@@ -61,3 +60,5 @@ export OMPI_MCA_opal_warn_on_missing_libcuda=0
 # Path to Windows Home Dir
 export WH="/mnt/c/Users/Siddharth.Dushantha"
 export WD="$WH/Downloads"
+
+xrdb -load "$XDG_CONFIG_HOME/X11/xresources"
