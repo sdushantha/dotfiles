@@ -1,14 +1,7 @@
-# Start my graphical interface
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx > $HOME/.cache/startx.log 2>&1
-fi 
+xrdb -load "$XDG_CONFIG_HOME/X11/xresources"
 
-# Default programs:
+# Default programs
 export EDITOR="nvim"
-export TERMINAL="kitty"
-export BROWSER="firefox"
-export READER="zathura"
-export FILE="thunar"
 
 # Clean up the $HOME directory
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -37,6 +30,8 @@ export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export W3M_DIR="$XDG_DATA_HOME/w3m"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export AZURE_CONFIG_DIR="$XDG_DATA_HOME"/azure
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 # This lets me have a colorful man page :)
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
