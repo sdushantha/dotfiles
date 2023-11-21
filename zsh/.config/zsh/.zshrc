@@ -3,7 +3,7 @@ zstyle ':prompt:*' color yellow
 export PURE_PROMPT_VICMD_SYMBOL="$"
 
 # Load my aliases 
-[ -f ~/.config/aliases ] && source ~/.config/aliases
+[ -f $ZDOTDIR/aliases ] && source $ZDOTDIR/aliases
 
 # History in cache directory
 export HISTFILE=~/.cache/zsh/zsh_history
@@ -16,11 +16,11 @@ setopt incappendhistory  # Immediately append to the history file, not just when
 
 # Basic auto/tab complete
 autoload -U compinit
+compinit -d "$HOME/.cache/zsh/zcompdump"
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 _comp_options+=(globdots)	
 [ ! -d "$HOME/.cache/zsh" ] && mkdir "$HOME/.cache/zsh"
-compinit -d "$HOME/.cache/zsh/zcompdump"
 
 # Automatically cd into directories by just typing the directory name
 setopt autocd
@@ -86,8 +86,7 @@ precmd_functions+=(_fix_cursor)
 stty -ixon 
 
 # These files have some important variables
-source $HOME/.zprofile
-source $HOME/.zshenv
+source $ZDOTDIR/.zprofile
 
 # Load my ZSH plugins
 source /usr/share/zinit/zinit.zsh

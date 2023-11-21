@@ -15,7 +15,7 @@ alias shots="cd ~/pictures/screenshots"
 alias ..="cd .."
 
 # Quickly edit some files
-alias zshrc="nvim $HOME/.zshrc && source $HOME/.zshrc"
+alias zshrc="nvim $ZDOTDIR/.zshrc && source $ZDOTDIR/.zshrc"
 alias aliases="nvim $HOME/.config/aliases && source $HOME/.config/aliases"
 alias i3config="nvim $HOME/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/init.lua"
