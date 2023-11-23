@@ -16,7 +16,7 @@ alias ..="cd .."
 
 # Quickly edit some files
 alias zshrc="nvim $ZDOTDIR/.zshrc && source $ZDOTDIR/.zshrc"
-alias aliases="nvim $HOME/.config/aliases && source $HOME/.config/aliases"
+alias aliases="nvim $ZDOTDIR/aliases && source $ZDOTDIR/aliases"
 alias i3config="nvim $HOME/.config/i3/config"
 alias vimrc="nvim ~/.config/nvim/init.lua"
 alias vifmrc="nvim $HOME/.config/vifm/vifmrc"
@@ -152,7 +152,7 @@ alias jp="git add . && git commit -m \"$(date)\" && git push"
 
 # Much quicker to just run 'o' instead of
 # typing out the whole command 
-alias o="explorer.exe;exit 0"
+alias o="explorer.exe"
 
 # A nmap alias that makes me go woah!makes me go woah!
 alias woah="nmap -sC -sV -A -Pn"
