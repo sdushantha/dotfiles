@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
 # Quick shortcuts to some dirs
-alias dls="cd ~/downloads"
-alias docs="cd ~/documents"
-alias prjs="cd ~/projects"
-alias pics="cd ~/pictures"
+alias dls="cd $WD"
 alias conf="cd ~/.config"
-alias vids="cd ~/videos"
 alias dots="cd ~/dotfiles"
+alias prjs="cd ~/projects"
 alias bin="cd ~/bin"
 alias lbin="cd $HOME/.local/bin"
 alias tmp="cd /tmp"
@@ -168,7 +165,7 @@ alias anon="export HISTFILE='' && echo 'Incognito mode activated'"
 # Connect to HackTheBox VPN
 alias htb="sudo openvpn ~/vpn/competitive_sdushantha.ovpn"
 
-alias wl='echo "$HOME/wordlists/$(fd . $HOME/wordlists -t f | sed "s/\/home\/siddharth\/wordlists\///g" | fzf)"'
+alias wl='echo "$HOME/projects/wordlists/$(fd . $HOME/projects/wordlists -t f | sed "s/\/home\/siddharth\/projects\/wordlists\///g" | fzf)"'
 
 # Start burpsuite and send it to the background
 alias burpsuite='nohup "burpsuite" >/dev/null 2>&1 &'
