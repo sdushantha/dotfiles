@@ -93,7 +93,14 @@ source /usr/share/zinit/zinit.zsh
 zinit light kutsan/zsh-system-clipboard
 zinit light Aloxaf/fzf-tab
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
+
+if [[ -n "$SSH_CONNECTION" ]]; then
+    NEWLINE=$'\n'
+    autoload -U colors && colors
+    PS1="%{$fg[green]%}%n@%m:%f %~ ${NEWLINE}%{$fg[yellow]%}% $%{$fg[reset_color]%}%f "
+else
+    zinit light sindresorhus/pure
+fi
 
 # Use fzf when doing CTRL-r
 [[ -e "/usr/share/fzf/key-bindings.zsh" ]] && source "/usr/share/fzf/key-bindings.zsh" 
@@ -103,12 +110,6 @@ yr() {
 	SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
     [[ -n "$SELECTED_PKGS" ]] && yay -Rns "$SELECTED_PKGS"
 }
-
-export PATH="/home/siddharth/perl5/bin${PATH:+:${PATH}}"
-export PERL5LIB="/home/siddharth/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
-export PERL_LOCAL_LIB_ROOT="/home/siddharth/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
-export PERL_MB_OPT="--install_base \"/home/siddharth/perl5\""
-export PERL_MM_OPT="INSTALL_BASE=/home/siddharth/perl5"
 
 # Dont overwrite files when redirecting output
 # Source: https://ngurajeka.com/post/zsh-no-clobber/
