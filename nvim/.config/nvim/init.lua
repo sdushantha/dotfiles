@@ -13,6 +13,8 @@ opt.foldmethod="marker"
 opt.mouse="a"
 g.mapleader = " "
 
+vim.opt.clipboard = "unnamedplus"
+
 --autocmd({ "BufReadPost", "BufNewFile" }, {
 --  once = true,
 --  callback = function()
