@@ -5,6 +5,10 @@ export PURE_PROMPT_VICMD_SYMBOL="$"
 # Load my aliases 
 [ -f $ZDOTDIR/aliases ] && source $ZDOTDIR/aliases
 
+autoload -U url-quote-magic bracketed-paste-magic
+zle -N self-insert url-quote-magic
+zle -N bracketed-paste bracketed-paste-magic
+
 # History in cache directory
 export HISTFILE=~/.cache/zsh/zsh_history
 export HISTORY_IGNORE="(clear|ls)"
@@ -109,6 +113,14 @@ fi
 yr() {
 	SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
     [[ -n "$SELECTED_PKGS" ]] && yay -Rns "$SELECTED_PKGS"
+}
+
+fang(){
+    echo "$1" | sed -e "s/http/hxxp/g" -e "s/\./[.]/g" -e "s|:\/\/|[://]|g"
+}
+
+defang(){
+    echo "$1" | sed -e "s/hxxp/http/g" -e "s/\[.\]/\./g" -e "s|\[:\/\/\]|:\/\/|g"
 }
 
 # Dont overwrite files when redirecting output
