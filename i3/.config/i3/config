@@ -199,9 +199,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 for_window [class="^.*"] border pixel 1
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #575268 #575268 #F5C2E7 #8c8c8c   #8c8c8c
-client.focused_inactive #575268 #575268 #F5C2E7 #333333   #333333
-client.unfocused        #302D41 #302D41 #D9E0EE #333333   #333333
+client.focused          #2c2f3e #2c2f3e #F5C2E7 #8c8c8c   #8c8c8c
+client.focused_inactive #2c2f3e #2c2f3e #F5C2E7 #333333   #333333
+client.unfocused        #121317 #121317 #D9E0EE #333333   #333333
 client.urgent           #f28fad #f28fad #000000 #333333   #f28fad
 client.placeholder      #333333 #333333 #000000 #333333   #333333
 
