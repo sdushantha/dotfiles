@@ -41,7 +41,7 @@ case "$file_ext" in
             launch mpv "$file_path" ;;
 
         jpg|jpeg|png)
-            launch sxiv -a -b -N sxiv -p -r "$file_path" ;;
+            launch nsxiv -a -b -N sxiv -p -r "$file_path" ;;
 
         otf|ttf|woff)
             launch fontpreview "$file_path" ;;
