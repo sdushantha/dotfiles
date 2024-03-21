@@ -10,3 +10,4 @@ nvim/.config/nvim/plugged/*
 vifminfo.json
 token.txt
 battery-notify.sh
+packer_compiled.lua
