@@ -37,7 +37,7 @@ status=$?
 decoded_text=$(zbarimg "$image_file" -q --raw)
 
 if [ -z "$decoded_text" ]; then
-    notify-send "qrshot" "no text was detected"
+    notify-send "qrshot" "no qr code was found"
     rm $image_file && exit 1
 fi
 
