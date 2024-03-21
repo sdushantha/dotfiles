@@ -64,9 +64,6 @@ bindsym $mod+Shift+t layout splith
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle,move absolute position center
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -108,13 +105,13 @@ bindsym $mod+Mod1+k resize shrink height 1 px or 1 ppt
 bindsym $mod+Mod1+l resize grow width 1 px or 1 ppt
 
 # Launch terminal
-bindsym $mod+Return exec alacritty --working-directory=$($HOME/bin/utils/xcwd-helper)
+bindsym $mod+Return exec alacritty --working-directory="$(command -v xcwd >/dev/null && xcwd | awk -F '\n' '{print $1}'|| echo $HOME)" 
 
 # Launch a terminal with vifm
-bindsym $mod+Shift+Return exec alacritty -e $HOME/bin/utils/vifmrun
+bindsym $mod+Shift+Return exec alacritty --working-directory="$(command -v xcwd >/dev/null && xcwd | awk -F '\n' '{print $1}' || echo $HOME)" -e $HOME/bin/utils/vifmrun
 
-# Keybindings that are do things using rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun
+# Keybindings that do things using rofi
+bindsym $mod+space exec --no-startup-id rofi -show drun
 bindsym $mod+n exec bash $HOME/bin/keybinded/rofi_notes.sh 
 bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
 bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' && xdotool key ctrl+shift+v
@@ -122,7 +119,7 @@ bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/rofi-picker.sh
 bindsym $mod+Shift+x exec bash $HOME/.config/rofi/scripts/rofi-powermenu.sh
 bindsym $mod+r exec bash $HOME/.config/rofi/scripts/rofi-run.sh
 bindsym $mod+o exec zsh -c "bash $HOME/.config/rofi/scripts/rofi-finder.sh $HOME"
-bindsym $mod+Shift+c exec rofi -show farge -modes "farge:$HOME/.local/bin/farge --rofi" | xclip -sel c
+bindsym $mod+Shift+c exec bash $HOME/.config/rofi/scripts/rofi-farge.sh
 
 # Lauch my Calculator 
 bindsym XF86Calculator exec qalculate-gtk 
@@ -151,7 +148,7 @@ bindsym XF86MonBrightnessDown exec light -U 5
 bindsym $mod+Shift+s --release exec flameshot gui
 
 # Select color from screen and save the value to clipboard 
-bindsym $mod+c --release exec $HOME/.local/bin/farge --no-color-code --no-preview
+bindsym $mod+c --release exec farge --no-color-code --no-preview
 
 # Rotating the display. Keybinings taken from Windows.
 bindsym Control+Mod1+Up exec xrandr -o normal
@@ -169,7 +166,7 @@ bindsym Control+space exec dunstctl close
 bindsym Control+Shift+period exec dunstctl context 
 
 # Lock my screen
-bindsym $mod+x exec dm-tool lock
+bindsym $mod+x exec betterlockscreen --lock
 
 # Launch Thunar
 bindsym $mod+E exec thunar &
@@ -185,12 +182,13 @@ exec_always --no-startup-id picom
 exec_always --no-startup-id bash $HOME/bin/keybinded/brightness/restoreBrightness.sh
 exec_always --no-startup-id bash $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id dunst
-exec_always --no-startup-id python3 $HOME/.config/i3/scripts/i3-alternating-layout.py
+exec_always --no-startup-id i3-auto-layout 
 exec_always --no-startup-id flameshot 
 exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id nm-applet 
 
+exec --no-startup-id betterlockscreen --lock
 exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #}}}
