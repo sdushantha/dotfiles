@@ -25,7 +25,7 @@ $reboot)
     reboot
   ;;
 $lock)
-    dm-tool lock
+    betterlockscreen -l
   ;;
 $logout)
     i3-msg exit
