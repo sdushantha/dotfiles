@@ -69,17 +69,6 @@ function clear_preview() {
     > "$FIFO_UEBERZUG"
 }
 
-# Check all the dependencies that are needed to show all the file previews.
-# The reason why we are sending a notification incase a dependency does not
-# exist is because that is the easiest way to get the user's attention.
-dependencies=(ffmpeg ffmpegthumbnailer fontpreview pdftoppm epub-thumbnailer)
-for dependency in "${dependencies[@]}"; do
-    type -p "$dependency" &>/dev/null || {
-        notify-send "vifm" "Could not find '${dependency}', is it installed?"
-        exit 1
-    }
-done
-
 # Make sure ueberzug's fifo exists
 if [ -e "$FIFO_UEBERZUG" ]; then
   # Make a temp dir for rendering if not exists
