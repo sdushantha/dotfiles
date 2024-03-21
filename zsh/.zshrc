@@ -1,4 +1,5 @@
 export PURE_PROMPT_SYMBOL="$"
+zstyle ':prompt:*' color yellow
 export PURE_PROMPT_VICMD_SYMBOL="$"
 
 # Load my aliases 
@@ -118,4 +119,4 @@ command_not_found_handler() {
     echo "zsh: command not found: $1" && exit 1
 }
 
-
+whodat(){curl -s "https://www.tekna.no/api/mobileinfo?id=$1"  | jq -r 'to_entries[] | "\(.key): \(.value)"' 2>/dev/null}
