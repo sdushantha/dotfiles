@@ -21,5 +21,7 @@ setxkbmap -layout no -variant nodeadkeys
 setxkbmap -option caps:swapescape
 setxkbmap -option altwin:swap_lalt_lwin
 
+xrdb -merge ~/.Xresource
+
 exec i3 --shmlog-size 0
 

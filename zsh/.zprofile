@@ -49,7 +49,8 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 
 # Other
 #export SUDO_ASKPASS=~/bin/utils/rofi-askpass
-export FZF_DEFAULT_COMMAND='ag --hidden -g "" --ignore ".git" --ignore .npm --ignore .node_modules --ignore "*Trash*" --ignore ".java" --ignore "undo" --ignore .cpan'
+#export FZF_DEFAULT_COMMAND='ag --hidden -g "" --ignore ".git" --ignore .npm --ignore .node_modules --ignore "*Trash*" --ignore ".java" --ignore "undo" --ignore .cpan'
+export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--bind='alt-j:down,alt-k:up' --no-info --reverse"
 
 # https://github.com/pypa/pip/issues/8090#issuecomment-803363268
