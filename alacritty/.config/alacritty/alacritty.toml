@@ -1,0 +1,22 @@
+[font]
+size = 11
+
+[font.bold]
+family = "JetBrainsMono NerdFont"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono NerdFont"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono NerdFont"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono NerdFont"
+style = "Regular"
+
+[window.padding]
+x = 15
+y = 15
