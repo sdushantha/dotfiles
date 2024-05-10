@@ -53,7 +53,7 @@
     idle_threshold = 120
 
     # Font and typography settings
-    font = SF Pro Text 11
+    font = JetBrains Mono Nerdfont 10
     alignment = left
     word_wrap = yes
 
