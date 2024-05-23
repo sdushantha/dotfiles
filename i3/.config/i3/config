@@ -116,7 +116,6 @@ bindsym $mod+n exec bash $HOME/bin/keybinded/rofi_notes.sh
 bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
 bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' && xdotool key ctrl+shift+v
 bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/rofi-picker.sh
-bindsym $mod+Shift+x exec bash $HOME/.config/rofi/scripts/rofi-powermenu.sh
 bindsym $mod+r exec bash $HOME/.config/rofi/scripts/rofi-run.sh
 bindsym $mod+o exec zsh -c "bash $HOME/.config/rofi/scripts/rofi-finder.sh $HOME"
 bindsym $mod+Shift+c exec bash $HOME/.config/rofi/scripts/rofi-farge.sh
@@ -145,7 +144,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 # Screenshot selected area
 # You need to use `--release` in the binding.
 # See "4.3. Keyboard bindings" on i3wm docs 
-bindsym $mod+Shift+s --release exec flameshot gui
+bindsym $mod+Shift+x --release exec flameshot gui
 
 # Select color from screen and save the value to clipboard 
 bindsym $mod+c --release exec farge --no-color-code --no-preview
@@ -189,7 +188,7 @@ exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id nm-applet 
 
 exec --no-startup-id betterlockscreen --lock
-exec --no-startup-id /usr/lib/gsd-xsettings
+#exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #}}}
 
