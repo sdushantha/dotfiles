@@ -187,7 +187,6 @@ exec_always --no-startup-id xfce4-power-manager
 exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id nm-applet 
 
-exec --no-startup-id betterlockscreen --lock
 #exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #}}}
