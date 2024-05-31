@@ -108,7 +108,7 @@ bindsym $mod+Mod1+l resize grow width 1 px or 1 ppt
 bindsym $mod+Return exec alacritty --working-directory="$(command -v xcwd >/dev/null && xcwd | awk -F '\n' '{print $1}'|| echo $HOME)" 
 
 # Launch a terminal with vifm
-bindsym $mod+Shift+Return exec alacritty --working-directory="$(command -v xcwd >/dev/null && xcwd | awk -F '\n' '{print $1}' || echo $HOME)" -e $HOME/bin/utils/vifmrun
+bindsym $mod+Shift+Return exec alacritty --working-directory="$(command -v xcwd >/dev/null && xcwd | awk -F '\n' '{print $1}' || echo $HOME)" -e vifmrun
 
 # Keybindings that do things using rofi
 bindsym $mod+space exec --no-startup-id rofi -show drun

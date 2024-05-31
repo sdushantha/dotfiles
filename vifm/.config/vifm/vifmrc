@@ -146,58 +146,49 @@ command! FZFfind :
 " program.
 
 
-" CSV/Excel
-filetype *.csv,*.xlsx $HOME/bin/utils/open %c %i
+fileviewer *.pdf
+    \ vifmimg pdf %px %py %pw %ph %c
+    \ %pc
+    \ vifmimg clear
+
+fileviewer *.djvu
+    \ vifmimg djvu %px %py %pw %ph %c
+    \ %pc
+    \ vifmimg clear
+
+fileviewer *.epub
+    \ vifmimg epub %px %py %pw %ph %c
+    \ %pc
+    \ vifmimg clear
+
+fileviewer <video/*>
+    \ vifmimg video %px %py %pw %ph %c
+    \ %pc
+    \ vifmimg clear
+
+fileviewer <image/*>
+    \ vifmimg draw %px %py %pw %ph %c
+    \ %pc
+    \ vifmimg clear
+
+fileviewer <audio/*>
+    \ vifmimg audio %px %py %pw %ph %c
+    \ %pc
+    \ vifmimg clear
+
+fileviewer <font/*>
+    \ vifmimg font %px %py %pw %ph %c
+    \ %pc
+    \ vifmimg clear
+
+
+
+
 fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g" | cut -c -%pw
 
-" HTMLs
-filextype *.html, *.htm, *.xhtml $HOME/bin/utils/open %f 2>/dev/null &
 fileviewer *.html, *.htm, *.xhtml w3m -dump %c
 
-" Text based files
-filetype <text/*> $HOME/bin/utils/open
 fileviewer <text/*> env -uCOLORTERM bat --color always --wrap never --pager never %c -p
-
-" PDFs
-filextype *.pdf $HOME/bin/utils/open %c %i &
-fileviewer *.pdf
-        \ vifmimg pdf %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-" ePUBs
-filextype *.epub $HOME/bin/utils/open %c %i &
-fileviewer *.epub
-        \ vifmimg epub %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-" Fonts
-fileviewer *.otf,*.ttf,*.woff
-        \ vifmimg font %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-" Audios
-filetype <audio/*> $HOME/bin/utils/open %c %i </dev/null &>/dev/null &
-fileviewer <audio/*>
-        \ vifmimg audio %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-" Videos
-filetype <video/*> $HOME/bin/utils/open %c %i </dev/null &>/dev/null &
-fileviewer <video/*>
-        \ vifmimg video %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-" Images
-filextype <image/*> $HOME/bin/utils/open %c %i </dev/null &>/dev/null &
-fileviewer <image/*>
-        \ vifmimg draw %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
 
 " Archives
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %c
@@ -219,7 +210,7 @@ fileviewer .*/ ls
 " Using xdg-open to open the highlighted file with a compatible program and
 " the reason why I am using "file" to preview other files is so that "vifm" 
 " does not lag when trying "cat" the file
-filetype * open %c </dev/null &>/dev/null &
+filextype * $HOME/bin/utils/open %c %i &
 fileviewer * file -b %c
 " }}}
 
