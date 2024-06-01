@@ -1,0 +1,16 @@
+[Default Applications]
+inode/directory=thunar.desktop;
+text/x-shellscript=text.desktop;
+text/plain=text.desktop;
+text/x-makefile=text.desktop;
+image/png=img.desktop;
+image/jpeg=img.desktop;
+image/gif=img.desktop;
+application/pdf=pdf.desktop;
+video/x-matroska=video.desktop;
+video/mp4=video.desktop;
+x-scheme-handler/http=browser.desktop;
+x-scheme-handler/https=browser.desktop;
+
+[Added Associations]
+application/json=text.desktop;

@@ -182,8 +182,6 @@ fileviewer <font/*>
     \ vifmimg clear
 
 
-
-
 fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g" | cut -c -%pw
 
 fileviewer *.html, *.htm, *.xhtml w3m -dump %c
@@ -210,7 +208,7 @@ fileviewer .*/ ls
 " Using xdg-open to open the highlighted file with a compatible program and
 " the reason why I am using "file" to preview other files is so that "vifm" 
 " does not lag when trying "cat" the file
-filextype * $HOME/bin/utils/open %c %i &
+filextype * xdg-open %c %i &
 fileviewer * file -b %c
 " }}}
 

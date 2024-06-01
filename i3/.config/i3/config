@@ -223,6 +223,7 @@ for_window [class="[Dd]ragon-drag-and-drop"] floating enable, border pixel 0
 for_window [class="Windscribe[2]"] floating enable, border pixel 0
 for_window [class="die"] floating enable
 for_window [class="[Xx][Cc]alc"] floating enable
+for_window [class="[N]sxiv"] floating enable
 
 # Prevent mouse from changing the focus
 focus_follows_mouse yes
