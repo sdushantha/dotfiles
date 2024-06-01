@@ -83,3 +83,7 @@ map("n", "<M-r>", ":luafile %<cr>", {silent = true})
 -- More sensible undo
 -- https://stackoverflow.com/a/4360415/9215267
 map("i", "<Space>", "<Space><C-g>u")
+
+-- Paste without losing text
+-- https://andrewcourter.substack.com/i/137693539/paste-without-losing-text
+map("v", "p", '"_dP')
