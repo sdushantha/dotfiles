@@ -280,8 +280,8 @@ nnoremap x :!/home/siddharth/bin/utils/ex %f &<cr>
 nnoremap mkd :mkdir<space>
 
 " Drag and drop files with ease
-nnoremap O :!dragon-drop %f </dev/null &>/dev/null & <cr>
-vnoremap O :!dragon-drop %f </dev/null &>/dev/null & <cr>
+nnoremap O :!blobdrop %f &>/dev/null & <cr>
+vnoremap O :!blobdrop %f &>/dev/null & <cr>
 
 " Toggle showing hidden files 
 nnoremap . za
