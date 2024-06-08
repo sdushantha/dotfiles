@@ -1,7 +1,7 @@
 " colortheme
 highlight clear
 
-highlight Win cterm=none ctermfg=255 ctermbg=none
+highlight Win cterm=none ctermfg=default ctermbg=none
 highlight Directory cterm=bold ctermfg=12 ctermbg=default
 highlight Link cterm=bold ctermfg=216 ctermbg=default
 highlight BrokenLink cterm=bold ctermfg=9 ctermbg=default
@@ -13,9 +13,9 @@ highlight Selected cterm=none ctermfg=255 ctermbg=236
 highlight CurrLine cterm=reverse
 highlight TopLine cterm=none ctermfg=255 ctermbg=none
 highlight TopLineSel cterm=bold ctermfg=110 ctermbg=none
-highlight StatusLine cterm=none ctermfg=15 ctermbg=none
+highlight StatusLine cterm=none ctermfg=default ctermbg=none
 highlight WildMenu cterm=reverse ctermfg=255 ctermbg=black
-highlight CmdLine cterm=none ctermfg=255 ctermbg=none
+highlight CmdLine cterm=none ctermfg=default ctermbg=none
 highlight ErrorMsg cterm=none ctermfg=203 ctermbg=none
 highlight Border cterm=none ctermfg=black ctermbg=none
 highlight JobLine cterm=bold,reverse ctermfg=black ctermbg=255
