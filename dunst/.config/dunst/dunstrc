@@ -136,3 +136,7 @@
     timeout = 0
     icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
 
+[skip-rule] 
+appname=discord
+skip_display=true
+
