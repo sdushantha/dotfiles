@@ -116,7 +116,6 @@ bindsym $mod+n exec bash $HOME/bin/keybinded/rofi_notes.sh
 bindsym $mod+ae exec bash $HOME/bin/keybinded/rofi_todo.sh
 bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' && xdotool key ctrl+shift+v
 bindsym $mod+Shift+d exec bash $HOME/.config/rofi/scripts/rofi-picker.sh
-bindsym $mod+r exec bash $HOME/.config/rofi/scripts/rofi-run.sh
 bindsym $mod+o exec zsh -c "bash $HOME/.config/rofi/scripts/rofi-finder.sh $HOME"
 bindsym $mod+Shift+c exec bash $HOME/.config/rofi/scripts/rofi-farge.sh
 
