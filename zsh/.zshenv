@@ -12,5 +12,7 @@ export PATH=$PATH":$HOME/.cargo/bin"
 export PATH=$PATH":$HOME/.local/share/cargo/bin"
 export PATH=$PATH":$GOPATH/bin"
 export PATH=~/.node_modules/bin:$PATH
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"
 
 source $HOME/.config/aliases
