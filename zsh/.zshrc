@@ -7,7 +7,7 @@ export PURE_PROMPT_VICMD_SYMBOL="$"
 
 # History in cache directory
 export HISTFILE=~/.cache/zsh/zsh_history
-export HISTORY_IGNORE="(clear|ls)"
+export HISTORY_IGNORE="(clear|ls|anon)"
 export HISTSIZE=1000000  # How many lines of history to keep in memory
 export SAVEHIST=1000000  # Number of history entries to save to disk 
 setopt appendhistory     # Append history to the history file (no overwriting)
@@ -120,3 +120,4 @@ command_not_found_handler() {
 }
 
 whodat(){curl -s "https://www.tekna.no/api/mobileinfo?id=$1"  | jq -r 'to_entries[] | "\(.key): \(.value)"' 2>/dev/null}
+
